@@ -1,1 +1,670 @@
-testing 2 3 5 7 11
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Mednafen - Multi-system Emulator</title>
+  <script language="javascript" src="/lib.js" type="text/javascript"></script>  <style type="text/css"><!--
+	body
+	{
+	 background-color: #000000;
+	 color: #e0ffe0;
+	 margin-top: 0px;
+	}
+	a:link
+	{
+	 color: #90cfff;
+	}
+	a:visited
+	{
+	 color: #e0ffe0;
+	}
+	a:hover
+	{
+	 color: #FF00FF;
+	}
+	.ContentBox
+	{
+	 clear: both;
+	 border: 1px solid #004000;
+	 margin-bottom: 1em;
+	}
+	.ContentBoxBody
+	{
+	 border: 1px solid #004010;
+	 border-top: none;
+	 padding: 0.5em;
+	 background-color: #000010;
+	}
+	.ContentBoxBody h3
+	{
+	 background-color: #001030;
+	 padding: 0.2em;
+	 font-size: 100%;
+	 margin: 0px;
+	}
+	.ContentBoxSub
+	{
+	 border: 1px solid #004000;
+	 margin-bottom: 1em;
+	 padding: 0.2em;
+	}
+	.ContentBoxBodySub
+	{
+	 padding: 0.6em;
+	}
+	h2.ContentBoxHead
+	{
+	 margin: 0px;
+	 font-size: 100%;
+	 font-weight: bold;
+	 border: 1px solid black;
+	 border-bottom: 1px solid #00453e;
+	 background-color: #000000;
+	 background-image: url('/headerbg.png');
+	 background-repeat: repeat-x;
+	 color: #e0ffe0;
+	 padding: 0.5em;
+	 padding-left: 0.2em;
+	}
+	.CopyrightBox
+	{
+	 border: 1px solid #808080;
+	 padding: 0.3em;
+	 font-style: italic;
+	 font-size: small;
+	 background-color: #101010;
+	}
+	.NavBox
+	{
+	 font-size: 1.25em;
+	 padding: 0.5em;
+	 clear:both;
+	 text-align: center;
+	}
+	.NavBox a
+	{
+	 text-decoration: none;
+	 padding: 4px 12px 4px 12px;
+	 border: 1px solid #002050;
+	}
+	.NavBox a:hover
+	{
+	 text-decoration: none;
+	 background-color: #002020;
+	}
+	acronym
+	{
+	 text-decoration: none;
+	 border: 0px;
+	}
+	h1
+	{
+	 padding: 0px;
+	 border: 0px;
+	 margin: 0px;
+	}
+	img
+	{
+	 border: 0px;
+	}
+
+	ul.ReleaseList
+	{
+	 margin-left: 0em;
+	 padding-left: 1em;
+	}
+
+	ul.ReleaseList >li
+	{
+	 padding-top: 0.4em;
+	 padding-bottom: 0.5em;
+	 list-style-type: none;
+	}
+
+	ul.ReleaseList li li
+	{
+	 padding-top: 0.1em;
+	 padding-bottom: 0.5em;
+	}
+
+
+	.dashed {
+	 border: 1px dashed #1B7CAD;
+	}
+   --></style>
+ </head>
+ <body>
+  <div style="text-align: center"><h1><acronym title="My emulator doesn't need a frickin' excellent name!"><a href="/"><img alt="Mednafen" width="696" height="204" src="/newlogo.png"></img></a></acronym></h1></div>
+<div class="NavBox">
+<a href="/releases/">Releases</a>
+<a href="http://forum.fobby.net/">Forum</a>
+<a href="/links/">Links</a>
+<a href="/documentation/">Documentation</a>
+<a href="/irc/">IRC</a>
+<a href="http://forum.fobby.net/index.php?t=thread&frm_id=6&">FAQ</a>
+</div>
+<br />
+<div class="ContentBox">
+ <h2 class="ContentBoxHead">Introduction to Mednafen</h2>
+ <div class="ContentBoxBody">
+ <p>
+ Mednafen is a portable, utilizing OpenGL and SDL, argument(command-line)-driven multi-system emulator.
+ Mednafen has the ability to remap hotkey functions and virtual system inputs to a keyboard, a joystick, or both simultaneously.  Save states are supported, as is real-time game rewinding.
+ Screen snapshots may be taken, in the <a href="http://libpng.org/">PNG</a> file format, at the press of a button.  Mednafen can record
+ audiovisual movies in the QuickTime file format, with <a href="/documentation/09x/mednafen.html#qtrecord.vcodec">several different lossless codecs</a> supported.
+ </p>
+ <p>
+ The following systems are supported(refer to the emulation module documentation for more details):
+ <ul>
+  <li>Atari Lynx</li>
+  <li>Neo Geo Pocket (Color)</li>
+  <li>WonderSwan</li>
+  <li>GameBoy (Color)</li>
+  <li>GameBoy Advance</li>
+  <li>Nintendo Entertainment System</li>
+  <li>Super Nintendo Entertainment System/Super Famicom</li>
+  <li>Virtual Boy</li>
+  <li>PC Engine/TurboGrafx 16 (CD)</li>
+  <li>SuperGrafx</li>
+  <li>PC-FX</li>
+  <li>Sega Game Gear</li>
+  <li>Sega Genesis/Megadrive</li>
+  <li>Sega Master System</li>
+  <li>Sega Saturn <i>(experimental, x86_64 only)</i></li>
+  <li>Sony PlayStation</li>
+ </ul>
+ </p>
+ <p>
+ Mednafen is distributed under the terms of the <a href="http://www.gnu.org/licenses/gpl-2.0.html">GNU GPLv2</a>.
+ </p>
+ <p>
+ Due to the threaded model of emulation used in Mednafen, and limitations of SDL, a joystick is preferred over a keyboard to play games,
+ as the joystick will have slightly less latency, although the latency differences may not be perceptible to most people.
+ </p>
+ </div>
+</div>
+<div class="ContentBox">
+ <h2 class="ContentBoxHead">News</h2>
+ <div class="ContentBoxBody">
+<div class="ContentBoxSub"><h3><a href="http://forum.fobby.net/index.php?t=rview&amp;goto=4528&amp;th=1354#msg_4528">Mednafen 0.9.39.2</a><span style="float: right;">September 19, 2016 - 21:01 PDT</span></h3><div class="ContentBoxBodySub">This release adds PAL/European support to the Sega Saturn emulation.<br />
+<br />
+<div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('512032318', 1);">ChangeLog</a><div align="left" id="512032318" style="display: none;"><br />
+<div class="pre"><pre>
+-- 0.9.39.2: --
+
+September 19, 2016:
+	SMS: Sanitize some previously-missed variables in the save state loading code.
+
+September 18, 2016:
+	MD: Fixed a bug that caused some YM2612 state to not be restored properly on save state load.
+
+	MD, SMS, NGP: Fixed an old Z80 emulation bug with interrupt handling.
+
+	Make an index of save state sections on save state load, to detect sections in a save state that are unused by the state loading code(for debugging).
+
+	MD, PCE, PCE_FAST: Sanitize some previously-missed variables in the save state loading code.
+
+September 16, 2016:
+	SS: Added PAL support.
+
+	SS: Fixed vertical positioning brokenness with custom &quot;ss.slstart&quot; setting values with interlaced video.
+
+September 15, 2016:
+	PC-FX, WonderSwan, NES, VB, PSX: Sanitize some previously-missed variables in the save state loading code.
+
+	Fixed a use-after-free bug in the SDL sound output driver.
+
+	NGP: Fixed several off-by-1 bugs in the address to ROM data translation function.
+
+September 11, 2016:
+	Removed nonsensical unused frame advance loop in drivers/main.cpp leftover from 0.5.x.
+
+	PCE_FAST: Fixed a bug that could cause a crash with large &quot;pce_fast.ocmultiplier&quot; setting values when running CD games.
+
+September 10, 2016:
+	PCE_FAST: Skip 512-byte copier header if detected when loading a ROM image.
+
+	PCE_FAST: Made some minor optimizations.
+
+	PCE, PSX, PCE_FAST: Avoid UB by biasing uintptr_t values instead of pointers directly in the CPU core.
+
+September 1, 2016:
+	GB: Corrected the layer names used with the layer toggling feature.
+
+August 26, 2016:
+	SS: Fixed a potential problem with SH-2 DMA event rescheduling when bus lock is held, that probably wouldn't ever happen in practice.
+
+	NES: Fixed several instances of missing initialization of on-cart WRAM.
+
+August 24, 2016:
+	SS: Marked more functions with MDFN_COLD hint, and marked a few functions to be forcibly-inlined where it makes sense.
+
+August 23, 2016:
+	SNES: Fixed an issue causing a compilation error on Mac OS X.
+</pre></div><br />
+</div></div><br />
+<br />
+<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.39.2.tar.bz2" target="_blank">mednafen-0.9.39.2.tar.bz2</a><br />
+<font size="-1">SHA-256: b42470b2ddf68ce0747f5b8ba4e1d1c3047fa8c45b8e168da43f3e2461ec34cc</font><br />
+<br />
+<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.39.2-win64.zip" target="_blank">mednafen-0.9.39.2-win64.zip</a><br />
+<font size="-1">SHA-256: 9acceb0d6239105605dc598d56563adb7d5dfce56671ab5ddfa0aef33cdc19c2</font><br />
+<br />
+<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.39.2-win32.zip" target="_blank">mednafen-0.9.39.2-win32.zip</a><br />
+<font size="-1">SHA-256: 6ca033328ee26c4696cf3a7820ab02a6ca7c6bfbe194b9697c0051cae1566894</font></div></div><br><div class="ContentBoxSub"><h3><a href="http://forum.fobby.net/index.php?t=rview&amp;goto=4465&amp;th=1333#msg_4465">Mednafen 0.9.39.1</a><span style="float: right;">August 23, 2016 - 06:40 PDT</span></h3><div class="ContentBoxBodySub">A relatively minor release.  Among other changes, fixes problems with the following Sega Saturn games: &quot;Astal&quot;, &quot;Hi-Octane&quot;, &quot;Panzer Dragoon&quot;, and &quot;Panzer Dragoon 2&quot;.<br />
+<br />
+<div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('961016517', 1);">ChangeLog</a><div align="left" id="961016517" style="display: none;"><br />
+<div class="pre"><pre>
+-- 0.9.39.1: --
+
+August 22, 2016:
+	SS: Settings &quot;ss.dbg_mask&quot; and &quot;ss.dbg_exe_cdpath&quot;, and the functionality they control, are no longer available unless Mednafen has been compiled with
+	&quot;MDFN_SS_DEV_BUILD&quot; defined(such as with -DMDFN_SS_DEV_BUILD=1 in CPPFLAGS env var passed to configure).
+
+	SS: Replaced some instances of case ranges with more portable constructs.
+
+August 20, 2016:
+	SS: Run VDP1 vblank erase at end of vblank, so we know how much time we have and thus how many entries in the framebuffer we'll be able
+	to erase.  Currently, the available time calculations are generous, allowing for a bit more erase than what's possible on a Saturn, but we can tighten
+	it up in the future once it's fairly certain there aren't any more event scheduling accuracy issues.  Fixes FMV subtitle text in &quot;Panzer Dragoon&quot;.
+
+	SS: Fixed a bug that caused VDP2 frames to be short by 1 to 3 CPU cycles.
+
+	SS: Reschedule the SH-2 DMA event handler as necessary to prevent it from running when the SH-2 bus is locked.
+
+	SS: Force the SH-2 DMA and SCU DMA event handlers to be rescheduled to SH7095_mem_timestamp time when necessary.
+
+	SS: Check for pending events right before calling VDP1, VDP2, SMPC, and SCU regs read/write handlers, which may then call their own event update
+	functions.
+
+August 17, 2016:
+	Fixed an old bug that could cause a startup crash on Windows systems without XInput DLLs installed(e.g. some Windows XP systems).
+
+	NES: Fixed a very old bug triggered when disabling(via CTRL+1) the background layer, that would cause sprite pixels to also be visually disabled too under certain
+	circumstances.
+
+August 16, 2016:
+	MD, PC-FX: Fixed several instances of left-shifting negative values.
+
+August 15, 2016:
+	SS: Fixed a compilation error when compiling with the debugger disabled(&quot;--disable-debugger&quot; passed to configure).
+
+	Added configure options &quot;--with-external-mpcdec&quot; and &quot;--with-external-tremor&quot;, for distribution packagers.
+
+	SS, SNES-Faust: Fixed a few issues causing compilation errors on clang.
+
+	SS: Tweaked how seek command pause works; fixes a lockup issue in &quot;Astal&quot;.
+
+August 11, 2016:
+	WonderSwan: Fixed a bad usage of &quot;char&quot; without an unsigned/signed qualifier.
+
+	SS: Slow down SCU DMA to VDP2 VRAM under certain conditions.
+
+August 10, 2016:
+	SS: Adjusted VDP1 polygon and line draw commands to behave as if SPD=1, ECD=1 when color mode &gt;= 6; fixes missing graphics problem in &quot;Hi-Octane&quot;.
+
+August 8, 2016:
+	SS: Reworked SCU DMA's timekeeping and scheduling code to be more accurate; reduces the size of the flickering section of the FMV in &quot;Lunar&quot;.
+
+	SS: Fixed handling of CPU&lt;-&gt;SMPC open bus.
+
+August 7, 2016:
+	Relaxed the CloneCD Q subchannel sanity checks to allow a track number of 0xAA(leadout).
+
+August 6, 2016:
+	SS: Implemented kludgy(incomplete) support for quasi-illegal window X start position values; fixes ground layer issues in the forest stage of
+	Panzer Dragoon 2.
+</pre></div><br />
+</div></div><br />
+<br />
+<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.39.1.tar.bz2" target="_blank">mednafen-0.9.39.1.tar.bz2</a><br />
+<font size="-1">SHA-256: 3d97bf160fc9679b1a1c8082305d0d3906d867a6ba2be93232aa9d3024ba84a5</font><br />
+<br />
+<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.39.1-win64.zip" target="_blank">mednafen-0.9.39.1-win64.zip</a><br />
+<font size="-1">SHA-256: 615eb850f33f2f072f572ef7be9e496b4576b589675c6b592e2f24c300bfa0ed</font><br />
+<br />
+<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.39.1-win32.zip" target="_blank">mednafen-0.9.39.1-win32.zip</a><br />
+<font size="-1">SHA-256: d43d34fac12de582e4b51df0342eee720a48db92126bb135f294fd67bdb616e0</font></div></div><br><div class="ContentBoxSub"><h3><a href="http://forum.fobby.net/index.php?t=rview&amp;goto=4409&amp;th=1326#msg_4409">Mednafen 0.9.39-UNSTABLE</a><span style="float: right;">August  5, 2016 - 19:22 PDT</span></h3><div class="ContentBoxBodySub">This release adds experimental Sega Saturn emulation.  It currently is x86_64-only, very CPU-intensive, lacking save state support, and not supporting PAL-region games.  However, SSF(&quot;Saturn Sound Format&quot;) rip playback is not limited to x86_64 platforms.<br />
+<br />
+<b>Significant end-user changes compared to 0.9.38.7:</b><br />
+<ul>
+<li>Added experimental Sega Saturn emulation.
+<li>Low-accuracy &quot;snes_faust&quot; SNES emulation module is now compiled in and available by default(but not used by default, except for SPC playback).
+<li>The version is now displayed in the upper right corner of the F1 help screen.
+<li>Scrolling in the netplay and cheat consoles is now done in visible line units, instead of internal line units as before, and when a console is not scrolled all the way down, a green indicator arrow will now be drawn in the lower right corner.
+<li>Revamped the layout of the debugger's memory editor.
+<li>MD: Replaced old 68K emulator with new 68K emulator developed for Saturn emulation.  Fixes major issues in &quot;Double Clutch&quot;, &quot;James Pond 3&quot;, and &quot;Sub-Terrania&quot;.  However, timing is currently a bit off with the new 68K emulation code, so there may be some regressions.
+<li>MD: Implemented kludge to fix a startup lockup in &quot;Turrican&quot;.
+<li>NES: Implemented kludge to fix a minor Zelda 2 title screen glitch, a status bar glitch in Burai Fighter, and scrolling in the second stage of The Young Indiana Jones Chronicles.
+<li>NES: Enabled SSE2 support in the audio resampler(though not used on all CPUs with SSE2 support, mostly just newer ones).
+<li>NES, PCE, PC-FX: Added ARM NEON support to the audio resamplers(when compiled with -mfpu=neon or similar).
+<li>PCE, PC-FX: Added AVX support to the audio resampler.
+<li>PS1: Enabled emulation of a rarely-used CDC feature; fixes lockup bug in &quot;Fantastic Pinball Kyutenkai&quot;.
+<li>PS1: Reordered CPU class data layout for a small performance boost on ARM CPUs.
+<li>SNES: Updated libco, for ARM support.
+</ul><br />
+<b>Settings added:</b><br />
+<ul>
+<li><b>filesys.fname_savbackup</b>
+<li><b>filesys.path_savbackup</b>
+<li><b>netplay.console.scale</b>
+<li><b>netplay.console.font</b>
+<li><b>netplay.console.lines</b>
+<li><b>ss.*</b>
+</ul><br />
+<b>Settings removed:</b><br />
+<ul>
+<li><b>netplay.smallfont</b>
+</ul><br />
+<br />
+<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.39-unstable.tar.bz2" target="_blank">mednafen-0.9.39-unstable.tar.bz2</a><br />
+<font size="-1">SHA-256: 353eafc1243b00256ec7050ad47c622c4b5243354f02ed23836f28e95ccbd107</font><br />
+<br />
+<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.39-unstable-win64.zip" target="_blank">mednafen-0.9.39-unstable-win64.zip</a><br />
+<font size="-1">SHA-256: f889e1e8f6276eaf237d1386328f3e2629d2ce84b52d496fbd139fbf3be0d5fd</font><br />
+<br />
+<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.39-unstable-win32.zip" target="_blank">mednafen-0.9.39-unstable-win32.zip</a><br />
+<font size="-1">SHA-256: 3aed1d5317df3dd28e25d0b9c95fd62477c1874365fa0df9b6726e71b35bf189</font></div></div><br><div class="ContentBoxSub"><h3><a href="http://forum.fobby.net/index.php?t=rview&amp;goto=4207&amp;th=1263#msg_4207">Mednafen 0.9.38.7</a><span style="float: right;">October  1, 2015 - 16:59 PDT</span></h3><div class="ContentBoxBodySub">Another minor bugfix release.<br />
+<br />
+<div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('974875332', 1);">ChangeLog</a><div align="left" id="974875332" style="display: none;"><br />
+<div class="pre"><pre>
+-- 0.9.38.7: --
+
+September 30, 2015:
+	Fixed several malformed trio_sscanf() format strings in regards to field width, that could cause stack buffer overflows in certain cases.
+
+September 29, 2015:
+	PSX: Added skeleton BCzF/BCzT instruction emulation, and fixed handling of illegal CP0 instructions.
+
+September 25, 2015:
+	PSX: Added emulation of CPU exception-handling bad address register.
+
+	PSX: Implemented emulation of the Coprocessor Error field in the CAUSE register.
+
+	PSX: Added emulation of CPU exception-handling branch target register.
+
+	PSX: Fixed handling of CAUSE bits 30 and 31 when an exception occurs immediately after a branch instruction is executed.
+
+	PSX: Fixed link address calculation for JAL, JALR, and B*AL instructions when they're executed in a branch delay slot.
+
+	PSX: Corrected emulation of the quasi-illegal mirrors of the BGEZ*/BLTZ* type instructions.
+
+	PSX: Added emulation of a pipeline quirk that occurs with back-to-back load instructions to the same register(previously only emulated with LWL and LWR).
+
+September 22, 2015:
+	Fixed a bug in the debugger's disassembler that could break disassembly when a disassembled instruction wraps around the end of the CPU's program address
+	space to the beginning.
+
+September 18, 2015:
+	PCE: Removed experimental and unfinished hypothetical subtitle hardware emulation which had a few security-related problems.
+
+September 16, 2015:
+	MD: Fixed registration of main RAM in the cheat engine to be mirrored properly.
+
+	PCE: Fixed a bug that caused the debugger's disassembly and memory view to show a wrong value for the HES bootstrap register
+	at $1D00.
+
+	PCE: Fixed a bug that sometimes caused the &quot;TIMV&quot; register in the debugger to display &quot;FFFFFFFF&quot; instead of &quot;FF&quot;.
+
+	The date and time of the compilation of qtrecord.cpp are no longer written to recorded QuickTime movie files, to solve
+	a minor privacy issue and a build reproducibility issue.
+
+	PSX: Rewrote parts of the timer emulation code to fix several issues; fixes wrong music playback speed problem
+	in &quot;RPG Tsukuru 4&quot;.
+</pre></div><br />
+</div></div><br />
+<br />
+<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.38.7.tar.bz2" target="_blank">mednafen-0.9.38.7.tar.bz2</a><br />
+<font size="-1">SHA-256: 1bb3beef883a325c35d1a1ce14959c307a4c321f2ea29d4ddb216c6dd03aded8</font><br />
+<br />
+<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.38.7-win64.zip" target="_blank">mednafen-0.9.38.7-win64.zip</a><br />
+<font size="-1">SHA-256: 84414c6ada6c736ee474703d1ea71e570426aff5e7cef05a0633b975e2a84c1e</font><br />
+<br />
+<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.38.7-win32.zip" target="_blank">mednafen-0.9.38.7-win32.zip</a><br />
+<font size="-1">SHA-256: 3b46fe0f955fb3c3f219c0e11694a958261a108310acffa90a7d2dfc116e9afc</font></div></div><br><div class="ContentBoxSub"><h3><a href="http://forum.fobby.net/index.php?t=rview&amp;goto=4143&amp;th=1250#msg_4143">Mednafen 0.9.38.6</a><span style="float: right;">August 11, 2015 - 19:45 PDT</span></h3><div class="ContentBoxBodySub">A minor release to fix a couple of issues:<br />
+<ul>
+<li>PCE, PCE_FAST: Tweaked CD read timing, to fix a lockup in &quot;Mirai Shonen Conan&quot;, and a stuck note problem in &quot;4 in 1 Super CD&quot;.
+<li>PS1: Fixed GPU emulation timing bugs that caused graphical glitches in &quot;Mr. Driller G&quot;.
+</ul><br />
+<br />
+<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.38.6.tar.bz2" target="_blank">mednafen-0.9.38.6.tar.bz2</a><br />
+<font size="-1">SHA-256: 9460da3c6cd8cb8a02293d51c958cbc6ab5555aa6d115b952d4db2e0f1067e47</font><br />
+<br />
+<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.38.6-win64.zip" target="_blank">mednafen-0.9.38.6-win64.zip</a><br />
+<font size="-1">SHA-256: 4ddd1fe9e77fa49166495c6615e0eead5a0146254b9bd80478c4cbd5be4ac192</font><br />
+<br />
+<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.38.6-win32.zip" target="_blank">mednafen-0.9.38.6-win32.zip</a><br />
+<font size="-1">SHA-256: d5d590e475dd62e84f21f76e8cb1a98865a3d8ec3df300810ab9aaef70479fca</font></div></div><br><div class="ContentBoxSub"><h3><a href="http://forum.fobby.net/index.php?t=rview&amp;goto=4064&amp;th=1187#msg_4064">Mednafen 0.9.38.5</a><span style="float: right;">June 26, 2015 - 17:27 PDT</span></h3><div class="ContentBoxBodySub">Notable changes in this bug-fix release:<br />
+<ul>
+<li>NES: Fixed a mapper 19 sound emulation bug; fixes music issues in the Japanese release of &quot;Rolling Thunder&quot;.
+<li>PC-FX: Fixed a bug causing a graphical glitch in &quot;Sakuraigar Mode&quot; in &quot;Tyoushin Heiki Zeroigar&quot;.
+<li>PSX: Fixed a problem that caused &quot;Vib Ribbon&quot; to lock up when trying to play with an audio CD.
+<li>WonderSwan: Removed erroneous constraints that were preventing opposing X* and Y* buttons from being pressed simultaneously.
+</ul><br />
+<br />
+<div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('1137474549', 1);">ChangeLog</a><div align="left" id="1137474549" style="display: none;"><br />
+<div class="pre"><pre>
+-- 0.9.38.5: --
+
+June 26, 2015:
+	PSX: Generate a seek error when trying to read audio sectors(when the appropriate Mode bit isn't set), and generate a bad command error
+	when executing ReadN/ReadS with a non-PS1 disc.  Fixes a lockup in &quot;Vib Ribbon&quot; when trying to play with audio CDs.
+
+June 20, 2015:
+	Altered SHA-1 and SHA-256 test code to work around a preprocessor-related bug in gcc.
+
+	NES: Fixed a mapper 19 sound emulation bug; fixes music issues in the Japanese release of &quot;Rolling Thunder&quot;.
+
+	PSX: Replaced a GPU debug puts() with code that respects the psx.dbg_level setting.
+
+June 18, 2015:
+	PC-FX: Corrected handling of width/height of 0xA for KING BG1-3, per tests on a PC-FX.  Fixes a graphical glitch in &quot;Sakuraigar Mode&quot; in
+	&quot;Tyoushin Heiki Zeroigar&quot;.
+
+May 5, 2015:
+	PSX: Added some debug messages to the memory card emulation code, outputted when setting psx.dbg_level is set to certain values.
+
+April 29, 2015:
+	PCE, PCE_FAST: Corrected decimal-mode ADC and SBC behavior(especially for &quot;illegal&quot; input values), per tests on a HuC6280.
+
+April 22, 2015:
+	Added a test to tests.cpp for gcc bug #60196(triggered with non-default optimization flags).
+
+April 19, 2015:
+	Added a missing dependency statement to configure.ac, whose absence broke compilation with --disable-pce --enable-pcfx
+
+April 16, 2015:
+	WonderSwan: Removed erroneous constraints that were preventing opposing X* and Y* buttons from being pressed simultaneously, and changed the
+	names of the the X* and Y* buttons used during input configuration, per tip from trap15.
+</pre></div><br />
+</div></div><br />
+<br />
+<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.38.5.tar.bz2" target="_blank">mednafen-0.9.38.5.tar.bz2</a><br />
+SHA1: b6dff2ff97673e4183c5628d49b6ac05c341b325<br />
+<br />
+<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.38.5-win64.zip" target="_blank">mednafen-0.9.38.5-win64.zip</a><br />
+SHA1: 7ca8100e8a54a53eda29bf67aaac88e0988d92ab<br />
+<br />
+<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.38.5-win32.zip" target="_blank">mednafen-0.9.38.5-win32.zip</a><br />
+SHA1: 27db9c8512870bb3bf4ab7f7b02ea56f10013f60</div></div><br><div class="ContentBoxSub"><h3><a href="http://forum.fobby.net/index.php?t=rview&amp;goto=3965&amp;th=1171#msg_3965">Mednafen 0.9.38.4</a><span style="float: right;">April 13, 2015 - 08:56 PDT</span></h3><div class="ContentBoxBodySub"><font size="3"><font color="purple">A newer version, <a href="http&#58;&#47;&#47;forum.fobby.net/index.php?t=msg&amp;th=1187" target="_blank">0.9.38.5</a>, is available.</font></font><br />
+<hr><br />
+<br />
+User-visible changes in this release:<br />
+<ul>
+<li> Miscellaneous debugger bug fixes and tweaks.
+<li> NES: Altered mapper 185 emulation to fix all known commercially-released mapper 185 games that were previously non-working.
+<li> PCE: Fixed a VRAM DMA emulation bug introduced around 0.9.16-WIP that broke some homebrew software.
+<li> PS1: Cheats are now also tied to the game's base filename(previously written out in the psx.cht file as a comment, but now being used for something more).  Previously(and currently with other emulated systems), cheats were tied only to the game's &quot;ID&quot;.  However, Mednafen's CD ID calculation code is flawed and insufficient, particularly for single-track games, leading to <b>many</b> collisions in the PS1's vast game library.  (The underlying issue, bad CD ID calculation, will be fixed in a future major release)
+<li> PS1: Improved GPU texture cache emulation; fixes menu graphical glitches in &quot;Tigershark&quot;.
+<li> SNES: Fixed a bug that was breaking input after triggering a virtual Reset/Power Toggle event when a non-gamepad controller(e.g. mouse) is currently selected for a port.
+</ul><br />
+<br />
+<div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('1842949238', 1);">ChangeLog</a><div align="left" id="1842949238" style="display: none;"><br />
+<div class="pre"><pre>
+-- 0.9.38.4: --
+
+April 12, 2015:
+	PC-FX: Reorganized the debugger's register view to be slightly more space-efficient horizontally.
+
+	NES: Migrated the rest of the *GetRegister() and *SetRegister() debugger functions over to the newer-style interface.
+
+	PC-FX: Migrated the rest of the *GetRegister() and *SetRegister() debugger functions over to the newer-style interface.
+
+April 11, 2015:
+	PC-FX: Migrated debugger functions PCFXDBG_GetRegister() and PCFXDBG_SetRegister() over to the newer-style interface that takes integer IDs instead
+	of std::string.
+
+	VB: Migrated debugger functions VBDBG_GetRegister() and VBDBG_SetRegister() over to the newer-style interface that takes integer IDs instead
+	of std::string.
+
+	WonderSwan: Migrated debugger functions WSwan_GfxGetRegister() and WSwan_GfxSetRegister() over to the newer-style interface that takes integer IDs instead
+	of std::string.
+
+	PC-FX: Added support for setting breakpoints on writes to specific VDC registers, by setting an Aux Write Breakpoint on an
+	address ranging from A0000-A001F(VDC-A) or B0000-B001F(VDC-B).
+
+April 10, 2015:
+	Debugger: Relaxed most maximum string length restrictions on user-inputted addresses(to allow for lazily leaving an excessive number of 0s at the
+	beginning of an address, for example).
+
+	Debugger: &quot;Goto Address&quot; prompt in the memory editor can now be activated by pressing &quot;ENTER&quot;(in addition to &quot;G&quot;), and &quot;Disassembly Address&quot; prompt in the main debugger
+	view can now be activated by pressing the &quot;G&quot; key(in addition to &quot;ENTER&quot;).
+
+April 9, 2015:
+	NES: Added sprite RAM to the debugger's memory editor.
+
+	NES: Fixed some issues with the debugger's graphics/tileset viewer.
+
+April 8, 2015:
+	PSX: Improved GPU texture cache emulation accuracy per tests on a PS1; fixes graphical glitches in the menus of &quot;Tigershark&quot;.
+
+April 5, 2015:
+	PCE: Added support for setting breakpoints on writes to specific VDC registers(like MAWR, BXR, BYR, etc.), by setting an Aux Write Breakpoint on an address
+	ranging from 20000-2001f(hexadecimal).
+
+April 4, 2015:
+	Avoid left-shifting negative values in hw_sound/pce_psg/pce_psg.cpp
+
+	Added a couple more tests regarding left shift of signed integers to tests.cpp.
+
+April 2, 2015:
+	Debugger: Fixed half-broken re-activation of the debug screen when a breakpoint triggers and the user was last on a debug screen other than the
+	main one.
+
+	Debugger: Fixed a rounding issue that could cause insufficient disassembly lines with some *.debugger.disfontsize setting values.
+
+	PSX: Hooked up writing(editing) in the debugger's memory editor for &quot;CPU Main RAM&quot;.
+
+March 29, 2015:
+	PCE: Removed old leftover debug puts() in HuC6280 emulation code.
+
+	Debugger: Fixed a bug that could cause breakpoints to be skipped if the 'R' key was pressed(or auto-repeated) while outside of step mode.
+
+	NES: Fixed highpass filter coefficient calculation.
+
+	SNES: Fixed a bug that was breaking input after triggering a virtual Reset/Power Toggle event when a non-gamepad controller(e.g. mouse) is currently
+	selected for a port.
+
+March 23, 2015:
+	NES: Fixed a minor sound emulation bug.
+
+March 15, 2015:
+	GBA: Fixed several instances of left-shifting negative values in thumb.cpp.
+
+	PC-FX, VB: Fixed an instance of left-shifting uint64 by 64 in the FPU emulation code.
+
+March 14, 2015:
+	GBA: Fixed a few instances of technically undefined behavior(shifting 32-bit int by &gt;= 32, and left-shifting negative values) in arm.cpp.
+
+March 11, 2015:
+	Reworked a test in tests.cpp to better reflect the requirements of certain undefined behavior some code still (unfortunately) relies on, to avoid
+	triggering an assert() during startup when compiled with llvm/clang 3.6.
+
+March 6, 2015:
+	PCE: Fixed a major VRAM DMA emulation regression introduced around version 0.9.16-WIP, that breaks some homebrew software.
+
+	NES: Altered mapper 185 emulation to fix &quot;Bird Week&quot;, &quot;B-Wings&quot;, &quot;Sansuu 1 Nen&quot;, &quot;Sansuu 2 Nen&quot;, &quot;Sansuu 3 Nen&quot;, and &quot;Seicross (version 2)&quot;.
+
+	PSX: Added a kludge to the core cheat file reading and writing code to work around the mess created by our flawed game ID generation code
+	(the PS1 game library is enormous, and many games only have one track, leading to many collisions); effectively, the game's filename(which was previously
+	regarded as a comment), is now used in addition to the game ID.
+</pre></div><br />
+</div></div><br />
+<br />
+<a href="https&#58;&#47;&#47;prdownloads.sourceforge.net/mednafen/mednafen-0.9.38.4.tar.bz2?download" target="_blank">mednafen-0.9.38.4.tar.bz2</a><br />
+SHA1: bb38199feed6258b9d51dda938f46950c157cb4f<br />
+<br />
+<a href="http&#58;&#47;&#47;prdownloads.sourceforge.net/mednafen/mednafen-0.9.38.4-win64.zip?download" target="_blank">mednafen-0.9.38.4-win64.zip</a><br />
+SHA1: 6e4c35366703c19695d834c77aab930e014befea<br />
+<br />
+<a href="http&#58;&#47;&#47;prdownloads.sourceforge.net/mednafen/mednafen-0.9.38.4-win32.zip?download" target="_blank">mednafen-0.9.38.4-win32.zip</a><br />
+SHA1: cb1ab005b0149137ea2a71083b3dc3d80bdd5c42</div></div><br><div class="ContentBoxSub"><h3><a href="http://forum.fobby.net/index.php?t=rview&amp;goto=3923&amp;th=1158#msg_3923">Mednafen 0.9.38.3</a><span style="float: right;">March  5, 2015 - 05:20 PST</span></h3><div class="ContentBoxBodySub"><font size="3"><font color="purple">A newer version, <a href="http&#58;&#47;&#47;forum.fobby.net/index.php?t=msg&amp;th=1171" target="_blank">0.9.38.4</a>, is available.</font></font><br />
+<hr><br />
+<br />
+Changes:<br />
+<div class="pre"><pre>
+-- 0.9.38.3: --
+
+March 4, 2015:
+	NES: Fixed mapper 69 IRQ acknowledge behavior, per tip from tepples.
+
+February 24, 2015:
+	MD: Fixed an out-of-bounds array access in the 68K emulation code.
+
+	Avoid passing NULL to memcpy() in netplay.cpp.
+
+	MD: Fixed some code doing misaligned memory writes in vdp.cpp.
+
+February 23, 2015:
+	Avoid blitting to the screen when visibility is lost(i.e. window is minimized),
+        to reduce CPU usage and to prevent memory usage from skyrocketing on
+	Windows under certain conditions.
+
+February 22, 2015:
+	PSX: Tweaked non-logical CD seek emulation to fix lockups in some versions of &quot;Tomb Raider&quot;.
+
+February 17, 2015:
+	PSX: Fixed Justifier and GunCon x position being off when setting &quot;psx.h_overscan&quot; is set to &quot;0&quot;.
+</pre></div><br />
+<br />
+<a href="https&#58;&#47;&#47;prdownloads.sourceforge.net/mednafen/mednafen-0.9.38.3.tar.bz2?download" target="_blank">mednafen-0.9.38.3.tar.bz2</a><br />
+SHA1: c71cdc0c92ba6c8177b7c1c5d29d5e9bf3a74027<br />
+<br />
+<a href="http&#58;&#47;&#47;prdownloads.sourceforge.net/mednafen/mednafen-0.9.38.3-win64.zip?download" target="_blank">mednafen-0.9.38.3-win64.zip</a><br />
+SHA1: 94fb78c7b8cb3add9da682287c43def9ef9a5d12<br />
+<br />
+<a href="http&#58;&#47;&#47;prdownloads.sourceforge.net/mednafen/mednafen-0.9.38.3-win32.zip?download" target="_blank">mednafen-0.9.38.3-win32.zip</a><br />
+SHA1: de1082b259575bc7b10306f924af48040e88d02c</div></div><br><div class="ContentBoxSub"><h3><a href="http://forum.fobby.net/index.php?t=rview&amp;goto=3902&amp;th=1152#msg_3902">Mednafen 0.9.38.2</a><span style="float: right;">February 16, 2015 - 18:18 PST</span></h3><div class="ContentBoxBodySub"><font size="3"><font color="purple">A newer version, <a href="http&#58;&#47;&#47;forum.fobby.net/index.php?t=msg&amp;th=1158" target="_blank">0.9.38.3</a>, is available.</font></font><br />
+<hr><br />
+<br />
+This release fixes a PS1 GPU emulation timing regression introduced in 0.9.37 that causes &quot;Tobal No.1&quot;, and possibly some other interlaced games that run at 60 fields per second, to be unplayable.<br />
+<br />
+<hr><br />
+mednafen-0.9.38.2.tar.bz2<br />
+SHA1: 09a258fdf2966a18c868fe8acdce0701e77a0347<br />
+<br />
+mednafen-0.9.38.2-win64.zip<br />
+SHA1: 42027c94b414fc5371b6771b020692b7c93bf287<br />
+<br />
+mednafen-0.9.38.2-win32.zip<br />
+SHA1: d3c6d04f855c80231ee97a718598d43d6903d858</div></div><br><div class="ContentBoxSub"><h3><a href="http://forum.fobby.net/index.php?t=rview&amp;goto=3886&amp;th=1148#msg_3886">Mednafen 0.9.38.1</a><span style="float: right;">February 11, 2015 - 19:32 PST</span></h3><div class="ContentBoxBodySub"><font size="3"><font color="purple">A newer version, <a href="http&#58;&#47;&#47;forum.fobby.net/index.php?t=msg&amp;th=1152" target="_blank">0.9.38.2</a>, is available.</font></font><br />
+<hr><br />
+<br />
+This release fixes a few minor bugs in <a href="http&#58;&#47;&#47;forum.fobby.net/index.php?t=msg&amp;th=1145&amp;start=0&amp;" target="_blank">0.9.38-UNSTABLE</a>, including broken PSF/PS1 EXE support.<br />
+<br />
+<a href="https&#58;&#47;&#47;prdownloads.sourceforge.net/mednafen/mednafen-0.9.38.1.tar.bz2?download" target="_blank">mednafen-0.9.38.1.tar.bz2</a><br />
+SHA1: 7087089da7b7f8cc16498496c58300270d656581<br />
+<br />
+<a href="http&#58;&#47;&#47;prdownloads.sourceforge.net/mednafen/mednafen-0.9.38.1-win64.zip?download" target="_blank">mednafen-0.9.38.1-win64.zip</a><br />
+SHA1: 837facd6259f0444cdb5c26b5d5faadeb7bc39f2<br />
+<br />
+<a href="http&#58;&#47;&#47;prdownloads.sourceforge.net/mednafen/mednafen-0.9.38.1-win32.zip?download" target="_blank">mednafen-0.9.38.1-win32.zip</a><br />
+SHA1: d18be7d691f8a8da034441580c1c956d8ea8a252</div></div><br> </div>
+</div>
+<br />
+  <div class="CopyrightBox">
+   Page design and original content copyright &copy; 2005-2017 Mednafen Team.  The Mednafen Beetle is copyright &copy; 2005 <a href="http://camilleart.com/">Camille Young</a>.  Nintendo,
+   Nintendo Entertainment System, GameBoy, GameBoy Color, and GameBoy Advance are registered trademarks of <a href="http://www.nintendo.com/">Nintendo</a>.  Mednafen is <b>not</b> an official Nintendo product, and Mednafen is in no way affiliated with the Nintendo corporation.
+  </div>
+  </body>
+</html>
+ 
