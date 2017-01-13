@@ -1,0 +1,40 @@
+diff -rupN libcdio-0.83.orig/lib/driver/MSWindows/win32_ioctl.c libcdio-0.83/lib/driver/MSWindows/win32_ioctl.c
+--- libcdio-0.83.orig/lib/driver/MSWindows/win32_ioctl.c	2011-08-24 21:18:15.000000000 -0700
++++ libcdio-0.83/lib/driver/MSWindows/win32_ioctl.c	2012-01-27 18:58:19.000000000 -0800
+@@ -25,18 +25,17 @@
+ 
+ #ifdef HAVE_WIN32_CDROM
+ 
++#ifdef WIN32
++#include <windows.h>
++#endif
++
+ #if defined (_XBOX)
+ # include "inttypes.h"
+ # include "NtScsi.h"
+ # include "undocumented.h"
+ #else
+-# include <ddk/ntddcdrm.h>
+-# include <ddk/ntddscsi.h>
+-# include <ddk/scsi.h>
+-#endif
+-
+-#ifdef WIN32
+-#include <windows.h>
++# include <ntddcdrm.h>
++# include <ntddscsi.h>
+ #endif
+ 
+ #include <stdio.h>
+diff -rupN libcdio-0.83.orig/lib/udf/udf_fs.c libcdio-0.83/lib/udf/udf_fs.c
+--- libcdio-0.83.orig/lib/udf/udf_fs.c	2011-10-20 16:09:32.000000000 -0700
++++ libcdio-0.83/lib/udf/udf_fs.c	2012-01-27 18:59:51.000000000 -0800
+@@ -54,6 +54,8 @@
+ # include <stdlib.h>
+ #endif
+ 
++#include <stdio.h>
++
+ /* These definitions are also to make debugging easy. Note that they
+    have to come *before* #include <cdio/ecma_167.h> which sets 
+    #defines for these.
