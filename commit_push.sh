@@ -1,3 +1,4 @@
 #!/bin/bash
 
-git commit && git push
+git commit
+git push
