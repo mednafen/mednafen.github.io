@@ -30,25 +30,39 @@ For the Windows builds, Windows XP or newer required.
 Windows 8 and newer will work, but their use is discouraged unless Mednafen is running in fullscreen mode(for video lag and quality reasons).  Using the 64-bit build is recommended, for better performance and functionality.
 </p>
 <?php
- function ReleaseFile($base, $version, $suffix, $purpose)
+ function ReleaseFile($base, $version, $suffix, $purpose, $first)
  {
-  $frfp = 'files/' . strtolower($base) . '-' . $version . $suffix;
+  $frfn = strtolower($base) . '-' . $version . $suffix;
+  $frfp = 'files/' . $frfn;
   if(file_exists($frfp))
   {
+   if($first)
+   {
+    $lfp = 'files/' . strtolower($base) . '-' . 'latest' . $suffix;
+    if(file_exists($lfp))
+     unlink($lfp);
+    symlink($frfn, $lfp);
+    $first = FALSE;
+   }
+
    echo '<li><a href="/releases/' . htmlspecialchars($frfp) . '">' . htmlspecialchars($purpose) . '</a>';
+   return TRUE;
   }
+  return FALSE;
  }
 
- function Release($version, $reldate, $base)
+ function Release($version, $reldate, $base, $first)
  {
   echo '<li><b>' . htmlspecialchars($base) . ' ' . htmlspecialchars($version) . '</b> <i>(' . htmlspecialchars($reldate) . ')</i>';
   echo '<ul>';
 
-  ReleaseFile($base, $version, ".tar.xz", "Source code");
-  ReleaseFile($base, $version, ".tar.bz2", "Source code");
-  ReleaseFile($base, $version, ".tar.gz", "Source code");
-  ReleaseFile($base, $version, "-win32.zip", "32-bit Windows");
-  ReleaseFile($base, $version, "-win64.zip", "64-bit Windows (Recommended)");
+  if(!ReleaseFile($base, $version, ".tar.xz", "Source code", $first))
+  {
+   ReleaseFile($base, $version, ".tar.gz", "Source code", FALSE);
+   ReleaseFile($base, $version, ".tar.bz2", "Source code", FALSE);
+  }
+  ReleaseFile($base, $version, "-win32.zip", "32-bit Windows", $first);
+  ReleaseFile($base, $version, "-win64.zip", "64-bit Windows (Recommended)", $first);
 
   echo '</ul>';
  }
@@ -58,18 +72,25 @@ Windows 8 and newer will work, but their use is discouraged unless Mednafen is r
   echo '<ul class="ReleaseList">';
   $fp = fopen($listpath, "rb");
 
-  //$first = TRUE;
+  $first = TRUE;
   $release_version = $release_date = "";
-  while(fscanf($fp, "%[^!]!%[^\n]", $release_version, $release_date) == 2)
+  while(FALSE !== ($line = fgets($fp)))
   {
-   //if($first)
-   //{
-   // @unlink("files/mednafen-latest.tar.bz2");
-   // symlink("mednafen-" . $release_version . ".tar.bz2", "files/mednafen-latest.tar.bz2");
-   // $first = FALSE;
-   //}
+   $line = trim($line);
 
-   Release($release_version, $release_date, $base);
+   if(!strlen($line) || $line[0] == '#' || $line[0] == ';')
+    continue;
+
+   if(sscanf($line, "%[^!]!%[^\n]", $release_version, $release_date) == 2)
+   {
+    Release($release_version, $release_date, $base, $first);
+    $first = FALSE;
+   }
+   else
+   {
+    fprintf(STDERR, "Malformed release line: %s\n", $line);
+    exit(1);
+   }
   }
 
   fclose($fp);
