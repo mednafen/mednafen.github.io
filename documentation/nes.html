@@ -9,18 +9,18 @@
  <body>
   <center><h1><img alt="Mednafen" src="mednafen.png" width="696" height="204"></h1></center>
   <center><h1>Nintendo Entertainment System/Famicom Documentation</h1></center>
-  <center><i>Last updated September 19, 2016<br>Valid as of 0.9.39.2</i></center>
+  <center><i>Last updated January 21, 2017<br>Valid as of 0.9.41</i></center>
  <p></p>
  <b>Table of Contents:</b>
- <ul><li><a href="#Introduction">Introduction</a><ul><li><a href="#Introduction%01Custom+Palettes">Custom Palettes</a><ul></ul></li><li><a href="#Introduction%01Input">Input</a><ul><li><a href="#Introduction%01Input%01Zapper">Zapper</a><ul></ul></li></ul></li><li><a href="#Introduction%01File+Formats">File Formats</a><ul><li><a href="#Introduction%01File+Formats%01iNES+Format">iNES Format</a><ul></ul></li><li><a href="#Introduction%01File+Formats%01UNIF">UNIF</a><ul></ul></li></ul></li><li><a href="#Introduction%01Famicom+Disk+System">Famicom Disk System</a><ul></ul></li><li><a href="#Introduction%01Game+Genie">Game Genie</a><ul></ul></li><li><a href="#Introduction%01VS+Unisystem">VS Unisystem</a><ul></ul></li></ul></li><li><a href="#Default+Key+Assignments">Default Key Assignments</a><ul><li><a href="#Default+Key+Assignments%01VS+Unisystem">VS Unisystem</a><ul></ul></li><li><a href="#Default+Key+Assignments%01Famicom+Disk+System">Famicom Disk System</a><ul></ul></li><li><a href="#Default+Key+Assignments%01Barcode+Readers">Barcode Readers</a><ul></ul></li><li><a href="#Default+Key+Assignments%01Game+Pad">Game Pad</a><ul></ul></li><li><a href="#Default+Key+Assignments%01Power+Pad">Power Pad</a><ul></ul></li><li><a href="#Default+Key+Assignments%01Family+Keyboard">Family Keyboard</a><ul></ul></li><li><a href="#Default+Key+Assignments%01HyperShot+Controller">HyperShot Controller</a><ul></ul></li><li><a href="#Default+Key+Assignments%01Mahjong+Controller">Mahjong Controller</a><ul></ul></li><li><a href="#Default+Key+Assignments%01Party+Tap+Controller">Party Tap Controller</a><ul></ul></li></ul></li><li><a href="#Game-specific+Emulation+Hacks">Game-specific Emulation Hacks</a><ul></ul></li><li><a href="#Settings+Reference">Settings Reference</a><ul></ul></li><li><a href="#Credits">Credits</a><ul></ul></li></ul><hr width="100%">
-<h2><a name="Introduction">Introduction</a></h2><p></p><p>
-Mednafen's NES/Famicom emulation is based off of <a href="http://fceultra.sourceforge.net/">FCE Ultra</a>.
+ <ul><li><a href="#Section_intro">Introduction</a><ul><li><a href="#Section_custom_palettes">Custom Palettes</a><ul></ul></li><li><a href="#Section_input">Input</a><ul><li><a href="#Section_input_zapper">Zapper</a><ul></ul></li></ul></li><li><a href="#Section_formats">File Formats</a><ul><li><a href="#Section_formats_ines">iNES Format</a><ul></ul></li><li><a href="#Section_formats_unif">UNIF</a><ul></ul></li></ul></li><li><a href="#Section_fds">Famicom Disk System</a><ul></ul></li><li><a href="#Section_game_genie">Game Genie</a><ul></ul></li><li><a href="#Section_vs_unisystem">VS Unisystem</a><ul></ul></li></ul></li><li><a href="#Section_default_keys">Default Key Assignments</a><ul><li><a href="#Section_default_keys_vsuni">VS Unisystem</a><ul></ul></li><li><a href="#Section_default_keys_fds">Famicom Disk System</a><ul></ul></li><li><a href="#Section_default_keys_barcode">Barcode Readers</a><ul></ul></li><li><a href="#Section_default_keys_gamepad">Game Pad</a><ul></ul></li><li><a href="#Section_default_keys_powerpad">Power Pad</a><ul></ul></li><li><a href="#Section_default_keys_fkb">Family Keyboard</a><ul></ul></li><li><a href="#Section_default_keys_hypershot">HyperShot Controller</a><ul></ul></li><li><a href="#Section_default_keys_mahjong">Mahjong Controller</a><ul></ul></li><li><a href="#Section_default_keys_partytap">Party Tap Controller</a><ul></ul></li></ul></li><li><a href="#Section_hax">Game-specific Emulation Hacks</a><ul></ul></li><li><a href="#Settings+Reference">Settings Reference</a><ul></ul></li><li><a href="#Section_credits">Credits</a><ul></ul></li></ul><hr width="100%">
+<h2><a name="Section_intro">Introduction</a></h2><p></p><p>
+Mednafen's NES/Famicom emulation is based off of FCE Ultra.
 </p>
-<h3><a name="Introduction%01Custom+Palettes">Custom Palettes</a></h3><p></p><p>
+<h3><a name="Section_custom_palettes">Custom Palettes</a></h3><p></p><p>
 Custom palettes should contain 64 8-bit-per-color-component RGB triplets.
 </p>
 <hr width="75%">
-<h3><a name="Introduction%01Input">Input</a></h3><p></p> <p>
+<h3><a name="Section_input">Input</a></h3><p></p> <p>
   Mednafen emulates the standard NES gamepad, the Four-Score multiplayer
   adapter, the Zapper, the Power Pad,  and the Arkanoid controller.  The 
   Famicom version of the Arkanoid controller, the "Space Shadow" gun, the 
@@ -29,7 +29,7 @@ Custom palettes should contain 64 8-bit-per-color-component RGB triplets.
   reader are also emulated.
  </p>
 
-<h4><a name="Introduction%01Input%01Zapper">Zapper</a></h4><p></p> <p>
+<h4><a name="Section_input_zapper">Zapper</a></h4><p></p> <p>
         Most Zapper NES games expect the Zapper to be plugged into port 2.
         and most VS Unisystem games expect the Zapper to be plugged
         into port 1.
@@ -44,13 +44,13 @@ Custom palettes should contain 64 8-bit-per-color-component RGB triplets.
  </p>
 <hr width="50%">
 <hr width="50%">
-<h3><a name="Introduction%01File+Formats">File Formats</a></h3><p></p> <p>
+<h3><a name="Section_formats">File Formats</a></h3><p></p> <p>
  Mednafen supports the iNES, FDS(raw and with a header), UNIF, and NSF file
  formats.  FDS ROM images in the iNES format are not supported; it would
  be silly to do so and storing them in that format is nonsensical.
  </p>
 
-<h4><a name="Introduction%01File+Formats%01iNES+Format">iNES Format</a></h4><p></p> <p>
+<h4><a name="Section_formats_ines">iNES Format</a></h4><p></p> <p>
  The battery-backed RAM, vertical/horizontal mirroring, four-screen
  name table layout, and 8-bit mapper number capabilities of the iNES
  format are supported.  The 512-byte trainer capability is also supported,
@@ -196,7 +196,7 @@ Custom palettes should contain 64 8-bit-per-color-component RGB triplets.
  </p>
 <hr width="50%">
 
-<h4><a name="Introduction%01File+Formats%01UNIF">UNIF</a></h4><p></p> <p>
+<h4><a name="Section_formats_unif">UNIF</a></h4><p></p> <p>
  Mednafen supports the following UNIF boards.  The prefixes HVC-, NES-, BTL-, and BMC- are omitted, since they are currently ignored in Mednafen's UNIF loader.
  </p>
  <p>
@@ -269,7 +269,7 @@ Custom palettes should contain 64 8-bit-per-color-component RGB triplets.
  </p>
 <hr width="50%">
 <hr width="50%">
-<h3><a name="Introduction%01Famicom+Disk+System">Famicom Disk System</a></h3><p></p> <p>
+<h3><a name="Section_fds">Famicom Disk System</a></h3><p></p> <p>
         You will need the FDS BIOS ROM image in the base Mednafen directory.
         It must be named "disksys.rom".  Mednafen will not load FDS games
 	without this file.
@@ -284,7 +284,7 @@ Custom palettes should contain 64 8-bit-per-color-component RGB triplets.
 	directory.
  </p>
 <hr width="75%">
-<h3><a name="Introduction%01Game+Genie">Game Genie</a></h3><p></p>
+<h3><a name="Section_game_genie">Game Genie</a></h3><p></p>
  <p>
         The Game Genie ROM image is loaded from the path specified by the setting "nes.ggrom", or, if that string is not set, the file "gg.rom" in the
         base directory when Game Genie emulation is enabled.
@@ -294,7 +294,7 @@ Custom palettes should contain 64 8-bit-per-color-component RGB triplets.
 </p>
 <hr width="75%">
 
-<h3><a name="Introduction%01VS+Unisystem">VS Unisystem</a></h3><p></p> <p>
+<h3><a name="Section_vs_unisystem">VS Unisystem</a></h3><p></p> <p>
 Mednafen currently only supports VS Unisystem ROM images in the
 iNES format.  DIP switches and coin insertion are both emulated.  
 The following games are supported, and have palettes provided(though not 
@@ -339,7 +339,7 @@ necessarily 100% accurate or complete):
 <hr width="75%">
 <hr width="75%">
 
-<h2><a name="Default+Key+Assignments">Default Key Assignments</a></h2><p></p>
+<h2><a name="Section_default_keys">Default Key Assignments</a></h2><p></p>
  <table border>
  <tr><th>Key(s):</th><th>Action:</th><th>Configuration String:</th></tr>
  <tr><td>ALT + SHIFT + 1</td><td>Activate in-game input configuration process for input port 1.</td><td>input_config1</td></tr>
@@ -349,7 +349,7 @@ necessarily 100% accurate or complete):
  <tr><td>ALT + SHIFT + 5</td><td>Activate in-game input configuration process for the Famicom expansion port.</td><td>input_config5</td></tr>
  </table>
 
-<h3><a name="Default+Key+Assignments%01VS+Unisystem">VS Unisystem</a></h3><p></p> <table border>
+<h3><a name="Section_default_keys_vsuni">VS Unisystem</a></h3><p></p> <table border>
  <tr><th>Key:</th><th>Action:</th><th>Configuration String:</th></tr>
  <tr><td>F8</td><td>Insert coin.</td><td>insert_coin</td></tr>
  <tr><td>F6</td><td>Show/Hide dip switches.</td><td>toggle_dipview</td></tr>
@@ -357,21 +357,21 @@ necessarily 100% accurate or complete):
  </table>
 <hr width="75%">
 
-<h3><a name="Default+Key+Assignments%01Famicom+Disk+System">Famicom Disk System</a></h3><p></p> <table border>
+<h3><a name="Section_default_keys_fds">Famicom Disk System</a></h3><p></p> <table border>
  <tr><th>Key:</th><th>Action:</th><th>Configuration String:</th></tr>
  <tr><td>F6</td><td>Select disk and disk side.</td><td>select_disk</td></tr>
  <tr><td>F8</td><td>Eject or Insert disk.</td><td>insert_eject_disk</td></tr>
  </table>
 <hr width="75%">
 
-<h3><a name="Default+Key+Assignments%01Barcode+Readers">Barcode Readers</a></h3><p></p> <table border>
+<h3><a name="Section_default_keys_barcode">Barcode Readers</a></h3><p></p> <table border>
  <tr><th>Key:</th><th>Action:</th><th>Configuration String:</th></tr>
  <tr><td>0-9</td><td>Barcode digits(after activating barcode input).</td><td>"0" through "9"</tr>
  <tr><td>F8</td><td>Activate barcode input/scan barcode.</td><td>activate_barcode</td></tr>
  </table>
 <hr width="75%">
 
-<h3><a name="Default+Key+Assignments%01Game+Pad">Game Pad</a></h3><p></p><table border>
+<h3><a name="Section_default_keys_gamepad">Game Pad</a></h3><p></p><table border>
  <tr><th>Key:</th><th nowrap>Button on Emulated Gamepad:</th></tr>
  <tr><td>Keypad 2</td><td>B</td></tr>
  <tr><td>Keypad 3</td><td>A</td></tr>
@@ -384,7 +384,7 @@ necessarily 100% accurate or complete):
  </table>
 <hr width="75%">
 
-<h3><a name="Default+Key+Assignments%01Power+Pad">Power Pad</a></h3><p></p> <table border>
+<h3><a name="Section_default_keys_powerpad">Power Pad</a></h3><p></p> <table border>
   <tr><th colspan="4">Side B</th></tr>
   <tr><td width="25%">O</td><td width="25%">P</td>
 	<td width="25%">[</td><td width="25%">]</td></tr>
@@ -400,7 +400,7 @@ necessarily 100% accurate or complete):
   <tr><td></td><td>,</td><td>.</td><td></td></tr>
  </table>
 <hr width="75%">
-<h3><a name="Default+Key+Assignments%01Family+Keyboard">Family Keyboard</a></h3><p></p> <p>
+<h3><a name="Section_default_keys_fkb">Family Keyboard</a></h3><p></p> <p>
          All emulated keys are mapped to the closest open key on the PC
           keyboard, with a few exceptions.  The emulated "@" key is
           mapped to the "`"(grave) key, and the emulated "kana" key
@@ -412,13 +412,13 @@ necessarily 100% accurate or complete):
  will cause input to be grabbed from the window manager(if present) and disable Mednafen's other internal command processing.
  </p>
 <hr width="75%">
-<h3><a name="Default+Key+Assignments%01HyperShot+Controller">HyperShot Controller</a></h3><p></p> <table border>
+<h3><a name="Section_default_keys_hypershot">HyperShot Controller</a></h3><p></p> <table border>
   <tr><td></td><th>Run</th><th>Jump</th></tr>
   <tr><th>Controller I</th><td>Q</td><td>W</td></tr>
   <tr><th>Controller II</th><td>E</td><td>R</td></tr>
  </table>
 <hr width="75%">
-<h3><a name="Default+Key+Assignments%01Mahjong+Controller">Mahjong Controller</a></h3><p></p> <p>
+<h3><a name="Section_default_keys_mahjong">Mahjong Controller</a></h3><p></p> <p>
   <table border>
    <tr><th>Emulated Mahjong Controller:</th><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td><td>J</td><td>K</td><td>L</td><td>M</td><td>N</td></tr>
    <tr><th>PC Keyboard:</th><td>Q</td><td>W</td><td>E</td><td>R</td><td>T</td><td>A</td><td>S</td><td>D</td><td>F</td><td>G</td><td>H</td><td>J</td><td>K</td><td>L</td></tr>
@@ -430,7 +430,7 @@ necessarily 100% accurate or complete):
   </table>
  </p>
 <hr width="75%">
-<h3><a name="Default+Key+Assignments%01Party+Tap+Controller">Party Tap Controller</a></h3><p></p> <p>
+<h3><a name="Section_default_keys_partytap">Party Tap Controller</a></h3><p></p> <p>
   <table border>
    <tr><th>Emulated Buzzer:</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
    <tr><th>PC Keyboard:</th><td>Q</td><td>W</td><td>E</td><td>R</td><td>T</td><td>Y</td></tr>
@@ -439,7 +439,7 @@ necessarily 100% accurate or complete):
 <hr width="75%">
 <hr width="75%">
 
-<h2><a name="Game-specific+Emulation+Hacks">Game-specific Emulation Hacks</a></h2><p></p> <table border width="100%">
+<h2><a name="Section_hax">Game-specific Emulation Hacks</a></h2><p></p> <table border width="100%">
   <tr><th>Title:</th><th>Description:</th><th>Source code files affected:</th></tr>
   <tr><td>KickMaster</td>
   <td>KickMaster relies on the low-level behavior of the MMC3(PPU A12 low->high transition)
@@ -500,10 +500,16 @@ necessarily 100% accurate or complete):
 </table><p></p><table border><tr class="TableHeader"><th>Setting:</th><th>Value Type:</th><th>Possible Values:</th><th>Default Value:</th><th>Description:</th></tr><tr class="RowA"><td class="ColA">nes.debugger.disfontsize</td><td class="ColB">enum</td><td class="ColC">5x7<br>6x9<br>6x12<br>6x13<br>9x18</td><td class="ColD">5x7</td><td class="ColE"><a name="nes.debugger.disfontsize">Disassembly font size.</a><p>Note: Setting the font size to larger than the default may cause text overlap in the debugger.</p><ul><li><b>5x7</b> - 5x7<br></li><br><li><b>6x9</b> - 6x9<br></li><br><li><b>6x12</b> - 6x12<br></li><br><li><b>6x13</b> - 6x13.  CJK support.<br></li><br><li><b>9x18</b> - 9x18;  CJK support.<br></li></ul></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
 <tr class="RowB"><td class="ColA">nes.debugger.memcharenc</td><td class="ColB">string</td><td class="ColC">&nbsp;</td><td class="ColD">cp437</td><td class="ColE"><a name="nes.debugger.memcharenc">Character encoding for the debugger's memory editor.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
 <tr class="RowA"><td class="ColA">nes.enable</td><td class="ColB">boolean</td><td class="ColC">0<br>1</td><td class="ColD">1</td><td class="ColE"><a name="nes.enable">Enable (automatic) usage of this module.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
-<tr class="RowB"><td class="ColA">nes.pixshader</td><td class="ColB">enum</td><td class="ColC">none<br>autoip<br>autoipsharper<br>scale2x<br>sabr<br>ipsharper<br>ipxnoty<br>ipynotx<br>ipxnotysharper<br>ipynotxsharper</td><td class="ColD">none</td><td class="ColE"><a name="nes.pixshader">Enable specified OpenGL pixel shader.</a><p>Obviously, this will only work with the OpenGL "video.driver" setting, and only on cards and OpenGL implementations that support pixel shaders, otherwise you will get a black screen, or Mednafen may display an error message when starting up. Bilinear interpolation is disabled with pixel shaders, and any interpolation, if present, will be noted in the description of each pixel shader.</p><ul><li><b>none</b> - None/Disabled<br></li><br><li><b>autoip</b> - Auto Interpolation<br>Will automatically interpolate on each axis if the corresponding effective scaling factor is not an integer.</li><br><li><b>autoipsharper</b> - Sharper Auto Interpolation<br>Same as "autoip", but when interpolation is done, it is done in a manner that will reduce blurriness if possible.</li><br><li><b>scale2x</b> - Scale2x<br></li><br><li><b>sabr</b> - SABR v3.0<br>GPU-intensive.</li><br><li><b>ipsharper</b> - Sharper bilinear interpolation.<br></li><br><li><b>ipxnoty</b> - Linear interpolation on X axis only.<br></li><br><li><b>ipynotx</b> - Linear interpolation on Y axis only.<br></li><br><li><b>ipxnotysharper</b> - Sharper version of "ipxnoty".<br></li><br><li><b>ipynotxsharper</b> - Sharper version of "ipynotx".<br></li></ul></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
-<tr class="RowA"><td class="ColA">nes.scanlines</td><td class="ColB">integer</td><td class="ColC">-100 <i>through</i> 100</td><td class="ColD">0</td><td class="ColE"><a name="nes.scanlines">Enable scanlines with specified opacity.</a><p>Opacity is specified in %; IE a value of "100" will give entirely black scanlines.<br>
+<tr class="RowB"><td class="ColA">nes.scanlines</td><td class="ColB">integer</td><td class="ColC">-100 <i>through</i> 100</td><td class="ColD">0</td><td class="ColE"><a name="nes.scanlines">Enable scanlines with specified opacity.</a><p>Opacity is specified in %; IE a value of "100" will give entirely black scanlines.<br>
 <br>
-Negative values are the same as positive values for non-interlaced video, but for interlaced video will cause the scanlines to be overlaid over the previous field's lines(only if the video.deinterlacer setting is set to "weave", the default).</p></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+Negative values are the same as positive values for non-interlaced video, but for interlaced video will cause the scanlines to be overlaid over the previous(if the video.deinterlacer setting is set to "weave", the default) field's lines.</p></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+<tr class="RowA"><td class="ColA">nes.shader</td><td class="ColB">enum</td><td class="ColC">none<br>autoip<br>autoipsharper<br>scale2x<br>sabr<br>ipsharper<br>ipxnoty<br>ipynotx<br>ipxnotysharper<br>ipynotxsharper<br>goat</td><td class="ColD">none</td><td class="ColE"><a name="nes.shader">Enable specified OpenGL shader.</a><p>Obviously, this will only work with the OpenGL "video.driver" setting, and only on cards and OpenGL implementations that support shaders, otherwise you will get a black screen, or Mednafen may display an error message when starting up. When a shader is enabled, the "<system>.videoip" setting is ignored.</p><ul><li><b>none</b> - None/Disabled<br></li><br><li><b>autoip</b> - Auto Interpolation<br>Will automatically interpolate on each axis if the corresponding effective scaling factor is not an integer.</li><br><li><b>autoipsharper</b> - Sharper Auto Interpolation<br>Same as "autoip", but when interpolation is done, it is done in a manner that will reduce blurriness if possible.</li><br><li><b>scale2x</b> - Scale2x<br></li><br><li><b>sabr</b> - SABR v3.0<br>GPU-intensive.</li><br><li><b>ipsharper</b> - Sharper bilinear interpolation.<br></li><br><li><b>ipxnoty</b> - Linear interpolation on X axis only.<br></li><br><li><b>ipynotx</b> - Linear interpolation on Y axis only.<br></li><br><li><b>ipxnotysharper</b> - Sharper version of "ipxnoty".<br></li><br><li><b>ipynotxsharper</b> - Sharper version of "ipynotx".<br></li><br><li><b>goat</b> - Simple approximation of a color TV CRT look.<br>Intended for fullscreen modes with a vertical resolution of around 1000 to 1500 pixels.  Doesn't simulate halation and electron beam energy distribution nuances.</li></ul></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+<tr class="RowB"><td class="ColA">nes.shader.goat.fprog</td><td class="ColB">boolean</td><td class="ColC">0<br>1</td><td class="ColD">0</td><td class="ColE"><a name="nes.shader.goat.fprog">Force interlaced video to be treated as progressive.</a><p>When disabled, the default, the "video.deinterlacer" setting is effectively ignored with respect to what appears on the screen.  When enabled, it may be prudent to disable the scanlines effect controlled by the *.goat.slen setting, or else the scanline effect may look objectionable.</p></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+<tr class="RowA"><td class="ColA">nes.shader.goat.hdiv</td><td class="ColB">real</td><td class="ColC">-2.00 <i>through</i> 2.00</td><td class="ColD">0.50</td><td class="ColE"><a name="nes.shader.goat.hdiv">Constant RGB horizontal divergence.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+<tr class="RowB"><td class="ColA">nes.shader.goat.pat</td><td class="ColB">enum</td><td class="ColC">goatron<br>borg<br>slenderman</td><td class="ColD">goatron</td><td class="ColE"><a name="nes.shader.goat.pat">Mask pattern.</a><ul><li><b>goatron</b> - Goatron<br>Brightest.</li><br><li><b>borg</b> - Borg<br>Darkest.</li><br><li><b>slenderman</b> - Slenderman<br>Spookiest?</li></ul></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+<tr class="RowA"><td class="ColA">nes.shader.goat.slen</td><td class="ColB">boolean</td><td class="ColC">0<br>1</td><td class="ColD">1</td><td class="ColE"><a name="nes.shader.goat.slen">Enable scanlines effect.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+<tr class="RowB"><td class="ColA">nes.shader.goat.tp</td><td class="ColB">real</td><td class="ColC">0.00 <i>through</i> 1.00</td><td class="ColD">0.50</td><td class="ColE"><a name="nes.shader.goat.tp">Transparency of otherwise-opaque mask areas.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+<tr class="RowA"><td class="ColA">nes.shader.goat.vdiv</td><td class="ColB">real</td><td class="ColC">-2.00 <i>through</i> 2.00</td><td class="ColD">0.50</td><td class="ColE"><a name="nes.shader.goat.vdiv">Constant RGB vertical divergence.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
 <tr class="RowB"><td class="ColA">nes.special</td><td class="ColB">enum</td><td class="ColC">none<br>hq2x<br>hq3x<br>hq4x<br>scale2x<br>scale3x<br>scale4x<br>2xsai<br>super2xsai<br>supereagle<br>nn2x<br>nn3x<br>nn4x<br>nny2x<br>nny3x<br>nny4x</td><td class="ColD">none</td><td class="ColE"><a name="nes.special">Enable specified special video scaler.</a><p>The destination rectangle is NOT altered by this setting, so if you have xscale and yscale set to "2", and try to use a 3x scaling filter like hq3x, the image is not going to look that great. The nearest-neighbor scalers are intended for use with bilinear interpolation enabled, at high resolutions(such as 1280x1024; nn2x(or nny2x) + bilinear interpolation + fullscreen stretching at this resolution looks quite nice).</p><ul><li><b>none</b> - None/Disabled<br></li><br><li><b>hq2x</b> - hq2x<br></li><br><li><b>hq3x</b> - hq3x<br></li><br><li><b>hq4x</b> - hq4x<br></li><br><li><b>scale2x</b> - scale2x<br></li><br><li><b>scale3x</b> - scale3x<br></li><br><li><b>scale4x</b> - scale4x<br></li><br><li><b>2xsai</b> - 2xSaI<br></li><br><li><b>super2xsai</b> - Super 2xSaI<br></li><br><li><b>supereagle</b> - Super Eagle<br></li><br><li><b>nn2x</b> - Nearest-neighbor 2x<br></li><br><li><b>nn3x</b> - Nearest-neighbor 3x<br></li><br><li><b>nn4x</b> - Nearest-neighbor 4x<br></li><br><li><b>nny2x</b> - Nearest-neighbor 2x, y axis only<br></li><br><li><b>nny3x</b> - Nearest-neighbor 3x, y axis only<br></li><br><li><b>nny4x</b> - Nearest-neighbor 4x, y axis only<br></li></ul></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
 <tr class="RowA"><td class="ColA">nes.stretch</td><td class="ColB">enum</td><td class="ColC">0<br>full<br>aspect<br>aspect_int<br>aspect_mult2</td><td class="ColD">aspect_mult2</td><td class="ColE"><a name="nes.stretch">Stretch to fill screen.</a><ul><li><b>0</b> - Disabled<br></li><br><li><b>full</b> - Full<br>Full-screen stretch, disregarding aspect ratio.</li><br><li><b>aspect</b> - Aspect Preserve<br>Full-screen stretch as far as the aspect ratio(in this sense, the equivalent xscalefs == yscalefs) can be maintained.</li><br><li><b>aspect_int</b> - Aspect Preserve + Integer Scale<br>Full-screen stretch, same as "aspect" except that the equivalent xscalefs and yscalefs are rounded down to the nearest integer.</li><br><li><b>aspect_mult2</b> - Aspect Preserve + Integer Multiple-of-2 Scale<br>Full-screen stretch, same as "aspect_int", but rounds down to the nearest multiple of 2.</li></ul></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
 <tr class="RowB"><td class="ColA">nes.tblur</td><td class="ColB">boolean</td><td class="ColC">0<br>1</td><td class="ColD">0</td><td class="ColE"><a name="nes.tblur">Enable video temporal blur(50/50 previous/current frame by default).</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
@@ -517,7 +523,7 @@ Negative values are the same as positive values for non-interlaced video, but fo
 <tr class="RowB"><td class="ColA">nes.yscale</td><td class="ColB">real</td><td class="ColC">0.01 <i>through</i> 256</td><td class="ColD">4.000000</td><td class="ColE"><a name="nes.yscale">Scaling factor for the Y axis in windowed mode.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
 <tr class="RowA"><td class="ColA">nes.yscalefs</td><td class="ColB">real</td><td class="ColC">0.01 <i>through</i> 256</td><td class="ColD">1.000000</td><td class="ColE"><a name="nes.yscalefs">Scaling factor for the Y axis in fullscreen mode.</a><p>For this settings to have any effect, the "<system>.stretch" setting must be set to "0".</p></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
 </table><hr width="100%">
- <h2><a name="Credits">Credits</a></h2><p></p> <p>
+ <h2><a name="Section_credits">Credits</a></h2><p></p> <p>
   (This section is woefully outdated, being mostly copied from FCE Ultra)
  <table border width="100%">
   <tr><th>Name:</th><th>Contribution(s):</th></tr>

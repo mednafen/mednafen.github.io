@@ -1,4 +1,134 @@
--- 0.9.39.2: -- 
+-- 0.9.41: --
+
+January 21, 2017:
+	SS: Implemented disc change IRQ on disc eject.
+
+January 20, 2017:
+	Replaced usage of trio_snprintf() to a fixed-size buffer for path construction in general.cpp with manual concatenation of std::string strings.
+
+January 18, 2017:
+	Use _beginthreadex() instead of CreateThread() on Windows, to avoid a small memory leak.
+
+	Now explicitly use 64-bit walltime functions on 32-bit Windows builds.
+
+January 17, 2017:
+	PCE, PCE_FAST: Added a missing sound emulation variable to save states.
+
+January 16, 2017:
+	SNES: Added setting "snes.h_blend", default value of "0", that when set to "1" will enable a horizontal blend/blur filter.
+
+January 15, 2017:
+	PCE: Improved SuperGrafx window handling in 10MHz dot clock modes.
+
+	GBA: Modified RTC emulation to not use standard C library walltime functions during emulation.
+
+	Wrapped various time functions, and dropped the dependencies on SDL time functions, in Time.cpp/Time.h.
+
+January 14, 2017:
+	WonderSwan: Fixed off-by-1 bugs in window coordinate evaluation, per tip from trap15.
+
+	WonderSwan: Fixed copyright notice headers to not allow distribution under versions of the GPL other than version 2(an oversight from 
+	back when the Cygne code was added to Mednafen).
+
+	WonderSwan: Applied sound and DMA emulation fixes from trap15; fixes rain sound effect in "Star Hearts".  The changes did necessitate lowering
+	the overall WonderSwan sound emulation volume a bit to prevent excessive clipping, however.
+
+January 12, 2017:
+	SS: Fixed a logic error in the VDP2 rendering code; fixes battle scenes in "Grandia".
+
+January 10, 2017:
+	SS: Removed a few bad entries in the internal region-correction database that were breaking the Korean releases of some games.
+
+January 9, 2017:
+	PCE, PCE_FAST: Added support for auto-enabling SuperGrafx emulation with CDs when a mode 1 data track has the 16-byte magic
+	"4D 65 64 6E 61 66 65 6E 74 AB 90 19 42 62 7D E6" at offset 0x86A(assuming 2048 bytes per sector), for homebrew and translations.
+
+January 7, 2017:
+	SS: Added emulation of the SCSP 18-bit DAC enable bit; fixes low volume problem in "Daytona USA".
+
+	SS: Fixed some bugs that broke emulation on big-endian platforms.
+
+January 5, 2017:
+	Fixed an off-by-1 memory corruption bug in the debugger's memory editor relative bytestring search code.
+
+	VB: Finally commented out some debug printf()s.
+
+January 1, 2017:
+	Cleaned up code that passes video data from the game thread to the main thread, and replaced some volatile usage with atomics.
+
+December 31, 2016:
+	Fixed a large memory leak that occurred when saving screenshots with SHIFT+F9.
+
+	VB: Fixed a regression introduced in 0.9.39.2 that caused transient sound/note distortion on save state load.
+
+December 27, 2016:
+	Moved TCP/IP networking code into the core of Mednafen, and added support for non-blocking connects, so the Saturn emulation module can eventually use
+	it for modem emulation.
+
+December 25, 2016:
+	Modified configure script to (hopefully) compile in the Saturn emulation module when building for PPC64 and AArch64 architectures(in addition to x86_64).
+
+December 21, 2016:
+	Allow emulated digital button mappings to be used in AND mode(like command keys configured with SHIFT+F2) if the user manually
+	prefixes the "/&&\ " magic string to the mapping setting string in the configuration file.  Can be useful with emulated switches and mode toggle buttons,
+	but the in-emulator input configuration process will need to be revamped before enabling this mode for a mapping can be done in a sane and
+	more user-friendly manner.
+
+	Rewrote round_up_pow2() in math_ops.h to use MDFN_log2, which in turn uses MDFN_lzcount*(), since the major CPUs that Mednafen is going
+	to run on should have dedicated instructions to (at least indirectly) count leading zeroes.  Also changed the semantics to return 0 on overflow instead of 1.
+
+December 20, 2016:
+	SS: Now use leading-zero counting function from math_ops.h in the VDP2 rendering code, instead of using inline assembly.
+
+	Reorganized the leading/trailing bit counting functions in math_ops.h, added 32-bit and 64-bit trailing-bit counting functions, and added faster
+	variants where passing a 0 results in an undefined result.
+
+December 19, 2016:
+	Print out the game key used after a connection is established with netplay, when the game key is not empty.
+
+	SMS: Added settings "sms.slstart", "sms.slend", "sms.slstartp", and "sms.slendp".
+
+	Added some checks to help prevent a black screen when the scanlines effect is enabled via a <system>.scanlines setting and the effective Y scale is
+	too small(by forcing negative-value behavior in the case of interlaced video, or temporarily disabling the effect otherwise).
+
+December 18, 2016:
+	PSX: The functionality controlled by the "psx.input.analog_mode_ct" setting no longer interferes with netplay.
+
+	PSX: Added "psx.input.analog_mode_ct.compare" setting to control the combination of buttons used when the functionality controlled by the
+	"psx.input.analog_mode_ct" setting is enabled.
+
+	Modified build system to use $(localedir) instead of $(datadir)/locale for LOCALEDIR define.
+
+	Updated miniLZO to version 2.09.
+
+December 14, 2016:
+	SS: Added setting "ss.h_blend", default value of "0", that when set to "1" will enable a horizontal blend/blur filter(with a much noticeable effect on the
+	Saturn video modes with a higher horizontal resolution).
+
+December 10, 2016:
+	SS: Added setting "ss.h_overscan", default value of "1", to allow the user to show less of the screen on the left and right sides by setting it to "0".
+
+December 9, 2016:
+	SS: Added setting "ss.correct_aspect", default value of "1", to allow the user to disable aspect ratio correction(not recommended, but whatever~).
+
+	Added simple TV CRT-approximating OpenGL shader, "goat".
+
+December 8, 2016:
+	Renamed settings "*.pixshader" to "*.shader".
+
+December 7, 2016:
+	Check for and use -no-pie instead of just -nopie in the configure script, to fix build failures on at least one platform.
+
+December 6, 2016:
+	Fixed half-source-pixel image offset bug in the "autoip", "ipxnoty", and "ipynotx" pixel shaders.
+
+	Fixed altivec.h header detection regression in 0.9.39.
+
+October 7, 2016:
+	Fixed a bug that caused input movie recording to produce broken recordings when done during netplay with an emulation module
+	that uses mid-frame sync functionality.
+
+-- 0.9.39.2: --
 
 September 19, 2016:
 	SMS: Sanitize some previously-missed variables in the save state loading code.
