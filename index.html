@@ -185,7 +185,75 @@
 <div class="ContentBox">
  <h2 class="ContentBoxHead">News</h2>
  <div class="ContentBoxBody">
-<div class="ContentBoxSub"><h3><a href="http://forum.fobby.net/index.php?t=rview&amp;goto=4770&amp;th=1404#msg_4770">Mednafen 0.9.41</a><span style="float: right;">January 21, 2017 - 11:16 PST</span></h3><div class="ContentBoxBodySub">The 64-bit Windows build is now compiled with gcc 4.9.4, but modified to produce slightly smaller and slightly faster Mednafen executables.  The patch is available as &quot;mednafen/patches/gcc-4.9.4-mingw-w64-noforcepic-smalljmptab.patch&quot; in the source tarball.<br />
+<div class="ContentBoxSub"><h3><a href="http://forum.fobby.net/index.php?t=rview&amp;goto=4814&amp;th=1483#msg_4814">Mednafen 0.9.42</a><span style="float: right;">February  7, 2017 - 22:04 PST</span></h3><div class="ContentBoxBodySub"><b>Notable changes since 0.9.41:</b><br />
+<ul>
+<li>NES: Added support for iNES mapper 190.
+<li>SNES_FAUST: Added multitap support(enable via setting &quot;snes_faust.input.sport2.multitap&quot;).
+<li>SS: Fixed severely-flickering graphics in &quot;Virtua Cop&quot; and &quot;Virtua Cop 2&quot;.
+<li>SS: Fixed speed problems in &quot;Pocket Fighter&quot;.
+<li>SS: Fixed FMV tearing in &quot;Johnny Bazookatone&quot;.
+<li>SS: Fixed hang in &quot;GunBlaze-S&quot;.
+<li>SS: Fixed hangs in &quot;Virtua Fighter&quot; and &quot;Virtua Fighter Remix&quot;(still some graphical weirdness, though).
+<li>SS: Fixed hang in &quot;Zero Divide&quot;.
+<li>SS: Fixed missing sound problem in &quot;Arcade's Greatest Hits&quot;.
+<li>SS: Fixed missing sound and related issues in &quot;Ultimate Mortal Kombat 3&quot;.
+</ul><br />
+<div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('710221372', 1);">ChangeLog</a><div align="left" id="710221372" style="display: none;"><br />
+<pre>
+-- 0.9.42: --
+
+February 7, 2017:
+	SS: Ignore lower bit of VDP1 sprite draw command texture base address when drawing using color mode 5, per tests on a SS; fixes some of the
+	graphical glitches in &quot;All-Star Baseball 97&quot;.
+
+February 6, 2017:
+	SS: Ignore writes to VDP1 registers via SCU DMA under certain conditions to approximate what happens on a SS; fixes hang in &quot;GunBlaze-S&quot;.
+
+	SS: Fixed handling of RSTCSR WOVF clearing, per tests on a SS.  Also changed the semantics of RSTCSRM a bit to simplify things, might want to change
+	WTCSRM, FTCSRM, etc. semantics too in the future for consistency...
+
+	SS: Fixed handling of WTCSR OVF clearing, per tests on a SS.
+
+	Updated tremor to revision 19427.
+
+	Updated libogg to version 1.3.2.
+
+	Fixed a bug that caused a crash if the user tried to select(via CTRL+SHIFT+[n]) a device on a non-existent virtual input port.
+
+February 5, 2017:
+	SNES-Faust: Added multitap support.
+
+February 3, 2017:
+	SS: Fixed a bug in the handling of M68K level 7 interrupts; fixes missing sound in &quot;Arcade's Greatest Hits&quot;.
+
+February 1, 2017:
+	SS: Suspend VDP1 command processing while an SCU DMA from SDRAM to VDP1 VRAM is active, to approximate how a SS behaves.  Fixes FMV tearing
+	in &quot;Johnny Bazookatone&quot;, and fubared graphics in &quot;Virtua Cop&quot; and &quot;Virtua Cop 2&quot;.
+
+January 31, 2017:
+	SS: Fixed handling of clearing FTCSR bits, per tests on a SS.
+
+January 30, 2017:
+	SS: Improved instruction timing(though still far from perfect); fixes speed problems in &quot;Pocket Fighter&quot;, reduces the size of the flickering
+	area in &quot;Lunar&quot;'s FMV, and fixes the crash that occurs immediately after gameplay starts in &quot;Virtua Fighter&quot; and &quot;Virtua Fighter Remix&quot;.
+
+January 26, 2017:
+	NES: Added support for iNES mapper 190.
+
+January 25, 2017:
+	SS: Clear SCU internal pending interrupt bit upon the SCU's acceptance of the IRQ to send to the SH-2, instead of when the SH-2 fetches the vector, per
+	tests on a SS.
+</pre><br />
+</div></div><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.42.tar.xz" target="_blank">mednafen-0.9.42.tar.xz</a><br />
+<font size="-1">SHA-256: 93e000286bd24ed5d39e6f67a22b950f3081aa71eeee1107a552246bbd3b5c25</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.42-win64.zip" target="_blank">mednafen-0.9.42-win64.zip</a><br />
+<font size="-1">SHA-256: 6e31184c72b6f8d461f423ae6b235e9ab38143fe12d4dbfb5c2c50b5992660a5</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.42-win32.zip" target="_blank">mednafen-0.9.42-win32.zip</a><br />
+<font size="-1">SHA-256: 7f2724faaca60f5bd2a39e19515d2bf9cdfc87024e3d455da7ec2a430a23cd3b</font></div></div><br><div class="ContentBoxSub"><h3><a href="http://forum.fobby.net/index.php?t=rview&amp;goto=4770&amp;th=1404#msg_4770">Mednafen 0.9.41</a><span style="float: right;">January 21, 2017 - 11:16 PST</span></h3><div class="ContentBoxBodySub">The 64-bit Windows build is now compiled with gcc 4.9.4, but modified to produce slightly smaller and slightly faster Mednafen executables.  The patch is available as &quot;mednafen/patches/gcc-4.9.4-mingw-w64-noforcepic-smalljmptab.patch&quot; in the source tarball.<br />
 <br />
 The source tarball is now compressed with <b>xz</b> instead of <b>bzip2</b>.<br />
 <br />
@@ -792,20 +860,7 @@ SHA1: c71cdc0c92ba6c8177b7c1c5d29d5e9bf3a74027<br />
 SHA1: 94fb78c7b8cb3add9da682287c43def9ef9a5d12<br />
 <br />
 <a href="http&#58;&#47;&#47;prdownloads.sourceforge.net/mednafen/mednafen-0.9.38.3-win32.zip?download" target="_blank">mednafen-0.9.38.3-win32.zip</a><br />
-SHA1: de1082b259575bc7b10306f924af48040e88d02c</div></div><br><div class="ContentBoxSub"><h3><a href="http://forum.fobby.net/index.php?t=rview&amp;goto=3902&amp;th=1152#msg_3902">Mednafen 0.9.38.2</a><span style="float: right;">February 16, 2015 - 18:18 PST</span></h3><div class="ContentBoxBodySub"><font size="3"><font color="purple">A newer version, <a href="http&#58;&#47;&#47;forum.fobby.net/index.php?t=msg&amp;th=1158" target="_blank">0.9.38.3</a>, is available.</font></font><br />
-<hr><br />
-<br />
-This release fixes a PS1 GPU emulation timing regression introduced in 0.9.37 that causes &quot;Tobal No.1&quot;, and possibly some other interlaced games that run at 60 fields per second, to be unplayable.<br />
-<br />
-<hr><br />
-mednafen-0.9.38.2.tar.bz2<br />
-SHA1: 09a258fdf2966a18c868fe8acdce0701e77a0347<br />
-<br />
-mednafen-0.9.38.2-win64.zip<br />
-SHA1: 42027c94b414fc5371b6771b020692b7c93bf287<br />
-<br />
-mednafen-0.9.38.2-win32.zip<br />
-SHA1: d3c6d04f855c80231ee97a718598d43d6903d858</div></div><br> </div>
+SHA1: de1082b259575bc7b10306f924af48040e88d02c</div></div><br> </div>
 </div>
 <br />
   <div class="CopyrightBox">
