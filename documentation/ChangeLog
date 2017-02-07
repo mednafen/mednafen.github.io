@@ -1,3 +1,47 @@
+-- 0.9.42: --
+
+February 7, 2017:
+	SS: Ignore lower bit of VDP1 sprite draw command texture base address when drawing using color mode 5, per tests on a SS; fixes some of the
+	graphical glitches in "All-Star Baseball 97".
+
+February 6, 2017:
+	SS: Ignore writes to VDP1 registers via SCU DMA under certain conditions to approximate what happens on a SS; fixes hang in "GunBlaze-S".
+
+	SS: Fixed handling of RSTCSR WOVF clearing, per tests on a SS.  Also changed the semantics of RSTCSRM a bit to simplify things, might want to change
+	WTCSRM, FTCSRM, etc. semantics too in the future for consistency...
+
+	SS: Fixed handling of WTCSR OVF clearing, per tests on a SS.
+
+	Updated tremor to revision 19427.
+
+	Updated libogg to version 1.3.2.
+
+	Fixed a bug that caused a crash if the user tried to select(via CTRL+SHIFT+[n]) a device on a non-existent virtual input port.
+
+February 5, 2017:
+	SNES-Faust: Added multitap support.
+
+February 3, 2017:
+	SS: Fixed a bug in the handling of M68K level 7 interrupts; fixes missing sound in "Arcade's Greatest Hits".
+
+February 1, 2017:
+	SS: Suspend VDP1 command processing while an SCU DMA from SDRAM to VDP1 VRAM is active, to approximate how a SS behaves.  Fixes FMV tearing
+	in "Johnny Bazookatone", and fubared graphics in "Virtua Cop" and "Virtua Cop 2".
+
+January 31, 2017:
+	SS: Fixed handling of clearing FTCSR bits, per tests on a SS.
+
+January 30, 2017:
+	SS: Improved instruction timing(though still far from perfect); fixes speed problems in "Pocket Fighter", reduces the size of the flickering
+	area in "Lunar"'s FMV, and fixes the crash that occurs immediately after gameplay starts in "Virtua Fighter" and "Virtua Fighter Remix".
+
+January 26, 2017:
+	NES: Added support for iNES mapper 190.
+
+January 25, 2017:
+	SS: Clear SCU internal pending interrupt bit upon the SCU's acceptance of the IRQ to send to the SH-2, instead of when the SH-2 fetches the vector, per
+	tests on a SS.
+
 -- 0.9.41: --
 
 January 21, 2017:

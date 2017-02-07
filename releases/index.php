@@ -72,6 +72,7 @@ Windows 8 and newer will work, but their use is discouraged unless Mednafen is r
   echo '<ul class="ReleaseList">';
   $fp = fopen($listpath, "rb");
 
+  $counter = 0;
   $first = TRUE;
   $release_version = $release_date = "";
   while(FALSE !== ($line = fgets($fp)))
@@ -91,6 +92,9 @@ Windows 8 and newer will work, but their use is discouraged unless Mednafen is r
     fprintf(STDERR, "Malformed release line: %s\n", $line);
     exit(1);
    }
+   $counter++;
+   if($counter == 3)
+    break;
   }
 
   fclose($fp);
