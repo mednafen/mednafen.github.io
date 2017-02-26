@@ -1,3 +1,37 @@
+-- 0.9.43: --
+
+February 24, 2017:
+	Reworked how input grabbing is handled.  The new way uses only one key combo(CTRL+SHIFT+Menu), and will adapt its behavior based on any keyboards
+	being selected on any virtual input ports or not(refer to the documentation for full details).  A new setting is added, "command.toggle_grab", and
+	two settings were removed, "command.toggle_grab_input" and "command.toggle_cidisable".
+
+	Emulated keyboard(FKB, Tsushin, Saturn) key state is now only updated when input grabbing is toggled on.
+
+February 22, 2017:
+	SS: Fixed SMPC read handling of an empty input port.
+
+	SS: Implemented emulation of SMPC 0-byte port read mode.
+
+	PSX: Reduced rumble latency by 1 frame.
+
+February 20, 2017:
+	Reworked how keyboard key state is handled, to prevent extremely short button presses from being lost(like what can happen with the Pause key, or
+	other keys when slow-forwarding is active).
+
+	SS: Added 101-key US keyboard emulation.
+
+February 17, 2017:
+	SS: Allow SMPC commands to be dual-issued; fixes hang in "F1 Challenge", and hangs/missing sound in "Magic Knight Rayearth".
+
+	SS: Added emulation of the 6-Player Adaptor(multitap).
+
+February 15, 2017:
+	SS: Added emulation of the Mission Stick and Dual Mission Sticks.
+
+February 13, 2017:
+	SS: Added emulation of the steering wheel("Arcade Racer"), for use with "Virtua Racing", "High Velocity - Mountain Racing Challenge",
+	"The Need for Speed", and other Saturn racing games that apparently lack 3D pad support.
+
 -- 0.9.42: --
 
 February 7, 2017:
