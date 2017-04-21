@@ -185,7 +185,90 @@
 <div class="ContentBox">
  <h2 class="ContentBoxHead">News</h2>
  <div class="ContentBoxBody">
-<div class="ContentBoxSub"><h3><a href="http://forum.fobby.net/index.php?t=rview&amp;goto=4860&amp;th=1493#msg_4860">Mednafen 0.9.43</a><span style="float: right;">February 26, 2017 - 09:07 PST</span></h3><div class="ContentBoxBodySub"><b>Notable changes since 0.9.42:</b><br />
+<div class="ContentBoxSub"><h3><a href="http://forum.fobby.net/index.php?t=rview&amp;goto=4963&amp;th=1523#msg_4963">Mednafen 0.9.44</a><span style="float: right;">April 21, 2017 - 21:33 PDT</span></h3><div class="ContentBoxBodySub"><b>Notable changes since 0.9.43:</b><br />
+<ul>
+<li>Added command-line option &quot;-which_medium&quot;, to specify which CD to start with when using multi-CD M3U sets.
+<li>SNES: Fixed &quot;Tractor Beam&quot; spell graphical glitches in &quot;Star Ocean&quot;.
+<li>SNES: Fixed emulator hang when saving state in &quot;Panic Bomber W&quot;.
+<li>SNES_FAUST: Added PAL support.
+<li>SNES_FAUST: Made minor optimizations to the BG rendering code.
+<li>SNES_FAUST: Added setting &quot;snes_faust.correct_aspect&quot;, default value of &quot;1&quot;.
+<li>SS: Fixed broken input in &quot;Primal Rage&quot;(a 0.9.43 regression).
+<li>SS: Added support for a 16MiB RAM cart mapped into the A-bus CS1 area(for &quot;Heart of Darkness&quot; and homebrew).
+<li>VB: Added support for custom palettes.
+<li>VB: Reworked how LED on-state duration is translated into RGB values and added setting &quot;vb.ledonscale&quot;; the default value of &quot;vb.ledonscale&quot; is set such that the overall brightness will be lower than in previous versions of Mednafen, to reduce white crush, but the user can set it to a value of &quot;1.9921875&quot; to approximate the old brightness level.
+<li>WonderSwan: Removed setting &quot;wswan.rotateinput&quot;, and added a new device(&quot;gamepadraa&quot;) that can be selected on virtual input port 1 to automatically rotate inputs when the display is rotated.
+</ul><br />
+<br />
+<div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('1621719394', 1);">ChangeLog</a><div align="left" id="1621719394" style="display: none;"><br />
+<pre>
+-- 0.9.44: --
+
+April 19, 2017:
+	PSX: Restructured the GPU emulation code and data a bit to get a minor performance boost.
+
+April 18, 2017:
+	VB, PCE, WonderSwan, MD, GBA: Use fastcall calling convention(on 32-bit x86) in a few (more) places where it makes sense.
+
+April 16, 2017:
+	SNES-Faust: Added setting &quot;snes_faust.correct_aspect&quot;, default value of &quot;1&quot;.
+
+	SNES-Faust: Added PAL support.
+
+April 14, 2017:
+	SNES-Faust: Made minor optimizations to the BG rendering code.
+
+April 9, 2017:
+	Added command-line option &quot;-which_medium&quot;, to specify which CD to start with when using multi-CD M3U sets.
+
+April 5, 2017:
+	SNES: Fixed emulator hang when saving state in &quot;Panic Bomber W&quot;.
+
+April 3, 2017:
+	Added some simple scripts to cross-compile and package Mednafen for Windows.
+
+	Added Windows cross-compiler toolchain setup notes.
+
+	32-bit Windows builds are now compiled with -march=i686 instead of -march=i586(shouldn't affect compatibility for official builds, since the toolchain
+	and libraries were already effectively being compiled with -march=i686, which was not intended, but since nobody apparently complained... ;p).
+
+March 25, 2017:
+	VB: Added support for custom palettes.
+
+	VB: Reworked how LED on-state duration is translated into RGB values and added setting &quot;vb.ledonscale&quot;; the default value of &quot;vb.ledonscale&quot; is
+	set such that the overall brightness will be lower than in previous versions of Mednafen, to reduce white crush, but the user can set it
+	to a value of &quot;1.9921875&quot; to approximate the old brightness level.
+
+March 20, 2017:
+	SNES: Made a couple of SDD1 registers readable; fixes &quot;Tractor Beam&quot; spell graphical glitches in &quot;Star Ocean&quot;(thanks to orbea).
+
+March 17, 2017:
+	SS: Added support for a 16MiB RAM cart mapped into the A-bus CS1 area(for &quot;Heart of Darkness&quot; and homebrew).
+
+March 15, 2017:
+	WonderSwan: Removed setting &quot;wswan.rotateinput&quot;, and added a new device(&quot;gamepadraa&quot;) that can be selected on virtual input port 1 to
+	automatically rotate inputs when the display is rotated.
+
+March 14, 2017:
+	Reworked text drawing to not use an excessive number of potentially-large VLAs.
+
+	Moved statements with important side effects outside of assert()s in settings.cpp.
+
+	Replaced ancient Unicode conversion code with newly-developed code.
+
+March 7, 2017:
+	SS: Prioritize SMPC command execution over VBlank handler execution, per (limited) tests on a SS.  Fixes broken input in &quot;Primal Rage&quot;(a 0.9.43 regression).
+</pre><br />
+</div></div><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.44.tar.xz" target="_blank">mednafen-0.9.44.tar.xz</a><br />
+<font size="-1">SHA-256: 4a0bba851ede405936de8ee8196c3766dae7ee0757af1929230784a44f7eae1b</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.44-win64.zip" target="_blank">mednafen-0.9.44-win64.zip</a><br />
+<font size="-1">SHA-256: 40537d64ed08938fddf736e25555755f94b92cbd6a718c3a2be32a867aa59131</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.44-win32.zip" target="_blank">mednafen-0.9.44-win32.zip</a><br />
+<font size="-1">SHA-256: e31b65d407764583a0e49c4a5a3ce8cc08a9789f9b15b5c252beaee147e539f8</font></div></div><br><div class="ContentBoxSub"><h3><a href="http://forum.fobby.net/index.php?t=rview&amp;goto=4860&amp;th=1493#msg_4860">Mednafen 0.9.43</a><span style="float: right;">February 26, 2017 - 09:07 PST</span></h3><div class="ContentBoxBodySub"><b>Notable changes since 0.9.42:</b><br />
 <ul>
 <li>PSX: Reduced DualShock rumble latency by 1 frame.
 <li>SS: Added multitap emulation, enableable via settings &quot;<a href="https&#58;&#47;&#47;mednafen.github.io/documentation/ss.html#ss.input.sport1.multitap" target="_blank">ss.input.sport1.multitap</a>&quot; and &quot;<a href="https&#58;&#47;&#47;mednafen.github.io/documentation/ss.html#ss.input.sport2.multitap" target="_blank">ss.input.sport2.multitap</a>&quot;.
@@ -769,119 +852,7 @@ SHA1: b6dff2ff97673e4183c5628d49b6ac05c341b325<br />
 SHA1: 7ca8100e8a54a53eda29bf67aaac88e0988d92ab<br />
 <br />
 <a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.38.5-win32.zip" target="_blank">mednafen-0.9.38.5-win32.zip</a><br />
-SHA1: 27db9c8512870bb3bf4ab7f7b02ea56f10013f60</div></div><br><div class="ContentBoxSub"><h3><a href="http://forum.fobby.net/index.php?t=rview&amp;goto=3965&amp;th=1171#msg_3965">Mednafen 0.9.38.4</a><span style="float: right;">April 13, 2015 - 08:56 PDT</span></h3><div class="ContentBoxBodySub"><font size="3"><font color="purple">A newer version, <a href="http&#58;&#47;&#47;forum.fobby.net/index.php?t=msg&amp;th=1187" target="_blank">0.9.38.5</a>, is available.</font></font><br />
-<hr><br />
-<br />
-User-visible changes in this release:<br />
-<ul>
-<li> Miscellaneous debugger bug fixes and tweaks.
-<li> NES: Altered mapper 185 emulation to fix all known commercially-released mapper 185 games that were previously non-working.
-<li> PCE: Fixed a VRAM DMA emulation bug introduced around 0.9.16-WIP that broke some homebrew software.
-<li> PS1: Cheats are now also tied to the game's base filename(previously written out in the psx.cht file as a comment, but now being used for something more).  Previously(and currently with other emulated systems), cheats were tied only to the game's &quot;ID&quot;.  However, Mednafen's CD ID calculation code is flawed and insufficient, particularly for single-track games, leading to <b>many</b> collisions in the PS1's vast game library.  (The underlying issue, bad CD ID calculation, will be fixed in a future major release)
-<li> PS1: Improved GPU texture cache emulation; fixes menu graphical glitches in &quot;Tigershark&quot;.
-<li> SNES: Fixed a bug that was breaking input after triggering a virtual Reset/Power Toggle event when a non-gamepad controller(e.g. mouse) is currently selected for a port.
-</ul><br />
-<br />
-<div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('1842949238', 1);">ChangeLog</a><div align="left" id="1842949238" style="display: none;"><br />
-<div class="pre"><pre>
--- 0.9.38.4: --
-
-April 12, 2015:
-	PC-FX: Reorganized the debugger's register view to be slightly more space-efficient horizontally.
-
-	NES: Migrated the rest of the *GetRegister() and *SetRegister() debugger functions over to the newer-style interface.
-
-	PC-FX: Migrated the rest of the *GetRegister() and *SetRegister() debugger functions over to the newer-style interface.
-
-April 11, 2015:
-	PC-FX: Migrated debugger functions PCFXDBG_GetRegister() and PCFXDBG_SetRegister() over to the newer-style interface that takes integer IDs instead
-	of std::string.
-
-	VB: Migrated debugger functions VBDBG_GetRegister() and VBDBG_SetRegister() over to the newer-style interface that takes integer IDs instead
-	of std::string.
-
-	WonderSwan: Migrated debugger functions WSwan_GfxGetRegister() and WSwan_GfxSetRegister() over to the newer-style interface that takes integer IDs instead
-	of std::string.
-
-	PC-FX: Added support for setting breakpoints on writes to specific VDC registers, by setting an Aux Write Breakpoint on an
-	address ranging from A0000-A001F(VDC-A) or B0000-B001F(VDC-B).
-
-April 10, 2015:
-	Debugger: Relaxed most maximum string length restrictions on user-inputted addresses(to allow for lazily leaving an excessive number of 0s at the
-	beginning of an address, for example).
-
-	Debugger: &quot;Goto Address&quot; prompt in the memory editor can now be activated by pressing &quot;ENTER&quot;(in addition to &quot;G&quot;), and &quot;Disassembly Address&quot; prompt in the main debugger
-	view can now be activated by pressing the &quot;G&quot; key(in addition to &quot;ENTER&quot;).
-
-April 9, 2015:
-	NES: Added sprite RAM to the debugger's memory editor.
-
-	NES: Fixed some issues with the debugger's graphics/tileset viewer.
-
-April 8, 2015:
-	PSX: Improved GPU texture cache emulation accuracy per tests on a PS1; fixes graphical glitches in the menus of &quot;Tigershark&quot;.
-
-April 5, 2015:
-	PCE: Added support for setting breakpoints on writes to specific VDC registers(like MAWR, BXR, BYR, etc.), by setting an Aux Write Breakpoint on an address
-	ranging from 20000-2001f(hexadecimal).
-
-April 4, 2015:
-	Avoid left-shifting negative values in hw_sound/pce_psg/pce_psg.cpp
-
-	Added a couple more tests regarding left shift of signed integers to tests.cpp.
-
-April 2, 2015:
-	Debugger: Fixed half-broken re-activation of the debug screen when a breakpoint triggers and the user was last on a debug screen other than the
-	main one.
-
-	Debugger: Fixed a rounding issue that could cause insufficient disassembly lines with some *.debugger.disfontsize setting values.
-
-	PSX: Hooked up writing(editing) in the debugger's memory editor for &quot;CPU Main RAM&quot;.
-
-March 29, 2015:
-	PCE: Removed old leftover debug puts() in HuC6280 emulation code.
-
-	Debugger: Fixed a bug that could cause breakpoints to be skipped if the 'R' key was pressed(or auto-repeated) while outside of step mode.
-
-	NES: Fixed highpass filter coefficient calculation.
-
-	SNES: Fixed a bug that was breaking input after triggering a virtual Reset/Power Toggle event when a non-gamepad controller(e.g. mouse) is currently
-	selected for a port.
-
-March 23, 2015:
-	NES: Fixed a minor sound emulation bug.
-
-March 15, 2015:
-	GBA: Fixed several instances of left-shifting negative values in thumb.cpp.
-
-	PC-FX, VB: Fixed an instance of left-shifting uint64 by 64 in the FPU emulation code.
-
-March 14, 2015:
-	GBA: Fixed a few instances of technically undefined behavior(shifting 32-bit int by &gt;= 32, and left-shifting negative values) in arm.cpp.
-
-March 11, 2015:
-	Reworked a test in tests.cpp to better reflect the requirements of certain undefined behavior some code still (unfortunately) relies on, to avoid
-	triggering an assert() during startup when compiled with llvm/clang 3.6.
-
-March 6, 2015:
-	PCE: Fixed a major VRAM DMA emulation regression introduced around version 0.9.16-WIP, that breaks some homebrew software.
-
-	NES: Altered mapper 185 emulation to fix &quot;Bird Week&quot;, &quot;B-Wings&quot;, &quot;Sansuu 1 Nen&quot;, &quot;Sansuu 2 Nen&quot;, &quot;Sansuu 3 Nen&quot;, and &quot;Seicross (version 2)&quot;.
-
-	PSX: Added a kludge to the core cheat file reading and writing code to work around the mess created by our flawed game ID generation code
-	(the PS1 game library is enormous, and many games only have one track, leading to many collisions); effectively, the game's filename(which was previously
-	regarded as a comment), is now used in addition to the game ID.
-</pre></div><br />
-</div></div><br />
-<br />
-<a href="https&#58;&#47;&#47;prdownloads.sourceforge.net/mednafen/mednafen-0.9.38.4.tar.bz2?download" target="_blank">mednafen-0.9.38.4.tar.bz2</a><br />
-SHA1: bb38199feed6258b9d51dda938f46950c157cb4f<br />
-<br />
-<a href="http&#58;&#47;&#47;prdownloads.sourceforge.net/mednafen/mednafen-0.9.38.4-win64.zip?download" target="_blank">mednafen-0.9.38.4-win64.zip</a><br />
-SHA1: 6e4c35366703c19695d834c77aab930e014befea<br />
-<br />
-<a href="http&#58;&#47;&#47;prdownloads.sourceforge.net/mednafen/mednafen-0.9.38.4-win32.zip?download" target="_blank">mednafen-0.9.38.4-win32.zip</a><br />
-SHA1: cb1ab005b0149137ea2a71083b3dc3d80bdd5c42</div></div><br> </div>
+SHA1: 27db9c8512870bb3bf4ab7f7b02ea56f10013f60</div></div><br> </div>
 </div>
 <br />
   <div class="CopyrightBox">
