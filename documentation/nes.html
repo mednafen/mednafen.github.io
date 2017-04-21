@@ -9,17 +9,15 @@
  <body>
   <center><h1><img alt="Mednafen" src="mednafen.png" width="696" height="204"></h1></center>
   <center><h1>Nintendo Entertainment System/Famicom Documentation</h1></center>
-  <center><i>Last updated February 25, 2017<br>Valid as of 0.9.43</i></center>
+  <center><i>Last updated April 21, 2017<br>Valid as of 0.9.44</i></center>
  <p></p>
  <b>Table of Contents:</b>
  <ul><li><a href="#Section_intro">Introduction</a><ul><li><a href="#Section_custom_palettes">Custom Palettes</a><ul></ul></li><li><a href="#Section_input">Input</a><ul><li><a href="#Section_input_zapper">Zapper</a><ul></ul></li></ul></li><li><a href="#Section_formats">File Formats</a><ul><li><a href="#Section_formats_ines">iNES Format</a><ul></ul></li><li><a href="#Section_formats_unif">UNIF</a><ul></ul></li></ul></li><li><a href="#Section_fds">Famicom Disk System</a><ul></ul></li><li><a href="#Section_game_genie">Game Genie</a><ul></ul></li><li><a href="#Section_vs_unisystem">VS Unisystem</a><ul></ul></li></ul></li><li><a href="#Section_default_keys">Default Key Assignments</a><ul><li><a href="#Section_default_keys_vsuni">VS Unisystem</a><ul></ul></li><li><a href="#Section_default_keys_fds">Famicom Disk System</a><ul></ul></li><li><a href="#Section_default_keys_barcode">Barcode Readers</a><ul></ul></li><li><a href="#Section_default_keys_gamepad">Game Pad</a><ul></ul></li><li><a href="#Section_default_keys_powerpad">Power Pad</a><ul></ul></li><li><a href="#Section_default_keys_fkb">Family Keyboard</a><ul></ul></li><li><a href="#Section_default_keys_hypershot">HyperShot Controller</a><ul></ul></li><li><a href="#Section_default_keys_mahjong">Mahjong Controller</a><ul></ul></li><li><a href="#Section_default_keys_partytap">Party Tap Controller</a><ul></ul></li></ul></li><li><a href="#Section_hax">Game-specific Emulation Hacks</a><ul></ul></li><li><a href="#Settings+Reference">Settings Reference</a><ul></ul></li><li><a href="#Section_credits">Credits</a><ul></ul></li></ul><hr width="100%">
 <h2><a name="Section_intro">Introduction</a></h2><p></p><p>
 Mednafen's NES/Famicom emulation is based off of FCE Ultra.
 </p>
-<h3><a name="Section_custom_palettes">Custom Palettes</a></h3><p></p><p>
-Custom palettes should contain 64 8-bit-per-color-component RGB triplets.
-</p>
-<hr width="75%">
+
+<h3><a name="Section_custom_palettes">Custom Palettes</a></h3><p></p><p></p><table border><tr class="TableHeader"><th>Global Filename:</th><th>Description:</th></tr><tr><td>nes-pal.pal</td><td>PAL NES<br><br>64 <i>or</i> 512 RGB triplets</td></tr><tr><td>nes.pal</td><td>NTSC NES/Famicom<br><br>64 <i>or</i> 512 RGB triplets</td></tr><tr><td>rp2c04-0001.pal</td><td>Arcade RP2C04-0001<br><br>64 RGB triplets</td></tr><tr><td>rp2c04-0002.pal</td><td>Arcade RP2C04-0002<br><br>64 RGB triplets</td></tr><tr><td>rp2c04-0003.pal</td><td>Arcade RP2C04-0003<br><br>64 RGB triplets</td></tr><tr><td>rp2c04-0004.pal</td><td>Arcade RP2C04-0004<br><br>64 RGB triplets</td></tr><tr><td>rp2c0x.pal</td><td>Arcade RP2C03/RP2C05<br><br>64 RGB triplets</td></tr></table><hr width="75%">
 <h3><a name="Section_input">Input</a></h3><p></p> <p>
   Mednafen emulates the standard NES gamepad, the Four-Score multiplayer
   adapter, the Zapper, the Power Pad,  and the Arkanoid controller.  The 

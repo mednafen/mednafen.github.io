@@ -1,3 +1,60 @@
+-- 0.9.44: --
+
+April 19, 2017:
+	PSX: Restructured the GPU emulation code and data a bit to get a minor performance boost.
+
+April 18, 2017:
+	VB, PCE, WonderSwan, MD, GBA: Use fastcall calling convention(on 32-bit x86) in a few (more) places where it makes sense.
+
+April 16, 2017:
+	SNES-Faust: Added setting "snes_faust.correct_aspect", default value of "1".
+
+	SNES-Faust: Added PAL support.
+
+April 14, 2017:
+	SNES-Faust: Made minor optimizations to the BG rendering code.
+
+April 9, 2017:
+	Added command-line option "-which_medium", to specify which CD to start with when using multi-CD M3U sets.
+
+April 5, 2017:
+	SNES: Fixed emulator hang when saving state in "Panic Bomber W".
+
+April 3, 2017:
+	Added some simple scripts to cross-compile and package Mednafen for Windows.
+
+	Added Windows cross-compiler toolchain setup notes.
+
+	32-bit Windows builds are now compiled with -march=i686 instead of -march=i586(shouldn't affect compatibility for official builds, since the toolchain
+	and libraries were already effectively being compiled with -march=i686, which was not intended, but since nobody apparently complained... ;p).
+
+March 25, 2017:
+	VB: Added support for custom palettes.
+
+	VB: Reworked how LED on-state duration is translated into RGB values and added setting "vb.ledonscale"; the default value of "vb.ledonscale" is
+	set such that the overall brightness will be lower than in previous versions of Mednafen, to reduce white crush, but the user can set it
+	to a value of "1.9921875" to approximate the old brightness level.
+
+March 20, 2017:
+	SNES: Made a couple of SDD1 registers readable; fixes "Tractor Beam" spell graphical glitches in "Star Ocean"(thanks to orbea).
+
+March 17, 2017:
+	SS: Added support for a 16MiB RAM cart mapped into the A-bus CS1 area(for "Heart of Darkness" and homebrew).
+
+March 15, 2017:
+	WonderSwan: Removed setting "wswan.rotateinput", and added a new device("gamepadraa") that can be selected on virtual input port 1 to
+	automatically rotate inputs when the display is rotated.
+
+March 14, 2017:
+	Reworked text drawing to not use an excessive number of potentially-large VLAs.
+
+	Moved statements with important side effects outside of assert()s in settings.cpp.
+
+	Replaced ancient Unicode conversion code with newly-developed code.
+
+March 7, 2017:
+	SS: Prioritize SMPC command execution over VBlank handler execution, per (limited) tests on a SS.  Fixes broken input in "Primal Rage"(a 0.9.43 regression).
+
 -- 0.9.43: --
 
 February 24, 2017:
