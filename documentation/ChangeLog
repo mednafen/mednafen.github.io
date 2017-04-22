@@ -1,3 +1,8 @@
+-- 0.9.44.1: --
+
+April 21, 2017:
+	MD: Added a missing MDFN_FASTCALL, the absence of which broke 32-bit x86 builds(either at link time or run time).
+
 -- 0.9.44: --
 
 April 19, 2017:
