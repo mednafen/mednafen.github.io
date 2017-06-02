@@ -185,7 +185,52 @@
 <div class="ContentBox">
  <h2 class="ContentBoxHead">News</h2>
  <div class="ContentBoxBody">
-<div class="ContentBoxSub"><h3><a href="http://forum.fobby.net/index.php?t=rview&amp;goto=4963&amp;th=1523#msg_4963">Mednafen 0.9.44.1</a><span style="float: right;">April 21, 2017 - 21:33 PDT</span></h3><div class="ContentBoxBodySub"><b>Notable changes since 0.9.43:</b><br />
+<div class="ContentBoxSub"><h3><a href="http://forum.fobby.net/index.php?t=rview&amp;goto=5012&amp;th=1538#msg_5012">Mednafen 0.9.45</a><span style="float: right;">June  2, 2017 - 07:08 PDT</span></h3><div class="ContentBoxBodySub">Changes:<br />
+<div class="pre"><pre>
+-- 0.9.45: --
+
+May 29, 2017:
+	Tweaked netplay sound buffer underrun kludge code.
+
+	The netplay server host and port being connected to are now printed to the netplay console at the beginning of a
+	connection attempt.
+
+	Netplay connection attempts to servers are now non-blocking.
+
+May 25, 2017:
+	SS: Synchronize end of SMPC clock change commands to beginning of vsync instead of beginning of vblank, per tests on a SS.
+
+May 23, 2017:
+	SS: Reworked how the VDP2 rendering thread waits, to make Saturn emulation usable with the default OpenBSD kernel.
+
+	SS: Added emulation of the light gun(&quot;Stunner&quot;/&quot;Virtua Gun&quot;).
+
+April 28, 2017:
+	#include'd many commonly-used C and C++ standard library headers in types.h(and removed redundant #include statements 
+	from various header and source files), to reduce the probability of portability problems
+	(due to neglecting to explicitly include a header file) when different standard C/C++ libraries
+	behave differently in regards to what header files include what other header files.
+
+	Added a sound output driver for OpenBSD's /dev/audio.
+
+	Reworked the sound output format conversion code to be more versatile, 
+
+April 25, 2017:
+	NES: Wrote new &quot;Barcode Battler II&quot; emulation code to replace the old &quot;Barcode World&quot; code, based on quick testing with
+	actual hardware(albeit the English version).
+
+April 24, 2017:
+	SSFPlay: Added save state support.
+</pre></div><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.45.tar.xz" target="_blank">mednafen-0.9.45.tar.xz</a><br />
+<font size="-1">SHA-256: 49715544a5eb7a678f7f01994f38aa14e2192f00d201684184665665073a600e</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.45-win64.zip" target="_blank">mednafen-0.9.45-win64.zip</a><br />
+<font size="-1">SHA-256: 89a6f67711c2e0bb4c5e59fb684e7e54dbb3b3c4acee94ecab52740a204e942d</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.45-win32.zip" target="_blank">mednafen-0.9.45-win32.zip</a><br />
+<font size="-1">SHA-256: 27c6bc064e96a54fe082b834fa29019ac8e82b9f1bc9be047e2ec633bd1b424f</font></div></div><br><div class="ContentBoxSub"><h3><a href="http://forum.fobby.net/index.php?t=rview&amp;goto=4963&amp;th=1523#msg_4963">Mednafen 0.9.44.1</a><span style="float: right;">April 21, 2017 - 21:33 PDT</span></h3><div class="ContentBoxBodySub"><b>Notable changes since 0.9.43:</b><br />
 <ul>
 <li>Added command-line option &quot;-which_medium&quot;, to specify which CD to start with when using multi-CD M3U sets.
 <li>SNES: Fixed &quot;Tractor Beam&quot; spell graphical glitches in &quot;Star Ocean&quot;.
@@ -805,59 +850,7 @@ September 16, 2015:
 <font size="-1">SHA-256: 4ddd1fe9e77fa49166495c6615e0eead5a0146254b9bd80478c4cbd5be4ac192</font><br />
 <br />
 <a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.38.6-win32.zip" target="_blank">mednafen-0.9.38.6-win32.zip</a><br />
-<font size="-1">SHA-256: d5d590e475dd62e84f21f76e8cb1a98865a3d8ec3df300810ab9aaef70479fca</font></div></div><br><div class="ContentBoxSub"><h3><a href="http://forum.fobby.net/index.php?t=rview&amp;goto=4064&amp;th=1187#msg_4064">Mednafen 0.9.38.5</a><span style="float: right;">June 26, 2015 - 17:27 PDT</span></h3><div class="ContentBoxBodySub">Notable changes in this bug-fix release:<br />
-<ul>
-<li>NES: Fixed a mapper 19 sound emulation bug; fixes music issues in the Japanese release of &quot;Rolling Thunder&quot;.
-<li>PC-FX: Fixed a bug causing a graphical glitch in &quot;Sakuraigar Mode&quot; in &quot;Tyoushin Heiki Zeroigar&quot;.
-<li>PSX: Fixed a problem that caused &quot;Vib Ribbon&quot; to lock up when trying to play with an audio CD.
-<li>WonderSwan: Removed erroneous constraints that were preventing opposing X* and Y* buttons from being pressed simultaneously.
-</ul><br />
-<br />
-<div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('1137474549', 1);">ChangeLog</a><div align="left" id="1137474549" style="display: none;"><br />
-<div class="pre"><pre>
--- 0.9.38.5: --
-
-June 26, 2015:
-	PSX: Generate a seek error when trying to read audio sectors(when the appropriate Mode bit isn't set), and generate a bad command error
-	when executing ReadN/ReadS with a non-PS1 disc.  Fixes a lockup in &quot;Vib Ribbon&quot; when trying to play with audio CDs.
-
-June 20, 2015:
-	Altered SHA-1 and SHA-256 test code to work around a preprocessor-related bug in gcc.
-
-	NES: Fixed a mapper 19 sound emulation bug; fixes music issues in the Japanese release of &quot;Rolling Thunder&quot;.
-
-	PSX: Replaced a GPU debug puts() with code that respects the psx.dbg_level setting.
-
-June 18, 2015:
-	PC-FX: Corrected handling of width/height of 0xA for KING BG1-3, per tests on a PC-FX.  Fixes a graphical glitch in &quot;Sakuraigar Mode&quot; in
-	&quot;Tyoushin Heiki Zeroigar&quot;.
-
-May 5, 2015:
-	PSX: Added some debug messages to the memory card emulation code, outputted when setting psx.dbg_level is set to certain values.
-
-April 29, 2015:
-	PCE, PCE_FAST: Corrected decimal-mode ADC and SBC behavior(especially for &quot;illegal&quot; input values), per tests on a HuC6280.
-
-April 22, 2015:
-	Added a test to tests.cpp for gcc bug #60196(triggered with non-default optimization flags).
-
-April 19, 2015:
-	Added a missing dependency statement to configure.ac, whose absence broke compilation with --disable-pce --enable-pcfx
-
-April 16, 2015:
-	WonderSwan: Removed erroneous constraints that were preventing opposing X* and Y* buttons from being pressed simultaneously, and changed the
-	names of the the X* and Y* buttons used during input configuration, per tip from trap15.
-</pre></div><br />
-</div></div><br />
-<br />
-<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.38.5.tar.bz2" target="_blank">mednafen-0.9.38.5.tar.bz2</a><br />
-SHA1: b6dff2ff97673e4183c5628d49b6ac05c341b325<br />
-<br />
-<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.38.5-win64.zip" target="_blank">mednafen-0.9.38.5-win64.zip</a><br />
-SHA1: 7ca8100e8a54a53eda29bf67aaac88e0988d92ab<br />
-<br />
-<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.38.5-win32.zip" target="_blank">mednafen-0.9.38.5-win32.zip</a><br />
-SHA1: 27db9c8512870bb3bf4ab7f7b02ea56f10013f60</div></div><br> </div>
+<font size="-1">SHA-256: d5d590e475dd62e84f21f76e8cb1a98865a3d8ec3df300810ab9aaef70479fca</font></div></div><br> </div>
 </div>
 <br />
   <div class="CopyrightBox">
