@@ -1,3 +1,35 @@
+-- 0.9.45: --
+
+May 29, 2017:
+	Tweaked netplay sound buffer underrun kludge code.
+
+	The netplay server host and port being connected to are now printed to the netplay console at the beginning of a connection attempt.
+
+	Netplay connection attempts to servers are now non-blocking.
+
+May 25, 2017:
+	SS: Synchronize end of SMPC clock change commands to beginning of vsync instead of beginning of vblank, per tests on a SS.
+
+May 23, 2017:
+	SS: Reworked how the VDP2 rendering thread waits, to make Saturn emulation usable with the default OpenBSD kernel.
+
+	SS: Added emulation of the light gun("Stunner"/"Virtua Gun").
+
+April 28, 2017:
+	#include'd many commonly-used C and C++ standard library headers in types.h(and removed redundant #include statements from various header and source files), to
+	reduce the probability of portability problems(due to neglecting to explicitly include a header file) when different standard C/C++ libraries
+	behave differently in regards to what header files include what other header files.
+
+	Added a sound output driver for OpenBSD's /dev/audio.
+
+	Reworked the sound output format conversion code to be more versatile, 
+
+April 25, 2017:
+	NES: Wrote new "Barcode Battler II" emulation code to replace the old "Barcode World" code, based on quick testing with actual hardware(albeit the English version).
+
+April 24, 2017:
+	SSFPlay: Added save state support.
+
 -- 0.9.44.1: --
 
 April 21, 2017:
