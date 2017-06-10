@@ -185,7 +185,31 @@
 <div class="ContentBox">
  <h2 class="ContentBoxHead">News</h2>
  <div class="ContentBoxBody">
-<div class="ContentBoxSub"><h3><a href="http://forum.fobby.net/index.php?t=rview&amp;goto=5012&amp;th=1538#msg_5012">Mednafen 0.9.45</a><span style="float: right;">June  2, 2017 - 07:08 PDT</span></h3><div class="ContentBoxBodySub">Changes:<br />
+<div class="ContentBoxSub"><h3><a href="http://forum.fobby.net/index.php?t=rview&amp;goto=5029&amp;th=1545#msg_5029">Mednafen 0.9.45.1</a><span style="float: right;">June 10, 2017 - 00:49 PDT</span></h3><div class="ContentBoxBodySub">This very minor release fixes a regression introduced in 0.9.45, that caused garbled sound output when using the (non-default) exclusive-mode WASAPI sound driver with certain higher-end sound cards.<br />
+<br />
+<div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('1817855764', 1);">ChangeLog</a><div align="left" id="1817855764" style="display: none;"><br />
+<pre>
+-- 0.9.45.1: --
+
+June 5, 2017:
+	SNES: Fixed an instance of possibly-undefined behavior.
+
+	Silenced dumb warning spam relating to endian.h emitted by newer versions of gcc.
+
+June 4, 2017:
+	Fixed garbled audio with the exclusive-mode WASAPI sound driver on some higher-end sound cards(regression introduced in 0.9.45 due to a mistake in changing
+	the meaning of a macro field during development); may also fix garbled audio when using the new OpenBSD sound driver with certain sound cards.
+</pre><br />
+</div></div><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.45.1.tar.xz" target="_blank">mednafen-0.9.45.1.tar.xz</a><br />
+<font size="-1">SHA-256: f95f68acc14f9b30b201e15b8205d85ac9dc7e581ea6b61e225e990491f01e69</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.45.1-win64.zip" target="_blank">mednafen-0.9.45.1-win64.zip</a><br />
+<font size="-1">SHA-256: 4d8a575cbb575115e7d12421a155dd46c7f15dffa359a61ab29e4b8809fda53f</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.45.1-win32.zip" target="_blank">mednafen-0.9.45.1-win32.zip</a><br />
+<font size="-1">SHA-256: bce8a7d15abdaf65365ade78a981e75ea30d626baa6c54c154fecc16bb8e9481</font></div></div><br><div class="ContentBoxSub"><h3><a href="http://forum.fobby.net/index.php?t=rview&amp;goto=5012&amp;th=1538#msg_5012">Mednafen 0.9.45</a><span style="float: right;">June  2, 2017 - 07:08 PDT</span></h3><div class="ContentBoxBodySub">Changes:<br />
 <div class="pre"><pre>
 -- 0.9.45: --
 
@@ -837,20 +861,7 @@ September 16, 2015:
 <font size="-1">SHA-256: 84414c6ada6c736ee474703d1ea71e570426aff5e7cef05a0633b975e2a84c1e</font><br />
 <br />
 <a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.38.7-win32.zip" target="_blank">mednafen-0.9.38.7-win32.zip</a><br />
-<font size="-1">SHA-256: 3b46fe0f955fb3c3f219c0e11694a958261a108310acffa90a7d2dfc116e9afc</font></div></div><br><div class="ContentBoxSub"><h3><a href="http://forum.fobby.net/index.php?t=rview&amp;goto=4143&amp;th=1250#msg_4143">Mednafen 0.9.38.6</a><span style="float: right;">August 11, 2015 - 19:45 PDT</span></h3><div class="ContentBoxBodySub">A minor release to fix a couple of issues:<br />
-<ul>
-<li>PCE, PCE_FAST: Tweaked CD read timing, to fix a lockup in &quot;Mirai Shonen Conan&quot;, and a stuck note problem in &quot;4 in 1 Super CD&quot;.
-<li>PS1: Fixed GPU emulation timing bugs that caused graphical glitches in &quot;Mr. Driller G&quot;.
-</ul><br />
-<br />
-<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.38.6.tar.bz2" target="_blank">mednafen-0.9.38.6.tar.bz2</a><br />
-<font size="-1">SHA-256: 9460da3c6cd8cb8a02293d51c958cbc6ab5555aa6d115b952d4db2e0f1067e47</font><br />
-<br />
-<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.38.6-win64.zip" target="_blank">mednafen-0.9.38.6-win64.zip</a><br />
-<font size="-1">SHA-256: 4ddd1fe9e77fa49166495c6615e0eead5a0146254b9bd80478c4cbd5be4ac192</font><br />
-<br />
-<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.38.6-win32.zip" target="_blank">mednafen-0.9.38.6-win32.zip</a><br />
-<font size="-1">SHA-256: d5d590e475dd62e84f21f76e8cb1a98865a3d8ec3df300810ab9aaef70479fca</font></div></div><br> </div>
+<font size="-1">SHA-256: 3b46fe0f955fb3c3f219c0e11694a958261a108310acffa90a7d2dfc116e9afc</font></div></div><br> </div>
 </div>
 <br />
   <div class="CopyrightBox">
