@@ -155,11 +155,11 @@ function PageBegin($subtitle = "", $include_fud_js = FALSE)
   <div style="text-align: center"><h1><acronym title="My emulator doesn't need a frickin' excellent name!"><a href="/"><img alt="Mednafen" width="696" height="204" src="/newlogo.png"></img></a></acronym></h1></div>
 <div class="NavBox">
 <a href="/releases/">Releases</a>
-<a href="http://forum.fobby.net/">Forum</a>
+<a href="https://forum.fobby.net/">Forum</a>
 <a href="/links/">Links</a>
 <a href="/documentation/">Documentation</a>
 <a href="/irc/">IRC</a>
-<a href="http://forum.fobby.net/index.php?t=thread&frm_id=6&">FAQ</a>
+<a href="https://forum.fobby.net/index.php?t=thread&frm_id=6&">FAQ</a>
 </div>
 <br />
 <?php

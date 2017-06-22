@@ -52,7 +52,7 @@
 <?php
 
 
-$file = "http://forum.fobby.net/rdf.php?mode=m&borg=1&l=1&basic=1&frm=19&n=10";
+$file = "https://forum.fobby.net/rdf.php?mode=m&borg=1&l=1&basic=1&frm=19&n=10";
 $depth = 0;
 $names = array();
 $valid = 0;

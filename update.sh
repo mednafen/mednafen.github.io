@@ -1,6 +1,6 @@
 #!/bin/bash
 
-wget -nv -O lib.js http://forum.fobby.net/lib.js >/dev/null && \
+wget -nv -O lib.js https://forum.fobby.net/lib.js >/dev/null && \
 php index.php > index.html && \
 cd releases && php index.php > index.html && cd .. && \
 cd irc && php index.php > index.html && cd .. && \
