@@ -1,3 +1,38 @@
+-- 0.9.46: --
+
+August 10, 2017:
+	Compile with explicit -fstrict-aliasing, for distributions/OSes that have configured gcc to not enable strict aliasing at -O2(and possibly other levels).
+
+	Fixed a bug that could, under certain conditions, cause emulator OSD elements to not be updated in the time after entering frame advance mode
+	and before a frame advance.
+
+August 7, 2017:
+	Use a sorted std::vector instead of std::multimap to store current settings, to reduce memory usage.
+
+August 6, 2017:
+	SS: Added ss.input.port*.3dpad.mode.defpos settings to control the default position of the digital/analog mode switch.
+
+August 5, 2017:
+	Allow addresses above FFFF to be entered as the logical watch address in the debugger.
+
+August 4, 2017:
+	SS: Added kludge to fix layer offset problem in "Daytona USA CCE".
+
+	NES: The functionality controlled by setting "nes.fnscan" now recognizes "(F)" and "(France)" as PAL.
+
+	NES: Added support for iNES mapper 40.
+
+July 11, 2017:
+	Utilize _byteswap_*() functions in endian.h when compiling with Microsoft's C++ compiler.
+
+June 22, 2017:
+	Fixed a couple of minor issues(log header formatting, and skipped logging of first instruction in step mode) with the debugger's undocumented trace log feature.
+
+	NES: Corrected the period of PAL noise channel frequency setting 0x1.
+
+June 21, 2017:
+	NES: Fixed a few square wave sound channel emulation bugs(wrong phase for duty setting 3, and failing to clock the period counter when the channel is silenced).
+
 -- 0.9.45.1: --
 
 June 5, 2017:
