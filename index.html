@@ -185,7 +185,57 @@
 <div class="ContentBox">
  <h2 class="ContentBoxHead">News</h2>
  <div class="ContentBoxBody">
-<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5029&amp;th=1545#msg_5029">Mednafen 0.9.45.1</a><span style="float: right;">June 10, 2017 - 00:49 PDT</span></h3><div class="ContentBoxBodySub">This very minor release fixes a regression introduced in 0.9.45, that caused garbled sound output when using the (non-default) exclusive-mode WASAPI sound driver with certain higher-end sound cards.<br />
+<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5129&amp;th=1575#msg_5129">Mednafen 0.9.46</a><span style="float: right;">August 10, 2017 - 22:50 PDT</span></h3><div class="ContentBoxBodySub">A small update, primarily to fix a few bugs.<br />
+<br />
+Changes:<br />
+<div class="pre"><pre>
+-- 0.9.46: --
+
+August 10, 2017:
+	Compile with explicit -fstrict-aliasing, for distributions/OSes that have configured gcc to
+	not enable strict aliasing at -O2(and possibly other levels).
+
+	Fixed a bug that could, under certain conditions, cause emulator OSD elements to not be updated in the time
+	after entering frame advance mode and before a frame advance.
+
+August 7, 2017:
+	Use a sorted std::vector instead of std::multimap to store current settings, to reduce memory usage.
+
+August 6, 2017:
+	SS: Added ss.input.port*.3dpad.mode.defpos settings to control the default position of the digital/analog mode switch.
+
+August 5, 2017:
+	Allow addresses above FFFF to be entered as the logical watch address in the debugger.
+
+August 4, 2017:
+	SS: Added kludge to fix layer offset problem in &quot;Daytona USA CCE&quot;.
+
+	NES: The functionality controlled by setting &quot;nes.fnscan&quot; now recognizes &quot;(F)&quot; and &quot;(France)&quot; as PAL.
+
+	NES: Added support for iNES mapper 40.
+
+July 11, 2017:
+	Utilize _byteswap_*() functions in endian.h when compiling with Microsoft's C++ compiler.
+
+June 22, 2017:
+	Fixed a couple of minor issues(log header formatting, and skipped logging of first instruction in step mode) with the debugger's
+	undocumented trace log feature.
+
+	NES: Corrected the period of PAL noise channel frequency setting 0x1.
+
+June 21, 2017:
+	NES: Fixed a few square wave sound channel emulation bugs(wrong phase for duty setting 3, and failing to clock the period counter
+	when the channel is silenced).
+</pre></div><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.46.tar.xz" target="_blank">mednafen-0.9.46.tar.xz</a><br />
+<font size="-1">SHA-256: 674faf42bdb0ad5649aea65da266b0be3428995caaa7be183fc6d3ed7732467a</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.46-win64.zip" target="_blank">mednafen-0.9.46-win64.zip</a><br />
+<font size="-1">SHA-256: e869db3dac14d020471055d81bc8d21d6cf63cf3d9806ea14879cf9eff8eab4d</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.46-win32.zip" target="_blank">mednafen-0.9.46-win32.zip</a><br />
+<font size="-1">SHA-256: 282ef3d6b383978976bedb991b9df57b846713028fcca48c2e1be966a66be41e</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5029&amp;th=1545#msg_5029">Mednafen 0.9.45.1</a><span style="float: right;">June 10, 2017 - 00:49 PDT</span></h3><div class="ContentBoxBodySub">This very minor release fixes a regression introduced in 0.9.45, that caused garbled sound output when using the (non-default) exclusive-mode WASAPI sound driver with certain higher-end sound cards.<br />
 <br />
 <div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('1817855764', 1);">ChangeLog</a><div align="left" id="1817855764" style="display: none;"><br />
 <pre>
@@ -804,64 +854,7 @@ August 6, 2016:
 <font size="-1">SHA-256: f889e1e8f6276eaf237d1386328f3e2629d2ce84b52d496fbd139fbf3be0d5fd</font><br />
 <br />
 <a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.39-unstable-win32.zip" target="_blank">mednafen-0.9.39-unstable-win32.zip</a><br />
-<font size="-1">SHA-256: 3aed1d5317df3dd28e25d0b9c95fd62477c1874365fa0df9b6726e71b35bf189</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=4207&amp;th=1263#msg_4207">Mednafen 0.9.38.7</a><span style="float: right;">October  1, 2015 - 16:59 PDT</span></h3><div class="ContentBoxBodySub">Another minor bugfix release.<br />
-<br />
-<div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('974875332', 1);">ChangeLog</a><div align="left" id="974875332" style="display: none;"><br />
-<div class="pre"><pre>
--- 0.9.38.7: --
-
-September 30, 2015:
-	Fixed several malformed trio_sscanf() format strings in regards to field width, that could cause stack buffer overflows in certain cases.
-
-September 29, 2015:
-	PSX: Added skeleton BCzF/BCzT instruction emulation, and fixed handling of illegal CP0 instructions.
-
-September 25, 2015:
-	PSX: Added emulation of CPU exception-handling bad address register.
-
-	PSX: Implemented emulation of the Coprocessor Error field in the CAUSE register.
-
-	PSX: Added emulation of CPU exception-handling branch target register.
-
-	PSX: Fixed handling of CAUSE bits 30 and 31 when an exception occurs immediately after a branch instruction is executed.
-
-	PSX: Fixed link address calculation for JAL, JALR, and B*AL instructions when they're executed in a branch delay slot.
-
-	PSX: Corrected emulation of the quasi-illegal mirrors of the BGEZ*/BLTZ* type instructions.
-
-	PSX: Added emulation of a pipeline quirk that occurs with back-to-back load instructions to the same register(previously only emulated with LWL and LWR).
-
-September 22, 2015:
-	Fixed a bug in the debugger's disassembler that could break disassembly when a disassembled instruction wraps around the end of the CPU's program address
-	space to the beginning.
-
-September 18, 2015:
-	PCE: Removed experimental and unfinished hypothetical subtitle hardware emulation which had a few security-related problems.
-
-September 16, 2015:
-	MD: Fixed registration of main RAM in the cheat engine to be mirrored properly.
-
-	PCE: Fixed a bug that caused the debugger's disassembly and memory view to show a wrong value for the HES bootstrap register
-	at $1D00.
-
-	PCE: Fixed a bug that sometimes caused the &quot;TIMV&quot; register in the debugger to display &quot;FFFFFFFF&quot; instead of &quot;FF&quot;.
-
-	The date and time of the compilation of qtrecord.cpp are no longer written to recorded QuickTime movie files, to solve
-	a minor privacy issue and a build reproducibility issue.
-
-	PSX: Rewrote parts of the timer emulation code to fix several issues; fixes wrong music playback speed problem
-	in &quot;RPG Tsukuru 4&quot;.
-</pre></div><br />
-</div></div><br />
-<br />
-<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.38.7.tar.bz2" target="_blank">mednafen-0.9.38.7.tar.bz2</a><br />
-<font size="-1">SHA-256: 1bb3beef883a325c35d1a1ce14959c307a4c321f2ea29d4ddb216c6dd03aded8</font><br />
-<br />
-<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.38.7-win64.zip" target="_blank">mednafen-0.9.38.7-win64.zip</a><br />
-<font size="-1">SHA-256: 84414c6ada6c736ee474703d1ea71e570426aff5e7cef05a0633b975e2a84c1e</font><br />
-<br />
-<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.38.7-win32.zip" target="_blank">mednafen-0.9.38.7-win32.zip</a><br />
-<font size="-1">SHA-256: 3b46fe0f955fb3c3f219c0e11694a958261a108310acffa90a7d2dfc116e9afc</font></div></div><br> </div>
+<font size="-1">SHA-256: 3aed1d5317df3dd28e25d0b9c95fd62477c1874365fa0df9b6726e71b35bf189</font></div></div><br> </div>
 </div>
 <br />
   <div class="CopyrightBox">
