@@ -1,3 +1,25 @@
+-- 0.9.47: --
+
+August 25, 2017:
+	Lynx, MD, NGP, SMS: Added a few missing variables to save states.
+
+August 24, 2017:
+	SS: Added save state support.
+
+	Revamped save state helper macros and functions, to allow save-stating of variables in arrays of structs to be simpler.
+
+August 22, 2017:
+	SS: Fixed BCR1 write protect, and added stub emulation of the other BSC registers.
+
+	SS: Added incomplete stub Action Replay 4M Plus emulation(for experimentation); proper Action Replay support would require SH-2 UBC emulation, and that
+	may be too costly performance wise.
+
+August 21, 2017:
+	SS: Implemented very rough approximation of bus timing side effects when master SH-2 DMA is active(accurate handling of bus priorities and sharing would increase
+	CPU requirements noticeably, but it may ultimately be necessary as a database-driven option for some stubborn games in the future).  Fixes startup hangs in
+	"Device Reign", "Real Sound", "Resident Evil", "SD Gundam G Century S", "Super Tempo", "Tennis Arena", "Tilk", "Yuukyuu Gensoukyoku",
+	"Yuukyuu Gensoukyoku 2nd Album", "Yuukyuu Gensoukyoku ensemble", "Yuukyuu Gensoukyoku ensemble 2", "Yuukyuu no Kobako Official Collection", and "Zero4 Champ". 
+
 -- 0.9.46: --
 
 August 10, 2017:
