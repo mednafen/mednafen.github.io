@@ -185,7 +185,45 @@
 <div class="ContentBox">
  <h2 class="ContentBoxHead">News</h2>
  <div class="ContentBoxBody">
-<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5129&amp;th=1575#msg_5129">Mednafen 0.9.46</a><span style="float: right;">August 10, 2017 - 22:50 PDT</span></h3><div class="ContentBoxBodySub">A small update, primarily to fix a few bugs.<br />
+<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5164&amp;th=1583#msg_5164">Mednafen 0.9.47</a><span style="float: right;">August 26, 2017 - 02:36 PDT</span></h3><div class="ContentBoxBodySub"><b>Notable changes since 0.9.46:</b><br />
+<ul>
+<li> SS: Added save state support(read the first section of the Saturn module's documentation before loading save states from external sources).
+<li> SS: Fixed startup hangs in &quot;Device Reign&quot;, &quot;Real Sound&quot;, &quot;Resident Evil&quot;, &quot;SD Gundam G Century S&quot;, &quot;Super Tempo&quot;, &quot;Tennis Arena&quot;, &quot;Tilk&quot;, &quot;Yuukyuu Gensoukyoku&quot;, &quot;Yuukyuu Gensoukyoku 2nd Album&quot;, &quot;Yuukyuu Gensoukyoku ensemble&quot;, &quot;Yuukyuu Gensoukyoku ensemble 2&quot;, &quot;Yuukyuu no Kobako Official Collection&quot;, and &quot;Zero4 Champ&quot;.
+</ul><br />
+<div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('260453754', 1);">ChangeLog</a><div align="left" id="260453754" style="display: none;"><br />
+<pre>
+-- 0.9.47: --
+
+August 25, 2017:
+	Lynx, MD, NGP, SMS: Added a few missing variables to save states.
+
+August 24, 2017:
+	SS: Added save state support.
+
+	Revamped save state helper macros and functions, to allow save-stating of variables in arrays of structs to be simpler.
+
+August 22, 2017:
+	SS: Fixed BCR1 write protect, and added stub emulation of the other BSC registers.
+
+	SS: Added incomplete stub Action Replay 4M Plus emulation(for experimentation); proper Action Replay support would require SH-2 UBC emulation, and that
+	may be too costly performance wise.
+
+August 21, 2017:
+	SS: Implemented very rough approximation of bus timing side effects when master SH-2 DMA is active(accurate handling of bus priorities and sharing would increase
+	CPU requirements noticeably, but it may ultimately be necessary as a database-driven option for some stubborn games in the future).  Fixes startup hangs in
+	&quot;Device Reign&quot;, &quot;Real Sound&quot;, &quot;Resident Evil&quot;, &quot;SD Gundam G Century S&quot;, &quot;Super Tempo&quot;, &quot;Tennis Arena&quot;, &quot;Tilk&quot;, &quot;Yuukyuu Gensoukyoku&quot;,
+	&quot;Yuukyuu Gensoukyoku 2nd Album&quot;, &quot;Yuukyuu Gensoukyoku ensemble&quot;, &quot;Yuukyuu Gensoukyoku ensemble 2&quot;, &quot;Yuukyuu no Kobako Official Collection&quot;, and &quot;Zero4 Champ&quot;. 
+</pre><br />
+</div></div><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.47.tar.xz" target="_blank">mednafen-0.9.47.tar.xz</a><br />
+<font size="-1">SHA-256: 51137e60aeab070af8aba8ddc305834d2cf233be8ce82112cf38e93fe5329f3a</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.47-win64.zip" target="_blank">mednafen-0.9.47-win64.zip</a><br />
+<font size="-1">SHA-256: 68686760456feeb615a2279474b9c78fcd5927f91de285ba7b545b23d9900836</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.47-win32.zip" target="_blank">mednafen-0.9.47-win32.zip</a><br />
+<font size="-1">SHA-256: 6ad4bbf1b53508c4d1caee392516501cf5e4ce8e6b2053633f00a610e632c4af</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5129&amp;th=1575#msg_5129">Mednafen 0.9.46</a><span style="float: right;">August 10, 2017 - 22:50 PDT</span></h3><div class="ContentBoxBodySub">A small update, primarily to fix a few bugs.<br />
 <br />
 Changes:<br />
 <div class="pre"><pre>
@@ -814,47 +852,7 @@ August 6, 2016:
 <font size="-1">SHA-256: 615eb850f33f2f072f572ef7be9e496b4576b589675c6b592e2f24c300bfa0ed</font><br />
 <br />
 <a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.39.1-win32.zip" target="_blank">mednafen-0.9.39.1-win32.zip</a><br />
-<font size="-1">SHA-256: d43d34fac12de582e4b51df0342eee720a48db92126bb135f294fd67bdb616e0</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=4409&amp;th=1326#msg_4409">Mednafen 0.9.39-UNSTABLE</a><span style="float: right;">August  5, 2016 - 19:22 PDT</span></h3><div class="ContentBoxBodySub">This release adds experimental Sega Saturn emulation.  It currently is x86_64-only, very CPU-intensive, lacking save state support, and not supporting PAL-region games.  However, SSF(&quot;Saturn Sound Format&quot;) rip playback is not limited to x86_64 platforms.<br />
-<br />
-<b>Significant end-user changes compared to 0.9.38.7:</b><br />
-<ul>
-<li>Added experimental Sega Saturn emulation.
-<li>Low-accuracy &quot;snes_faust&quot; SNES emulation module is now compiled in and available by default(but not used by default, except for SPC playback).
-<li>The version is now displayed in the upper right corner of the F1 help screen.
-<li>Scrolling in the netplay and cheat consoles is now done in visible line units, instead of internal line units as before, and when a console is not scrolled all the way down, a green indicator arrow will now be drawn in the lower right corner.
-<li>Revamped the layout of the debugger's memory editor.
-<li>MD: Replaced old 68K emulator with new 68K emulator developed for Saturn emulation.  Fixes major issues in &quot;Double Clutch&quot;, &quot;James Pond 3&quot;, and &quot;Sub-Terrania&quot;.  However, timing is currently a bit off with the new 68K emulation code, so there may be some regressions.
-<li>MD: Implemented kludge to fix a startup lockup in &quot;Turrican&quot;.
-<li>NES: Implemented kludge to fix a minor Zelda 2 title screen glitch, a status bar glitch in Burai Fighter, and scrolling in the second stage of The Young Indiana Jones Chronicles.
-<li>NES: Enabled SSE2 support in the audio resampler(though not used on all CPUs with SSE2 support, mostly just newer ones).
-<li>NES, PCE, PC-FX: Added ARM NEON support to the audio resamplers(when compiled with -mfpu=neon or similar).
-<li>PCE, PC-FX: Added AVX support to the audio resampler.
-<li>PS1: Enabled emulation of a rarely-used CDC feature; fixes lockup bug in &quot;Fantastic Pinball Kyutenkai&quot;.
-<li>PS1: Reordered CPU class data layout for a small performance boost on ARM CPUs.
-<li>SNES: Updated libco, for ARM support.
-</ul><br />
-<b>Settings added:</b><br />
-<ul>
-<li><b>filesys.fname_savbackup</b>
-<li><b>filesys.path_savbackup</b>
-<li><b>netplay.console.scale</b>
-<li><b>netplay.console.font</b>
-<li><b>netplay.console.lines</b>
-<li><b>ss.*</b>
-</ul><br />
-<b>Settings removed:</b><br />
-<ul>
-<li><b>netplay.smallfont</b>
-</ul><br />
-<br />
-<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.39-unstable.tar.bz2" target="_blank">mednafen-0.9.39-unstable.tar.bz2</a><br />
-<font size="-1">SHA-256: 353eafc1243b00256ec7050ad47c622c4b5243354f02ed23836f28e95ccbd107</font><br />
-<br />
-<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.39-unstable-win64.zip" target="_blank">mednafen-0.9.39-unstable-win64.zip</a><br />
-<font size="-1">SHA-256: f889e1e8f6276eaf237d1386328f3e2629d2ce84b52d496fbd139fbf3be0d5fd</font><br />
-<br />
-<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.39-unstable-win32.zip" target="_blank">mednafen-0.9.39-unstable-win32.zip</a><br />
-<font size="-1">SHA-256: 3aed1d5317df3dd28e25d0b9c95fd62477c1874365fa0df9b6726e71b35bf189</font></div></div><br> </div>
+<font size="-1">SHA-256: d43d34fac12de582e4b51df0342eee720a48db92126bb135f294fd67bdb616e0</font></div></div><br> </div>
 </div>
 <br />
   <div class="CopyrightBox">
