@@ -185,7 +185,69 @@
 <div class="ContentBox">
  <h2 class="ContentBoxHead">News</h2>
  <div class="ContentBoxBody">
-<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5164&amp;th=1583#msg_5164">Mednafen 0.9.47</a><span style="float: right;">August 26, 2017 - 02:36 PDT</span></h3><div class="ContentBoxBodySub"><b>Notable changes since 0.9.46:</b><br />
+<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5224&amp;th=1603#msg_5224">Mednafen 0.9.48</a><span style="float: right;">September 18, 2017 - 18:05 PDT</span></h3><div class="ContentBoxBodySub"><b>Notable changes since 0.9.47:</b><br />
+<ul>
+<li> SS: Fixed graphics corruption in the intro of &quot;Batman Forever&quot;.
+<li> SS: Fixed hang in &quot;Jung Rhythm&quot; when trying to retry a failed stage.
+<li> SS: Fixed crash in &quot;Tenchi Muyou! Ryououki Gokuraku&quot; when it tries to play an opening movie.
+<li> SS: Fixed messed-up colors in &quot;Discworld 2&quot;.
+<li> SS: Fixed hang when trying to resume a suspended game in &quot;Tactics Ogre&quot;.
+<li> SS: Fixed the periodic loud popping noise during FMV playback in &quot;Grandia&quot;(an emulation bugfix; sound may still pop/click if you have a slower CPU of course).
+<li> SS: Added a hack/kludge to allow bypassing of data cache on reads(such that the timing benefits of partial cache emulation are preserved, without cache coherency problems that partial cache emulation sometimes leads to with poorly programmed games), and added an internal database to enable it on select games; fixes graphical glitches and/or hangs in &quot;Area 51 (USA and Europe)&quot;, &quot;Clockwork Knight 2 (USA)&quot;, &quot;DeJig - Lassen Art Collection&quot;, &quot;Father Christmas&quot;, &quot;Golden Axe The Duel&quot;, &quot;Sega Saturn Choice Cuts&quot;, &quot;Spot Goes to Hollywood (USA and Japan)&quot;, &quot;Street Fighter Zero&quot;, &quot;Street Fighter Zero 3&quot;, &quot;Super Puzzle Fighter II Turbo&quot;, and &quot;Virtual Volleyball&quot;.
+<li> SS: Full cache emulation is now enabled for &quot;Whizz&quot;(by using an internal database), to resolve(or at least reduce) quasi-random hanging issues during startup.
+</ul><br />
+<br />
+<div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('1143116374', 1);">ChangeLog</a><div align="left" id="1143116374" style="display: none;"><br />
+<pre>
+-- 0.9.48: --
+
+September 16, 2017:
+	Set cheat's default endianness to that preferred by the system being emulated when manually adding a cheat that's not
+	a cheat device code nor the result of a cheat search.
+
+September 15, 2017:
+	SS: Fixed SCU DSP DMA from B-bus; fixes the periodic loud popping in Grandia's FMV.
+
+September 12, 2017:
+	SS: Added a hack/kludge to allow bypassing of data cache on reads(such that the timing benefits of partial cache emulation are preserved, without cache
+	coherency problems that partial cache emulation sometimes leads to with poorly programmed games), and added an internal database to enable it on select games;
+	fixes graphical glitches and/or hangs in &quot;Area 51 (USA and Europe)&quot;, &quot;Clockwork Knight 2 (USA)&quot;, &quot;DeJig - Lassen Art Collection&quot;, &quot;Father Christmas&quot;,
+	&quot;Golden Axe The Duel&quot;, &quot;Sega Saturn Choice Cuts&quot;, &quot;Spot Goes to Hollywood (USA and Japan)&quot;, &quot;Street Fighter Zero&quot;, &quot;Street Fighter Zero 3&quot;,
+	&quot;Super Puzzle Fighter II Turbo&quot;, and &quot;Virtual Volleyball&quot;.
+
+	SS: Full cache emulation is now enabled for &quot;Whizz&quot;(by using an internal database), to resolve(or at least reduce) quasi-random hanging issues during startup. 
+
+September 11, 2017:
+	SS: Corrected an inaccuracy with CDB play repeat handling; fixes hang when trying to resume a suspended game in &quot;Tactics Ogre&quot;.
+
+	SS: Initialize VDP1 clipping and local coordinate registers only on power-on, and not on reset.
+
+September 7, 2017:
+	SS: Fixed side-effect inaccuracies in the CDB Put Sector Data, Copy Sector Data, and Move Sector Data command emulation.
+
+September 6, 2017:
+	Added configure option &quot;--with-external-trio&quot;, for distribution packagers.
+
+	SS: Added partial emulation of SH-2 external bus open bus behavior; fixes messed up colors in &quot;Discworld 2&quot;.
+
+September 4, 2017:
+	SS: Improved CDB Initialize command emulation; fixes crash in &quot;Tenchi Muyou! Ryououki Gokuraku&quot; when it tries to play an opening movie during startup.
+
+August 28, 2017:
+	SS: Made CD seek overhead calculation less completely wrong; fixes graphics corruption in intro of &quot;Batman Forever&quot;, and fixes hang in &quot;Jung Rhythm&quot; when
+	trying to retry a failed stage.
+</pre><br />
+</div></div><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.48.tar.xz" target="_blank">mednafen-0.9.48.tar.xz</a><br />
+<font size="-1">SHA-256: d3cc0c838f496511946d6ea18fda5965d2b71577c610acc811835cc87d152102</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.48-win64.zip" target="_blank">mednafen-0.9.48-win64.zip</a><br />
+<font size="-1">SHA-256: c3ccb78325bae8cbbf7d9101317a61e364c4dcd21c59004225a7307866599fa5</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.48-win32.zip" target="_blank">mednafen-0.9.48-win32.zip</a><br />
+<font size="-1">SHA-256: ed40023c66bc545a724f4190e6e18fb54bb97cc4249a445120f2b70a825f43e7</font><br />
+</div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5164&amp;th=1583#msg_5164">Mednafen 0.9.47</a><span style="float: right;">August 26, 2017 - 02:36 PDT</span></h3><div class="ContentBoxBodySub"><b>Notable changes since 0.9.46:</b><br />
 <ul>
 <li> SS: Added save state support(read the first section of the Saturn module's documentation before loading save states from external sources).
 <li> SS: Fixed startup hangs in &quot;Device Reign&quot;, &quot;Real Sound&quot;, &quot;Resident Evil&quot;, &quot;SD Gundam G Century S&quot;, &quot;Super Tempo&quot;, &quot;Tennis Arena&quot;, &quot;Tilk&quot;, &quot;Yuukyuu Gensoukyoku&quot;, &quot;Yuukyuu Gensoukyoku 2nd Album&quot;, &quot;Yuukyuu Gensoukyoku ensemble&quot;, &quot;Yuukyuu Gensoukyoku ensemble 2&quot;, &quot;Yuukyuu no Kobako Official Collection&quot;, and &quot;Zero4 Champ&quot;.
@@ -779,80 +841,7 @@ August 23, 2016:
 <font size="-1">SHA-256: 9acceb0d6239105605dc598d56563adb7d5dfce56671ab5ddfa0aef33cdc19c2</font><br />
 <br />
 <a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.39.2-win32.zip" target="_blank">mednafen-0.9.39.2-win32.zip</a><br />
-<font size="-1">SHA-256: 6ca033328ee26c4696cf3a7820ab02a6ca7c6bfbe194b9697c0051cae1566894</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=4465&amp;th=1333#msg_4465">Mednafen 0.9.39.1</a><span style="float: right;">August 23, 2016 - 06:40 PDT</span></h3><div class="ContentBoxBodySub">A relatively minor release.  Among other changes, fixes problems with the following Sega Saturn games: &quot;Astal&quot;, &quot;Hi-Octane&quot;, &quot;Panzer Dragoon&quot;, and &quot;Panzer Dragoon 2&quot;.<br />
-<br />
-<div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('961016517', 1);">ChangeLog</a><div align="left" id="961016517" style="display: none;"><br />
-<div class="pre"><pre>
--- 0.9.39.1: --
-
-August 22, 2016:
-	SS: Settings &quot;ss.dbg_mask&quot; and &quot;ss.dbg_exe_cdpath&quot;, and the functionality they control, are no longer available unless Mednafen has been compiled with
-	&quot;MDFN_SS_DEV_BUILD&quot; defined(such as with -DMDFN_SS_DEV_BUILD=1 in CPPFLAGS env var passed to configure).
-
-	SS: Replaced some instances of case ranges with more portable constructs.
-
-August 20, 2016:
-	SS: Run VDP1 vblank erase at end of vblank, so we know how much time we have and thus how many entries in the framebuffer we'll be able
-	to erase.  Currently, the available time calculations are generous, allowing for a bit more erase than what's possible on a Saturn, but we can tighten
-	it up in the future once it's fairly certain there aren't any more event scheduling accuracy issues.  Fixes FMV subtitle text in &quot;Panzer Dragoon&quot;.
-
-	SS: Fixed a bug that caused VDP2 frames to be short by 1 to 3 CPU cycles.
-
-	SS: Reschedule the SH-2 DMA event handler as necessary to prevent it from running when the SH-2 bus is locked.
-
-	SS: Force the SH-2 DMA and SCU DMA event handlers to be rescheduled to SH7095_mem_timestamp time when necessary.
-
-	SS: Check for pending events right before calling VDP1, VDP2, SMPC, and SCU regs read/write handlers, which may then call their own event update
-	functions.
-
-August 17, 2016:
-	Fixed an old bug that could cause a startup crash on Windows systems without XInput DLLs installed(e.g. some Windows XP systems).
-
-	NES: Fixed a very old bug triggered when disabling(via CTRL+1) the background layer, that would cause sprite pixels to also be visually disabled too under certain
-	circumstances.
-
-August 16, 2016:
-	MD, PC-FX: Fixed several instances of left-shifting negative values.
-
-August 15, 2016:
-	SS: Fixed a compilation error when compiling with the debugger disabled(&quot;--disable-debugger&quot; passed to configure).
-
-	Added configure options &quot;--with-external-mpcdec&quot; and &quot;--with-external-tremor&quot;, for distribution packagers.
-
-	SS, SNES-Faust: Fixed a few issues causing compilation errors on clang.
-
-	SS: Tweaked how seek command pause works; fixes a lockup issue in &quot;Astal&quot;.
-
-August 11, 2016:
-	WonderSwan: Fixed a bad usage of &quot;char&quot; without an unsigned/signed qualifier.
-
-	SS: Slow down SCU DMA to VDP2 VRAM under certain conditions.
-
-August 10, 2016:
-	SS: Adjusted VDP1 polygon and line draw commands to behave as if SPD=1, ECD=1 when color mode &gt;= 6; fixes missing graphics problem in &quot;Hi-Octane&quot;.
-
-August 8, 2016:
-	SS: Reworked SCU DMA's timekeeping and scheduling code to be more accurate; reduces the size of the flickering section of the FMV in &quot;Lunar&quot;.
-
-	SS: Fixed handling of CPU&lt;-&gt;SMPC open bus.
-
-August 7, 2016:
-	Relaxed the CloneCD Q subchannel sanity checks to allow a track number of 0xAA(leadout).
-
-August 6, 2016:
-	SS: Implemented kludgy(incomplete) support for quasi-illegal window X start position values; fixes ground layer issues in the forest stage of
-	Panzer Dragoon 2.
-</pre></div><br />
-</div></div><br />
-<br />
-<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.39.1.tar.bz2" target="_blank">mednafen-0.9.39.1.tar.bz2</a><br />
-<font size="-1">SHA-256: 3d97bf160fc9679b1a1c8082305d0d3906d867a6ba2be93232aa9d3024ba84a5</font><br />
-<br />
-<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.39.1-win64.zip" target="_blank">mednafen-0.9.39.1-win64.zip</a><br />
-<font size="-1">SHA-256: 615eb850f33f2f072f572ef7be9e496b4576b589675c6b592e2f24c300bfa0ed</font><br />
-<br />
-<a href="http&#58;&#47;&#47;mednafen.fobby.net/releases/files/mednafen-0.9.39.1-win32.zip" target="_blank">mednafen-0.9.39.1-win32.zip</a><br />
-<font size="-1">SHA-256: d43d34fac12de582e4b51df0342eee720a48db92126bb135f294fd67bdb616e0</font></div></div><br> </div>
+<font size="-1">SHA-256: 6ca033328ee26c4696cf3a7820ab02a6ca7c6bfbe194b9697c0051cae1566894</font></div></div><br> </div>
 </div>
 <br />
   <div class="CopyrightBox">
