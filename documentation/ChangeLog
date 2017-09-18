@@ -1,3 +1,41 @@
+-- 0.9.48: --
+
+September 16, 2017:
+	Set cheat's default endianness to that preferred by the system being emulated when manually adding a cheat that's not
+	a cheat device code nor the result of a cheat search.
+
+September 15, 2017:
+	SS: Fixed SCU DSP DMA from B-bus; fixes the periodic loud popping in Grandia's FMV.
+
+September 12, 2017:
+	SS: Added a hack/kludge to allow bypassing of data cache on reads(such that the timing benefits of partial cache emulation are preserved, without cache
+	coherency problems that partial cache emulation sometimes leads to with poorly programmed games), and added an internal database to enable it on select games;
+	fixes graphical glitches and/or hangs in "Area 51 (USA and Europe)", "Clockwork Knight 2 (USA)", "DeJig - Lassen Art Collection", "Father Christmas",
+	"Golden Axe The Duel", "Sega Saturn Choice Cuts", "Spot Goes to Hollywood (USA and Japan)", "Street Fighter Zero", "Street Fighter Zero 3",
+	"Super Puzzle Fighter II Turbo", and "Virtual Volleyball".
+
+	SS: Full cache emulation is now enabled for "Whizz"(by using an internal database), to resolve(or at least reduce) quasi-random hanging issues during startup. 
+
+September 11, 2017:
+	SS: Corrected an inaccuracy with CDB play repeat handling; fixes hang when trying to resume a suspended game in "Tactics Ogre".
+
+	SS: Initialize VDP1 clipping and local coordinate registers only on power-on, and not on reset.
+
+September 7, 2017:
+	SS: Fixed side-effect inaccuracies in the CDB Put Sector Data, Copy Sector Data, and Move Sector Data command emulation.
+
+September 6, 2017:
+	Added configure option "--with-external-trio", for distribution packagers.
+
+	SS: Added partial emulation of SH-2 external bus open bus behavior; fixes messed up colors in "Discworld 2".
+
+September 4, 2017:
+	SS: Improved CDB Initialize command emulation; fixes crash in "Tenchi Muyou! Ryououki Gokuraku" when it tries to play an opening movie during startup.
+
+August 28, 2017:
+	SS: Made CD seek overhead calculation less completely wrong; fixes graphics corruption in intro of "Batman Forever", and fixes hang in "Jung Rhythm" when
+	trying to retry a failed stage.
+
 -- 0.9.47: --
 
 August 25, 2017:
