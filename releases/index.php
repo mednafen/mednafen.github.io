@@ -3,18 +3,11 @@
 <h2 class="ContentBoxHead">Notes and Errata:</h2>
 <div class="ContentBoxBody">
 <p>
-Save states from 0.8.x and earlier are not compatible with 0.9.x, as the save state format(and file extension) have changed.  Additionally,
-save states from older 0.9.x releases may or may not work entirely correctly with newer 0.9.x releases(if there's a particularly big breakage, however,
-it will be noted in the release announcement).
+<font color="yellow">Before upgrading from 0.9.x to 1.x, please read the <a href="https://forum.fobby.net/index.php?t=msg&th=1652">1.21.0-UNSTABLE release announcement</a>.</font>
 </p>
 
 <p>
-Mednafen's configuration file name has changed to "mednafen-09x.cfg" for 0.9.x releases, due to a large number of backwards-incompatible
-setting-related changes.
-</p>
-
-<p>
-When using ALSA sound output under linux, the <a href="/documentation/mednafen.html#sound.device">"sound.device"</a> setting "default" is Mednafen's default, AKA "hw:0", not
+When using ALSA sound output under Linux, the <a href="/documentation/mednafen.html#sound.device">"sound.device"</a> setting "default" is Mednafen's default, AKA "hw:0", not
 ALSA's "default".  If you want to use ALSA's "default", use "sexyal-literal-default".
 </p>
 </div>
@@ -115,13 +108,13 @@ Windows 8 and newer will work, but their use is discouraged unless Mednafen is r
 <h2 class="ContentBoxHead">Compiling from Sources:</h2>
 <div class="ContentBoxBody">
 <table border>
-<tr><td colspan="4">Library dependencies for Mednafen >= 0.9.38, plus the development package names for various distributions that need to be installed.</td></tr>
-<tr><th>&nbsp;</th><th>Debian Squeeze</th><th>Fedora Core 4</th></tr>
-<tr><td>(General)</td><td>build-essential<br>pkg-config</td><td>&nbsp;</td></tr>
-<tr><td>ALSA</td><td>libasound2-dev</td><td>&nbsp;</td></tr>
-<tr><td><a href="http://libsdl.org/">libSDL</a></td><td>libsdl1.2-dev</td><td>SDL-devel</td></tr>
-<tr><td><a href="http://www.mega-nerd.com/libsndfile/">libsndfile</a></td><td>libsndfile1-dev</td><td>libsndfile-devel(extras)</td></tr>
-<tr><td><a href="http://www.zlib.org/">zlib</a></td><td>zlib1g-dev</td><td>zlib-devel</td></tr>
+<tr><td colspan="4">Library dependencies for Mednafen >= 1.21.0-UNSTABLE, plus the development package names for various distributions that need to be installed.</td></tr>
+<tr><th>&nbsp;</th><th>Debian Stretch</th></tr>
+<tr><td>(General)</td><td>build-essential<br>pkg-config</td></tr>
+<tr><td>ALSA</td><td>libasound2-dev</td></tr>
+<tr><td><a href="http://libsdl.org/">SDL 2.0.5+</a></td><td>libsdl2-dev</td></tr>
+<tr><td><a href="http://www.mega-nerd.com/libsndfile/">libsndfile</a></td><td>libsndfile1-dev</td></tr>
+<tr><td><a href="http://www.zlib.org/">zlib</a></td><td>zlib1g-dev</td></tr>
 </table>
 <p />
 <hr>

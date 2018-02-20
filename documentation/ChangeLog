@@ -1,3 +1,118 @@
+-- 1.21.0-UNSTABLE: --
+
+February 19, 2018:
+	An attempt to run an instance of Mednafen while another instance is already running with the same base directory is now blocked during startup, via
+	a lock file; note that this check occurs after stdout and stderr are potentially redirected to stdout.txt and stderr.txt on Windows.
+
+February 15, 2018:
+	Changed the default value of setting "video.driver" from "opengl" to "default", removed the old "0" and "1" backwards-compatibility value aliases,
+	renamed the "sdl" driver to "softfb"(without backwards-compat aliases), and made it so the setting's value will be reset to "default" after 
+	automatically importing settings from "mednafen-09x.cfg".
+
+	On Windows, no longer exit on ALT+F4 while input is grabbed.
+
+	Added settings "fps.autoenable", "fps.position", "fps.textcolor", and "fps.bgcolor".
+
+February 11, 2018:
+	Removed reliance on malloc(), realloc(), and calloc() setting errno to ENOMEM on failure, since it's not the case on Windows XP, and possibly other
+	platforms/operating systems too.
+
+February 9, 2018:
+	ZIP files are now recognized by file extension instead of by magic(wizards).
+
+	Replaced old minizip code with newly-written ZIP archive reading code.
+
+	Replaced MDFN_PrintError() and MDFN_DispMessage() with MDFN_Notify().
+
+February 6, 2018:
+	Use versionsort() instead of alphasort() when scanning for js* joystick devices on Linux.
+
+February 1, 2018:
+	Added settings "fps.scale" and "fps.font".
+
+January 31, 2018:
+	On Windows, in-memory conversion of M3U and CUE files to UTF-8 will be attempted if they lack a UTF-8 BOM and contain byte sequences that are not
+	valid UTF-8.
+
+	On Windows, path/filename settings loaded from the old mednafen-09x.cfg(before being saved to mednafen.cfg on exit) will now be converted to UTF-8.
+
+January 29, 2018:
+	Added support for pasting text into the cheat and netplay consoles.
+
+January 28, 2018:
+	SS: Added Japanese keyboard emulation.
+
+	SS: Improved VDP2 window Y coordinate evaluation emulation; fixes at least one background layer graphical glitch
+	in "Radiant Silvergun"(at the start of stage 2C), and the graphical glitch near the end of the intro in "Snatcher".
+
+January 20, 2018:
+	Altered calculations involving *.xscale(fs)/*.yscale(fs) settings to be more predictable given floating point nuances; any user using non-integer scaling values
+	for these settings may need to adjust them to get the same result as in previous versions of Mednafen, however.
+
+	Added setting "video.fs.display".
+
+January 18, 2018:
+	SDL2(2.0.5+) is now used and required.
+
+	Removed the "overlay" video driver.
+
+	On Windows, error messages during startup will now be displayed in a popup message box.
+
+	On Windows, Mednafen will now output text to a console if it's started from a console(e.g. cmd.exe or Cygwin), and if not, write
+	to stdout.txt and stderr.txt like before.
+
+	On Windows, Mednafen now uses Unicode variants of CRT and Win32 functions; this may require the user to convert their CUE sheets to UTF-8 if filenames use
+	exotic(e.g. not directly typable on a standard US-layout keyboard) characters.
+
+	For key bindings relating to the debugger and cheat management interface, the Right ALT key modifier will no longer be respected(only the Left ALT has
+	any effect now), for internationalization reasons.
+
+	The configuration file is back to "mednafen.cfg" instead of "mednafen-09x.cfg".  If a 0.8.x "mednafen.cfg" is in the way, it will be renamed.  If "mednafen.cfg"
+	does not exist, or is from an old version of Mednafen, settings will initially be loaded from "mednafen-09x.cfg", but still saved to "mednafen.cfg" on exit(and
+	loaded from "mednafen.cfg" from that point on).
+
+	Reworked the input mapping setting format to be more human-readable(and editable).  Details are in the documentation, in the "Advanced Usage" section.  Old
+	input mappings will be translated internally, except for keyboard mappings, due to incompatibilities between how SDL 1.2 and 2 handle keyboards.
+
+	Added support for mapping joystick axes and buttons, mouse buttons, and keyboard keys to emulated mouse device relative motion for testing purposes(via
+	manually editing the configuration file, as the in-emulator configuration process currently won't create such mappings).
+
+	Added support for digital button input mappings that mix AND, ANDNOT, and OR-style operations together(previously it was either just AND or OR); refer to the
+	documentation for more details.  Note that the in-emulator configuration process won't create complex mappings that mix different boolean operations, 
+	but you can map combinations using simpler logic in-emulator, and then edit the configuration file to adjust the boolean operations used.
+
+January 15, 2018:
+	SS: Fixed a bug that caused a crash if an error occurred early in the process of loading a game.
+
+	Updated the configure script to disable gcc's mitigations for Spectre, in the event distributions configure their compilers to enable them by default.
+
+	Stopped (erroneously) memset()'ing some MDFN_PixelFormat objects.
+
+January 12, 2018:
+	Cleaned up the handling and reduced the size of axis-related inputs as communicated from the driver-side code to core Mednafen.
+
+	PCE_FAST: Fixed fubared mouse emulation.
+
+December 28, 2017:
+	Replaced usage of strcasecmp() and strncasecmp() with MDFN_strazicmp(), for consistent behavior across locales.
+
+	Added MDFN_strazlower(), MDFN_strazupper(), MDFN_memazicmp(), and MDFN_strazicmp() functions.
+
+December 14, 2017:
+	SS: Fixed a logic error in the BIOS sanity check code that caused it to throw a less helpful error message than intended in certain circumstances, and
+	made the error messages related to BIOS file misconfiguration more verbose(and hopefully more helpful...).
+
+December 6, 2017:
+	Fixed broken cheat file saving on MS Windows.
+
+November 12, 2017:
+	Changed how some multidimensional arrays and arrays of structs are accessed, to try to avoid behavior that's probably undefined and may be a problem
+	in the future.
+
+	PC-FX: Fixed integer overflows that caused fatal division by zero when Mednafen's cheat functionality was used(a regression introduced around 0.9.39).
+
+	SS: Stuck SCU DMA table arrays in a struct to avoid unspecified behavior in the SCU save state code.
+
 -- 0.9.48: --
 
 September 16, 2017:
