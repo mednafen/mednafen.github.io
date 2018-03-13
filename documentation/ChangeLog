@@ -1,3 +1,32 @@
+-- 1.21.1: --
+
+March 9, 2018:
+	Enabling the automatic save state loading/saving feature will no longer cause an error to be outputted on game load if the save state does not exist.
+
+March 3, 2018:
+	Added support for compiling and linking with external LZO instead of the bundled miniLZO.
+
+	A CD image loading hint will now be appended to the ROM image too large error message in certain circumstances.
+
+February 25, 2018:
+	PC-FX: Added a missing variable to save states.
+
+	(Re)Added backwards-compatibility "video.driver" setting value aliases.
+
+February 24, 2018:
+	NES: Misc minor fixes for a few bootleg mappers.
+
+	NES: Added missing data to VS Unisystem save states.
+
+	NES: Added missing variable to mapper 64 save states.
+
+	NES: Added missing save state support to the mapper 22 code.
+
+	NES: Fixed improper handling of an MMC1 variable in save states.
+
+February 22, 2018:
+	Fixed handling of the "osd.state_display_time" setting to allow a value of "0" to work as expected.
+
 -- 1.21.0-UNSTABLE: --
 
 February 19, 2018:
