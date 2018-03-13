@@ -185,7 +185,49 @@
 <div class="ContentBox">
  <h2 class="ContentBoxHead">News</h2>
  <div class="ContentBoxBody">
-<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5427&amp;th=1652#msg_5427">Mednafen 1.21.0-UNSTABLE</a><span style="float: right;">February 20, 2018 - 21:01 PST</span></h3><div class="ContentBoxBodySub"><b>Notable changes since 0.9.48:</b><br />
+<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5477&amp;th=1670#msg_5477">Mednafen 1.21.1</a><span style="float: right;">March 13, 2018 - 01:41 PDT</span></h3><div class="ContentBoxBodySub">Minor bugfix release.<br />
+<br />
+<div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('1745431558', 1);">ChangeLog</a><div align="left" id="1745431558" style="display: none;"><br />
+<pre>
+-- 1.21.1: --
+
+March 9, 2018:
+	Enabling the automatic save state loading/saving feature will no longer cause an error to be outputted on game load if the save state does not exist.
+
+March 3, 2018:
+	Added support for compiling and linking with external LZO instead of the bundled miniLZO.
+
+	A CD image loading hint will now be appended to the ROM image too large error message in certain circumstances.
+
+February 25, 2018:
+	PC-FX: Added a missing variable to save states.
+
+	(Re)Added backwards-compatibility &quot;video.driver&quot; setting value aliases.
+
+February 24, 2018:
+	NES: Misc minor fixes for a few bootleg mappers.
+
+	NES: Added missing data to VS Unisystem save states.
+
+	NES: Added missing variable to mapper 64 save states.
+
+	NES: Added missing save state support to the mapper 22 code.
+
+	NES: Fixed improper handling of an MMC1 variable in save states.
+
+February 22, 2018:
+	Fixed handling of the &quot;osd.state_display_time&quot; setting to allow a value of &quot;0&quot; to work as expected.
+</pre><br />
+</div></div><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.21.1.tar.xz" target="_blank">mednafen-1.21.1.tar.xz</a><br />
+<font size="-1">SHA-256: 848136e4b98d5a949d7691f6596564b20d5720e7d766e93deedc7832bbee2a40</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.21.1-win64.zip" target="_blank">mednafen-1.21.1-win64.zip</a><br />
+<font size="-1">SHA-256: b9db8d4d6bd2f3e9eafc55d2db26e8d00d1ccf43c51ff373bc68a742e930dc53</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.21.1-win32.zip" target="_blank">mednafen-1.21.1-win32.zip</a><br />
+<font size="-1">SHA-256: a4a7f9ec0e0c965e4c7e04bdf1965fb286be3c9fcae4df01980feaab4bec468b</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5427&amp;th=1652#msg_5427">Mednafen 1.21.0-UNSTABLE</a><span style="float: right;">February 20, 2018 - 21:01 PST</span></h3><div class="ContentBoxBodySub"><b>Notable changes since 0.9.48:</b><br />
 <ul>
 <li>Migrated to SDL2(building from source requires 2.0.5+).
 
@@ -792,166 +834,7 @@ January 25, 2017:
 <font size="-1">SHA-256: 6e31184c72b6f8d461f423ae6b235e9ab38143fe12d4dbfb5c2c50b5992660a5</font><br />
 <br />
 <a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.42-win32.zip" target="_blank">mednafen-0.9.42-win32.zip</a><br />
-<font size="-1">SHA-256: 7f2724faaca60f5bd2a39e19515d2bf9cdfc87024e3d455da7ec2a430a23cd3b</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=4770&amp;th=1404#msg_4770">Mednafen 0.9.41</a><span style="float: right;">January 21, 2017 - 11:16 PST</span></h3><div class="ContentBoxBodySub">The 64-bit Windows build is now compiled with gcc 4.9.4, but modified to produce slightly smaller and slightly faster Mednafen executables.  The patch is available as &quot;mednafen/patches/gcc-4.9.4-mingw-w64-noforcepic-smalljmptab.patch&quot; in the source tarball.<br />
-<br />
-The source tarball is now compressed with <b>xz</b> instead of <b>bzip2</b>.<br />
-<br />
-<b>Particularly notable changes since 0.9.39.2:</b><br />
-<ul>
-<li>Renamed settings &quot;*.pixshader&quot; to &quot;*.shader&quot;.
-<li>Added simple color TV CRT-approximating OpenGL shader, &quot;goat&quot;.
-<li>PSX: Added &quot;psx.input.analog_mode_ct.compare&quot; setting to control the combination of buttons used when the functionality controlled by the &quot;psx.input.analog_mode_ct&quot; setting is enabled.
-<li>SMS: Added settings &quot;sms.slstart&quot;, &quot;sms.slend&quot;, &quot;sms.slstartp&quot;, and &quot;sms.slendp&quot;.
-<li>SNES: Added setting &quot;snes.h_blend&quot;, default value of &quot;0&quot;, that when set to &quot;1&quot; will enable a horizontal blend/blur filter.
-<li>SS: Added setting &quot;ss.correct_aspect&quot;, default value of &quot;1&quot;, to allow the user to disable aspect ratio correction(not recommended, but whatever~).
-<li>SS: Added setting &quot;ss.h_overscan&quot;, default value of &quot;1&quot;, to allow the user to show less of the screen on the left and right sides by setting it to &quot;0&quot;.
-<li>SS: Added setting &quot;ss.h_blend&quot;, default value of &quot;0&quot;, that when set to &quot;1&quot; will enable a horizontal blend/blur filter(with a more noticeable effect on the	Saturn video modes with a higher horizontal resolution).
-<li>SS: Fixed the low volume problem in &quot;Daytona USA&quot;.
-<li>SS: Fixed missing/corrupted graphics of battle scenes in &quot;Grandia&quot;.
-<li>WonderSwan: Minor sound and graphics emulation accuracy improvements, from patches and suggestions provided by <a href="http&#58;&#47;&#47;daifukkat.su/" target="_blank">trap15</a>.
-</ul><br />
-<div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('138014204', 1);">ChangeLog</a><div align="left" id="138014204" style="display: none;"><br />
-<pre>
--- 0.9.41: --
-
-January 21, 2017:
-	SS: Implemented disc change IRQ on disc eject.
-
-January 20, 2017:
-	Replaced usage of trio_snprintf() to a fixed-size buffer for path construction in general.cpp with manual concatenation of std::string strings.
-
-January 18, 2017:
-	Use _beginthreadex() instead of CreateThread() on Windows, to avoid a small memory leak.
-
-	Now explicitly use 64-bit walltime functions on 32-bit Windows builds.
-
-January 17, 2017:
-	PCE, PCE_FAST: Added a missing sound emulation variable to save states.
-
-January 16, 2017:
-	SNES: Added setting &quot;snes.h_blend&quot;, default value of &quot;0&quot;, that when set to &quot;1&quot; will enable a horizontal blend/blur filter.
-
-January 15, 2017:
-	PCE: Improved SuperGrafx window handling in 10MHz dot clock modes.
-
-	GBA: Modified RTC emulation to not use standard C library walltime functions during emulation.
-
-	Wrapped various time functions, and dropped the dependencies on SDL time functions, in Time.cpp/Time.h.
-
-January 14, 2017:
-	WonderSwan: Fixed off-by-1 bugs in window coordinate evaluation, per tip from trap15.
-
-	WonderSwan: Fixed copyright notice headers to not allow distribution under versions of the GPL other than version 2(an oversight from 
-	back when the Cygne code was added to Mednafen).
-
-	WonderSwan: Applied sound and DMA emulation fixes from trap15; fixes rain sound effect in &quot;Star Hearts&quot;.  The changes did necessitate lowering
-	the overall WonderSwan sound emulation volume a bit to prevent excessive clipping, however.
-
-January 12, 2017:
-	SS: Fixed a logic error in the VDP2 rendering code; fixes battle scenes in &quot;Grandia&quot;.
-
-January 10, 2017:
-	SS: Removed a few bad entries in the internal region-correction database that were breaking the Korean releases of some games.
-
-January 9, 2017:
-	PCE, PCE_FAST: Added support for auto-enabling SuperGrafx emulation with CDs when a mode 1 data track has the 16-byte magic
-	&quot;4D 65 64 6E 61 66 65 6E 74 AB 90 19 42 62 7D E6&quot; at offset 0x86A(assuming 2048 bytes per sector), for homebrew and translations.
-
-January 7, 2017:
-	SS: Added emulation of the SCSP 18-bit DAC enable bit; fixes low volume problem in &quot;Daytona USA&quot;.
-
-	SS: Fixed some bugs that broke emulation on big-endian platforms.
-
-January 5, 2017:
-	Fixed an off-by-1 memory corruption bug in the debugger's memory editor relative bytestring search code.
-
-	VB: Finally commented out some debug printf()s.
-
-January 1, 2017:
-	Cleaned up code that passes video data from the game thread to the main thread, and replaced some volatile usage with atomics.
-
-December 31, 2016:
-	Fixed a large memory leak that occurred when saving screenshots with SHIFT+F9.
-
-	VB: Fixed a regression introduced in 0.9.39.2 that caused transient sound/note distortion on save state load.
-
-December 27, 2016:
-	Moved TCP/IP networking code into the core of Mednafen, and added support for non-blocking connects, so the Saturn emulation module can eventually use
-	it for modem emulation.
-
-December 25, 2016:
-	Modified configure script to (hopefully) compile in the Saturn emulation module when building for PPC64 and AArch64 architectures(in addition to x86_64).
-
-December 21, 2016:
-	Allow emulated digital button mappings to be used in AND mode(like command keys configured with SHIFT+F2) if the user manually
-	prefixes the &quot;/&amp;&amp;\ &quot; magic string to the mapping setting string in the configuration file.  Can be useful with emulated switches and mode toggle buttons,
-	but the in-emulator input configuration process will need to be revamped before enabling this mode for a mapping can be done in a sane and
-	more user-friendly manner.
-
-	Rewrote round_up_pow2() in math_ops.h to use MDFN_log2, which in turn uses MDFN_lzcount*(), since the major CPUs that Mednafen is going
-	to run on should have dedicated instructions to (at least indirectly) count leading zeroes.  Also changed the semantics to return 0 on overflow instead of 1.
-
-December 20, 2016:
-	SS: Now use leading-zero counting function from math_ops.h in the VDP2 rendering code, instead of using inline assembly.
-
-	Reorganized the leading/trailing bit counting functions in math_ops.h, added 32-bit and 64-bit trailing-bit counting functions, and added faster
-	variants where passing a 0 results in an undefined result.
-
-December 19, 2016:
-	Print out the game key used after a connection is established with netplay, when the game key is not empty.
-
-	SMS: Added settings &quot;sms.slstart&quot;, &quot;sms.slend&quot;, &quot;sms.slstartp&quot;, and &quot;sms.slendp&quot;.
-
-	Added some checks to help prevent a black screen when the scanlines effect is enabled via a &lt;system&gt;.scanlines setting and the effective Y scale is
-	too small(by forcing negative-value behavior in the case of interlaced video, or temporarily disabling the effect otherwise).
-
-December 18, 2016:
-	PSX: The functionality controlled by the &quot;psx.input.analog_mode_ct&quot; setting no longer interferes with netplay.
-
-	PSX: Added &quot;psx.input.analog_mode_ct.compare&quot; setting to control the combination of buttons used when the functionality controlled by the
-	&quot;psx.input.analog_mode_ct&quot; setting is enabled.
-
-	Modified build system to use $(localedir) instead of $(datadir)/locale for LOCALEDIR define.
-
-	Updated miniLZO to version 2.09.
-
-December 14, 2016:
-	SS: Added setting &quot;ss.h_blend&quot;, default value of &quot;0&quot;, that when set to &quot;1&quot; will enable a horizontal blend/blur filter(with a much noticeable effect on the
-	Saturn video modes with a higher horizontal resolution).
-
-December 10, 2016:
-	SS: Added setting &quot;ss.h_overscan&quot;, default value of &quot;1&quot;, to allow the user to show less of the screen on the left and right sides by setting it to &quot;0&quot;.
-
-December 9, 2016:
-	SS: Added setting &quot;ss.correct_aspect&quot;, default value of &quot;1&quot;, to allow the user to disable aspect ratio correction(not recommended, but whatever~).
-
-	Added simple TV CRT-approximating OpenGL shader, &quot;goat&quot;.
-
-December 8, 2016:
-	Renamed settings &quot;*.pixshader&quot; to &quot;*.shader&quot;.
-
-December 7, 2016:
-	Check for and use -no-pie instead of just -nopie in the configure script, to fix build failures on at least one platform.
-
-December 6, 2016:
-	Fixed half-source-pixel image offset bug in the &quot;autoip&quot;, &quot;ipxnoty&quot;, and &quot;ipynotx&quot; pixel shaders.
-
-	Fixed altivec.h header detection regression in 0.9.39.
-
-October 7, 2016:
-	Fixed a bug that caused input movie recording to produce broken recordings when done during netplay with an emulation module
-	that uses mid-frame sync functionality.
-</pre><br />
-</div></div><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.41.tar.xz" target="_blank">mednafen-0.9.41.tar.xz</a><br />
-<font size="-1">SHA-256: 74736b9b52a7ba6270b67ae8e6c876a887e0e26a00a7d96bdd49af17992aac47</font><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.41-win64.zip" target="_blank">mednafen-0.9.41-win64.zip</a><br />
-<font size="-1">SHA-256: 2eed5383624d781c34bc18cbe42ab51bf5a633161d71fdc68cf14bf0e9a768d5</font><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.41-win32.zip" target="_blank">mednafen-0.9.41-win32.zip</a><br />
-<font size="-1">SHA-256: ae6483a20f0c0aa900a2e14908d3c004fea056ffcef179c582e4f3f3c077f664</font></div></div><br> </div>
+<font size="-1">SHA-256: 7f2724faaca60f5bd2a39e19515d2bf9cdfc87024e3d455da7ec2a430a23cd3b</font></div></div><br> </div>
 </div>
 <br />
   <div class="CopyrightBox">
