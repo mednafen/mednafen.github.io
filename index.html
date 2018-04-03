@@ -185,7 +185,35 @@
 <div class="ContentBox">
  <h2 class="ContentBoxHead">News</h2>
  <div class="ContentBoxBody">
-<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5477&amp;th=1670#msg_5477">Mednafen 1.21.1</a><span style="float: right;">March 13, 2018 - 01:41 PDT</span></h3><div class="ContentBoxBodySub">Minor bugfix release.<br />
+<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5492&amp;th=1675#msg_5492">Mednafen 1.21.2</a><span style="float: right;">April  3, 2018 - 16:46 PDT</span></h3><div class="ContentBoxBodySub">This minor release updates Tremor to address a security vulnerability with Vorbis-encoded CD image audio tracks, and fixes graphical glitches in the Sega Saturn game &quot;Shining Force III - Scenario 2&quot;.<br />
+<br />
+<div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('1209766756', 1);">ChangeLog</a><div align="left" id="1209766756" style="display: none;"><br />
+<pre>
+-- 1.21.2: --
+
+April 2, 2018:
+	Updated bundled copy of Tremor to address a security vulnerability.
+
+	SS: Improved emulation of SCU DSP DMA to program RAM, per tests on a SS(still nowhere near perfect, the way it's implemented on hardware is kind of
+	horrible, but it should work ok if games use it how it's meant to be used); fixes graphical glitches in &quot;Shining Force III - Scenario 2&quot;, and perhaps
+	in the other &quot;Shining Force III&quot; games as well.
+
+	SS: Flush the prefetched SCU DSP instruction when PC is set via PPAF, instead of when END/ENDI executes or when execution is forcibly stopped, per tests on a SS.
+
+	SS: Disallow SCU DSP LOP from being written in a looped single instruction unless it's the final iteration, per tests on a SS.
+
+	SS: Allow SCU DSP LOP to underflow to 0xFFF with LPS and BTM, per tests on a SS.
+</pre><br />
+</div></div><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.21.2.tar.xz" target="_blank">mednafen-1.21.2.tar.xz</a><br />
+<font size="-1">SHA-256: 528b7ad6976182c451f7e7852f79fcc8e81e29005823f9c9bed816914bfd6da2</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.21.2-win64.zip" target="_blank">mednafen-1.21.2-win64.zip</a><br />
+<font size="-1">SHA-256: e4a1765fe9ee994fe3041772b698e4a26e3021e17ce981fc6179e9de61ecbc19</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.21.2-win32.zip" target="_blank">mednafen-1.21.2-win32.zip</a><br />
+<font size="-1">SHA-256: c291a2cbb9c3e3b78ebe58d9b8efb09c09abb33e47f52855784dbeea644bbfd8</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5477&amp;th=1670#msg_5477">Mednafen 1.21.1</a><span style="float: right;">March 13, 2018 - 01:41 PDT</span></h3><div class="ContentBoxBodySub">Minor bugfix release.<br />
 <br />
 <div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('1745431558', 1);">ChangeLog</a><div align="left" id="1745431558" style="display: none;"><br />
 <pre>
@@ -766,75 +794,7 @@ February 13, 2017:
 <font size="-1">SHA-256: 656c298fd28bfbd9f003537347971c41cb3ae759a23c95c3ecb22fa13a7748aa</font><br />
 <br />
 <a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.43-win32.zip" target="_blank">mednafen-0.9.43-win32.zip</a><br />
-<font size="-1">SHA-256: e8931cceb9d42943beca70e83f876c5d7f469fe510f63506e27f418b1673f6ad</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=4814&amp;th=1483#msg_4814">Mednafen 0.9.42</a><span style="float: right;">February  7, 2017 - 22:04 PST</span></h3><div class="ContentBoxBodySub"><b>Notable changes since 0.9.41:</b><br />
-<ul>
-<li>NES: Added support for iNES mapper 190.
-<li>SNES_FAUST: Added multitap support(enable via setting &quot;snes_faust.input.sport2.multitap&quot;).
-<li>SS: Fixed severely-flickering graphics in &quot;Virtua Cop&quot; and &quot;Virtua Cop 2&quot;.
-<li>SS: Fixed speed problems in &quot;Pocket Fighter&quot;.
-<li>SS: Fixed FMV tearing in &quot;Johnny Bazookatone&quot;.
-<li>SS: Fixed hang in &quot;GunBlaze-S&quot;.
-<li>SS: Fixed hangs in &quot;Virtua Fighter&quot; and &quot;Virtua Fighter Remix&quot;(still some graphical weirdness, though).
-<li>SS: Fixed hang in &quot;Zero Divide&quot;.
-<li>SS: Fixed missing sound problem in &quot;Arcade's Greatest Hits&quot;.
-<li>SS: Fixed missing sound and related issues in &quot;Ultimate Mortal Kombat 3&quot;.
-</ul><br />
-<div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('710221372', 1);">ChangeLog</a><div align="left" id="710221372" style="display: none;"><br />
-<pre>
--- 0.9.42: --
-
-February 7, 2017:
-	SS: Ignore lower bit of VDP1 sprite draw command texture base address when drawing using color mode 5, per tests on a SS; fixes some of the
-	graphical glitches in &quot;All-Star Baseball 97&quot;.
-
-February 6, 2017:
-	SS: Ignore writes to VDP1 registers via SCU DMA under certain conditions to approximate what happens on a SS; fixes hang in &quot;GunBlaze-S&quot;.
-
-	SS: Fixed handling of RSTCSR WOVF clearing, per tests on a SS.  Also changed the semantics of RSTCSRM a bit to simplify things, might want to change
-	WTCSRM, FTCSRM, etc. semantics too in the future for consistency...
-
-	SS: Fixed handling of WTCSR OVF clearing, per tests on a SS.
-
-	Updated tremor to revision 19427.
-
-	Updated libogg to version 1.3.2.
-
-	Fixed a bug that caused a crash if the user tried to select(via CTRL+SHIFT+[n]) a device on a non-existent virtual input port.
-
-February 5, 2017:
-	SNES-Faust: Added multitap support.
-
-February 3, 2017:
-	SS: Fixed a bug in the handling of M68K level 7 interrupts; fixes missing sound in &quot;Arcade's Greatest Hits&quot;.
-
-February 1, 2017:
-	SS: Suspend VDP1 command processing while an SCU DMA from SDRAM to VDP1 VRAM is active, to approximate how a SS behaves.  Fixes FMV tearing
-	in &quot;Johnny Bazookatone&quot;, and fubared graphics in &quot;Virtua Cop&quot; and &quot;Virtua Cop 2&quot;.
-
-January 31, 2017:
-	SS: Fixed handling of clearing FTCSR bits, per tests on a SS.
-
-January 30, 2017:
-	SS: Improved instruction timing(though still far from perfect); fixes speed problems in &quot;Pocket Fighter&quot;, reduces the size of the flickering
-	area in &quot;Lunar&quot;'s FMV, and fixes the crash that occurs immediately after gameplay starts in &quot;Virtua Fighter&quot; and &quot;Virtua Fighter Remix&quot;.
-
-January 26, 2017:
-	NES: Added support for iNES mapper 190.
-
-January 25, 2017:
-	SS: Clear SCU internal pending interrupt bit upon the SCU's acceptance of the IRQ to send to the SH-2, instead of when the SH-2 fetches the vector, per
-	tests on a SS.
-</pre><br />
-</div></div><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.42.tar.xz" target="_blank">mednafen-0.9.42.tar.xz</a><br />
-<font size="-1">SHA-256: 93e000286bd24ed5d39e6f67a22b950f3081aa71eeee1107a552246bbd3b5c25</font><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.42-win64.zip" target="_blank">mednafen-0.9.42-win64.zip</a><br />
-<font size="-1">SHA-256: 6e31184c72b6f8d461f423ae6b235e9ab38143fe12d4dbfb5c2c50b5992660a5</font><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.42-win32.zip" target="_blank">mednafen-0.9.42-win32.zip</a><br />
-<font size="-1">SHA-256: 7f2724faaca60f5bd2a39e19515d2bf9cdfc87024e3d455da7ec2a430a23cd3b</font></div></div><br> </div>
+<font size="-1">SHA-256: e8931cceb9d42943beca70e83f876c5d7f469fe510f63506e27f418b1673f6ad</font></div></div><br> </div>
 </div>
 <br />
   <div class="CopyrightBox">
