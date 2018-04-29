@@ -185,7 +185,46 @@
 <div class="ContentBox">
  <h2 class="ContentBoxHead">News</h2>
  <div class="ContentBoxBody">
-<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5492&amp;th=1675#msg_5492">Mednafen 1.21.2</a><span style="float: right;">April  3, 2018 - 16:46 PDT</span></h3><div class="ContentBoxBodySub">This minor release updates Tremor to address a security vulnerability with Vorbis-encoded CD image audio tracks, and fixes graphical glitches in the Sega Saturn game &quot;Shining Force III - Scenario 2&quot;.<br />
+<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5516&amp;th=1684#msg_5516">Mednafen 1.21.3</a><span style="float: right;">April 29, 2018 - 15:27 PDT</span></h3><div class="ContentBoxBodySub">This release fixes a regression introduced in 1.21.0-UNSTABLE that forced the user to manually create ~/.mednafen on UN*X systems if the directory didn't already exist, fixes broken 2xSaI-family scaler support(also a 1.21.0-UNSTABLE regression), and fixes problems with a handful of Sega Saturn games.<br />
+<br />
+<div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('1723742837', 1);">ChangeLog</a><div align="left" id="1723742837" style="display: none;"><br />
+<pre>
+-- 1.21.3: --
+
+April 29, 2018:
+	SNES: Fixed an off-by-1 bug in the PPU code that would cause writing past the end of the OAM tile list array.
+
+April 24, 2018:
+	SS: Added &quot;House of the Dead (Japan)&quot; to internal database of games to use the data cache read
+	bypass kludge with, to fix a game crash on the gun calibration screen.
+
+	SS: Added &quot;Virtua Fighter Kids (Java Tea Original)&quot; and &quot;World Series Baseball&quot; to internal database of games to use the data cache read
+	bypass kludge with, to fix gameplay glitches.
+
+April 22, 2018:
+	Removed some unnecessary memory allocations in the old settings to argument parsing glue code.
+
+	Fixed a crash bug with 2xSaI-family scalers during initialization(regression introduced in 1.21.0-UNSTABLE).
+
+	Create the Mednafen base directory(e.g. ~/.mednafen) before opening the lockfile to fix a startup error when the directory does not already exist(regression
+	introduced in 1.21.0-UNSTABLE).
+
+April 21, 2018:
+	SS: Added kludge to fix layer offset problem in &quot;Alien Trilogy&quot;.
+
+	SS: Added &quot;WipEout&quot; to internal database of games to use the data cache read bypass kludge with, to fix a hang that occurred when trying to exit gameplay
+	back to the main menu.
+</pre><br />
+</div></div><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.21.3.tar.xz" target="_blank">mednafen-1.21.3.tar.xz</a><br />
+<font size="-1">SHA-256: 2e761e8834b098b7f1ab35dccaa6d2be715ee9106cf40af4919f6ca4b99ee3c6</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.21.3-win64.zip" target="_blank">mednafen-1.21.3-win64.zip</a><br />
+<font size="-1">SHA-256: 5b6e7b017c0b0741f375d0803f54dcb417d9e4d926864f2b039c694aac10a362</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.21.3-win32.zip" target="_blank">mednafen-1.21.3-win32.zip</a><br />
+<font size="-1">SHA-256: 6fc62a7a3cb42a3bef1de9856aa2bf00701e4b64fcdc2b6c76e7135a127840d4</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5492&amp;th=1675#msg_5492">Mednafen 1.21.2</a><span style="float: right;">April  3, 2018 - 16:46 PDT</span></h3><div class="ContentBoxBodySub">This minor release updates Tremor to address a security vulnerability with Vorbis-encoded CD image audio tracks, and fixes graphical glitches in the Sega Saturn game &quot;Shining Force III - Scenario 2&quot;.<br />
 <br />
 <div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('1209766756', 1);">ChangeLog</a><div align="left" id="1209766756" style="display: none;"><br />
 <pre>
@@ -737,64 +776,7 @@ March 7, 2017:
 <font size="-1">SHA-256: 31950987af0d34b000766f57347e84a1b5f3f2d016792ed7deb74e4a9a565d0f</font><br />
 <br />
 <a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.44.1-win32.zip" target="_blank">mednafen-0.9.44.1-win32.zip</a><br />
-<font size="-1">SHA-256: 447bb75e9c0c0c85e8614699ade138d84a64db0dc087e0fa010bd062ea03d4c7</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=4860&amp;th=1493#msg_4860">Mednafen 0.9.43</a><span style="float: right;">February 26, 2017 - 09:07 PST</span></h3><div class="ContentBoxBodySub"><b>Notable changes since 0.9.42:</b><br />
-<ul>
-<li>PSX: Reduced DualShock rumble latency by 1 frame.
-<li>SS: Added multitap emulation, enableable via settings &quot;<a href="https&#58;&#47;&#47;mednafen.github.io/documentation/ss.html#ss.input.sport1.multitap" target="_blank">ss.input.sport1.multitap</a>&quot; and &quot;<a href="https&#58;&#47;&#47;mednafen.github.io/documentation/ss.html#ss.input.sport2.multitap" target="_blank">ss.input.sport2.multitap</a>&quot;.
-<li>SS: Added steering wheel emulation(for &quot;Virtua Racing&quot;, and other racing games that lack 3D Pad analog support).
-<li>SS: Added Mission Stick and Dual Mission Stick emulation.
-<li>SS: Added 101-key US keyboard emulation.
-<li>SS: Fixed hang in &quot;F1 Challenge&quot;.
-<li>SS: Fixed missing voice acting and related hangs in &quot;Magic Knight Rayearth&quot;.
-<li>Reworked how input grabbing is handled.  The new way uses only one key combo(<a href="https&#58;&#47;&#47;mednafen.github.io/documentation/mednafen.html#command.toggle_grab" target="_blank">CTRL+SHIFT+Menu</a>), and will adapt its behavior based on any keyboards being selected on any virtual input ports or not(refer to the documentation for <a href="https&#58;&#47;&#47;mednafen.github.io/documentation/mednafen.html#Section_input_grabbing" target="_blank">full details</a>).  A new setting is added, &quot;command.toggle_grab&quot;, and two settings were removed, &quot;command.toggle_grab_input&quot; and &quot;command.toggle_cidisable&quot;.
-<li>Emulated keyboard(FKB, Tsushin, Saturn) key state is now only updated when input grabbing is toggled on.
-</ul><br />
-<div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('1471204594', 1);">ChangeLog</a><div align="left" id="1471204594" style="display: none;"><br />
-<pre>
--- 0.9.43: --
-
-February 24, 2017:
-	Reworked how input grabbing is handled.  The new way uses only one key combo(CTRL+SHIFT+Menu), and will adapt its behavior based on any keyboards
-	being selected on any virtual input ports or not(refer to the documentation for full details).  A new setting is added, &quot;command.toggle_grab&quot;, and
-	two settings were removed, &quot;command.toggle_grab_input&quot; and &quot;command.toggle_cidisable&quot;.
-
-	Emulated keyboard(FKB, Tsushin, Saturn) key state is now only updated when input grabbing is toggled on.
-
-February 22, 2017:
-	SS: Fixed SMPC read handling of an empty input port.
-
-	SS: Implemented emulation of SMPC 0-byte port read mode.
-
-	PSX: Reduced rumble latency by 1 frame.
-
-February 20, 2017:
-	Reworked how keyboard key state is handled, to prevent extremely short button presses from being lost(like what can happen with the Pause key, or
-	other keys when slow-forwarding is active).
-
-	SS: Added 101-key US keyboard emulation.
-
-February 17, 2017:
-	SS: Allow SMPC commands to be dual-issued; fixes hang in &quot;F1 Challenge&quot;, and hangs/missing sound in &quot;Magic Knight Rayearth&quot;.
-
-	SS: Added emulation of the 6-Player Adaptor(multitap).
-
-February 15, 2017:
-	SS: Added emulation of the Mission Stick and Dual Mission Sticks.
-
-February 13, 2017:
-	SS: Added emulation of the steering wheel(&quot;Arcade Racer&quot;), for use with &quot;Virtua Racing&quot;, &quot;High Velocity - Mountain Racing Challenge&quot;,
-	&quot;The Need for Speed&quot;, and other Saturn racing games that apparently lack 3D pad support.
-</pre><br />
-</div></div><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.43.tar.xz" target="_blank">mednafen-0.9.43.tar.xz</a><br />
-<font size="-1">SHA-256: b8305914cdf297fe6483219fa10c3fa14116fff8eed02f61326a0e32dd350f4d</font><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.43-win64.zip" target="_blank">mednafen-0.9.43-win64.zip</a><br />
-<font size="-1">SHA-256: 656c298fd28bfbd9f003537347971c41cb3ae759a23c95c3ecb22fa13a7748aa</font><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.43-win32.zip" target="_blank">mednafen-0.9.43-win32.zip</a><br />
-<font size="-1">SHA-256: e8931cceb9d42943beca70e83f876c5d7f469fe510f63506e27f418b1673f6ad</font></div></div><br> </div>
+<font size="-1">SHA-256: 447bb75e9c0c0c85e8614699ade138d84a64db0dc087e0fa010bd062ea03d4c7</font></div></div><br> </div>
 </div>
 <br />
   <div class="CopyrightBox">
