@@ -8,10 +8,10 @@ For example, remove the "%M" specifier to simulate setting the "dfmd5" setting t
                 %b      -       Mednafen base directory (no trailing slash)
                 %d      -       Loaded file base directory("/games/nintendo/megaman.nes" -> "/games/nintendo")
                 %f      -       File base("/games/nintendo/megaman.nes" -> "megaman")
-                %F      -       Same as %f, but replaced with emulation module's short name with recognized multi-CD CD sets.
-                %m      -       MD5 hash of the currently loaded game.
+                %F      -       Same as %f since version 1.22.0.
+                %m      -       Hash of the currently loaded game.
                 %M      -       Empty for first evaluation per full path construction, then filled with the game's
-                                MD5 hash(or the game set's MD5 hash ID for multi-CD CD sets) followed by a period.
+                                hash followed by a period.
 				(Not available for the filesys.fname_snap string)
 
                 %e      -       Loaded file extension("/games/nintendo/megaman.nes" -> ".nes")

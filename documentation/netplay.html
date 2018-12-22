@@ -9,11 +9,21 @@
  <body>
   <center><h1><img alt="Mednafen" src="mednafen.png" width="696" height="204"></h1></center>
   <center><h1>Netplay Documentation</h1></center>
-  <center><i>Last updated April 29, 2018<br>Valid as of 1.21.3</i></center>
+  <center><i>Last updated December 20, 2018<br>Valid as of 1.22.0-UNSTABLE</i></center>
  <p></p>
  <b>Table of Contents:</b>
  <ul><li><a href="#Section_intro">Introduction</a><ul></ul></li><li><a href="#Section_server_setup">Setting up the Server</a><ul></ul></li><li><a href="#Section_using_console">Using Mednafen's netplay console</a><ul></ul></li></ul><hr width="100%">
-<h2><a name="Section_intro">Introduction</a></h2><p></p> (To be written; topics: standalone-server based, potential for losing saved games, save state usage, latency issues, bandwidth usage)
+<h2><a name="Section_intro">Introduction</a></h2><p></p> <p>
+ Mednafen's netplay is standalone-server based, with multiple clients(players) connecting to the same server.  Save states are utilized upon connection, and whenever
+ a player loads a save state on their end, so having decent bandwidth is critical, especially for newer systems with large save states like PS1 and Sega Saturn.
+ Since nonvolatile memories(save RAM, floppy disks, etc.) are preserved in save states, you may want to backup any important save game files before netplaying
+ with the corresponding game(s).  Using a different Mednafen installation, or Mednafen base directory, solely for netplay, is an option as well.  <font color="yellow">Be aware that the utilization of save states does bring about some potential <a href="mednafen.html#Section_security_savestates">security issues</a>.</font>
+ </p>
+
+ <p>
+ Players with lower ping times to the server will have a latency/lag advantage.  To reduce latency, it's recommended to make the setting changes described <a href="mednafen.html#Section_minimize_video_lag">here</a>.  If emulating SNES
+ games, try the alternate <a href="snes_faust.html">snes_faust</a> emulation module, with setting "<a href="snes_faust.html#snes_faust.spex">snes_faust.spex</a>" set to "1".
+ </p>
 <hr width="100%">
 
 <h2><a name="Section_server_setup">Setting up the Server</a></h2><p></p>  <p>

@@ -9,10 +9,10 @@
  <body>
   <center><h1><img alt="Mednafen" src="mednafen.png" width="696" height="204"></h1></center>
   <center><h1>General Documentation</h1></center>
-  <center><i>Last updated April 29, 2018<br>Valid as of 1.21.3</i></center>
+  <center><i>Last updated December 20, 2018<br>Valid as of 1.22.0-UNSTABLE</i></center>
  <p></p>
  <b>Table of Contents:</b>
- <ul><li><a href="#Section_introduction">Introduction</a><ul><li><a href="#Section_base_directory">Base Directory</a><ul></ul></li></ul></li><li><a href="#Section_core_features">Core Features</a><ul><li><a href="#Section_cdrom_emulation">CD Emulation</a><ul><li><a href="#Section_cd_images">Compact Disc Images</a><ul></ul></li><li><a href="#Section_multicd_games">Multiple-CD Games</a><ul></ul></li><li><a href="#Section_cdg">CD+G</a><ul></ul></li><li><a href="#Section_photocdportfolio">PhotoCD Portfolio</a><ul></ul></li></ul></li></ul></li><li><a href="#Section_security">Security Issues</a><ul><li><a href="#Section_security_savestates">Save States</a><ul></ul></li><li><a href="#Section_security_includes">CD images and PSF(PSF1, GSF, etc.) Files</a><ul></ul></li><li><a href="#Section_security_netplay">Network Play</a><ul></ul></li></ul></li><li><a href="#Section_using">Using Mednafen</a><ul><li><a href="#Section_key_assignments">Key Assignments</a><ul></ul></li><li><a href="#Section_input_grabbing">Input Grabbing</a><ul></ul></li><li><a href="#Section_remapping_input">Remapping Buttons and Keys</a><ul></ul></li><li><a href="#Section_command_line">Command-line</a><ul></ul></li><li><a href="#Section_config_files">Configuration Files</a><ul></ul></li><li><a href="#Global+Settings+Reference">Global Settings Reference</a><ul></ul></li><li><a href="#Section_firmware_bios">Firmware/BIOS</a><ul></ul></li><li><a href="#Section_custom_palettes">Custom Palettes</a><ul></ul></li><li><a href="#Section_ips_patching">Automatic IPS Patching</a><ul></ul></li></ul></li><li><a href="#Section_advanced">Advanced Usage</a><ul><li><a href="#Section_lag">Minimizing video/audio/input Lag</a><ul><li><a href="#Section_lag_hardware">Hardware Selection</a><ul></ul></li><li><a href="#Section_minimize_video_lag">Settings to Minimize Video Lag</a><ul></ul></li><li><a href="#Section_minimize_audio_lag">Settings to Minimize Audio Lag</a><ul></ul></li></ul></li><li><a href="#Section_input_mapping_format">Input Mapping Settings Format</a><ul><li><a href="#Section_ims_keyboard">Keyboard</a><ul></ul></li><li><a href="#Section_ims_mouse">Mouse</a><ul></ul></li><li><a href="#Section_ims_joystick">Joystick</a><ul></ul></li></ul></li></ul></li><li><a href="#Section_troubleshooting">Troubleshooting and Common Solutions</a><ul><li><a href="#Section_troubleshooting_nosoundlinux">No sound output on Linux.</a><ul></ul></li><li><a href="#Section_troubleshooting_configcrlf">Configuration file is a mess in Notepad in Windows.</a><ul></ul></li></ul></li><li>Emulation Module Documentation<ul><li><a href="lynx.html">Atari Lynx</a> [lynx]<li><a href="cdplay.html">CD-DA Player</a> [cdplay]<li><a href="gb.html">GameBoy (Color)</a> [gb]<li><a href="gba.html">GameBoy Advance</a> [gba]<li><a href="ngp.html">Neo Geo Pocket (Color)</a> [ngp]<li><a href="nes.html">Nintendo Entertainment System/Famicom</a> [nes]<li><a href="pce_fast.html">PC Engine (CD)/TurboGrafx 16 (CD)/SuperGrafx</a> [pce_fast]<li><a href="pce.html">PC Engine (CD)/TurboGrafx 16 (CD)/SuperGrafx</a> [pce]<li><a href="pcfx.html">PC-FX</a> [pcfx]<li><a href="gg.html">Sega Game Gear</a> [gg]<li><a href="md.html">Sega Genesis/MegaDrive</a> [md]<li><a href="sms.html">Sega Master System</a> [sms]<li><a href="ss.html">Sega Saturn</a> [ss]<li><a href="ssfplay.html">Sega Saturn Sound Format Player</a> [ssfplay]<li><a href="psx.html">Sony PlayStation</a> [psx]<li><a href="snes_faust.html">Super Nintendo Entertainment System/Super Famicom</a> [snes_faust]<li><a href="snes.html">Super Nintendo Entertainment System/Super Famicom</a> [snes]<li><a href="vb.html">Virtual Boy</a> [vb]<li><a href="wswan.html">WonderSwan</a> [wswan]</ul></li><li><a href="debugger.html">Debugger</a><li><a href="netplay.html">Network Play</a><li><a href="#Section_legal">Licenses, Copyright Notices, and Code Credits</a><ul><li><a href="#Section_legal_libmpcdec">libmpcdec</a><ul></ul></li><li><a href="#Section_legal_tremor">Tremor</a><ul></ul></li><li><a href="#Section_legal_gb_snd_emu">Gb_Snd_Emu</a><ul></ul></li><li><a href="#Section_legal_blip_buffer">Blip_Buffer</a><ul></ul></li><li><a href="#Section_legal_sms_snd_emu">Sms_Snd_Emu(base for T6W28_Apu NGP code)</a><ul></ul></li><li><a href="#Section_legal_handy">Handy</a><ul></ul></li><li><a href="#Section_legal_pc2e">PC2e (Used in portions of PC Engine CD emulation)</a><ul></ul></li><li><a href="#Section_legal_scale2x">Scale2x</a><ul></ul></li><li><a href="#Section_legal_hqnx">hq2x, hq3x, hq4x</a><ul></ul></li><li><a href="#Section_legal_nes_ntsc">nes_ntsc</a><ul></ul></li><li><a href="#Section_legal_2xsai">2xSaI</a><ul></ul></li><li><a href="#Section_legal_vba">VisualBoyAdvance GameBoy and GBA code</a><ul></ul></li><li><a href="#Section_legal_trio">trio</a><ul></ul></li><li><a href="#Section_legal_md5">MD5 Hashing</a><ul></ul></li><li><a href="#Section_legal_v810">V810 Emulator</a><ul></ul></li><li><a href="#Section_legal_minilzo">MiniLZO</a><ul></ul></li><li><a href="#Section_legal_fuse">Fuse Z80 emulation code</a><ul></ul></li><li><a href="#Section_legal_neopop">NeoPop Neo Geo Pocket (Color) Code</a><ul></ul></li><li><a href="#Section_legal_jrevdct">PC-FX MJPEG Decoding</a><ul></ul></li><li><a href="#Section_legal_emu2413">VRC7 Sound Emulation</a><ul></ul></li><li><a href="#Section_legal_v30mz">NEC V30MZ Emulator</a><ul></ul></li><li><a href="#Section_legal_v30mzdis">NEC V30MZ disassembler(modified BOCHS x86 disassembler)</a><ul></ul></li><li><a href="#Section_legal_cygne">Cygne</a><ul></ul></li><li><a href="#Section_legal_fceu">FCE Ultra</a><ul></ul></li><li><a href="#Section_legal_quicklz">QuickLZ</a><ul></ul></li><li><a href="#Section_legal_cdrdao">Q-Subchannel CRC16 Code</a><ul></ul></li><li><a href="#Section_legal_sms_plus">SMS Plus</a><ul></ul></li><li><a href="#Section_legal_genesis_plus">Genesis Plus</a><ul></ul></li><li><a href="#Section_legal_genesis_plus_gx">Genesis Plus GX</a><ul></ul></li><li><a href="#Section_legal_emu2413_sms">EMU2413(used in SMS emulation)</a><ul></ul></li><li><a href="#Section_legal_dvdisaster">CD-ROM data correction code</a><ul></ul></li><li><a href="#Section_legal_ym2612">YM2612 Emulator</a><ul></ul></li><li><a href="#Section_legal_svp_ssp16">Sega Genesis SVP/SSP16 Emulator</a><ul></ul></li><li><a href="#Section_legal_speex">Speex Resampler</a><ul></ul></li><li><a href="#Section_legal_sabr">SABR v3.0 Shader</a><ul></ul></li><li><a href="#Section_legal_ffmpeg">ffmpeg cputest</a><ul></ul></li></ul></li></ul><hr width="100%">
+ <ul><li><a href="#Section_introduction">Introduction</a><ul><li><a href="#Section_base_directory">Base Directory</a><ul></ul></li></ul></li><li><a href="#Section_core_features">Core Features</a><ul><li><a href="#Section_cdrom_emulation">CD Emulation</a><ul><li><a href="#Section_cd_images">Compact Disc Images</a><ul></ul></li><li><a href="#Section_multicd_games">Multiple-CD Games</a><ul></ul></li><li><a href="#Section_cdg">CD+G</a><ul></ul></li><li><a href="#Section_photocdportfolio">PhotoCD Portfolio</a><ul></ul></li></ul></li></ul></li><li><a href="#Section_security">Security Issues</a><ul><li><a href="#Section_security_savestates">Save States</a><ul></ul></li><li><a href="#Section_security_includes">CD images and PSF(PSF1, GSF, etc.) Files</a><ul></ul></li><li><a href="#Section_security_netplay">Network Play</a><ul></ul></li></ul></li><li><a href="#Section_using">Using Mednafen</a><ul><li><a href="#Section_key_assignments">Key Assignments</a><ul></ul></li><li><a href="#Section_input_grabbing">Input Grabbing</a><ul></ul></li><li><a href="#Section_remapping_input">Remapping Buttons and Keys</a><ul></ul></li><li><a href="#Section_command_line">Command-line</a><ul></ul></li><li><a href="#Section_config_files">Configuration Files</a><ul></ul></li><li><a href="#Global+Settings+Reference">Global Settings Reference</a><ul></ul></li><li><a href="#Section_firmware_bios">Firmware/BIOS</a><ul></ul></li><li><a href="#Section_custom_palettes">Custom Palettes</a><ul></ul></li><li><a href="#Section_ips_patching">Automatic IPS Patching</a><ul></ul></li></ul></li><li><a href="#Section_advanced">Advanced Usage</a><ul><li><a href="#Section_lag">Minimizing video/audio/input Lag</a><ul><li><a href="#Section_lag_hardware">Hardware Selection</a><ul></ul></li><li><a href="#Section_minimize_video_lag">Settings to Minimize Video Lag</a><ul></ul></li><li><a href="#Section_minimize_audio_lag">Settings to Minimize Audio Lag</a><ul></ul></li></ul></li><li><a href="#Section_input_mapping_format">Input Mapping Settings Format</a><ul><li><a href="#Section_ims_keyboard">Keyboard</a><ul></ul></li><li><a href="#Section_ims_mouse">Mouse</a><ul></ul></li><li><a href="#Section_ims_joystick">Joystick</a><ul></ul></li></ul></li></ul></li><li><a href="#Section_troubleshooting">Troubleshooting and Common Solutions</a><ul><li><a href="#Section_troubleshooting_nosoundlinux">No sound output on Linux.</a><ul></ul></li><li><a href="#Section_troubleshooting_configcrlf">Configuration file is a mess in Notepad in Windows.</a><ul></ul></li></ul></li><li>Emulation Module Documentation<ul><li><a href="apple2.html">Apple II/II+</a> [apple2]<li><a href="lynx.html">Atari Lynx</a> [lynx]<li><a href="cdplay.html">CD-DA Player</a> [cdplay]<li><a href="gb.html">GameBoy (Color)</a> [gb]<li><a href="gba.html">GameBoy Advance</a> [gba]<li><a href="ngp.html">Neo Geo Pocket (Color)</a> [ngp]<li><a href="nes.html">Nintendo Entertainment System/Famicom</a> [nes]<li><a href="pce.html">PC Engine (CD)/TurboGrafx 16 (CD)/SuperGrafx</a> [pce]<li><a href="pce_fast.html">PC Engine (CD)/TurboGrafx 16 (CD)/SuperGrafx</a> [pce_fast]<li><a href="pcfx.html">PC-FX</a> [pcfx]<li><a href="gg.html">Sega Game Gear</a> [gg]<li><a href="md.html">Sega Genesis/MegaDrive</a> [md]<li><a href="sms.html">Sega Master System</a> [sms]<li><a href="ss.html">Sega Saturn</a> [ss]<li><a href="ssfplay.html">Sega Saturn Sound Format Player</a> [ssfplay]<li><a href="psx.html">Sony PlayStation</a> [psx]<li><a href="snes_faust.html">Super Nintendo Entertainment System/Super Famicom</a> [snes_faust]<li><a href="snes.html">Super Nintendo Entertainment System/Super Famicom</a> [snes]<li><a href="vb.html">Virtual Boy</a> [vb]<li><a href="wswan.html">WonderSwan</a> [wswan]</ul></li><li><a href="debugger.html">Debugger</a><li><a href="netplay.html">Network Play</a><li><a href="#Section_legal">Licenses, Copyright Notices, and Code Credits</a><ul><li><a href="#Section_legal_libmpcdec">libmpcdec</a><ul></ul></li><li><a href="#Section_legal_tremor">Tremor</a><ul></ul></li><li><a href="#Section_legal_minilzo">MiniLZO</a><ul></ul></li><li><a href="#Section_legal_quicklz">QuickLZ</a><ul></ul></li><li><a href="#Section_legal_trio">trio</a><ul></ul></li><li><a href="#Section_legal_speex">Speex Resampler</a><ul></ul></li><li><a href="#Section_legal_ffmpeg">ffmpeg cputest</a><ul></ul></li><li><a href="#Section_legal_dvdisaster">CD-ROM data correction code</a><ul></ul></li><li><a href="#Section_legal_scale2x">Scale2x</a><ul></ul></li><li><a href="#Section_legal_hqnx">hq2x, hq3x, hq4x</a><ul></ul></li><li><a href="#Section_legal_2xsai">2xSaI</a><ul></ul></li><li><a href="#Section_legal_sabr">SABR v3.0 Shader</a><ul></ul></li><li><a href="#Section_legal_nes_ntsc">nes_ntsc</a><ul></ul></li><li><a href="#Section_legal_gb_snd_emu">Gb_Snd_Emu</a><ul></ul></li><li><a href="#Section_legal_blip_buffer">Blip_Buffer</a><ul></ul></li><li><a href="#Section_legal_sms_snd_emu">Sms_Snd_Emu(base for T6W28_Apu NGP code)</a><ul></ul></li><li><a href="#Section_legal_v810">V810 Emulator</a><ul></ul></li><li><a href="#Section_legal_fuse">Fuse Z80 emulation code</a><ul></ul></li><li><a href="#Section_legal_jrevdct">PC-FX MJPEG Decoding</a><ul></ul></li><li><a href="#Section_legal_emu2413">VRC7 Sound Emulation</a><ul></ul></li><li><a href="#Section_legal_v30mz">NEC V30MZ Emulator</a><ul></ul></li><li><a href="#Section_legal_v30mzdis">NEC V30MZ disassembler(modified BOCHS x86 disassembler)</a><ul></ul></li><li><a href="#Section_legal_emu2413_sms">EMU2413(used in SMS emulation)</a><ul></ul></li><li><a href="#Section_legal_ym2612">YM2612 Emulator</a><ul></ul></li><li><a href="#Section_legal_svp_ssp16">Sega Genesis SVP/SSP16 Emulator</a><ul></ul></li><li><a href="#Section_legal_pc2e">PC2e (Used in portions of PC Engine CD emulation)</a><ul></ul></li><li><a href="#Section_legal_handy">Handy</a><ul></ul></li><li><a href="#Section_legal_vba">VisualBoyAdvance GameBoy and GBA code</a><ul></ul></li><li><a href="#Section_legal_neopop">NeoPop Neo Geo Pocket (Color) Code</a><ul></ul></li><li><a href="#Section_legal_cygne">Cygne</a><ul></ul></li><li><a href="#Section_legal_fceu">FCE Ultra</a><ul></ul></li><li><a href="#Section_legal_sms_plus">SMS Plus</a><ul></ul></li><li><a href="#Section_legal_genesis_plus">Genesis Plus</a><ul></ul></li><li><a href="#Section_legal_genesis_plus_gx">Genesis Plus GX</a><ul></ul></li></ul></li></ul><hr width="100%">
  <h2><a name="Section_introduction">Introduction</a></h2><p></p> <p>
  This main document covers general Mednafen usage, generally regardless of which system is being emulated.  Documentation covering key assignments, settings, and related information for each system emulation module is linked to in the table of contents under "Emulation Module Documentation".
  </p>
@@ -24,7 +24,7 @@
  </p>
   <h3><a name="Section_base_directory">Base Directory</a></h3><p></p>   <p>
     Mednafen's "base directory" is the directory under which Mednafen stores its data and
-    looks for various auxillary data by default.  If the "<b>HOME</b>" environment variable is set, it will be suffixed with "/.mednafen"
+    looks for various auxiliary data by default.  If the "<b>HOME</b>" environment variable is set, it will be suffixed with "/.mednafen"
     and used as the base directory(in other words ~/.mednafen, or $HOME/.mednafen).  If the "<b>MEDNAFEN_HOME</b>" environment variable is set,
     it will be used as the base directory.  If neither the "HOME" nor "MEDNAFEN_HOME" environment
     variable is set, and the current user has an entry in the password file, the corresponding home directory
@@ -158,7 +158,7 @@
  <tr><td>LALT&nbsp;+&nbsp;C</td><td>Toggle cheat console.<br><b>Note</b>: Will not respond to RALT/AltGr even if remapped.</td><td>togglecheatview</td></tr>
  <tr><td>ALT&nbsp;+&nbsp;T</td><td>Toggle cheats active.</td><td>togglecheatactive</td></tr>
  <tr><td>T</td><td>Enable network play console input.</td><td>togglenetview</td></tr>
- <tr><td>LALT&nbsp;+&nbsp;D</td><td>Toggle debugger.<br><b>Note</b>: Will not respond to RALT/AltGr even if remapped.</td><td>toggle_debugger</td></tr>
+ <tr><td>LALT&nbsp;+&nbsp;D</td><td>Toggle <a href="debugger.html">debugger</a>.<br><b>Note</b>: Will not respond to RALT/AltGr even if remapped.</td><td>toggle_debugger</td></tr>
  <tr><th>Key(s):</th><th>Action:</th><th>Configuration String:</th></tr>
  <tr><td>`</td><td>Fast-forward.</td><td>fast_forward</td></tr>
  <tr><td>\</td><td>Slow-forward.</td><td>slow_forward</td></tr>
@@ -180,6 +180,9 @@
  <tr><td>SHIFT + F2</td><td>Like F2, but after configuration completes, to activate the configured command key will require all buttons configured to it to be in a pressed state simultaneously to trigger the action.  Note that keyboard modifier keys(CTRL, ALT, SHIFT) are still treated as modifiers and not discrete keys.<br><br>Especially useful in conjunction with the <a href="#ckdelay">ckdelay</a> setting.</td><td>input_configc_am</td></tr>
  <tr><td nowrap>CTRL + SHIFT + Menu</td><td><a name="command.toggle_grab">Toggle <a href="#Section_input_grabbing">input grabbing</a>(for emulated mice and keyboards).</a></td><td>toggle_grab</td></tr>
  <tr><th>Key(s):</th><th>Action:</th><th>Configuration String:</th></tr>
+ <tr><td>SHIFT + F6</td><td>Select drive.</td><td>select_drive</td></tr>
+ <tr><td>F6</td><td>Select medium(CD, floppy disk, etc.) for selected drive.</td><td>select_disk</td></tr>
+ <tr><td>F8</td><td>Insert/Eject medium(CD, floppy disk, etc.) for selected drive.</td><td>insert_eject_disk</td></tr>
  <tr><td>F10</td><td>Reset.</td><td>reset</td></tr>
  <tr><td>F11</td><td>Hard reset(toggle power switch).</td><td>power</td></tr>
  <tr><td>Escape/F12</td><td>Exit(the emulator, or netplay chat mode).</td><td>exit</td></tr>
@@ -292,10 +295,10 @@
 <tr class="RowB"><td class="ColA">ffspeed</td><td class="ColB">real</td><td class="ColC">1 <i>through</i> 15</td><td class="ColD">4</td><td class="ColE"><a name="ffspeed">Fast-forwarding speed multiplier.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
 <tr class="RowA"><td class="ColA">fftoggle</td><td class="ColB">boolean</td><td class="ColC">0<br>1</td><td class="ColD">0</td><td class="ColE"><a name="fftoggle">Treat the fast-forward button as a toggle.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
 <tr class="RowB"><td class="ColA">filesys.fname_movie</td><td class="ColB">string</td><td class="ColC">&nbsp;</td><td class="ColD">%f.%M%p.%x</td><td class="ColE"><a name="filesys.fname_movie">Format string for movie filename.</a><p>See <a href="fname_format.txt">fname_format.txt</a> for more information.  Edit at your own risk.</p></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
-<tr class="RowA"><td class="ColA">filesys.fname_sav</td><td class="ColB">string</td><td class="ColC">&nbsp;</td><td class="ColD">%F.%M%x</td><td class="ColE"><a name="filesys.fname_sav">Format string for save games filename.</a><p>WARNING: %x should always be included, otherwise you run the risk of overwriting save data for games that create multiple save data files.<br>
+<tr class="RowA"><td class="ColA">filesys.fname_sav</td><td class="ColB">string</td><td class="ColC">&nbsp;</td><td class="ColD">%f.%M%x</td><td class="ColE"><a name="filesys.fname_sav">Format string for save games filename.</a><p>WARNING: %x should always be included, otherwise you run the risk of overwriting save data for games that create multiple save data files.<br>
 <br>
 See <a href="fname_format.txt">fname_format.txt</a> for more information.  Edit at your own risk.</p></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
-<tr class="RowB"><td class="ColA">filesys.fname_savbackup</td><td class="ColB">string</td><td class="ColC">&nbsp;</td><td class="ColD">%F.%m%z%p.%x</td><td class="ColE"><a name="filesys.fname_savbackup">Format string for save game backups filename.</a><p>WARNING: %x and %p should always be included.<br>
+<tr class="RowB"><td class="ColA">filesys.fname_savbackup</td><td class="ColB">string</td><td class="ColC">&nbsp;</td><td class="ColD">%f.%m%z%p.%x</td><td class="ColE"><a name="filesys.fname_savbackup">Format string for save game backups filename.</a><p>WARNING: %x and %p should always be included.<br>
 <br>
 See <a href="fname_format.txt">fname_format.txt</a> for more information.  Edit at your own risk.</p></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
 <tr class="RowA"><td class="ColA">filesys.fname_snap</td><td class="ColB">string</td><td class="ColC">&nbsp;</td><td class="ColD">%f-%p.%x</td><td class="ColE"><a name="filesys.fname_snap">Format string for screen snapshot filenames.</a><p>WARNING: %x or %p should always be included, otherwise there will be a conflict between the numeric counter text file and the image data file.<br>
@@ -357,7 +360,7 @@ Note: This is not the "sound buffer size" setting, that would be "sound.buffer_t
 <tr class="RowA"><td class="ColA">srwframes</td><td class="ColB">integer</td><td class="ColC">10 <i>through</i> 99999</td><td class="ColD">600</td><td class="ColE"><a name="srwframes">Number of frames to keep states for when state rewinding is enabled.</a><p>WARNING: Setting this to a large value may cause excessive RAM usage in some circumstances, such as with games that stream large volumes of data off of CDs.</p></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
 <tr class="RowB"><td class="ColA">video.blit_timesync</td><td class="ColB">boolean</td><td class="ColC">0<br>1</td><td class="ColD">1</td><td class="ColE"><a name="video.blit_timesync">Enable time synchronization(waiting) for frame blitting.</a><p>Disable to reduce latency, at the cost of potentially increased video "juddering", with the maximum reduction in latency being about 1 video frame's time.<br>
 Will work best with emulated systems that are not very computationally expensive to emulate, combined with running on a relatively fast CPU.</p></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
-<tr class="RowA"><td class="ColA">video.deinterlacer</td><td class="ColB">enum</td><td class="ColC">weave<br>bob<br>bob_offset</td><td class="ColD">weave</td><td class="ColE"><a name="video.deinterlacer">Deinterlacer to use for interlaced video.</a><ul><li><b>weave</b> - Good for low-motion video; can be used in conjunction with negative <system>.scanlines setting values.<br></li><br><li><b>bob</b> - Good for causing a headache.  All glory to Bob.<br></li><br><li><b>bob_offset</b> - Good for high-motion video, but is a bit flickery; reduces the subjective vertical resolution.<br></li></ul></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+<tr class="RowA"><td class="ColA">video.deinterlacer</td><td class="ColB">enum</td><td class="ColC">weave<br>bob<br>bob_offset<br>blend<br>blend_rg</td><td class="ColD">weave</td><td class="ColE"><a name="video.deinterlacer">Deinterlacer to use for interlaced video.</a><ul><li><b>weave</b> - Good for low-motion video; can be used in conjunction with negative <system>.scanlines setting values.<br></li><br><li><b>bob</b> - Good for causing a headache.  All glory to Bob.<br></li><br><li><b>bob_offset</b> - Good for high-motion video, but is a bit flickery; reduces the subjective vertical resolution.<br></li><br><li><b>blend</b> - Blend fields together; reduces vertical and temporal resolution.<br></li><br><li><b>blend_rg</b> - Like the "blend" deinterlacer, but the blending is done in a manner that respects gamma, reducing unwanted brightness changes, at the cost of increased CPU usage.<br></li></ul></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
 <tr class="RowB"><td class="ColA">video.disable_composition</td><td class="ColB">boolean</td><td class="ColC">0<br>1</td><td class="ColD">1</td><td class="ColE"><a name="video.disable_composition">Attempt to disable desktop composition.</a><p>Currently, this setting only has an effect on Windows Vista and Windows 7(and probably the equivalent server versions as well).</p></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
 <tr class="RowA"><td class="ColA">video.driver</td><td class="ColB">enum</td><td class="ColC">default<br>opengl<br>softfb</td><td class="ColD">default</td><td class="ColE"><a name="video.driver">Video output driver.</a><ul><li><b>default</b> - Default<br>Selects the default video driver.  Currently, this is OpenGL for all platforms, but may change in the future if better platform-specific drivers are added.</li><br><li><b>opengl</b> - OpenGL<br>All video-related Mednafen features are available with this video driver.</li><br><li><b>softfb</b> - Software Blitting to Framebuffer<br>Slower with lower-quality scaling than OpenGL, but if you don't have hardware-accelerated OpenGL rendering, it will probably be faster than software OpenGL rendering. Bilinear interpolation not available. OpenGL shaders do not work with this output method, of course.</li></ul></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
 <tr class="RowB"><td class="ColA">video.frameskip</td><td class="ColB">boolean</td><td class="ColC">0<br>1</td><td class="ColD">1</td><td class="ColE"><a name="video.frameskip">Enable frameskip during emulation rendering.</a><p>Disable for rendering code performance testing.</p></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
@@ -365,29 +368,29 @@ Will work best with emulated systems that are not very computationally expensive
 <tr class="RowB"><td class="ColA">video.fs.display</td><td class="ColB">integer</td><td class="ColC">-1 <i>through</i> 32767</td><td class="ColD">-1</td><td class="ColE"><a name="video.fs.display">Display to use with fullscreen mode.</a><p>Specify -1 to use the display on which the center of the window lies in windowed mode.</p></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
 <tr class="RowA"><td class="ColA">video.glvsync</td><td class="ColB">boolean</td><td class="ColC">0<br>1</td><td class="ColD">1</td><td class="ColE"><a name="video.glvsync">Attempt to synchronize OpenGL page flips to vertical retrace period.</a><p>Note: Additionally, if the environment variable "__GL_SYNC_TO_VBLANK" does not exist, then it will be created and set to the value specified for this setting.  This has the effect of forcibly enabling or disabling vblank synchronization when running under Linux with NVidia's drivers.</p></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
 </table><p></p><table border><tr class="TableHeader"><th>Setting:</th><th>Value Type:</th><th>Possible Values:</th><th>Default Value:</th><th>Description:</th></tr><tr class="RowA"><td class="ColA">&lt;system&gt;.enable</td><td class="ColB">boolean</td><td class="ColC">0<br>1</td><td class="ColD">1</td><td class="ColE"><a name="&lt;system&gt;.enable">Enable (automatic) usage of this module.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
-<tr class="RowB"><td class="ColA">&lt;system&gt;.forcemono<br><ul><li>cdplay</li><li>demo</li><li>gb</li><li>gba</li><li>gg</li><li>lynx</li><li>md</li><li>ngp</li><li>pce</li><li>pce_fast</li><li>pcfx</li><li>psx</li><li>sms</li><li>snes</li><li>snes_faust</li><li>ss</li><li>ssfplay</li><li>vb</li><li>wswan</li></ul></td><td class="ColB">boolean</td><td class="ColC">0<br>1</td><td class="ColD">0</td><td class="ColE"><a name="&lt;system&gt;.forcemono">Force monophonic sound output.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
-<tr class="RowA"><td class="ColA">&lt;system&gt;.scanlines</td><td class="ColB">integer</td><td class="ColC">-100 <i>through</i> 100</td><td class="ColD">0</td><td class="ColE"><a name="&lt;system&gt;.scanlines">Enable scanlines with specified opacity.</a><p>Opacity is specified in %; IE a value of "100" will give entirely black scanlines.<br>
+<tr class="RowB"><td class="ColA">&lt;system&gt;.scanlines</td><td class="ColB">integer</td><td class="ColC">-100 <i>through</i> 100</td><td class="ColD">0</td><td class="ColE"><a name="&lt;system&gt;.scanlines">Enable scanlines with specified opacity.</a><p>Opacity is specified in %; IE a value of "100" will give entirely black scanlines.<br>
 <br>
 Negative values are the same as positive values for non-interlaced video, but for interlaced video will cause the scanlines to be overlaid over the previous(if the video.deinterlacer setting is set to "weave", the default) field's lines.</p></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
-<tr class="RowB"><td class="ColA">&lt;system&gt;.shader</td><td class="ColB">enum</td><td class="ColC">none<br>autoip<br>autoipsharper<br>scale2x<br>sabr<br>ipsharper<br>ipxnoty<br>ipynotx<br>ipxnotysharper<br>ipynotxsharper<br>goat</td><td class="ColD">none</td><td class="ColE"><a name="&lt;system&gt;.shader">Enable specified OpenGL shader.</a><p>Obviously, this will only work with the OpenGL "video.driver" setting, and only on cards and OpenGL implementations that support shaders, otherwise you will get a black screen, or Mednafen may display an error message when starting up. When a shader is enabled, the "<system>.videoip" setting is ignored.</p><ul><li><b>none</b> - None/Disabled<br></li><br><li><b>autoip</b> - Auto Interpolation<br>Will automatically interpolate on each axis if the corresponding effective scaling factor is not an integer.</li><br><li><b>autoipsharper</b> - Sharper Auto Interpolation<br>Same as "autoip", but when interpolation is done, it is done in a manner that will reduce blurriness if possible.</li><br><li><b>scale2x</b> - Scale2x<br></li><br><li><b>sabr</b> - SABR v3.0<br>GPU-intensive.</li><br><li><b>ipsharper</b> - Sharper bilinear interpolation.<br></li><br><li><b>ipxnoty</b> - Linear interpolation on X axis only.<br></li><br><li><b>ipynotx</b> - Linear interpolation on Y axis only.<br></li><br><li><b>ipxnotysharper</b> - Sharper version of "ipxnoty".<br></li><br><li><b>ipynotxsharper</b> - Sharper version of "ipynotx".<br></li><br><li><b>goat</b> - Simple approximation of a color TV CRT look.<br>Intended for fullscreen modes with a vertical resolution of around 1000 to 1500 pixels.  Doesn't simulate halation and electron beam energy distribution nuances.</li></ul></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
-<tr class="RowA"><td class="ColA">&lt;system&gt;.shader.goat.fprog</td><td class="ColB">boolean</td><td class="ColC">0<br>1</td><td class="ColD">0</td><td class="ColE"><a name="&lt;system&gt;.shader.goat.fprog">Force interlaced video to be treated as progressive.</a><p>When disabled, the default, the "video.deinterlacer" setting is effectively ignored with respect to what appears on the screen.  When enabled, it may be prudent to disable the scanlines effect controlled by the *.goat.slen setting, or else the scanline effect may look objectionable.</p></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
-<tr class="RowB"><td class="ColA">&lt;system&gt;.shader.goat.hdiv</td><td class="ColB">real</td><td class="ColC">-2.00 <i>through</i> 2.00</td><td class="ColD">0.50</td><td class="ColE"><a name="&lt;system&gt;.shader.goat.hdiv">Constant RGB horizontal divergence.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
-<tr class="RowA"><td class="ColA">&lt;system&gt;.shader.goat.pat</td><td class="ColB">enum</td><td class="ColC">goatron<br>borg<br>slenderman</td><td class="ColD">goatron</td><td class="ColE"><a name="&lt;system&gt;.shader.goat.pat">Mask pattern.</a><ul><li><b>goatron</b> - Goatron<br>Brightest.</li><br><li><b>borg</b> - Borg<br>Darkest.</li><br><li><b>slenderman</b> - Slenderman<br>Spookiest?</li></ul></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
-<tr class="RowB"><td class="ColA">&lt;system&gt;.shader.goat.slen</td><td class="ColB">boolean</td><td class="ColC">0<br>1</td><td class="ColD">1</td><td class="ColE"><a name="&lt;system&gt;.shader.goat.slen">Enable scanlines effect.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
-<tr class="RowA"><td class="ColA">&lt;system&gt;.shader.goat.tp</td><td class="ColB">real</td><td class="ColC">0.00 <i>through</i> 1.00</td><td class="ColD">0.50</td><td class="ColE"><a name="&lt;system&gt;.shader.goat.tp">Transparency of otherwise-opaque mask areas.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
-<tr class="RowB"><td class="ColA">&lt;system&gt;.shader.goat.vdiv</td><td class="ColB">real</td><td class="ColC">-2.00 <i>through</i> 2.00</td><td class="ColD">0.50</td><td class="ColE"><a name="&lt;system&gt;.shader.goat.vdiv">Constant RGB vertical divergence.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
-<tr class="RowA"><td class="ColA">&lt;system&gt;.special</td><td class="ColB">enum</td><td class="ColC">none<br>hq2x<br>hq3x<br>hq4x<br>scale2x<br>scale3x<br>scale4x<br>2xsai<br>super2xsai<br>supereagle<br>nn2x<br>nn3x<br>nn4x<br>nny2x<br>nny3x<br>nny4x</td><td class="ColD">none</td><td class="ColE"><a name="&lt;system&gt;.special">Enable specified special video scaler.</a><p>The destination rectangle is NOT altered by this setting, so if you have xscale and yscale set to "2", and try to use a 3x scaling filter like hq3x, the image is not going to look that great. The nearest-neighbor scalers are intended for use with bilinear interpolation enabled, at high resolutions(such as 1280x1024; nn2x(or nny2x) + bilinear interpolation + fullscreen stretching at this resolution looks quite nice).</p><ul><li><b>none</b> - None/Disabled<br></li><br><li><b>hq2x</b> - hq2x<br></li><br><li><b>hq3x</b> - hq3x<br></li><br><li><b>hq4x</b> - hq4x<br></li><br><li><b>scale2x</b> - scale2x<br></li><br><li><b>scale3x</b> - scale3x<br></li><br><li><b>scale4x</b> - scale4x<br></li><br><li><b>2xsai</b> - 2xSaI<br></li><br><li><b>super2xsai</b> - Super 2xSaI<br></li><br><li><b>supereagle</b> - Super Eagle<br></li><br><li><b>nn2x</b> - Nearest-neighbor 2x<br></li><br><li><b>nn3x</b> - Nearest-neighbor 3x<br></li><br><li><b>nn4x</b> - Nearest-neighbor 4x<br></li><br><li><b>nny2x</b> - Nearest-neighbor 2x, y axis only<br></li><br><li><b>nny3x</b> - Nearest-neighbor 3x, y axis only<br></li><br><li><b>nny4x</b> - Nearest-neighbor 4x, y axis only<br></li></ul></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
-<tr class="RowB"><td class="ColA">&lt;system&gt;.stretch</td><td class="ColB">enum</td><td class="ColC">0<br>full<br>aspect<br>aspect_int<br>aspect_mult2</td><td class="ColD">aspect_mult2</td><td class="ColE"><a name="&lt;system&gt;.stretch">Stretch to fill screen.</a><ul><li><b>0</b> - Disabled<br></li><br><li><b>full</b> - Full<br>Full-screen stretch, disregarding aspect ratio.</li><br><li><b>aspect</b> - Aspect Preserve<br>Full-screen stretch as far as the aspect ratio(in this sense, the equivalent xscalefs == yscalefs) can be maintained.</li><br><li><b>aspect_int</b> - Aspect Preserve + Integer Scale<br>Full-screen stretch, same as "aspect" except that the equivalent xscalefs and yscalefs are rounded down to the nearest integer.</li><br><li><b>aspect_mult2</b> - Aspect Preserve + Integer Multiple-of-2 Scale<br>Full-screen stretch, same as "aspect_int", but rounds down to the nearest multiple of 2.</li></ul></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
-<tr class="RowA"><td class="ColA">&lt;system&gt;.tblur</td><td class="ColB">boolean</td><td class="ColC">0<br>1</td><td class="ColD">0</td><td class="ColE"><a name="&lt;system&gt;.tblur">Enable video temporal blur(50/50 previous/current frame by default).</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
-<tr class="RowB"><td class="ColA">&lt;system&gt;.tblur.accum</td><td class="ColB">boolean</td><td class="ColC">0<br>1</td><td class="ColD">0</td><td class="ColE"><a name="&lt;system&gt;.tblur.accum">Accumulate color data rather than discarding it.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
-<tr class="RowA"><td class="ColA">&lt;system&gt;.tblur.accum.amount</td><td class="ColB">real</td><td class="ColC">0 <i>through</i> 100</td><td class="ColD">50</td><td class="ColE"><a name="&lt;system&gt;.tblur.accum.amount">Blur amount in accumulation mode, specified in percentage of accumulation buffer to mix with the current frame.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
-<tr class="RowB"><td class="ColA">&lt;system&gt;.videoip</td><td class="ColB">enum</td><td class="ColC">0<br>1<br>x<br>y</td><td class="ColD"><i>(variable)</i></td><td class="ColE"><a name="&lt;system&gt;.videoip">Enable (bi)linear interpolation.</a><ul><li><b>0</b> - Disabled<br></li><br><li><b>1</b> - Bilinear<br></li><br><li><b>x</b> - Linear (X)<br>Interpolation only on the X axis.</li><br><li><b>y</b> - Linear (Y)<br>Interpolation only on the Y axis.</li></ul></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
-<tr class="RowA"><td class="ColA">&lt;system&gt;.xres</td><td class="ColB">integer</td><td class="ColC">0 <i>through</i> 65536</td><td class="ColD">0</td><td class="ColE"><a name="&lt;system&gt;.xres">Full-screen horizontal resolution.</a><p>A value of "0" will cause the current desktop horizontal resolution to be used.</p></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
-<tr class="RowB"><td class="ColA">&lt;system&gt;.xscale</td><td class="ColB">real</td><td class="ColC">0.01 <i>through</i> 256</td><td class="ColD"><i>(variable)</i></td><td class="ColE"><a name="&lt;system&gt;.xscale">Scaling factor for the X axis in windowed mode.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
-<tr class="RowA"><td class="ColA">&lt;system&gt;.xscalefs</td><td class="ColB">real</td><td class="ColC">0.01 <i>through</i> 256</td><td class="ColD">1.000000</td><td class="ColE"><a name="&lt;system&gt;.xscalefs">Scaling factor for the X axis in fullscreen mode.</a><p>For this setting to have any effect, the "<system>.stretch" setting must be set to "0".</p></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
-<tr class="RowB"><td class="ColA">&lt;system&gt;.yres</td><td class="ColB">integer</td><td class="ColC">0 <i>through</i> 65536</td><td class="ColD">0</td><td class="ColE"><a name="&lt;system&gt;.yres">Full-screen vertical resolution.</a><p>A value of "0" will cause the current desktop vertical resolution to be used.</p></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
-<tr class="RowA"><td class="ColA">&lt;system&gt;.yscale</td><td class="ColB">real</td><td class="ColC">0.01 <i>through</i> 256</td><td class="ColD"><i>(variable)</i></td><td class="ColE"><a name="&lt;system&gt;.yscale">Scaling factor for the Y axis in windowed mode.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
-<tr class="RowB"><td class="ColA">&lt;system&gt;.yscalefs</td><td class="ColB">real</td><td class="ColC">0.01 <i>through</i> 256</td><td class="ColD">1.000000</td><td class="ColE"><a name="&lt;system&gt;.yscalefs">Scaling factor for the Y axis in fullscreen mode.</a><p>For this setting to have any effect, the "<system>.stretch" setting must be set to "0".</p></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+<tr class="RowA"><td class="ColA">&lt;system&gt;.shader</td><td class="ColB">enum</td><td class="ColC">none<br>autoip<br>autoipsharper<br>scale2x<br>sabr<br>ipsharper<br>ipxnoty<br>ipynotx<br>ipxnotysharper<br>ipynotxsharper<br>goat</td><td class="ColD">none</td><td class="ColE"><a name="&lt;system&gt;.shader">Enable specified OpenGL shader.</a><p>Obviously, this will only work with the OpenGL "video.driver" setting, and only on cards and OpenGL implementations that support shaders, otherwise you will get a black screen, or Mednafen may display an error message when starting up. When a shader is enabled, the "<system>.videoip" setting is ignored.</p><ul><li><b>none</b> - None/Disabled<br></li><br><li><b>autoip</b> - Auto Interpolation<br>Will automatically interpolate on each axis if the corresponding effective scaling factor is not an integer.</li><br><li><b>autoipsharper</b> - Sharper Auto Interpolation<br>Same as "autoip", but when interpolation is done, it is done in a manner that will reduce blurriness if possible.</li><br><li><b>scale2x</b> - Scale2x<br></li><br><li><b>sabr</b> - SABR v3.0<br>GPU-intensive.</li><br><li><b>ipsharper</b> - Sharper bilinear interpolation.<br></li><br><li><b>ipxnoty</b> - Linear interpolation on X axis only.<br></li><br><li><b>ipynotx</b> - Linear interpolation on Y axis only.<br></li><br><li><b>ipxnotysharper</b> - Sharper version of "ipxnoty".<br></li><br><li><b>ipynotxsharper</b> - Sharper version of "ipynotx".<br></li><br><li><b>goat</b> - Simple approximation of a color TV CRT look.<br>Intended for fullscreen modes with a vertical resolution of around 1000 to 1500 pixels.  Doesn't simulate halation and electron beam energy distribution nuances.</li></ul></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+<tr class="RowB"><td class="ColA">&lt;system&gt;.shader.goat.fprog</td><td class="ColB">boolean</td><td class="ColC">0<br>1</td><td class="ColD">0</td><td class="ColE"><a name="&lt;system&gt;.shader.goat.fprog">Force interlaced video to be treated as progressive.</a><p>When disabled, the default, the "video.deinterlacer" setting is effectively ignored with respect to what appears on the screen.  When enabled, it may be prudent to disable the scanlines effect controlled by the *.goat.slen setting, or else the scanline effect may look objectionable.</p></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+<tr class="RowA"><td class="ColA">&lt;system&gt;.shader.goat.hdiv</td><td class="ColB">real</td><td class="ColC">-2.00 <i>through</i> 2.00</td><td class="ColD">0.50</td><td class="ColE"><a name="&lt;system&gt;.shader.goat.hdiv">Constant RGB horizontal divergence.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+<tr class="RowB"><td class="ColA">&lt;system&gt;.shader.goat.pat</td><td class="ColB">enum</td><td class="ColC">goatron<br>borg<br>slenderman</td><td class="ColD">goatron</td><td class="ColE"><a name="&lt;system&gt;.shader.goat.pat">Mask pattern.</a><ul><li><b>goatron</b> - Goatron<br>Brightest.</li><br><li><b>borg</b> - Borg<br>Darkest.</li><br><li><b>slenderman</b> - Slenderman<br>Spookiest?</li></ul></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+<tr class="RowA"><td class="ColA">&lt;system&gt;.shader.goat.slen</td><td class="ColB">boolean</td><td class="ColC">0<br>1</td><td class="ColD">1</td><td class="ColE"><a name="&lt;system&gt;.shader.goat.slen">Enable scanlines effect.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+<tr class="RowB"><td class="ColA">&lt;system&gt;.shader.goat.tp</td><td class="ColB">real</td><td class="ColC">0.00 <i>through</i> 1.00</td><td class="ColD">0.50</td><td class="ColE"><a name="&lt;system&gt;.shader.goat.tp">Transparency of otherwise-opaque mask areas.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+<tr class="RowA"><td class="ColA">&lt;system&gt;.shader.goat.vdiv</td><td class="ColB">real</td><td class="ColC">-2.00 <i>through</i> 2.00</td><td class="ColD">0.50</td><td class="ColE"><a name="&lt;system&gt;.shader.goat.vdiv">Constant RGB vertical divergence.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+<tr class="RowB"><td class="ColA">&lt;system&gt;.special</td><td class="ColB">enum</td><td class="ColC">none<br>hq2x<br>hq3x<br>hq4x<br>scale2x<br>scale3x<br>scale4x<br>2xsai<br>super2xsai<br>supereagle<br>nn2x<br>nn3x<br>nn4x<br>nny2x<br>nny3x<br>nny4x</td><td class="ColD">none</td><td class="ColE"><a name="&lt;system&gt;.special">Enable specified special video scaler.</a><p>The destination rectangle is NOT altered by this setting, so if you have xscale and yscale set to "2", and try to use a 3x scaling filter like hq3x, the image is not going to look that great. The nearest-neighbor scalers are intended for use with bilinear interpolation enabled, at high resolutions(such as 1280x1024; nn2x(or nny2x) + bilinear interpolation + fullscreen stretching at this resolution looks quite nice).</p><ul><li><b>none</b> - None/Disabled<br></li><br><li><b>hq2x</b> - hq2x<br></li><br><li><b>hq3x</b> - hq3x<br></li><br><li><b>hq4x</b> - hq4x<br></li><br><li><b>scale2x</b> - scale2x<br></li><br><li><b>scale3x</b> - scale3x<br></li><br><li><b>scale4x</b> - scale4x<br></li><br><li><b>2xsai</b> - 2xSaI<br></li><br><li><b>super2xsai</b> - Super 2xSaI<br></li><br><li><b>supereagle</b> - Super Eagle<br></li><br><li><b>nn2x</b> - Nearest-neighbor 2x<br></li><br><li><b>nn3x</b> - Nearest-neighbor 3x<br></li><br><li><b>nn4x</b> - Nearest-neighbor 4x<br></li><br><li><b>nny2x</b> - Nearest-neighbor 2x, y axis only<br></li><br><li><b>nny3x</b> - Nearest-neighbor 3x, y axis only<br></li><br><li><b>nny4x</b> - Nearest-neighbor 4x, y axis only<br></li></ul></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+<tr class="RowA"><td class="ColA">&lt;system&gt;.stretch</td><td class="ColB">enum</td><td class="ColC">0<br>full<br>aspect<br>aspect_int<br>aspect_mult2</td><td class="ColD">aspect_mult2</td><td class="ColE"><a name="&lt;system&gt;.stretch">Stretch to fill screen.</a><ul><li><b>0</b> - Disabled<br></li><br><li><b>full</b> - Full<br>Full-screen stretch, disregarding aspect ratio.</li><br><li><b>aspect</b> - Aspect Preserve<br>Full-screen stretch as far as the aspect ratio(in this sense, the equivalent xscalefs == yscalefs) can be maintained.</li><br><li><b>aspect_int</b> - Aspect Preserve + Integer Scale<br>Full-screen stretch, same as "aspect" except that the equivalent xscalefs and yscalefs are rounded down to the nearest integer.</li><br><li><b>aspect_mult2</b> - Aspect Preserve + Integer Multiple-of-2 Scale<br>Full-screen stretch, same as "aspect_int", but rounds down to the nearest multiple of 2.</li></ul></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+<tr class="RowB"><td class="ColA">&lt;system&gt;.tblur</td><td class="ColB">boolean</td><td class="ColC">0<br>1</td><td class="ColD">0</td><td class="ColE"><a name="&lt;system&gt;.tblur">Enable video temporal blur(50/50 previous/current frame by default).</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+<tr class="RowA"><td class="ColA">&lt;system&gt;.tblur.accum</td><td class="ColB">boolean</td><td class="ColC">0<br>1</td><td class="ColD">0</td><td class="ColE"><a name="&lt;system&gt;.tblur.accum">Accumulate color data rather than discarding it.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+<tr class="RowB"><td class="ColA">&lt;system&gt;.tblur.accum.amount</td><td class="ColB">real</td><td class="ColC">0 <i>through</i> 100</td><td class="ColD">50</td><td class="ColE"><a name="&lt;system&gt;.tblur.accum.amount">Blur amount in accumulation mode, specified in percentage of accumulation buffer to mix with the current frame.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+<tr class="RowA"><td class="ColA">&lt;system&gt;.videoip</td><td class="ColB">enum</td><td class="ColC">0<br>1<br>x<br>y</td><td class="ColD"><i>(variable)</i></td><td class="ColE"><a name="&lt;system&gt;.videoip">Enable (bi)linear interpolation.</a><ul><li><b>0</b> - Disabled<br></li><br><li><b>1</b> - Bilinear<br></li><br><li><b>x</b> - Linear (X)<br>Interpolation only on the X axis.</li><br><li><b>y</b> - Linear (Y)<br>Interpolation only on the Y axis.</li></ul></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+<tr class="RowB"><td class="ColA">&lt;system&gt;.xres</td><td class="ColB">integer</td><td class="ColC">0 <i>through</i> 65536</td><td class="ColD">0</td><td class="ColE"><a name="&lt;system&gt;.xres">Full-screen horizontal resolution.</a><p>A value of "0" will cause the current desktop horizontal resolution to be used.</p></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+<tr class="RowA"><td class="ColA">&lt;system&gt;.xscale</td><td class="ColB">real</td><td class="ColC">0.01 <i>through</i> 256</td><td class="ColD"><i>(variable)</i></td><td class="ColE"><a name="&lt;system&gt;.xscale">Scaling factor for the X axis in windowed mode.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+<tr class="RowB"><td class="ColA">&lt;system&gt;.xscalefs</td><td class="ColB">real</td><td class="ColC">0.01 <i>through</i> 256</td><td class="ColD">1.000000</td><td class="ColE"><a name="&lt;system&gt;.xscalefs">Scaling factor for the X axis in fullscreen mode.</a><p>For this setting to have any effect, the "<system>.stretch" setting must be set to "0".</p></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+<tr class="RowA"><td class="ColA">&lt;system&gt;.yres</td><td class="ColB">integer</td><td class="ColC">0 <i>through</i> 65536</td><td class="ColD">0</td><td class="ColE"><a name="&lt;system&gt;.yres">Full-screen vertical resolution.</a><p>A value of "0" will cause the current desktop vertical resolution to be used.</p></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+<tr class="RowB"><td class="ColA">&lt;system&gt;.yscale</td><td class="ColB">real</td><td class="ColC">0.01 <i>through</i> 256</td><td class="ColD"><i>(variable)</i></td><td class="ColE"><a name="&lt;system&gt;.yscale">Scaling factor for the Y axis in windowed mode.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+<tr class="RowA"><td class="ColA">&lt;system&gt;.yscalefs</td><td class="ColB">real</td><td class="ColC">0.01 <i>through</i> 256</td><td class="ColD">1.000000</td><td class="ColE"><a name="&lt;system&gt;.yscalefs">Scaling factor for the Y axis in fullscreen mode.</a><p>For this setting to have any effect, the "<system>.stretch" setting must be set to "0".</p></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
+<tr class="RowB"><td class="ColA">&lt;system&gt;.forcemono<br><ul><li>cdplay</li><li>demo</li><li>gb</li><li>gba</li><li>gg</li><li>lynx</li><li>md</li><li>ngp</li><li>pce</li><li>pce_fast</li><li>pcfx</li><li>psx</li><li>sms</li><li>snes</li><li>snes_faust</li><li>ss</li><li>ssfplay</li><li>vb</li><li>wswan</li></ul></td><td class="ColB">boolean</td><td class="ColC">0<br>1</td><td class="ColD">0</td><td class="ColE"><a name="&lt;system&gt;.forcemono">Force monophonic sound output.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
 <tr class="RowA"><td class="ColA">&lt;system&gt;.debugger.disfontsize<br><ul><li>md</li><li>nes</li><li>pce</li><li>pcfx</li><li>psx</li><li>ss</li><li>vb</li><li>wswan</li></ul></td><td class="ColB">enum</td><td class="ColC">5x7<br>6x9<br>6x12<br>6x13<br>9x18</td><td class="ColD">5x7</td><td class="ColE"><a name="&lt;system&gt;.debugger.disfontsize">Disassembly font size.</a><p>Note: Setting the font size to larger than the default may cause text overlap in the debugger.</p><ul><li><b>5x7</b> - 5x7<br></li><br><li><b>6x9</b> - 6x9<br></li><br><li><b>6x12</b> - 6x12<br></li><br><li><b>6x13</b> - 6x13.  CJK support.<br></li><br><li><b>9x18</b> - 9x18;  CJK support.<br></li></ul></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
 <tr class="RowB"><td class="ColA">&lt;system&gt;.debugger.memcharenc<br><ul><li>md</li><li>nes</li><li>pce</li><li>pcfx</li><li>psx</li><li>ss</li><li>vb</li><li>wswan</li></ul></td><td class="ColB">string</td><td class="ColC">&nbsp;</td><td class="ColD"><i>(variable)</i></td><td class="ColE"><a name="&lt;system&gt;.debugger.memcharenc">Character encoding for the debugger's memory editor.</a></td></tr><tr><td class="RowSpacer" colspan="5">&nbsp</td></tr>
 </table><hr width="75%">
@@ -682,6 +685,256 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 </pre>
   </blockquote>
   <hr width="75%">
+<h3><a name="Section_legal_minilzo"><a href="http://www.oberhumer.com/opensource/lzo/">MiniLZO</a></a></h3><p></p><blockquote>
+<pre>
+   Copyright (C) 1996-2015 Markus Franz Xaver Johannes Oberhumer
+   All Rights Reserved.
+
+   The LZO library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU General Public License as
+   published by the Free Software Foundation; either version 2 of
+   the License, or (at your option) any later version.
+
+   The LZO library is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with the LZO library; see the file COPYING.
+   If not, write to the Free Software Foundation, Inc.,
+   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+   Markus F.X.J. Oberhumer
+   &lt;markus@oberhumer.com&gt;
+   http://www.oberhumer.com/opensource/lzo/
+</pre>
+</blockquote>
+<hr width="75%">
+<h3><a name="Section_legal_quicklz"><a href="http://www.quicklz.com/">QuickLZ</a></a></h3><p></p><blockquote>
+<pre>
+// QuickLZ data compression library
+// Copyright (C) 2006-2008 Lasse Mikkel Reinhold
+// lar@quicklz.com
+//
+// QuickLZ can be used for free under the GPL-1 or GPL-2 license (where anything 
+// released into public must be open source) or under a commercial license if such 
+// has been acquired (see http://www.quicklz.com/order.html). The commercial license 
+// does not cover derived or ported versions created by third parties under GPL.
+</pre>
+</blockquote>
+<hr width="75%">
+<h3><a name="Section_legal_trio"><a href="http://daniel.haxx.se/projects/trio/">trio</a></a></h3><p></p><blockquote>
+<pre>
+ * Copyright (C) 1998, 2009 Bjorn Reese and Daniel Stenberg.
+ * Copyright (C) 2001 Bjorn Reese <breese@users.sourceforge.net>
+ * Copyright (C) 2001 Bjorn Reese and Daniel Stenberg.
+ *
+ * Permission to use, copy, modify, and distribute this software for any
+ * purpose with or without fee is hereby granted, provided that the above
+ * copyright notice and this permission notice appear in all copies.
+ *
+ * THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
+ * MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE AUTHORS AND
+ * CONTRIBUTORS ACCEPT NO RESPONSIBILITY IN ANY CONCEIVABLE MANNER.
+ *
+</pre>
+</blockquote>
+<hr width="75%">
+<h3><a name="Section_legal_speex"><a href="http://speex.org/">Speex Resampler</a></a></h3><p></p><blockquote>
+<pre>
+/* Copyright (C) 2007-2008 Jean-Marc Valin
+   Copyright (C) 2008      Thorvald Natvig
+
+   File: resample.c
+   Arbitrary resampling code
+
+   Redistribution and use in source and binary forms, with or without
+   modification, are permitted provided that the following conditions are
+   met:
+
+   1. Redistributions of source code must retain the above copyright notice,
+   this list of conditions and the following disclaimer.
+
+   2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+
+   3. The name of the author may not be used to endorse or promote products
+   derived from this software without specific prior written permission.
+
+   THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+   IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+   OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+   DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,
+   INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+   (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+   SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+   HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+   STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+   ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+   POSSIBILITY OF SUCH DAMAGE.
+*/
+</pre>
+</blockquote>
+ <hr width="75%">
+<h3><a name="Section_legal_ffmpeg">ffmpeg cputest</a></h3><p></p><blockquote>
+<pre>
+/*
+ * CPU detection code, extracted from mmx.h
+ * (c)1997-99 by H. Dietz and R. Fisher
+ * Converted to C and improved by Fabrice Bellard.
+ *
+ * This file is part of FFmpeg.
+ *
+ * FFmpeg is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ *
+ * FFmpeg is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with FFmpeg; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+ */
+</pre>
+</blockquote>
+<hr width="75%">
+<h3><a name="Section_legal_dvdisaster">CD-ROM data correction code</a></h3><p></p><blockquote>
+<pre>
+/*  dvdisaster: Additional error correction for optical media.
+ *  Copyright (C) 2004-2007 Carsten Gnoerlich.
+ *  Project home page: http://www.dvdisaster.com
+ *  Email: carsten@dvdisaster.com  -or-  cgnoerlich@fsfe.org
+ *
+ *  The Reed-Solomon error correction draws a lot of inspiration - and even code -
+ *  from Phil Karn's excellent Reed-Solomon library: http://www.ka9q.net/code/fec/
+ *
+ *  This program is free software; you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation; either version 2 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA,
+ *  or direct your browser at http://www.gnu.org.
+ */
+</pre>
+</blockquote>
+<hr width="75%">
+ <h3><a name="Section_legal_scale2x"><a href="http://scale2x.sf.net/">Scale2x</a></a></h3><p></p><blockquote>
+<pre>
+ * Copyright (C) 2001, 2002, 2003, 2004 Andrea Mazzoleni
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+</pre>
+</blockquote>
+ <hr width="75%">
+<h3><a name="Section_legal_hqnx"><a href="http://www.hiend3d.com/hq2x.html">hq2x, hq3x, hq4x</a></a></h3><p></p><blockquote>
+<pre>
+//Copyright (C) 2003 MaxSt ( maxst@hiend3d.com )
+
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the GNU Lesser General Public
+//License as published by the Free Software Foundation; either
+//version 2.1 of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but WITHOUT ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+//Lesser General Public License for more details.
+//
+//You should have received a copy of the GNU Lesser General Public
+//License along with this program; if not, write to the Free Software
+//Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
+</pre>
+</blockquote>
+ <hr width="75%">
+<h3><a name="Section_legal_2xsai">2xSaI</a></h3><p></p><blockquote>
+<pre>
+/* 2xSaI
+ * Copyright (c) Derek Liauw Kie Fa, 1999-2002
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ */
+/* http://lists.fedoraproject.org/pipermail/legal/2009-October/000928.html */
+</pre>
+</blockquote>
+<hr width="75%">
+<h3><a name="Section_legal_sabr">SABR v3.0 Shader</a></h3><p></p><blockquote>
+<pre>
+        SABR v3.0 Shader
+        Joshua Street
+
+        Portions of this algorithm were taken from Hyllian's 5xBR v3.7c
+        shader.
+
+        This program is free software; you can redistribute it and/or
+        modify it under the terms of the GNU General Public License
+        as published by the Free Software Foundation; either version 2
+        of the License, or (at your option) any later version.
+
+        This program is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        GNU General Public License for more details.
+
+        You should have received a copy of the GNU General Public License
+        along with this program; if not, write to the Free Software
+        Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+</pre>
+</blockquote>
+<hr width="75%">
+<h3><a name="Section_legal_nes_ntsc"><a href="http://www.slack.net/~ant/libs/ntsc.html#nes_ntsc">nes_ntsc</a></a></h3><p></p><blockquote>
+<pre>
+/* Copyright (C) 2006 Shay Green. This module is free software; you
+can redistribute it and/or modify it under the terms of the GNU Lesser
+General Public License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version. This
+module is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for
+more details. You should have received a copy of the GNU Lesser General
+Public License along with this module; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA */
+</pre>
+</blockquote>
+ <hr width="75%">
  <h3><a name="Section_legal_gb_snd_emu"><a href="http://slack.net/~ant/libs/audio.html">Gb_Snd_Emu</a></a></h3><p></p><blockquote>
 <pre>
 /* Library Copyright (C) 2003-2004 Shay Green. Gb_Snd_Emu is free
@@ -727,175 +980,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
 </pre>
 </blockquote>
  <hr width="75%">
-<h3><a name="Section_legal_handy"><a href="http://handy.sourceforge.net/">Handy</a></a></h3><p></p><blockquote>
-<pre>
-Copyright (c) 2004 K. Wilkins
-
-This software is provided 'as-is', without any express or implied warranty.
-In no event will the authors be held liable for any damages arising from
-the use of this software.
-
-Permission is granted to anyone to use this software for any purpose,
-including commercial applications, and to alter it and redistribute it
-freely, subject to the following restrictions:
-
-1. The origin of this software must not be misrepresented; you must not
-   claim that you wrote the original software. If you use this software
-   in a product, an acknowledgment in the product documentation would be
-   appreciated but is not required.
-
-2. Altered source versions must be plainly marked as such, and must not
-   be misrepresented as being the original software.
-
-3. This notice may not be removed or altered from any source distribution.
-</pre>
-</blockquote>
- <hr width="75%">
- <h3><a name="Section_legal_pc2e">PC2e (Used in portions of PC Engine CD emulation)</a></h3><p></p><blockquote>
-<pre>
-        Copyright (C) 2004 Ki
-
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-</pre>
-</blockquote>
- <hr width="75%">
- <h3><a name="Section_legal_scale2x"><a href="http://scale2x.sf.net/">Scale2x</a></a></h3><p></p><blockquote>
-<pre>
- * Copyright (C) 2001, 2002, 2003, 2004 Andrea Mazzoleni
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-</pre>
-</blockquote>
- <hr width="75%">
-<h3><a name="Section_legal_hqnx"><a href="http://www.hiend3d.com/hq2x.html">hq2x, hq3x, hq4x</a></a></h3><p></p><blockquote>
-<pre>
-//Copyright (C) 2003 MaxSt ( maxst@hiend3d.com )
-
-//This program is free software; you can redistribute it and/or
-//modify it under the terms of the GNU Lesser General Public
-//License as published by the Free Software Foundation; either
-//version 2.1 of the License, or (at your option) any later version.
-//
-//This program is distributed in the hope that it will be useful,
-//but WITHOUT ANY WARRANTY; without even the implied warranty of
-//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
-//Lesser General Public License for more details.
-//
-//You should have received a copy of the GNU Lesser General Public
-//License along with this program; if not, write to the Free Software
-//Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
-</pre>
-</blockquote>
- <hr width="75%">
-<h3><a name="Section_legal_nes_ntsc"><a href="http://www.slack.net/~ant/libs/ntsc.html#nes_ntsc">nes_ntsc</a></a></h3><p></p><blockquote>
-<pre>
-/* Copyright (C) 2006 Shay Green. This module is free software; you
-can redistribute it and/or modify it under the terms of the GNU Lesser
-General Public License as published by the Free Software Foundation; either
-version 2.1 of the License, or (at your option) any later version. This
-module is distributed in the hope that it will be useful, but WITHOUT ANY
-WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for
-more details. You should have received a copy of the GNU Lesser General
-Public License along with this module; if not, write to the Free Software
-Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA */
-</pre>
-</blockquote>
- <hr width="75%">
-<h3><a name="Section_legal_2xsai">2xSaI</a></h3><p></p><blockquote>
-<pre>
-/* 2xSaI
- * Copyright (c) Derek Liauw Kie Fa, 1999-2002
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- */
-/* http://lists.fedoraproject.org/pipermail/legal/2009-October/000928.html */
-</pre>
-</blockquote>
-<hr width="75%">
-<h3><a name="Section_legal_vba">VisualBoyAdvance GameBoy and GBA code</a></h3><p></p><blockquote>
-<pre>
-// VisualBoyAdvance - Nintendo Gameboy/GameboyAdvance (TM) emulator.
-// Copyright (C) 1999-2003 Forgotten
-// Copyright (C) 2004-2006 Forgotten and the VBA development team
-
-// This program is free software; you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation; either version 2, or(at your option)
-// any later version.
-//
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with this program; if not, write to the Free Software Foundation,
-// Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
-</pre>
-</blockquote>
- <hr width="75%">
-<h3><a name="Section_legal_trio"><a href="http://daniel.haxx.se/projects/trio/">trio</a></a></h3><p></p><blockquote>
-<pre>
- * Copyright (C) 1998, 2009 Bjorn Reese and Daniel Stenberg.
- * Copyright (C) 2001 Bjorn Reese <breese@users.sourceforge.net>
- * Copyright (C) 2001 Bjorn Reese and Daniel Stenberg.
- *
- * Permission to use, copy, modify, and distribute this software for any
- * purpose with or without fee is hereby granted, provided that the above
- * copyright notice and this permission notice appear in all copies.
- *
- * THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR IMPLIED
- * WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
- * MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE AUTHORS AND
- * CONTRIBUTORS ACCEPT NO RESPONSIBILITY IN ANY CONCEIVABLE MANNER.
- *
-</pre>
-</blockquote>
-
-<hr width="75%">
-<h3><a name="Section_legal_md5">MD5 Hashing</a></h3><p></p><blockquote>
-<pre>
-/*
- * RFC 1321 compliant MD5 implementation,
- * by Christophe Devine <devine@cr0.net>;
- * this program is licensed under the GPL.
- */
-</pre>
-</blockquote>
- <hr width="75%">
 <h3><a name="Section_legal_v810">V810 Emulator</a></h3><p></p><blockquote>
 <pre>
  * Copyright (C) 2006 David Tucker
@@ -913,32 +997,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA */
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-</pre>
-</blockquote>
-<hr width="75%">
-<h3><a name="Section_legal_minilzo"><a href="http://www.oberhumer.com/opensource/lzo/">MiniLZO</a></a></h3><p></p><blockquote>
-<pre>
-   Copyright (C) 1996-2015 Markus Franz Xaver Johannes Oberhumer
-   All Rights Reserved.
-
-   The LZO library is free software; you can redistribute it and/or
-   modify it under the terms of the GNU General Public License as
-   published by the Free Software Foundation; either version 2 of
-   the License, or (at your option) any later version.
-
-   The LZO library is distributed in the hope that it will be useful,
-   but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-   GNU General Public License for more details.
-
-   You should have received a copy of the GNU General Public License
-   along with the LZO library; see the file COPYING.
-   If not, write to the Free Software Foundation, Inc.,
-   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
-
-   Markus F.X.J. Oberhumer
-   &lt;markus@oberhumer.com&gt;
-   http://www.oberhumer.com/opensource/lzo/
 </pre>
 </blockquote>
 <hr width="75%">
@@ -964,21 +1022,6 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA */
    Author contact information:
 
    E-mail: philip-fuse@shadowmagic.org.uk
-</pre>
-</blockquote>
-<hr width="75%">
-<h3><a name="Section_legal_neopop">NeoPop Neo Geo Pocket (Color) Code</a></h3><p></p><blockquote>
-<pre>
-//---------------------------------------------------------------------------
-// NEOPOP : Emulator as in Dreamland
-//
-// Copyright (c) 2001-2002 by neopop_uk
-//---------------------------------------------------------------------------
-//      This program is free software; you can redistribute it and/or modify
-//      it under the terms of the GNU General Public License as published by
-//      the Free Software Foundation; either version 2 of the License, or
-//      (at your option) any later version. See also the license.txt file for
-//      additional informations.
 </pre>
 </blockquote>
 <hr width="75%">
@@ -1035,6 +1078,154 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 </pre>
 </blockquote>
 <hr width="75%">
+<h3><a name="Section_legal_emu2413_sms">EMU2413(used in SMS emulation)</a></h3><p></p><blockquote>
+<pre>
+  Copyright (C) Mitsutaka Okazaki 2004
+
+  This software is provided 'as-is', without any express or implied warranty.
+  In no event will the authors be held liable for any damages arising from
+  the use of this software.
+
+  Permission is granted to anyone to use this software for any purpose,
+  including commercial applications, and to alter it and redistribute it
+  freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not
+     be misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+</pre>
+</blockquote>
+<hr width="75%">
+<h3><a name="Section_legal_ym2612">YM2612 Emulator</a></h3><p></p><blockquote>
+<pre>
+/* Copyright (C) 2002 St�phane Dallongeville (gens AT consolemul.com) */
+/* Copyright (C) 2004-2006 Shay Green. This module is free software; you
+can redistribute it and/or modify it under the terms of the GNU Lesser
+General Public License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version. This
+module is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+details. You should have received a copy of the GNU Lesser General Public
+License along with this module; if not, write to the Free Software Foundation,
+Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA */
+</pre>
+</blockquote>
+<hr width="75%">
+<h3><a name="Section_legal_svp_ssp16">Sega Genesis SVP/SSP16 Emulator</a></h3><p></p><blockquote>
+<pre>
+/*
+ * basic, incomplete SSP160x (SSP1601?) interpreter
+ * with SVP memory controller emu
+ *
+ * Copyright (c) Gražvydas "notaz" Ignotas, 2008
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *     * Redistributions of source code must retain the above copyright
+ *       notice, this list of conditions and the following disclaimer.
+ *     * Redistributions in binary form must reproduce the above copyright
+ *       notice, this list of conditions and the following disclaimer in the
+ *       documentation and/or other materials provided with the distribution.
+ *     * Neither the name of the organization nor the
+ *       names of its contributors may be used to endorse or promote products
+ *       derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED. IN NO EVENT SHALL COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+</pre>
+</blockquote>
+<hr width="75%">
+ <h3><a name="Section_legal_pc2e">PC2e (Used in portions of PC Engine CD emulation)</a></h3><p></p><blockquote>
+<pre>
+        Copyright (C) 2004 Ki
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+</pre>
+</blockquote>
+ <hr width="75%">
+<h3><a name="Section_legal_handy"><a href="http://handy.sourceforge.net/">Handy</a></a></h3><p></p><blockquote>
+<pre>
+Copyright (c) 2004 K. Wilkins
+
+This software is provided 'as-is', without any express or implied warranty.
+In no event will the authors be held liable for any damages arising from
+the use of this software.
+
+Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely, subject to the following restrictions:
+
+1. The origin of this software must not be misrepresented; you must not
+   claim that you wrote the original software. If you use this software
+   in a product, an acknowledgment in the product documentation would be
+   appreciated but is not required.
+
+2. Altered source versions must be plainly marked as such, and must not
+   be misrepresented as being the original software.
+
+3. This notice may not be removed or altered from any source distribution.
+</pre>
+</blockquote>
+ <hr width="75%">
+<h3><a name="Section_legal_vba">VisualBoyAdvance GameBoy and GBA code</a></h3><p></p><blockquote>
+<pre>
+// VisualBoyAdvance - Nintendo Gameboy/GameboyAdvance (TM) emulator.
+// Copyright (C) 1999-2003 Forgotten
+// Copyright (C) 2004-2006 Forgotten and the VBA development team
+
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 2, or(at your option)
+// any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program; if not, write to the Free Software Foundation,
+// Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+</pre>
+</blockquote>
+ <hr width="75%">
+<h3><a name="Section_legal_neopop">NeoPop Neo Geo Pocket (Color) Code</a></h3><p></p><blockquote>
+<pre>
+//---------------------------------------------------------------------------
+// NEOPOP : Emulator as in Dreamland
+//
+// Copyright (c) 2001-2002 by neopop_uk
+//---------------------------------------------------------------------------
+//      This program is free software; you can redistribute it and/or modify
+//      it under the terms of the GNU General Public License as published by
+//      the Free Software Foundation; either version 2 of the License, or
+//      (at your option) any later version. See also the license.txt file for
+//      additional informations.
+</pre>
+</blockquote>
+<hr width="75%">
 <h3><a name="Section_legal_cygne"><a href="http://cygne.emuunlim.com/">Cygne</a></a></h3><p></p><p>
 Cygne is distributed under the terms of the GNU GPL Version 2, 1991.<br>Copyright 2002 Dox, dox@space.pl.
 </p>
@@ -1063,43 +1254,6 @@ Cygne is distributed under the terms of the GNU GPL Version 2, 1991.<br>Copyrigh
  */
 </pre>
 </blockquote>
-<hr width="75%">
-<h3><a name="Section_legal_quicklz"><a href="http://www.quicklz.com/">QuickLZ</a></a></h3><p></p><blockquote>
-<pre>
-// QuickLZ data compression library
-// Copyright (C) 2006-2008 Lasse Mikkel Reinhold
-// lar@quicklz.com
-//
-// QuickLZ can be used for free under the GPL-1 or GPL-2 license (where anything 
-// released into public must be open source) or under a commercial license if such 
-// has been acquired (see http://www.quicklz.com/order.html). The commercial license 
-// does not cover derived or ported versions created by third parties under GPL.
-</pre>
-</blockquote>
-<hr width="75%">
-<h3><a name="Section_legal_cdrdao"><a href="http://cdrdao.sourceforge.net/">Q-Subchannel CRC16 Code</a></a></h3><p></p><blockquote>
-<pre>
-/*  cdrdao - write audio CD-Rs in disc-at-once mode
- *
- *  Copyright (C) 1998  Andreas Mueller <mueller@daneb.ping.de>
- *
- *  This program is free software; you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
- *  (at your option) any later version.
- *
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
- */
-</pre>
-</blockquote>
-
 <hr width="75%">
 <h3><a name="Section_legal_sms_plus"><a href="http://www.techno-junk.org/">SMS Plus</a></a></h3><p></p><blockquote>
 <pre>
@@ -1161,192 +1315,6 @@ Cygne is distributed under the terms of the GNU GPL Version 2, 1991.<br>Copyrigh
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-</pre>
-</blockquote>
-<hr width="75%">
-<h3><a name="Section_legal_emu2413_sms">EMU2413(used in SMS emulation)</a></h3><p></p><blockquote>
-<pre>
-  Copyright (C) Mitsutaka Okazaki 2004
-
-  This software is provided 'as-is', without any express or implied warranty.
-  In no event will the authors be held liable for any damages arising from
-  the use of this software.
-
-  Permission is granted to anyone to use this software for any purpose,
-  including commercial applications, and to alter it and redistribute it
-  freely, subject to the following restrictions:
-
-  1. The origin of this software must not be misrepresented; you must not
-     claim that you wrote the original software. If you use this software
-     in a product, an acknowledgment in the product documentation would be
-     appreciated but is not required.
-  2. Altered source versions must be plainly marked as such, and must not
-     be misrepresented as being the original software.
-  3. This notice may not be removed or altered from any source distribution.
-</pre>
-</blockquote>
-<hr width="75%">
-<h3><a name="Section_legal_dvdisaster">CD-ROM data correction code</a></h3><p></p><blockquote>
-<pre>
-/*  dvdisaster: Additional error correction for optical media.
- *  Copyright (C) 2004-2007 Carsten Gnoerlich.
- *  Project home page: http://www.dvdisaster.com
- *  Email: carsten@dvdisaster.com  -or-  cgnoerlich@fsfe.org
- *
- *  The Reed-Solomon error correction draws a lot of inspiration - and even code -
- *  from Phil Karn's excellent Reed-Solomon library: http://www.ka9q.net/code/fec/
- *
- *  This program is free software; you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2 of the License, or
- *  (at your option) any later version.
- *
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA,
- *  or direct your browser at http://www.gnu.org.
- */
-</pre>
-</blockquote>
-<hr width="75%">
-<h3><a name="Section_legal_ym2612">YM2612 Emulator</a></h3><p></p><blockquote>
-<pre>
-/* Copyright (C) 2002 St�phane Dallongeville (gens AT consolemul.com) */
-/* Copyright (C) 2004-2006 Shay Green. This module is free software; you
-can redistribute it and/or modify it under the terms of the GNU Lesser
-General Public License as published by the Free Software Foundation; either
-version 2.1 of the License, or (at your option) any later version. This
-module is distributed in the hope that it will be useful, but WITHOUT ANY
-WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
-details. You should have received a copy of the GNU Lesser General Public
-License along with this module; if not, write to the Free Software Foundation,
-Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA */
-</pre>
-</blockquote>
-<hr width="75%">
-<h3><a name="Section_legal_svp_ssp16">Sega Genesis SVP/SSP16 Emulator</a></h3><p></p><blockquote>
-<pre>
-/*
- * basic, incomplete SSP160x (SSP1601?) interpreter
- * with SVP memory controller emu
- *
- * Copyright (c) Gražvydas "notaz" Ignotas, 2008
- *
- * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met:
- *     * Redistributions of source code must retain the above copyright
- *       notice, this list of conditions and the following disclaimer.
- *     * Redistributions in binary form must reproduce the above copyright
- *       notice, this list of conditions and the following disclaimer in the
- *       documentation and/or other materials provided with the distribution.
- *     * Neither the name of the organization nor the
- *       names of its contributors may be used to endorse or promote products
- *       derived from this software without specific prior written permission.
- *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
- * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
- * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
- * ARE DISCLAIMED. IN NO EVENT SHALL COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
- * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
- * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
- * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
- * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
- * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- */
-</pre>
-</blockquote>
-<hr width="75%">
-<h3><a name="Section_legal_speex"><a href="http://speex.org/">Speex Resampler</a></a></h3><p></p><blockquote>
-<pre>
-/* Copyright (C) 2007-2008 Jean-Marc Valin
-   Copyright (C) 2008      Thorvald Natvig
-
-   File: resample.c
-   Arbitrary resampling code
-
-   Redistribution and use in source and binary forms, with or without
-   modification, are permitted provided that the following conditions are
-   met:
-
-   1. Redistributions of source code must retain the above copyright notice,
-   this list of conditions and the following disclaimer.
-
-   2. Redistributions in binary form must reproduce the above copyright
-   notice, this list of conditions and the following disclaimer in the
-   documentation and/or other materials provided with the distribution.
-
-   3. The name of the author may not be used to endorse or promote products
-   derived from this software without specific prior written permission.
-
-   THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
-   IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
-   OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-   DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,
-   INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-   (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-   SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-   HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
-   STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
-   ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-   POSSIBILITY OF SUCH DAMAGE.
-*/
-</pre>
-</blockquote>
- <hr width="75%">
-<h3><a name="Section_legal_sabr">SABR v3.0 Shader</a></h3><p></p><blockquote>
-<pre>
-        SABR v3.0 Shader
-        Joshua Street
-
-        Portions of this algorithm were taken from Hyllian's 5xBR v3.7c
-        shader.
-
-        This program is free software; you can redistribute it and/or
-        modify it under the terms of the GNU General Public License
-        as published by the Free Software Foundation; either version 2
-        of the License, or (at your option) any later version.
-
-        This program is distributed in the hope that it will be useful,
-        but WITHOUT ANY WARRANTY; without even the implied warranty of
-        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-        GNU General Public License for more details.
-
-        You should have received a copy of the GNU General Public License
-        along with this program; if not, write to the Free Software
-        Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
-</pre>
-</blockquote>
-<hr width="75%">
-<h3><a name="Section_legal_ffmpeg">ffmpeg cputest</a></h3><p></p><blockquote>
-<pre>
-/*
- * CPU detection code, extracted from mmx.h
- * (c)1997-99 by H. Dietz and R. Fisher
- * Converted to C and improved by Fabrice Bellard.
- *
- * This file is part of FFmpeg.
- *
- * FFmpeg is free software; you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation; either
- * version 2.1 of the License, or (at your option) any later version.
- *
- * FFmpeg is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
- * Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with FFmpeg; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
- */
 </pre>
 </blockquote>
 <hr width="75%">
