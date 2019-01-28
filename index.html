@@ -186,7 +186,41 @@
 <div class="ContentBox">
  <h2 class="ContentBoxHead">News</h2>
  <div class="ContentBoxBody">
-<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5736&amp;th=1752#msg_5736">Mednafen 1.22.0-UNSTABLE</a><span style="float: right;">December 22, 2018 - 07:14 PST</span></h3><div class="ContentBoxBodySub"><div align="center"><img src="https://forum.fobby.net/index.php?t=getfile&amp;id=1161&amp;private=0" border=0 alt="Oregon Trail"></div><br />
+<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5771&amp;th=1765#msg_5771">Mednafen 1.22.1</a><span style="float: right;">January 28, 2019 - 09:22 PST</span></h3><div class="ContentBoxBodySub">Minor bugfix release.<br />
+<br />
+<div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('563199818', 1);">ChangeLog</a><div align="left" id="563199818" style="display: none;"><br />
+<pre>
+-- 1.22.1: --
+
+January 27, 2019:
+	Changed the default sound device for the OpenBSD sound driver from &quot;/dev/audio&quot; to &quot;/dev/audio0&quot;.
+
+January 26, 2019:
+	Semaphores are now implemented with condition variables and mutexes when compiling against a POSIX threads implementation without sem_timedwait().
+
+January 23, 2019:
+	PC-FX: Replaced old RAINBOW IDCT code with newly-written code.
+
+January 20, 2019:
+	Some hotkeys in the debugger's memory editor weren't being ignored properly when in text entry mode; fixed.  (Regression introduced in 1.21.0-UNSTABLE)
+
+January 1, 2019:
+	Apple2: Corrected minimum allowed value for the &quot;apple2.video.mono_lumafilter&quot; setting(was -2 when it should have been -3).
+
+	SS: Corrected line-scroll handling in double-density interlaced mode with non-zero LSS; fixes broken background graphics effect in Dural's stage in &quot;Virtua Fighter 2&quot;.
+
+	SS: Added &quot;Linkle Liver Story&quot; to the internal database of games to use the data cache read bypass kludge with, to fix a crash/hang when going to the world map.
+</pre><br />
+</div></div><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.22.1.tar.xz" target="_blank">mednafen-1.22.1.tar.xz</a><br />
+<font size="-1">SHA-256: f5b502e9f2f615c8b69fa1e151da20ab387377c72748cd8e19deb75a432ecfd2</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.22.1-win64.zip" target="_blank">mednafen-1.22.1-win64.zip</a><br />
+<font size="-1">SHA-256: 78b20b5b165476a5481cea81e13ae43e1dd387d53bbefeee92128addb67af637</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.22.1-win32.zip" target="_blank">mednafen-1.22.1-win32.zip</a><br />
+<font size="-1">SHA-256: 25184915f52bbbcad29ae4b98ce63de6e2a2847632900cdce37058845a30e8ad</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5736&amp;th=1752#msg_5736">Mednafen 1.22.0-UNSTABLE</a><span style="float: right;">December 22, 2018 - 07:14 PST</span></h3><div class="ContentBoxBodySub"><div align="center"><img src="https://forum.fobby.net/index.php?t=getfile&amp;id=1161&amp;private=0" border=0 alt="Oregon Trail"></div><br />
 <br />
 <b>Notable changes since 1.21.3:</b><br />
 <ul>
@@ -838,52 +872,7 @@ June 4, 2017:
 <font size="-1">SHA-256: 4d8a575cbb575115e7d12421a155dd46c7f15dffa359a61ab29e4b8809fda53f</font><br />
 <br />
 <a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.45.1-win32.zip" target="_blank">mednafen-0.9.45.1-win32.zip</a><br />
-<font size="-1">SHA-256: bce8a7d15abdaf65365ade78a981e75ea30d626baa6c54c154fecc16bb8e9481</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5012&amp;th=1538#msg_5012">Mednafen 0.9.45</a><span style="float: right;">June  2, 2017 - 07:08 PDT</span></h3><div class="ContentBoxBodySub">Changes:<br />
-<div class="pre"><pre>
--- 0.9.45: --
-
-May 29, 2017:
-	Tweaked netplay sound buffer underrun kludge code.
-
-	The netplay server host and port being connected to are now printed to the netplay console at the beginning of a
-	connection attempt.
-
-	Netplay connection attempts to servers are now non-blocking.
-
-May 25, 2017:
-	SS: Synchronize end of SMPC clock change commands to beginning of vsync instead of beginning of vblank, per tests on a SS.
-
-May 23, 2017:
-	SS: Reworked how the VDP2 rendering thread waits, to make Saturn emulation usable with the default OpenBSD kernel.
-
-	SS: Added emulation of the light gun(&quot;Stunner&quot;/&quot;Virtua Gun&quot;).
-
-April 28, 2017:
-	#include'd many commonly-used C and C++ standard library headers in types.h(and removed redundant #include statements 
-	from various header and source files), to reduce the probability of portability problems
-	(due to neglecting to explicitly include a header file) when different standard C/C++ libraries
-	behave differently in regards to what header files include what other header files.
-
-	Added a sound output driver for OpenBSD's /dev/audio.
-
-	Reworked the sound output format conversion code to be more versatile, 
-
-April 25, 2017:
-	NES: Wrote new &quot;Barcode Battler II&quot; emulation code to replace the old &quot;Barcode World&quot; code, based on quick testing with
-	actual hardware(albeit the English version).
-
-April 24, 2017:
-	SSFPlay: Added save state support.
-</pre></div><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.45.tar.xz" target="_blank">mednafen-0.9.45.tar.xz</a><br />
-<font size="-1">SHA-256: 49715544a5eb7a678f7f01994f38aa14e2192f00d201684184665665073a600e</font><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.45-win64.zip" target="_blank">mednafen-0.9.45-win64.zip</a><br />
-<font size="-1">SHA-256: 89a6f67711c2e0bb4c5e59fb684e7e54dbb3b3c4acee94ecab52740a204e942d</font><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.45-win32.zip" target="_blank">mednafen-0.9.45-win32.zip</a><br />
-<font size="-1">SHA-256: 27c6bc064e96a54fe082b834fa29019ac8e82b9f1bc9be047e2ec633bd1b424f</font></div></div><br> </div>
+<font size="-1">SHA-256: bce8a7d15abdaf65365ade78a981e75ea30d626baa6c54c154fecc16bb8e9481</font></div></div><br> </div>
 </div>
 <br />
   <div class="CopyrightBox">
