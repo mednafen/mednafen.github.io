@@ -1,3 +1,24 @@
+-- 1.22.1: --
+
+January 27, 2019:
+	Changed the default sound device for the OpenBSD sound driver from "/dev/audio" to "/dev/audio0".
+
+January 26, 2019:
+	Semaphores are now implemented with condition variables and mutexes when compiling against a POSIX threads implementation without sem_timedwait().
+
+January 23, 2019:
+	PC-FX: Replaced old RAINBOW IDCT code with newly-written code.
+
+January 20, 2019:
+	Some hotkeys in the debugger's memory editor weren't being ignored properly when in text entry mode; fixed.  (Regression introduced in 1.21.0-UNSTABLE)
+
+January 1, 2019:
+	Apple2: Corrected minimum allowed value for the "apple2.video.mono_lumafilter" setting(was -2 when it should have been -3).
+
+	SS: Corrected line-scroll handling in double-density interlaced mode with non-zero LSS; fixes broken background graphics effect in Dural's stage in "Virtua Fighter 2".
+
+	SS: Added "Linkle Liver Story" to the internal database of games to use the data cache read bypass kludge with, to fix a crash/hang when going to the world map.
+
 -- 1.22.0-UNSTABLE: --
 
 December 11, 2018:
