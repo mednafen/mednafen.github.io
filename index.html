@@ -186,7 +186,23 @@
 <div class="ContentBox">
  <h2 class="ContentBoxHead">News</h2>
  <div class="ContentBoxBody">
-<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5771&amp;th=1765#msg_5771">Mednafen 1.22.1</a><span style="float: right;">January 28, 2019 - 09:22 PST</span></h3><div class="ContentBoxBodySub">Minor bugfix release.<br />
+<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5834&amp;th=1788#msg_5834">Mednafen 1.22.2</a><span style="float: right;">April 24, 2019 - 00:31 PDT</span></h3><div class="ContentBoxBodySub"><b>Notable changes since 1.22.1:</b><br />
+<ul>
+<li><b>Apple2</b>: Added basic support for WOZ 2.0 floppy disk images.
+<li><b>Lynx</b>: Fixed a potential security vulnerability.
+<li><b>PCE</b>: Fixed an an old regression(from around 0.9.0) that degraded DDA sample playback when playing a HES file.
+<li><b>PS1</b>: Fixed a regression introduced in 1.22.0-UNSTABLE that broke a few PS1 games(e.g. &quot;SimCity 2000&quot; and &quot;Rise 2&quot;).
+<li><b>SS</b>: Added the European release of &quot;Theme Park&quot; to the internal database of games to use the data cache read bypass kludge with, to fix infinite boredom during the intro FMV.
+</ul><div align="center"><a href="https&#58;&#47;&#47;mednafen.github.io/documentation/ChangeLog.txt" target="_blank">ChangeLog</a></div><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.22.2.tar.xz" target="_blank">mednafen-1.22.2.tar.xz</a><br />
+<font size="-1">SHA-256: fad433ac694696d69ea38f6f4be1d0a6c1aa3609ec7f46ce75412be2f2df2f95</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.22.2-win64.zip" target="_blank">mednafen-1.22.2-win64.zip</a><br />
+<font size="-1">SHA-256: d0674f6e498f612c6ceb7dff95dfa3b5a8eda051a8e98a2843da4b91898f6895</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.22.2-win32.zip" target="_blank">mednafen-1.22.2-win32.zip</a><br />
+<font size="-1">SHA-256: 97229dad50e05483f85ecd9f3dc718c3d22aa3040a525d00231828197bb47090</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5771&amp;th=1765#msg_5771">Mednafen 1.22.1</a><span style="float: right;">January 28, 2019 - 09:22 PST</span></h3><div class="ContentBoxBodySub">Minor bugfix release.<br />
 <br />
 <div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('563199818', 1);">ChangeLog</a><div align="left" id="563199818" style="display: none;"><br />
 <pre>
@@ -848,31 +864,7 @@ June 21, 2017:
 <font size="-1">SHA-256: e869db3dac14d020471055d81bc8d21d6cf63cf3d9806ea14879cf9eff8eab4d</font><br />
 <br />
 <a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.46-win32.zip" target="_blank">mednafen-0.9.46-win32.zip</a><br />
-<font size="-1">SHA-256: 282ef3d6b383978976bedb991b9df57b846713028fcca48c2e1be966a66be41e</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5029&amp;th=1545#msg_5029">Mednafen 0.9.45.1</a><span style="float: right;">June 10, 2017 - 00:49 PDT</span></h3><div class="ContentBoxBodySub">This very minor release fixes a regression introduced in 0.9.45, that caused garbled sound output when using the (non-default) exclusive-mode WASAPI sound driver with certain higher-end sound cards.<br />
-<br />
-<div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('1817855764', 1);">ChangeLog</a><div align="left" id="1817855764" style="display: none;"><br />
-<pre>
--- 0.9.45.1: --
-
-June 5, 2017:
-	SNES: Fixed an instance of possibly-undefined behavior.
-
-	Silenced dumb warning spam relating to endian.h emitted by newer versions of gcc.
-
-June 4, 2017:
-	Fixed garbled audio with the exclusive-mode WASAPI sound driver on some higher-end sound cards(regression introduced in 0.9.45 due to a mistake in changing
-	the meaning of a macro field during development); may also fix garbled audio when using the new OpenBSD sound driver with certain sound cards.
-</pre><br />
-</div></div><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.45.1.tar.xz" target="_blank">mednafen-0.9.45.1.tar.xz</a><br />
-<font size="-1">SHA-256: f95f68acc14f9b30b201e15b8205d85ac9dc7e581ea6b61e225e990491f01e69</font><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.45.1-win64.zip" target="_blank">mednafen-0.9.45.1-win64.zip</a><br />
-<font size="-1">SHA-256: 4d8a575cbb575115e7d12421a155dd46c7f15dffa359a61ab29e4b8809fda53f</font><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.45.1-win32.zip" target="_blank">mednafen-0.9.45.1-win32.zip</a><br />
-<font size="-1">SHA-256: bce8a7d15abdaf65365ade78a981e75ea30d626baa6c54c154fecc16bb8e9481</font></div></div><br> </div>
+<font size="-1">SHA-256: 282ef3d6b383978976bedb991b9df57b846713028fcca48c2e1be966a66be41e</font></div></div><br> </div>
 </div>
 <br />
   <div class="CopyrightBox">

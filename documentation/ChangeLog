@@ -1,3 +1,27 @@
+-- 1.22.2: --
+
+April 23, 2019:
+	PSX: Fixed a regression introduced in 1.22.0-UNSTABLE that broke a few PS1 games(e.g. SimCity 2000 and Rise 2).
+
+	Fixed issues with inline functions in the QuickLZ code that could cause linker errors when compiling with optimizations disabled.
+
+April 14, 2019:
+	Apple2: Added basic WOZ 2.0 disk image support.
+
+April 13, 2019:
+	NGP: Fixed a sequence point rule violation that could cause "Gals' Fighters" to malfunction when Mednafen was compiled with clang,
+	per tip from stellarporter.
+
+	SS: Added the European release of "Theme Park" to the internal database of games to use the data cache read bypass kludge with,
+	to fix a crash/hang during the intro FMV.
+
+	Lynx: Fixed an old heap buffer overflow bug that could be triggered if the emulated game set up registers and RAM in a
+	certain way.
+
+March 18, 2019:
+	PCE: Fixed an old bug(looks like from around a decade ago) in the HES playback code; it caused periodic high IRQ latency,
+	which resulted in timer IRQ-driven DDA playback sounding rougher than it should have.
+
 -- 1.22.1: --
 
 January 27, 2019:
