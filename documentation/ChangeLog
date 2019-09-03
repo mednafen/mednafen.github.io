@@ -1,3 +1,88 @@
+-- 1.23.0-UNSTABLE: --
+
+August 26, 2019:
+	Apple2: Added support for an RGB-style video mode, selectable with the new setting "apple2.video.mode".
+
+	SS: Added "Shunsai" to the internal database of games to use the data cache read bypass kludge with, to fix various graphical glitches.
+
+August 25, 2019:
+	Expanded and harmonized the accepted value ranges for settings "sfspeed" and "ffspeed" to 0.25 through 15, for greater versatility.
+
+	NGP: Added very incomplete emulation of BIOS system call "VECT_FLASHERS", per tip from stellarporter.  Fixes eventual hang in "The Last Blade".
+
+	NGP: Fixed TLCS-900H new IFF calculation when taking an interrupt, per tip from trinemark.  Fixes broken voice playback in
+	"Densetsu no Ogre Battle Gaiden".
+
+	NGP: Fixed potential division by zero in the TLCS-900H MINC* and MDEC* instructions emulation(the emulation of the instructions is still almost certainly wrong,
+	though), per tip from byuu.
+
+August 24, 2019:
+	PCE: Changed the Super CD-ROM^2 memory identification signature to match a Duo instead of a PCE with a system card, to fix compatibility
+	issues with some US Super CD-ROM^2 games when using a US system card image, per tip from elmer.
+
+August 22, 2019:
+	SS: Added "Ronde" to the internal database of games to use the data cache read bypass kludge with, to fix missing graphics
+	on the title screen and main menu.
+
+August 20, 2019:
+	SS: Added "Thunder Force Gold Pack 1" to the internal database of games to use the data cache read bypass kludge with,
+	to fix explosion graphic glitches in "Thunder Force III".
+
+	SS: Fixed a bug that could cause erroneous VDP1 framebuffer erasure when the lower Y coordinate for the erase window was too large.
+
+August 12, 2019:
+	SS: Added "Thunder Force Gold Pack 2" to the internal database of games to use the data cache read bypass kludge with,
+	to fix quasi-random hangs when pausing the game in "Thunder Force AC".
+
+	SS: Corrected the value the SCU DMA mode registers are initialized to on reset.
+
+June 18, 2019:
+	SS: Added "Formula Grand Prix - Team Unei Simulation" to the internal database of games to use the data cache read bypass kludge with,
+	to fix a hang after the title screen.
+
+	SS: Added "Virtual Mahjong" to the internal database of games to use the data cache read bypass kludge with, to fix graphical glitches on the character
+	select screen.
+
+June 16, 2019:
+	SS: Slowed down SCU DMA from SDRAM/SH-2 bus slightly, though I'm not sure what is the origin of the measured overhead/slowdown on a Saturn.
+	Fixes FMV flickering in "Lunar".
+
+	SS: Added partial emulation(CS0 and CS1, SH-2 non-DMA accesses and SCU DMA accesses) of the timing effects of the SCU A-bus configuration registers.
+
+	SS: Added "Tech Saturn 1997.6" to the internal database of games for which 1MiB RAM cart emulation is enabled, for its "Groove on Fight" demo.
+
+	SS: Implemented a crude simulation of the VDP1 command execution slowdown that occurs when an SH-2 CPU writes to VDP1 RAM or registers, activated
+	via the horrible hacks mechanism; fixes text flickering in "Arcade's Greatest Hits", most rescue text flickering in "Burning Rangers"(at least on the first stage),
+	graphical glitches in "Whizz", and some of the graphical glitches in "All-Star Baseball 97".
+
+	SS: Added a horrible hack to fix the hang in "Fighters Megamix" that occurred after the intro FMV played(or was interrupted).
+
+	SS: Added a horrible hack to fix the hang at the end of disc 1 of "Grandia".
+
+	SS: Added a per-game horrible hacks mechanism.
+
+	SS: Added "Albert Odyssey" to the internal database of games to use full cache emulation with, to fix battle text truncation.
+
+	SS: Added "Die Hard Trilogy", "GeGeGe no Kitarou", "Nobunaga no Yabou Shouseiroku", "Space Jam" to the internal database of games to use full
+	cache emulation with, to fix hangs/crashes.
+
+	SS: Added "Gex" and "Slam 'n Jam 96" to the internal database of games to use full cache emulation with, to fix minor FMV glitches.
+
+	SS: Added "Policenauts" to the internal database of games to use full cache emulation with, to fix screen flickering on disc 2.
+
+	SS: Full cache emulation(enabled via database) now also enables emulation of SH-2 WB/EX pipeline stalls.
+
+	SS: Tweaked the kludgey CPU instruction read/write penalty during SH-2 DMA to be higher in some circumstances; fixes major graphical glitches in the
+	later stages of "Shienryu" when on arcade mode.
+
+	SS: Added "Dragon Force II" to the internal database of games to use the data cache read bypass kludge with, to fix major game logic errors
+	during battles.
+
+March 15, 2019:
+	SNES-Faust: Added CX4, SuperFX, and SA-1 emulation.
+
+	SNES-Faust: Made various changes to try to improve game compatibility.
+
 -- 1.22.2: --
 
 April 23, 2019:
