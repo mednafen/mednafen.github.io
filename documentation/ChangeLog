@@ -1,3 +1,65 @@
+-- 1.24.0-UNSTABLE: --
+
+December 19, 2019:
+	PSX: Handle SPU CD volume as signed 16-bit instead of unsigned; fixes lowest volume setting in "Star Wars Dark Forces".
+
+December 18, 2019:
+	PSX: Tweaked PAL pixel aspect ratio, tweaked nominal FPS values, added setting "psx.correct_aspect", and fixed light gun Y positioning with PAL games.
+
+December 16, 2019:
+	SNES-Faust: Added SDD-1 emulation.
+
+November 26, 2019:
+	SNES-Faust: Allow emulation to switch away from the SPC700 during execution of opcode 0xFA, between the read and write, to fix bonkers
+	audio that leads to a hang in the "Tenshi no Uta" game.
+
+	SNES-Faust: Extended DMA NMI delay kludge to cover 8-bit LDX #imm to fix hang in "Frisky Tom" in "Nichibutsu Arcade Classics".
+
+	SNES-Faust: Added DSP-2 emulation.
+
+November 19, 2019:
+	SNES-Faust: Added MSU1 support.
+
+	SNES-Faust: Added a multithreaded PPU renderer, controlled via the new "snes_faust.renderer" setting, disabled by default.
+
+	SNES-Faust: Added SuperFX overclocking support, controlled via setting "snes_faust.superfx.clock_rate".
+
+	SNES-Faust: Added SuperFX instruction cache emulation support, controlled via setting "snes_faust.superfx.icache", disabled by default.
+
+	SNES-Faust: Added support for Game Genie cheats(entered via Mednafen's cheat system).
+
+	SNES-Faust: Added setting "snes_faust.region" to allow for overriding the automatic region detection and emulating one region while reporting the different region to the game.
+
+November 17, 2019:
+	On Windows, call CoInitializeEx() with COINIT_MULTITHREADED before calling SDL_Init(), to prevent potential initialization errors with Mednafen's
+	WASAPI sound code.
+
+November 16, 2019:
+	Using drive-relative paths on Windows should no longer make a mess due to Mednafen looking for and putting files in the wrong place.
+
+November 14, 2019:
+	SS: Removed "ss.midsync" setting; the functionality it controlled is now always enabled.
+
+	Added settings "affinity.cd", "affinity.emu", "affinity.video", and "ss.affinity.vdp2" to specify CPU thread affinity masks for the CD read threads,
+	main emulation thread, video blitting thread, and Saturn VDP2 rendering thread, respectively. Setting thread affinities properly can improve
+	Saturn emulation performance on a dual-core CPU with hyperthreading.
+
+	Cleaned up multithreading code and API.
+
+November 10, 2019:
+	Removed "using namespace Mednafen;" from types.h, and related changes.
+
+October 25, 2019:
+	SNES-Faust: Ignore frameskip if interlace mode is enabled, to avoid feeding uninitialized data into the deinterlacer which leads to a crash.
+
+September 18, 2019:
+	Implemented workaround in OwlResampler_neon.inc for a C++ parsing bug in gcc 9.x.
+
+September 13, 2019:
+	Apple2: Renamed(with backwards-compatibility aliases) video mode "rgb_alt1" to "rgb_alt" and "rgb_alt2" to "rgb_alt_tfr", and added new video mode "rgb_tfr".
+
+	Apple2: Added support for 32-color custom palettes(will automatically enable a text fringe reduction RGB mode if used).
+
 -- 1.23.0-UNSTABLE: --
 
 August 26, 2019:
