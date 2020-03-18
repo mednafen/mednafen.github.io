@@ -1,3 +1,38 @@
+-- 1.24.1: --
+
+February 27, 2020:
+	NES: Changed some macros in the CPU emulation code to not have leading underscores.
+
+February 25, 2020:
+	Use sem_clockwait() or sem_clockwait_np() when available, instead of sem_timedwait().
+
+	NES: Don't memset() MDFN_PixelFormat object.
+
+February 23, 2020:
+	Fixed build errors on FreeBSD relating to the multithreading code.
+
+February 22, 2020:
+	Fixed broken semaphore emulation code used on non-Windows platforms when sem_timedwait() is not available(1.24.0-UNSTABLE regression).
+
+February 15, 2020:
+	Altered Linux joystick API detection in the configure script, to avoid compiling with Linux joystick support in lieu of SDL joystick support on *BSD systems
+	with Linux header files installed.
+
+February 11, 2020:
+	Fixed AltiVec-related build errors on 64-bit POWER/PPC.
+
+	SS: Added kludges to fix NBG2/NBG3 background layer offset problems in "Fighters Megamix".
+
+February 2, 2020:
+	SNES-Faust: Replaced assert() in the DSP-1 emulation code with a SNES_DBG()
+
+January 23, 2020:
+	PSX: Implemented a partial fix for missing notes/instruments in the music of "Dragon Ball GT: Final Bout".
+
+December 30, 2019:
+	PSX: Don't ignore the sample loop address set via ADPCM header when the loop address register was written only before the end of voice on startup delay.
+	Fixes sound effect glitches in "Re-Loaded: The Hardcore Sequel".
+
 -- 1.24.0-UNSTABLE: --
 
 December 19, 2019:
