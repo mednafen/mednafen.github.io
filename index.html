@@ -186,7 +186,18 @@
 <div class="ContentBox">
  <h2 class="ContentBoxHead">News</h2>
  <div class="ContentBoxBody">
-<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=6033&amp;th=1852#msg_6033">Mednafen 1.24.0-UNSTABLE</a><span style="float: right;">December 24, 2019 - 15:48 PST</span></h3><div class="ContentBoxBodySub"><b>Notable changes since 1.23.0-UNSTABLE:</b><br />
+<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=6099&amp;th=1873#msg_6099">Mednafen 1.24.1</a><span style="float: right;">March 18, 2020 - 02:58 PDT</span></h3><div class="ContentBoxBodySub">Minor update to fix build issues on a few platforms, to fix sound effect glitches in the PS1 game &quot;Re-Loaded: The Hardcore Sequel&quot;, and to fix minor background layer alignment issues in the Saturn game &quot;Fighters Megamix&quot;.<br />
+<br />
+<div align="center"><a href="https&#58;&#47;&#47;mednafen.github.io/documentation/ChangeLog.txt" target="_blank">ChangeLog</a></div><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.24.1.tar.xz" target="_blank">mednafen-1.24.1.tar.xz</a><br />
+<font size="-1">SHA-256: a47adf3faf4da66920bebb9436e28cbf87ff66324d0bb392033cbb478b675fe7</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.24.1-win64.zip" target="_blank">mednafen-1.24.1-win64.zip</a><br />
+<font size="-1">SHA-256: ad3a7906521f0ce45737c2f0f7ea1117799548e60d10a746ac74ddd26d944cbb</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.24.1-win32.zip" target="_blank">mednafen-1.24.1-win32.zip</a><br />
+<font size="-1">SHA-256: d26456eb711feac679e424968edee579b69c38ce1972a93bed10355b04ff21cd</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=6033&amp;th=1852#msg_6033">Mednafen 1.24.0-UNSTABLE</a><span style="float: right;">December 24, 2019 - 15:48 PST</span></h3><div class="ContentBoxBodySub"><b>Notable changes since 1.23.0-UNSTABLE:</b><br />
 <ul>
 <li>Added settings &quot;affinity.cd&quot;, &quot;affinity.emu&quot;, &quot;affinity.video&quot;, and &quot;ss.affinity.vdp2&quot; to specify CPU thread affinity masks for the CD read threads, main emulation thread, video blitting thread, and Saturn VDP2 rendering thread, respectively.  Setting thread affinities properly can improve Saturn emulation performance on a dual-core CPU with hyperthreading.
 <li>Using drive-relative paths on Windows should no longer make a mess due to Mednafen looking for and putting files in the wrong place.
@@ -815,69 +826,7 @@ November 12, 2017:
 <font size="-1">SHA-256: 3458c0c0f3ab54760e08814340dbef37f4e9c32684bbc73e1395e9f517bea1ba</font><br />
 <br />
 <a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.21.0-UNSTABLE-win32.zip" target="_blank">mednafen-1.21.0-UNSTABLE-win32.zip</a><br />
-<font size="-1">SHA-256: 9f53d534ae67d3834cd1ca9cd92c866b63d7a55fed9585a8c57089f2c7a3235c</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5224&amp;th=1603#msg_5224">Mednafen 0.9.48</a><span style="float: right;">September 18, 2017 - 18:05 PDT</span></h3><div class="ContentBoxBodySub"><b>Notable changes since 0.9.47:</b><br />
-<ul>
-<li> SS: Fixed graphics corruption in the intro of &quot;Batman Forever&quot;.
-<li> SS: Fixed hang in &quot;Jung Rhythm&quot; when trying to retry a failed stage.
-<li> SS: Fixed crash in &quot;Tenchi Muyou! Ryououki Gokuraku&quot; when it tries to play an opening movie.
-<li> SS: Fixed messed-up colors in &quot;Discworld 2&quot;.
-<li> SS: Fixed hang when trying to resume a suspended game in &quot;Tactics Ogre&quot;.
-<li> SS: Fixed the periodic loud popping noise during FMV playback in &quot;Grandia&quot;(an emulation bugfix; sound may still pop/click if you have a slower CPU of course).
-<li> SS: Added a hack/kludge to allow bypassing of data cache on reads(such that the timing benefits of partial cache emulation are preserved, without cache coherency problems that partial cache emulation sometimes leads to with poorly programmed games), and added an internal database to enable it on select games; fixes graphical glitches and/or hangs in &quot;Area 51 (USA and Europe)&quot;, &quot;Clockwork Knight 2 (USA)&quot;, &quot;DeJig - Lassen Art Collection&quot;, &quot;Father Christmas&quot;, &quot;Golden Axe The Duel&quot;, &quot;Sega Saturn Choice Cuts&quot;, &quot;Spot Goes to Hollywood (USA and Japan)&quot;, &quot;Street Fighter Zero&quot;, &quot;Street Fighter Zero 3&quot;, &quot;Super Puzzle Fighter II Turbo&quot;, and &quot;Virtual Volleyball&quot;.
-<li> SS: Full cache emulation is now enabled for &quot;Whizz&quot;(by using an internal database), to resolve(or at least reduce) quasi-random hanging issues during startup.
-</ul><br />
-<br />
-<div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('1143116374', 1);">ChangeLog</a><div align="left" id="1143116374" style="display: none;"><br />
-<pre>
--- 0.9.48: --
-
-September 16, 2017:
-	Set cheat's default endianness to that preferred by the system being emulated when manually adding a cheat that's not
-	a cheat device code nor the result of a cheat search.
-
-September 15, 2017:
-	SS: Fixed SCU DSP DMA from B-bus; fixes the periodic loud popping in Grandia's FMV.
-
-September 12, 2017:
-	SS: Added a hack/kludge to allow bypassing of data cache on reads(such that the timing benefits of partial cache emulation are preserved, without cache
-	coherency problems that partial cache emulation sometimes leads to with poorly programmed games), and added an internal database to enable it on select games;
-	fixes graphical glitches and/or hangs in &quot;Area 51 (USA and Europe)&quot;, &quot;Clockwork Knight 2 (USA)&quot;, &quot;DeJig - Lassen Art Collection&quot;, &quot;Father Christmas&quot;,
-	&quot;Golden Axe The Duel&quot;, &quot;Sega Saturn Choice Cuts&quot;, &quot;Spot Goes to Hollywood (USA and Japan)&quot;, &quot;Street Fighter Zero&quot;, &quot;Street Fighter Zero 3&quot;,
-	&quot;Super Puzzle Fighter II Turbo&quot;, and &quot;Virtual Volleyball&quot;.
-
-	SS: Full cache emulation is now enabled for &quot;Whizz&quot;(by using an internal database), to resolve(or at least reduce) quasi-random hanging issues during startup. 
-
-September 11, 2017:
-	SS: Corrected an inaccuracy with CDB play repeat handling; fixes hang when trying to resume a suspended game in &quot;Tactics Ogre&quot;.
-
-	SS: Initialize VDP1 clipping and local coordinate registers only on power-on, and not on reset.
-
-September 7, 2017:
-	SS: Fixed side-effect inaccuracies in the CDB Put Sector Data, Copy Sector Data, and Move Sector Data command emulation.
-
-September 6, 2017:
-	Added configure option &quot;--with-external-trio&quot;, for distribution packagers.
-
-	SS: Added partial emulation of SH-2 external bus open bus behavior; fixes messed up colors in &quot;Discworld 2&quot;.
-
-September 4, 2017:
-	SS: Improved CDB Initialize command emulation; fixes crash in &quot;Tenchi Muyou! Ryououki Gokuraku&quot; when it tries to play an opening movie during startup.
-
-August 28, 2017:
-	SS: Made CD seek overhead calculation less completely wrong; fixes graphics corruption in intro of &quot;Batman Forever&quot;, and fixes hang in &quot;Jung Rhythm&quot; when
-	trying to retry a failed stage.
-</pre><br />
-</div></div><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.48.tar.xz" target="_blank">mednafen-0.9.48.tar.xz</a><br />
-<font size="-1">SHA-256: d3cc0c838f496511946d6ea18fda5965d2b71577c610acc811835cc87d152102</font><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.48-win64.zip" target="_blank">mednafen-0.9.48-win64.zip</a><br />
-<font size="-1">SHA-256: c3ccb78325bae8cbbf7d9101317a61e364c4dcd21c59004225a7307866599fa5</font><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-0.9.48-win32.zip" target="_blank">mednafen-0.9.48-win32.zip</a><br />
-<font size="-1">SHA-256: ed40023c66bc545a724f4190e6e18fb54bb97cc4249a445120f2b70a825f43e7</font><br />
-</div></div><br> </div>
+<font size="-1">SHA-256: 9f53d534ae67d3834cd1ca9cd92c866b63d7a55fed9585a8c57089f2c7a3235c</font></div></div><br> </div>
 </div>
 <br />
   <div class="CopyrightBox">
