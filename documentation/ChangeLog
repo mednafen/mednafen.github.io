@@ -1,3 +1,30 @@
+-- 1.24.2: --
+
+April 25, 2020:
+	Fixed broken support for systems without any usable OpenGL implementation available.
+
+April 24, 2020:
+	Apple2:  Adjust disk angle variable upon disk change, partially sanitize the disk angle variable on state load, and print out a debug error
+	message instead of triggering an assert() in the disk reading code, to prevent Mednafen from aborting out in certain circumstances involving disk
+	changing and state loading.
+
+April 21, 2020:
+	Apple2: Added missing keyboard reading variable to save states.
+
+April 7, 2020:
+	SS: Fixed a few inaccuracies with the SCSP waveform loop handling.
+
+April 6, 2020:
+	SS: Added emulation of SCSP slot short waveform mode bit.
+
+April 5, 2020:
+	SS: Implemented the buggy linear interpolation that occurs on the SCSP when FM is used.
+
+April 3, 2020:
+	SS: Added emulation of SCSP slot EG bypass bit.
+
+	SS: Implemented SCSP register mirroring.
+
 -- 1.24.1: --
 
 February 27, 2020:
