@@ -186,7 +186,25 @@
 <div class="ContentBox">
  <h2 class="ContentBoxHead">News</h2>
  <div class="ContentBoxBody">
-<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=6099&amp;th=1873#msg_6099">Mednafen 1.24.1</a><span style="float: right;">March 18, 2020 - 02:58 PDT</span></h3><div class="ContentBoxBodySub">Minor update to fix build issues on a few platforms, to fix sound effect glitches in the PS1 game &quot;Re-Loaded: The Hardcore Sequel&quot;, and to fix minor background layer alignment issues in the Saturn game &quot;Fighters Megamix&quot;.<br />
+<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=6165&amp;th=1892#msg_6165">Mednafen 1.24.2</a><span style="float: right;">May  1, 2020 - 01:13 PDT</span></h3><div class="ContentBoxBodySub">Minor update.<br />
+<ul>
+<li>Fixed broken support for systems with no OpenGL implementation available.
+<li><b>Apple2</b>: Fixed potential assert() failure after changing disks.
+<li><b>SS</b>: Implemented emulation of SCSP slot EG bypass and short waveform mode bits.
+<li><b>SS</b>: Implemented the buggy linear interpolation that occurs when SCSP FM is used.
+<li><b>SS</b>: Implemented SCSP register mirroring.
+<li><b>SS</b>: Fixed a few inaccuracies with the SCSP waveform loop handling.
+</ul><br />
+<div align="center"><a href="https&#58;&#47;&#47;mednafen.github.io/documentation/ChangeLog.txt" target="_blank">ChangeLog</a></div><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.24.2.tar.xz" target="_blank">mednafen-1.24.2.tar.xz</a><br />
+<font size="-1">SHA-256: 1169ded285bb56d359973d3d332f28e5d2e9e41768a9932383d1a0ef63057c6c</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.24.2-win64.zip" target="_blank">mednafen-1.24.2-win64.zip</a><br />
+<font size="-1">SHA-256: cb95a1e0c33873ccd746e5ac4af2cbcdc48281416beb66f1da99e9b68e26aca6</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.24.2-win32.zip" target="_blank">mednafen-1.24.2-win32.zip</a><br />
+<font size="-1">SHA-256: f2921999408a911e7be5229a0cf51be658c5b3bc4ad15e6353a6988c0308f00c</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=6099&amp;th=1873#msg_6099">Mednafen 1.24.1</a><span style="float: right;">March 18, 2020 - 02:58 PDT</span></h3><div class="ContentBoxBodySub">Minor update to fix build issues on a few platforms, to fix sound effect glitches in the PS1 game &quot;Re-Loaded: The Hardcore Sequel&quot;, and to fix minor background layer alignment issues in the Saturn game &quot;Fighters Megamix&quot;.<br />
 <br />
 <div align="center"><a href="https&#58;&#47;&#47;mednafen.github.io/documentation/ChangeLog.txt" target="_blank">ChangeLog</a></div><br />
 <br />
@@ -651,182 +669,7 @@ February 22, 2018:
 <font size="-1">SHA-256: b9db8d4d6bd2f3e9eafc55d2db26e8d00d1ccf43c51ff373bc68a742e930dc53</font><br />
 <br />
 <a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.21.1-win32.zip" target="_blank">mednafen-1.21.1-win32.zip</a><br />
-<font size="-1">SHA-256: a4a7f9ec0e0c965e4c7e04bdf1965fb286be3c9fcae4df01980feaab4bec468b</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5427&amp;th=1652#msg_5427">Mednafen 1.21.0-UNSTABLE</a><span style="float: right;">February 20, 2018 - 21:01 PST</span></h3><div class="ContentBoxBodySub"><b>Notable changes since 0.9.48:</b><br />
-<ul>
-<li>Migrated to SDL2(building from source requires 2.0.5+).
-
-<li>An attempt to run an instance of Mednafen while another instance is already running with the same base directory is now blocked during startup, via a lock file; note that this check occurs after stdout and stderr are potentially redirected to stdout.txt and stderr.txt on Windows.
-
-<li>Removed the &quot;overlay&quot; video driver.
-
-<li>Changed the default value of setting &quot;video.driver&quot; from &quot;opengl&quot; to &quot;default&quot;, removed the old &quot;0&quot; and &quot;1&quot; backwards-compatibility value aliases, renamed the &quot;sdl&quot; driver to &quot;softfb&quot;(without backwards-compat aliases), and made it so the setting's value will be reset to &quot;default&quot; after automatically importing settings from &quot;mednafen-09x.cfg&quot;.
-
-<li>Added setting &quot;video.fs.display&quot;.
-
-<li>Added settings &quot;fps.autoenable&quot;, &quot;fps.position&quot;, &quot;fps.scale&quot;, &quot;fps.font&quot;, &quot;fps.textcolor&quot;, and &quot;fps.bgcolor&quot;.
-
-<li>Added support for pasting text into the cheat and netplay consoles.
-
-<li>On Windows, Mednafen will now output text to a console if it's started from a console(e.g. cmd.exe or Cygwin), and if not, write to stdout.txt and stderr.txt like before.
-
-<li>On Windows, error messages during startup will now be displayed in a popup message box.
-
-<li><font color="yellow">On Windows, Mednafen now uses Unicode variants of CRT and Win32 functions; this may require the user to update path settings and convert their CUE sheets to UTF-8 if filenames use exotic(e.g. not directly typable on a standard US-layout keyboard) characters.</font>
-
-<li>For key bindings relating to the debugger and cheat management interface, the Right ALT key modifier will no longer be respected(only the Left ALT has	any effect now), for internationalization reasons.
-
-<li><font color="yellow">Configuration file is now named &quot;mednafen.cfg&quot; again, instead of &quot;mednafen-09x.cfg&quot;; if &quot;mednafen.cfg&quot; doesn't exist or is for an old version(earlier than 0.9.0) of Mednafen, the settings will be loaded from &quot;mednafen-09x.cfg&quot; on startup, but still saved to &quot;mednafen.cfg&quot; on exit.</font>
-
-<li>Reworked the input mapping setting format to be more human-readable(and editable).  Details are in the documentation, in the &quot;Advanced Usage&quot; section.  <font color="yellow">Old input mappings will be translated internally, except for keyboard mappings, due to incompatibilities between how SDL 1.2 and 2 handle keyboards.</font>
-
-<li>Added support for mapping joystick axes and buttons, mouse buttons, and keyboard keys to emulated mouse device relative motion for testing purposes(via	manually editing the configuration file, as the in-emulator configuration process currently won't create such mappings).
-
-<li>Added support for digital button input mappings that mix AND, ANDNOT, and OR-style operations together(previously it was either just AND or OR); refer to the documentation for more details.  Note that the in-emulator configuration process won't create complex mappings that mix different boolean operations, but you can map combinations using simpler logic in-emulator, and then edit the configuration file to adjust the boolean operations used.
-
-<li><font color="yellow">Altered calculations involving *.xscale(fs)/*.yscale(fs) settings to be more predictable given floating point nuances; any user using non-integer scaling values for these settings may need to adjust them to get the same result as in previous versions of Mednafen, however.</font>
-
-<li>Fixed broken cheat file saving on MS Windows.
-
-<li><b>PCE_FAST</b>: Fixed fubared mouse emulation.
-
-<li><b>PC-FX</b>: Fixed integer overflows that caused fatal division by zero when Mednafen's cheat functionality was used(a regression introduced around 0.9.39).
-
-<li><b>SS</b>: Fixed a logic error in the BIOS sanity check code that caused it to throw a less helpful error message than intended in certain circumstances, and made the error messages related to BIOS file misconfiguration more verbose(and hopefully more helpful...).
-
-<li><b>SS</b>: Fixed at least one background layer graphical glitch	in &quot;Radiant Silvergun&quot;(at the start of stage 2C).
-
-<li><b>SS</b>: Fixed the graphical glitch near the end of the intro in &quot;Snatcher&quot;.
-
-<li><b>SS</b>: Added Japanese keyboard(HSS-0129) emulation.
-</ul><br />
-<br />
-<div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('489154127', 1);">ChangeLog</a><div align="left" id="489154127" style="display: none;"><br />
-<pre>
--- 1.21.0-UNSTABLE: --
-
-February 19, 2018:
-	An attempt to run an instance of Mednafen while another instance is already running with the same base directory is now blocked during startup, via
-	a lock file; note that this check occurs after stdout and stderr are potentially redirected to stdout.txt and stderr.txt on Windows.
-
-February 15, 2018:
-	Changed the default value of setting &quot;video.driver&quot; from &quot;opengl&quot; to &quot;default&quot;, removed the old &quot;0&quot; and &quot;1&quot; backwards-compatibility value aliases,
-	renamed the &quot;sdl&quot; driver to &quot;softfb&quot;(without backwards-compat aliases), and made it so the setting's value will be reset to &quot;default&quot; after 
-	automatically importing settings from &quot;mednafen-09x.cfg&quot;.
-
-	On Windows, no longer exit on ALT+F4 while input is grabbed.
-
-	Added settings &quot;fps.autoenable&quot;, &quot;fps.position&quot;, &quot;fps.textcolor&quot;, and &quot;fps.bgcolor&quot;.
-
-February 11, 2018:
-	Removed reliance on malloc(), realloc(), and calloc() setting errno to ENOMEM on failure, since it's not the case on Windows XP, and possibly other
-	platforms/operating systems too.
-
-February 9, 2018:
-	ZIP files are now recognized by file extension instead of by magic(wizards).
-
-	Replaced old minizip code with newly-written ZIP archive reading code.
-
-	Replaced MDFN_PrintError() and MDFN_DispMessage() with MDFN_Notify().
-
-February 6, 2018:
-	Use versionsort() instead of alphasort() when scanning for js* joystick devices on Linux.
-
-February 1, 2018:
-	Added settings &quot;fps.scale&quot; and &quot;fps.font&quot;.
-
-January 31, 2018:
-	On Windows, in-memory conversion of M3U and CUE files to UTF-8 will be attempted if they lack a UTF-8 BOM and contain byte sequences that are not
-	valid UTF-8.
-
-	On Windows, path/filename settings loaded from the old mednafen-09x.cfg(before being saved to mednafen.cfg on exit) will now be converted to UTF-8.
-
-January 29, 2018:
-	Added support for pasting text into the cheat and netplay consoles.
-
-January 28, 2018:
-	SS: Added Japanese keyboard emulation.
-
-	SS: Improved VDP2 window Y coordinate evaluation emulation; fixes at least one background layer graphical glitch
-	in &quot;Radiant Silvergun&quot;(at the start of stage 2C), and the graphical glitch near the end of the intro in &quot;Snatcher&quot;.
-
-January 20, 2018:
-	Altered calculations involving *.xscale(fs)/*.yscale(fs) settings to be more predictable given floating point nuances; any user using non-integer scaling values
-	for these settings may need to adjust them to get the same result as in previous versions of Mednafen, however.
-
-	Added setting &quot;video.fs.display&quot;.
-
-January 18, 2018:
-	SDL2(2.0.5+) is now used and required.
-
-	Removed the &quot;overlay&quot; video driver.
-
-	On Windows, error messages during startup will now be displayed in a popup message box.
-
-	On Windows, Mednafen will now output text to a console if it's started from a console(e.g. cmd.exe or Cygwin), and if not, write
-	to stdout.txt and stderr.txt like before.
-
-	On Windows, Mednafen now uses Unicode variants of CRT and Win32 functions; this may require the user to convert their CUE sheets to UTF-8 if filenames use
-	exotic(e.g. not directly typable on a standard US-layout keyboard) characters.
-
-	For key bindings relating to the debugger and cheat management interface, the Right ALT key modifier will no longer be respected(only the Left ALT has
-	any effect now), for internationalization reasons.
-
-	The configuration file is back to &quot;mednafen.cfg&quot; instead of &quot;mednafen-09x.cfg&quot;.  If a 0.8.x &quot;mednafen.cfg&quot; is in the way, it will be renamed.  If &quot;mednafen.cfg&quot;
-	does not exist, or is from an old version of Mednafen, settings will initially be loaded from &quot;mednafen-09x.cfg&quot;, but still saved to &quot;mednafen.cfg&quot; on exit(and
-	loaded from &quot;mednafen.cfg&quot; from that point on).
-
-	Reworked the input mapping setting format to be more human-readable(and editable).  Details are in the documentation, in the &quot;Advanced Usage&quot; section.  Old
-	input mappings will be translated internally, except for keyboard mappings, due to incompatibilities between how SDL 1.2 and 2 handle keyboards.
-
-	Added support for mapping joystick axes and buttons, mouse buttons, and keyboard keys to emulated mouse device relative motion for testing purposes(via
-	manually editing the configuration file, as the in-emulator configuration process currently won't create such mappings).
-
-	Added support for digital button input mappings that mix AND, ANDNOT, and OR-style operations together(previously it was either just AND or OR); refer to the
-	documentation for more details.  Note that the in-emulator configuration process won't create complex mappings that mix different boolean operations, 
-	but you can map combinations using simpler logic in-emulator, and then edit the configuration file to adjust the boolean operations used.
-
-January 15, 2018:
-	SS: Fixed a bug that caused a crash if an error occurred early in the process of loading a game.
-
-	Updated the configure script to disable gcc's mitigations for Spectre, in the event distributions configure their compilers to enable them by default.
-
-	Stopped (erroneously) memset()'ing some MDFN_PixelFormat objects.
-
-January 12, 2018:
-	Cleaned up the handling and reduced the size of axis-related inputs as communicated from the driver-side code to core Mednafen.
-
-	PCE_FAST: Fixed fubared mouse emulation.
-
-December 28, 2017:
-	Replaced usage of strcasecmp() and strncasecmp() with MDFN_strazicmp(), for consistent behavior across locales.
-
-	Added MDFN_strazlower(), MDFN_strazupper(), MDFN_memazicmp(), and MDFN_strazicmp() functions.
-
-December 14, 2017:
-	SS: Fixed a logic error in the BIOS sanity check code that caused it to throw a less helpful error message than intended in certain circumstances, and
-	made the error messages related to BIOS file misconfiguration more verbose(and hopefully more helpful...).
-
-December 6, 2017:
-	Fixed broken cheat file saving on MS Windows.
-
-November 12, 2017:
-	Changed how some multidimensional arrays and arrays of structs are accessed, to try to avoid behavior that's probably undefined and may be a problem
-	in the future.
-
-	PC-FX: Fixed integer overflows that caused fatal division by zero when Mednafen's cheat functionality was used(a regression introduced around 0.9.39).
-
-	SS: Stuck SCU DMA table arrays in a struct to avoid unspecified behavior in the SCU save state code.
-</pre><br />
-</div></div><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.21.0-UNSTABLE.tar.xz" target="_blank">mednafen-1.21.0-UNSTABLE.tar.xz</a><br />
-<font size="-1">SHA-256: ee7c633641206c336d72b6f92b2db2d9088604a12fc509342b1c312608d34213</font><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.21.0-UNSTABLE-win64.zip" target="_blank">mednafen-1.21.0-UNSTABLE-win64.zip</a><br />
-<font size="-1">SHA-256: 3458c0c0f3ab54760e08814340dbef37f4e9c32684bbc73e1395e9f517bea1ba</font><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.21.0-UNSTABLE-win32.zip" target="_blank">mednafen-1.21.0-UNSTABLE-win32.zip</a><br />
-<font size="-1">SHA-256: 9f53d534ae67d3834cd1ca9cd92c866b63d7a55fed9585a8c57089f2c7a3235c</font></div></div><br> </div>
+<font size="-1">SHA-256: a4a7f9ec0e0c965e4c7e04bdf1965fb286be3c9fcae4df01980feaab4bec468b</font></div></div><br> </div>
 </div>
 <br />
   <div class="CopyrightBox">
