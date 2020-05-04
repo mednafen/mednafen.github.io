@@ -1,3 +1,9 @@
+-- 1.24.3: --
+
+May 1, 2020:
+	SS: Implemented more complete emulation of the SCSP short waveform mode, after running further tests; fixes excessive distortion in a
+	sound effect in "Sega Ages: OutRun", a regression introduced in Mednafen 1.24.2.
+
 -- 1.24.2: --
 
 April 25, 2020:
