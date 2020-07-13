@@ -1,3 +1,32 @@
+-- 1.25.0-UNSTABLE: --
+
+June 27, 2020:
+	SS: Implemented more accurate emulation of VDP1 drawing of excessively-large primitives.
+	It's not perfect, there's still something weird going on with antialiasing, and the effects on gradient shading
+	and texturing are not fully emulated, but it's enough to fix missing graphics in the attract mode of "Virtua Cop",
+	and a hang after defeating the final boss in "Rayman".
+
+	SS: Fixed an off-by-1 inaccuracy in the edge stepping code for sprites and polygons, with minor visible effects in
+	non-rectangular sprites/polygons.
+
+June 26, 2020:
+	SS, MD: Fixed/Implemented M68K MULU and MULS instruction timing.
+
+June 24, 2020:
+	SS: Added wait states to M68K writes; fixes hang in "Lunar" after the Meribia pub singer's singing, that was caused by a timer being
+	reloaded too quickly in an interrupt handler.
+
+June 13, 2020:
+	SS: Allow VDP1 primitive drawing code to be suspended(and later resumed) mid-drawing when it's consumed too much emulated time; fixes excessive CPU usage during
+	the FMV in "Dark Seed II".
+
+June 4, 2020:
+	SS: Added "Senken Kigyouden", "Xian Jian Qi Xia Zhuan", "Virtua Fighter", and "Virtua Fighter Remix" to the internal database of games to
+	enable full cache emulation with, to fix graphical glitches.
+
+May 17, 2020:
+	SS: Implemented more complete emulation of SCSP's buggy(inter-slot contamination) linear interpolation on FM carrier slots.
+
 -- 1.24.3: --
 
 May 1, 2020:
