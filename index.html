@@ -186,7 +186,27 @@
 <div class="ContentBox">
  <h2 class="ContentBoxHead">News</h2>
  <div class="ContentBoxBody">
-<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=6176&amp;th=1896#msg_6176">Mednafen 1.24.3</a><span style="float: right;">May  4, 2020 - 11:07 PDT</span></h3><div class="ContentBoxBodySub">This update implements more complete emulation of the Saturn SCSP's short waveform mode, fixing excessive distortion in a sound effect in &quot;Sega Ages: OutRun&quot;, a regression introduced in Mednafen 1.24.2.<br />
+<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=6244&amp;th=1924#msg_6244">Mednafen 1.25.0-UNSTABLE</a><span style="float: right;">July 13, 2020 - 22:53 PDT</span></h3><div class="ContentBoxBodySub"><b>Notable changes since 1.24.3:</b><br />
+<ul>
+<li><b>SS</b>: Implemented more complete emulation of SCSP's buggy linear interpolation on FM carrier slots.
+<li><b>SS</b>: Fixed a minor VDP1 rendering inaccuracy with non-rectangular sprites and polygons.
+<li><b>SS</b>: Fixed excessive CPU usage during the FMV in &quot;Dark Seed II&quot;.
+<li><b>SS</b>: Fixed hang after defeating the final boss in &quot;Rayman&quot;.
+<li><b>SS</b>: Fixed hang after the Meribia singer's singing in &quot;Lunar&quot;.
+<li><b>SS</b>: Fixed missing graphics during the attract mode in &quot;Virtua Cop&quot;.
+<li><b>SS</b>: Fixed garbage horizontally-stretched sprite in the Christmas-themed stage in &quot;Christmas NiGHTS into Dreams&quot;.
+<li><b>SS</b>: Fixed dialogue text truncation in &quot;Senken Kigyouden&quot;.
+<li><b>SS</b>: Significantly reduced graphical glitching in &quot;Virtua Fighter&quot; and &quot;Virtua Fighter Remix&quot;.
+</ul><div align="center"><a href="https&#58;&#47;&#47;mednafen.github.io/documentation/ChangeLog.txt" target="_blank">ChangeLog</a></div><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.25.0-UNSTABLE.tar.xz" target="_blank">mednafen-1.25.0-UNSTABLE.tar.xz</a><br />
+<font size="-1">SHA-256: 0ee12e6b52325d5b158f55725f2f34845afd85a4bfba2d5e3c1e139e2be5982a</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.25.0-UNSTABLE-win64.zip" target="_blank">mednafen-1.25.0-UNSTABLE-win64.zip</a><br />
+<font size="-1">SHA-256: 3a1d0be4da01fbff3eef7019e89db38bcbb12b249e426cfb49261a230c47ed5a</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.25.0-UNSTABLE-win32.zip" target="_blank">mednafen-1.25.0-UNSTABLE-win32.zip</a><br />
+<font size="-1">SHA-256: 1170c8cd84829dc1c5b7e735e22cef1c309ffe7d5926262412a765e8b8bb79db</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=6176&amp;th=1896#msg_6176">Mednafen 1.24.3</a><span style="float: right;">May  4, 2020 - 11:07 PDT</span></h3><div class="ContentBoxBodySub">This update implements more complete emulation of the Saturn SCSP's short waveform mode, fixing excessive distortion in a sound effect in &quot;Sega Ages: OutRun&quot;, a regression introduced in Mednafen 1.24.2.<br />
 <br />
 <div align="center"><a href="https&#58;&#47;&#47;mednafen.github.io/documentation/ChangeLog.txt" target="_blank">ChangeLog</a></div><br />
 <br />
@@ -612,35 +632,7 @@ April 21, 2018:
 <font size="-1">SHA-256: 5b6e7b017c0b0741f375d0803f54dcb417d9e4d926864f2b039c694aac10a362</font><br />
 <br />
 <a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.21.3-win32.zip" target="_blank">mednafen-1.21.3-win32.zip</a><br />
-<font size="-1">SHA-256: 6fc62a7a3cb42a3bef1de9856aa2bf00701e4b64fcdc2b6c76e7135a127840d4</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5492&amp;th=1675#msg_5492">Mednafen 1.21.2</a><span style="float: right;">April  3, 2018 - 16:46 PDT</span></h3><div class="ContentBoxBodySub">This minor release updates Tremor to address a security vulnerability with Vorbis-encoded CD image audio tracks, and fixes graphical glitches in the Sega Saturn game &quot;Shining Force III - Scenario 2&quot;.<br />
-<br />
-<div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('1209766756', 1);">ChangeLog</a><div align="left" id="1209766756" style="display: none;"><br />
-<pre>
--- 1.21.2: --
-
-April 2, 2018:
-	Updated bundled copy of Tremor to address a security vulnerability.
-
-	SS: Improved emulation of SCU DSP DMA to program RAM, per tests on a SS(still nowhere near perfect, the way it's implemented on hardware is kind of
-	horrible, but it should work ok if games use it how it's meant to be used); fixes graphical glitches in &quot;Shining Force III - Scenario 2&quot;, and perhaps
-	in the other &quot;Shining Force III&quot; games as well.
-
-	SS: Flush the prefetched SCU DSP instruction when PC is set via PPAF, instead of when END/ENDI executes or when execution is forcibly stopped, per tests on a SS.
-
-	SS: Disallow SCU DSP LOP from being written in a looped single instruction unless it's the final iteration, per tests on a SS.
-
-	SS: Allow SCU DSP LOP to underflow to 0xFFF with LPS and BTM, per tests on a SS.
-</pre><br />
-</div></div><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.21.2.tar.xz" target="_blank">mednafen-1.21.2.tar.xz</a><br />
-<font size="-1">SHA-256: 528b7ad6976182c451f7e7852f79fcc8e81e29005823f9c9bed816914bfd6da2</font><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.21.2-win64.zip" target="_blank">mednafen-1.21.2-win64.zip</a><br />
-<font size="-1">SHA-256: e4a1765fe9ee994fe3041772b698e4a26e3021e17ce981fc6179e9de61ecbc19</font><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.21.2-win32.zip" target="_blank">mednafen-1.21.2-win32.zip</a><br />
-<font size="-1">SHA-256: c291a2cbb9c3e3b78ebe58d9b8efb09c09abb33e47f52855784dbeea644bbfd8</font></div></div><br> </div>
+<font size="-1">SHA-256: 6fc62a7a3cb42a3bef1de9856aa2bf00701e4b64fcdc2b6c76e7135a127840d4</font></div></div><br> </div>
 </div>
 <br />
   <div class="CopyrightBox">
