@@ -186,7 +186,16 @@
 <div class="ContentBox">
  <h2 class="ContentBoxHead">News</h2>
  <div class="ContentBoxBody">
-<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=6321&amp;th=1950#msg_6321">Mednafen 1.26.0-UNSTABLE</a><span style="float: right;">October 28, 2020 - 23:13 PDT</span></h3><div class="ContentBoxBodySub">This release may have more Saturn-related regressions than usual.<br />
+<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=6334&amp;th=1957#msg_6334">Mednafen 1.26.1</a><span style="float: right;">November 10, 2020 - 23:12 PST</span></h3><div class="ContentBoxBodySub">This release fixes compilation errors with clang, fixes compilation errors after configuring with --disable-debugger, fixes a few minor MSU1 handling bugs in the SNES-Faust module, and improves the accuracy of the PS1 SPU reverb emulation.<br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.26.1.tar.xz" target="_blank">mednafen-1.26.1.tar.xz</a><br />
+<font size="-1">SHA-256: 842907c25c4292c9ba497c9cb9229c7d10e04e22cb4740d154ab690e6587fdf4</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.26.1-win64.zip" target="_blank">mednafen-1.26.1-win64.zip</a><br />
+<font size="-1">SHA-256: 1d776e9355208c2fc81bea5ce036e955c5aea02f1176dc311df0a74ec17e6b48</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.26.1-win32.zip" target="_blank">mednafen-1.26.1-win32.zip</a><br />
+<font size="-1">SHA-256: 7ba91c81e7c40179adbd066fb390d8d696fdf3f9222c87090576f62359c9e7fb</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=6321&amp;th=1950#msg_6321">Mednafen 1.26.0-UNSTABLE</a><span style="float: right;">October 28, 2020 - 23:13 PDT</span></h3><div class="ContentBoxBodySub">This release may have more Saturn-related regressions than usual.<br />
 <br />
 <b>Notable changes since 1.25.0-UNSTABLE:</b><br />
 <ul>
@@ -439,201 +448,7 @@ January 1, 2019:
 <font size="-1">SHA-256: 78b20b5b165476a5481cea81e13ae43e1dd387d53bbefeee92128addb67af637</font><br />
 <br />
 <a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.22.1-win32.zip" target="_blank">mednafen-1.22.1-win32.zip</a><br />
-<font size="-1">SHA-256: 25184915f52bbbcad29ae4b98ce63de6e2a2847632900cdce37058845a30e8ad</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5736&amp;th=1752#msg_5736">Mednafen 1.22.0-UNSTABLE</a><span style="float: right;">December 22, 2018 - 07:14 PST</span></h3><div class="ContentBoxBodySub"><div align="center"><img src="https://forum.fobby.net/index.php?t=getfile&amp;id=1161&amp;private=0" border=0 alt="Oregon Trail"></div><br />
-<br />
-<b>Notable changes since 1.21.3:</b><br />
-<ul>
-<li>Added basic Apple II/II+ emulation(no IIe/IIc, sound card, mouse, nor tape support now, maybe later).
-
-<li>gzip-compressed ROM/disk image files are now recognized by file extension instead of header magic.
-
-<li>Dropped support for &quot;game set&quot; hashes used to change the naming of save state and save game files.  The feature was mostly broken by changes made years ago, and is redundant now with M3U support.  <font color="yellow">Save game files for multi-disc PC-FX games created in previous versions of Mednafen will need to be renamed to be seen by this and newer versions of Mednafen.</font>  Other files, including save states, should generally be unaffected, unless the user has changed filesys.fname_*	settings to use the %F specifier where they wouldn't by default.
-
-<li>Added &quot;blend&quot; and &quot;blend_rg&quot; deinterlacers.
-
-<li><b>PCE</b>: Fixed ADPCM voice playback issues in &quot;Downtown Nekketsu Monogatari&quot; when text speed is set to fast.
-
-<li><b>PS1</b>: Fixed a startup crash that could occur with a malformed or corrupted SYSTEM.CNF file.
-<li><b>PS1</b>: Fixed missing music in &quot;Grind Session&quot;, &quot;Pitball&quot;, and &quot;Roswell Conspiracies - Aliens, Myths &amp; Legends&quot;.
-<li><b>PS1</b>: Fixed hangs in &quot;Army Men - Air Attack (Europe)&quot;, &quot;Ballerburg - Castle Chaos&quot;, &quot;Colony Wars - Vengeance (Europe)&quot;, &quot;Grind Session&quot;, &quot;Goryuujin Electro&quot;, &quot;Simple 1500 Series Vol. 057 - The Maze&quot;, and &quot;Transformers - Beast Wars Transmetals&quot;.
-<li><b>PS1</b>: Fixed broken disc switching in &quot;Arc the Lad III&quot;.
-
-<li><b>SNES-Faust</b>: Fixed missing sprites in the water stage of &quot;Mario's Time Machine&quot;.
-
-<li><b>SS</b>: Added setting &quot;ss.cart.auto_default&quot;.
-
-<li><b>SS</b>: Added &quot;Fighting Vipers&quot; to the internal database of games to use the data cache read bypass kludge with, to fix the problem of the computer-controlled opponent sometimes losing the will to not be a statue.
-
-<li><b>VB</b>: Added the ability to toggle the state of the low battery sensor bit; configure the device on virtual input port 2(e.g. ALT+SHIFT+2) to assign a key/button to this function.
-
-</ul><br />
-<br />
-<div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('801260381', 1);">ChangeLog</a><div align="left" id="801260381" style="display: none;"><br />
-<pre>
--- 1.22.0-UNSTABLE: --
-
-December 11, 2018:
-	SS: Added support for directly loading &lt;= 1MiB bootable cart ROM images, with the expected file extension being &quot;ss&quot;, for debugging and testing
-	purposes.
-
-December 2, 2018:
-	SS: Added &quot;Fighting Vipers&quot; to the internal database of games to use the data cache read bypass kludge with, to fix the problem of the
-	computer-controlled opponent sometimes losing the will to not be a statue.
-
-December 1, 2018:
-	PSX: Memory cards are now backed up on startup(maximum number of backup copies kept for each memory card is 5).
-
-November 30, 2018:
-	PCE: Increased CD read startup delay per tip from dshadoff.  Fixes ADPCM voice playback	issues in &quot;Downtown Nekketsu Monogatari&quot; when text
-	speed is set to fast.
-
-	MD: Fixed a few errors in the internal automatic multitap database, per tip from clobber.
-
-	SS: Added setting &quot;ss.cart.auto_default&quot;.
-
-	NES: Removed apparently erroneous iNES header correction database entry for &quot;Dragon Quest II&quot; that was breaking the game.
-
-November 6, 2018:
-	VB: Added the ability to toggle the state of the low battery sensor bit; configure the device on virtual input port 2(e.g. ALT+SHIFT+2) to assign a
-	key/button to this function.
-
-November 4, 2018:
-	PSX: Added a pseudorandom component to Pause command timing to address loading-related hangs in &quot;Colony Wars - Vengeance (Europe)&quot;
-	and &quot;Army Men - Air Attack (Europe)&quot;.
-
-	PSX: Generate a seek error if the tray is opened while the CD drive is not stopped; fixes broken disc switching in &quot;Arc the Lad III&quot;.
-
-November 3, 2018:
-	PSX: Improved emulation of the behavior of CDC command 0x0A per tests on a PS1; fixes hang in &quot;Goryuujin Electro&quot;.
-
-November 2, 2018:
-	PSX: Don't set the autopause track test value unless autopause is enabled; fixes missing music in &quot;Pitball&quot;.
-
-	PSX: Delay first CD-DA report after playback begins, per tests on a PS1; fixes missing music in &quot;Roswell Conspiracies - Aliens, Myths &amp; Legends&quot;.
-
-October 31, 2018:
-	PSX: Improved timing of CDC command 0x0A per tests on a PS1; fixes missing music and hangs in &quot;Grind Session&quot;.
-
-	PSX: Altered seek and pause timing and behavior per tests on a PS1; fixes hangs in &quot;Incredible Crisis&quot;, &quot;Ballerburg - Castle Chaos&quot;, &quot;Transformers - Beast Wars Transmetals&quot;,
-	and &quot;Simple 1500 Series Vol. 057 - The Maze&quot;.
-
-October 28, 2018:
-	The settings management code will now throw an exception if a floating-point setting is NaN.
-
-	Fixed a crash that occurred when &quot;debugger.autostepmode&quot; was set to &quot;1&quot; and a game was loaded for a system for which debugger functionality was not implemented.
-
-	NativeVFS, FileStream, and GZFileStream methods taking a path will now throw an error when the path contains a null character.
-
-October 23, 2018:
-	SNES-Faust: Added recognition of files with &quot;fig&quot; and &quot;swc&quot; file extensions as SNES ROM images.
-
-October 9, 2018:
-	Altered the variants of MDFN_rtrim(), MDFN_ltrim(), MDFN_trim(), MDFN_zapctrlchars(), MDFN_strazlower(), MDFN_strazupper(), and UTF8_sanitize()
-	that operate on a mutable std::string to take a pointer to the std::string instead of a non-const reference, and added variants that take a const std::string
-	reference and return a std::string result.
-
-October 8, 2018:
-	Dropped support for &quot;game set&quot; hashes used to change the naming of save state and save game files.  The feature was mostly broken by changes made years ago,
-	and is redundant now with M3U support.  Save game files for multi-disc PC-FX games created in previous versions of Mednafen will need to be renamed to be
-	seen by this and newer versions of Mednafen.  Other files, including save states, should generally be unaffected, unless the user has changed filesys.fname_*
-	settings to use the %F specifier where they wouldn't by default.
-
-	Removed usage of the deprecated &quot;register&quot; keyword in some old code.
-
-October 7, 2018:
-	Adjusted placement of MDFN_FASTCALL and NO_INLINE to fix some compilation errors with MSVC.
-
-	In addition to nonvolatile memory backup files as before, any missing directories in the file path for input-recording movies, save states, screen snapshots, and
-	nonvolatile memory files are now created as necessary, to increase the versatility of the filesys.fname_* settings.
-
-October 6, 2018:
-	Implemented partial virtual filesystem support via classes VirtualFS, NativeVFS, and ZIPReader.
-
-	Emulation modules' loading of files referenced from the main file being loaded is now done through its associated VFS.  This does create a
-	small backwards-compatibility issue with PSF-family(PSF, SSF, GSF, etc.) files, in that previously a ZIP'd PSF-family file that referenced
-	a library file would have the referenced file loaded from the directory containing the ZIP file, but now will
-	have it loaded from within the same ZIP file.
-
-October 4, 2018:
-	NGP: Replaced min/max macros with usage of std::min/std::max.
-
-September 30, 2018:
-	Modified usage of std::swap in OwlResampler.cpp to not explicitly(and unnecessarily) specify the template argument, to fix a compilation error on MSVC.
-
-	Reworked FileStream.cpp to fix some issues causing errors on MSVC.
-
-	GBA: Fixed a regression introduced in 0.9.47 that partially broke compatibility with save states created in previous versions(&lt; 0.9.47), while
-	preserving compatibility for save states created in versions between and including 0.9.47 and 1.21.3.
-
-September 29, 2018:
-	SNES-Faust: Added RAM cheat support(main WRAM only for now).
-
-	SNES-Faust: Added emulation of PPU-area open bus/bus read latches; fixes missing sprites in the water stage of &quot;Mario's Time Machine&quot;.
-
-	SNES-Faust: Corrected H/V latch reading to use two separate high/low byte toggles.
-
-September 24, 2018:
-	SNES-Faust: Made minor changes to the CPU emulation core to not require computed goto support in the compiler.
-
-September 23, 2018:
-	Added &quot;blend&quot; and &quot;blend_rg&quot; deinterlacers.
-
-	Moved multithreading management code into the core.
-
-	Encapsulated most(ish) core Mednafen code in the &quot;Mednafen&quot; namespace.
-
-	Slightly improved the quality of audio output by SwiftResampler when running at the higher quality settings.
-
-September 22, 2018:
-	Moved NES audio resampler so it can be used by any emulation module, and renamed it to &quot;SwiftResampler&quot;.
-
-	Added an SSE intrinsics-utilizing MAC loop to OwlResampler as a fallback(for the inline assembly) when compiling with MSVC.
-
-	Added an SSE2 intrinsics-utilizing MAC loop to SwiftResampler as a fallback(for the inline assembly) when compiling with MSVC.
-
-September 21, 2018:
-	Wrote new Kaiser-windowed sinc generation code, and modified OwlResampler and the NES resampler to use it.  It shouldn't have any particularly noticeable end-user
-	effects, other than slightly different startup performance(assuming no mistakes were made :p).
-
-September 11, 2018:
-	SS: Emulated input devices' internal states were not being reset on virtual power toggle; fixed.
-
-September 5, 2018:
-	SS: Reorganized SCSP DSP emulation code to make the lifetime of variables clearer, for a possible x86_64 dynarec in the future.
-
-August 30, 2018:
-	Modified SHA-256 hashing code to allow for piecemeal hashing of data, instead of requiring the hash to be generated from one contiguous
-	chunk of memory.
-
-August 8, 2018:
-	PSX: Fixed a startup crash that could occur with a malformed or corrupted SYSTEM.CNF file.
-
-July 31, 2018:
-	Replaced MD5 hashing code with newly-written code.
-
-July 29, 2018:
-	Replaced SDL threading code with new code that uses pthreads directly.
-
-July 28, 2018:
-	Replaced Q subchannel CRC16 calculation code from cdrdao with newly-written code.
-
-July 24, 2018:
-	gzip-compressed ROM/disk image files are now recognized by file extension instead of header magic.
-
-June 13, 2018:
-	SS: Fixed an emulation inaccuracy with the handling of the SH-2 &quot;mac.l&quot; instruction when saturation is enabled, per tests on a SS.
-
-</pre><br />
-</div></div><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.22.0-UNSTABLE.tar.xz" target="_blank">mednafen-1.22.0-UNSTABLE.tar.xz</a><br />
-<font size="-1">SHA-256: 0dfd49ec534db1841346a8a2c1b483df6123d7178825374a2ce01ca27315a9d0</font><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.22.0-UNSTABLE-win64.zip" target="_blank">mednafen-1.22.0-UNSTABLE-win64.zip</a><br />
-<font size="-1">SHA-256: 8dfb80c9a5bfcd49699743a6c1e62df7031cf7f7bca78887d10333f9c2049d9e</font><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.22.0-UNSTABLE-win32.zip" target="_blank">mednafen-1.22.0-UNSTABLE-win32.zip</a><br />
-<font size="-1">SHA-256: bdc84a48f6f7516b1f72abe9fcc7ae5ad4ad972c96fce3529637431622857c25</font></div></div><br> </div>
+<font size="-1">SHA-256: 25184915f52bbbcad29ae4b98ce63de6e2a2847632900cdce37058845a30e8ad</font></div></div><br> </div>
 </div>
 <br />
   <div class="CopyrightBox">
