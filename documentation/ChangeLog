@@ -1,3 +1,23 @@
+-- 1.26.1: --
+
+November 8, 2020:
+	PSX: Fixed various inaccuracies in the SPU reverb emulation code.
+
+	PSX: Fixed quasi-benign dereferencing of a null pointer in the GPU code when playing a PSF.
+
+November 3, 2020:
+	SNES-Faust: Fixed a crash when an MSU1-enabled game tried to play MSU1 audio but no audio tracks existed.
+
+	SNES-Faust: Only create MSU1 multithreaded audio reader object if at least one audio track is available.
+
+November 2, 2020:
+	SNES-Faust: Fixed a design flaw in the MSU1 audio track loading code that broke loading of audio tracks when the game's filename included a "%" character.
+
+November 1, 2020:
+	SS: Fixed compilation errors after configuring with --disable-debugger.
+
+	SS: Fixed compilation errors with clang.
+
 -- 1.26.0-UNSTABLE: --
 
 October 26, 2020:
@@ -18,7 +38,7 @@ October 23, 2020:
 	SS: Made changes to prevent the CDB emulation from reporting PLAY status until the second sector is read after a seek completes; fixes game-breaking
 	problems in "Break Point", "DJ Wars", "Hop Step Idol", and "Tennis Arena".
 
-	SS: Fixed inaccuracies with how CDB playback buffer full auto-pause and resume works; fixes occasional hangs of finite duration in "Dragon Wars II" and
+	SS: Fixed inaccuracies with how CDB playback buffer full auto-pause and resume works; fixes occasional hangs of finite duration in "Dragon Force II" and
 	"World Cup France '98: Road to Win" when trying to skip FMVs.
 
 October 22, 2020:
