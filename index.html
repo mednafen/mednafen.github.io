@@ -186,7 +186,34 @@
 <div class="ContentBox">
  <h2 class="ContentBoxHead">News</h2>
  <div class="ContentBoxBody">
-<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=6334&amp;th=1957#msg_6334">Mednafen 1.26.1</a><span style="float: right;">November 10, 2020 - 23:12 PST</span></h3><div class="ContentBoxBodySub">This release fixes compilation errors with clang, fixes compilation errors after configuring with --disable-debugger, fixes a few minor MSU1 handling bugs in the SNES-Faust module, and improves the accuracy of the PS1 SPU reverb emulation.<br />
+<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=6431&amp;th=1991#msg_6431">Mednafen 1.27.0-UNSTABLE</a><span style="float: right;">April  1, 2021 - 12:29 PDT</span></h3><div class="ContentBoxBodySub">With this release, there is now a special <a href="https&#58;&#47;&#47;forum.fobby.net/index.php?t=getfile&amp;id=1313" target="_blank">non-Unicode Windows 98-compatible build</a> available.  This special Windows 98 build will not be provided for every release, and may be discontinued entirely if it becomes too much of a pain.  The minimum CPU requirement is i686-class with MMX, e.g. Intel Pentium II, AMD K7(Athlon), and VIA C3 Nehemiah, though the PS1 emulation module also requires SSE2 for MDEC emulation.<br />
+<br />
+<b>Notable changes since 1.26.1:</b><br />
+<ul>
+<li>Added support for 16bpp graphics output to the majority of emulation modules(excluding &quot;pce&quot;, &quot;pcfx&quot;, &quot;psx&quot;, &quot;snes&quot;, &quot;ss&quot;, and &quot;vb&quot;).  Using this support with OpenGL can be done by setting the <b>video.glformat</b> setting appropriately, which *may* result in a small performance boost on scary dinosaur toasters and underpowered ARM SBCs.
+<li>Rewrote the save state preview image resizing code, such that it no longer makes Saturn mesh transparency look horrendous.
+<li>Dropped usage of and dependency on libsndfile, and added a direct dependency on libFLAC.  The only CD image audio file formats/encodings other than raw supported now are: FLAC, Ogg Vorbis, Musepack, and uncompressed PCM in AIFF/AIFC, AU/SND, W64, and WAV.
+<li>Each Mednafen data directory created on startup will now be based on the current value of the corresponding <b>filesys.path_</b>* setting, rather than the default value, except when the current value of the corresponding <b>filesys.fname_</b>* setting is different from its default, in which case the directory will not be created at all.
+<li>Added manual physical game controller hotplugging support, by pressing SHIFT+F3 to rescan and reinitialize the controllers.
+<li>Changed netplay/cheat console key combos for navigating to the beginning and end of the scrollback buffer to CTRL+Home and CTRL+End, respectively(previously SHIFT+Home and SHIFT+End).
+<li>Added netplay/cheat console key combos CTRL+Backspace and CTRL+Delete for quickly clearing the prompt text entry buffer.
+<li><b>PS1</b>: Fixed hangs at different points in some versions of &quot;Tomb Raider&quot;, a problem initially fixed in 0.9.38.3, but regressed in 1.22.0-UNSTABLE.
+<li><b>PS1</b>: Fixed missing FMV audio in &quot;Blue's Clues: Blue's Big Musical&quot;.
+<li><b>SNES-Faust</b>: Fixed hangs in &quot;Derby Stallion 96&quot;, &quot;Hakunetsu Pro Yakyuu: Ganba League&quot;, &quot;Ihatov Monogatari&quot;, &quot;Kentou Ou World Champion&quot;, &quot;Kyuuyaku Megami Tensei&quot;, &quot;Sound Novel Tsukuru&quot;, &quot;Super Professional Baseball II&quot;, &quot;Yuujin Janjuu Gakuen 2&quot;, and &quot;Yuuyu no Quiz de Go! Go!&quot;.
+<li><b>SNES-Faust</b>: Fixed missing sound in &quot;Shougi Club&quot;.
+<li><b>SNES-Faust</b>: Fixed saving in &quot;Light Fantasy&quot;, &quot;PGA Tour Golf&quot;, and &quot;Ys III&quot;.
+<li><b>SS</b>: Fixed major audio problems in &quot;Lunar&quot; during boss battles, due to the sound CPU crashing inaccurately during game bootup and corrupting SCSP DSP registers.  Note that this fix will not affect existing save states made within the game.
+
+</ul><div align="center"><a href="https&#58;&#47;&#47;mednafen.github.io/documentation/ChangeLog.txt" target="_blank">ChangeLog</a></div><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.27.0-UNSTABLE.tar.xz" target="_blank">mednafen-1.27.0-UNSTABLE.tar.xz</a><br />
+<font size="-1">SHA-256: 4a7ecf38139372472598ab1c75469eac284ba203cdce5ba6ec8aefbff5f0a382</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.27.0-UNSTABLE-win64.zip" target="_blank">mednafen-1.27.0-UNSTABLE-win64.zip</a><br />
+<font size="-1">SHA-256: a6196361b8c7740c65d9647550ff3e7b870e2f2c833e178f06bbda1deea963f9</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.27.0-UNSTABLE-win32.zip" target="_blank">mednafen-1.27.0-UNSTABLE-win32.zip</a><br />
+<font size="-1">SHA-256: dcb5649b857b4879bbc76aba4bf04d31bc250d97a5e81539325ee2a771691188</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=6334&amp;th=1957#msg_6334">Mednafen 1.26.1</a><span style="float: right;">November 10, 2020 - 23:12 PST</span></h3><div class="ContentBoxBodySub">This release fixes compilation errors with clang, fixes compilation errors after configuring with --disable-debugger, fixes a few minor MSU1 handling bugs in the SNES-Faust module, and improves the accuracy of the PS1 SPU reverb emulation.<br />
 <br />
 <a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.26.1.tar.xz" target="_blank">mednafen-1.26.1.tar.xz</a><br />
 <font size="-1">SHA-256: 842907c25c4292c9ba497c9cb9229c7d10e04e22cb4740d154ab690e6587fdf4</font><br />
@@ -414,41 +441,7 @@ A future update may implement more correct fixes via global accuracy improvement
 <font size="-1">SHA-256: d0674f6e498f612c6ceb7dff95dfa3b5a8eda051a8e98a2843da4b91898f6895</font><br />
 <br />
 <a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.22.2-win32.zip" target="_blank">mednafen-1.22.2-win32.zip</a><br />
-<font size="-1">SHA-256: 97229dad50e05483f85ecd9f3dc718c3d22aa3040a525d00231828197bb47090</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=5771&amp;th=1765#msg_5771">Mednafen 1.22.1</a><span style="float: right;">January 28, 2019 - 09:22 PST</span></h3><div class="ContentBoxBodySub">Minor bugfix release.<br />
-<br />
-<div class="dashed" style="padding: 3px;" align="center" width="100%"><a href="javascript://" OnClick="javascript: layerVis('563199818', 1);">ChangeLog</a><div align="left" id="563199818" style="display: none;"><br />
-<pre>
--- 1.22.1: --
-
-January 27, 2019:
-	Changed the default sound device for the OpenBSD sound driver from &quot;/dev/audio&quot; to &quot;/dev/audio0&quot;.
-
-January 26, 2019:
-	Semaphores are now implemented with condition variables and mutexes when compiling against a POSIX threads implementation without sem_timedwait().
-
-January 23, 2019:
-	PC-FX: Replaced old RAINBOW IDCT code with newly-written code.
-
-January 20, 2019:
-	Some hotkeys in the debugger's memory editor weren't being ignored properly when in text entry mode; fixed.  (Regression introduced in 1.21.0-UNSTABLE)
-
-January 1, 2019:
-	Apple2: Corrected minimum allowed value for the &quot;apple2.video.mono_lumafilter&quot; setting(was -2 when it should have been -3).
-
-	SS: Corrected line-scroll handling in double-density interlaced mode with non-zero LSS; fixes broken background graphics effect in Dural's stage in &quot;Virtua Fighter 2&quot;.
-
-	SS: Added &quot;Linkle Liver Story&quot; to the internal database of games to use the data cache read bypass kludge with, to fix a crash/hang when going to the world map.
-</pre><br />
-</div></div><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.22.1.tar.xz" target="_blank">mednafen-1.22.1.tar.xz</a><br />
-<font size="-1">SHA-256: f5b502e9f2f615c8b69fa1e151da20ab387377c72748cd8e19deb75a432ecfd2</font><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.22.1-win64.zip" target="_blank">mednafen-1.22.1-win64.zip</a><br />
-<font size="-1">SHA-256: 78b20b5b165476a5481cea81e13ae43e1dd387d53bbefeee92128addb67af637</font><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.22.1-win32.zip" target="_blank">mednafen-1.22.1-win32.zip</a><br />
-<font size="-1">SHA-256: 25184915f52bbbcad29ae4b98ce63de6e2a2847632900cdce37058845a30e8ad</font></div></div><br> </div>
+<font size="-1">SHA-256: 97229dad50e05483f85ecd9f3dc718c3d22aa3040a525d00231828197bb47090</font></div></div><br> </div>
 </div>
 <br />
   <div class="CopyrightBox">
