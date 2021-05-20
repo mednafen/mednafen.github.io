@@ -2,7 +2,7 @@
 <div class="ContentBox">
 <h2 class="ContentBoxHead">IRC:</h2>
 <div class="ContentBoxBody">
-#mednafen on irc.freenode.net
+#mednafen on <a href="https://www.oftc.net/">OFTC</a>, irc.oftc.net (port 6697 or 9999 for SSL)
 <p>
 <h3>Rules</h3>
 <ol>Don't aggravate the ops.  Would you taunt a moose?  Yes?  HAVE YOU EVEN SEEN A MOOSE?!</ol>
