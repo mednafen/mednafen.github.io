@@ -1,3 +1,190 @@
+-- 1.28.0-UNSTABLE: --
+
+November 7, 2021:
+	SNES: Updated libco to latest.
+
+November 5, 2021:
+	Paths included in informational and error messages are now outputted with ASCII control characters non-reversibly transformed by inverting bit 6
+	and prefixing with a "^" character.
+
+	When loading a game from a ZIP archive, the path used within the ZIP archive is now outputted in an informational message.
+
+	The paths of CD images specified within M3U files are now outputted in informational messages as they are loaded.
+
+November 3, 2021:
+	Added support for loading CD images from ZIP archives when the "cd.image_memcache" setting is set to "1".
+
+	Implemented an M3U recursion limit of 9, adjustable by the new setting "cd.m3u.recursion_limit".
+
+	Implemented a limit of 25 on the total number of CD images loaded while processing M3U files, adjustable via the new setting "cd.m3u.disc_limit".
+
+	Implemented a size sanity limit of 65535 bytes for PSF tag source data.
+
+October 28, 2021:
+	Changed handling of single gzip/Zstd compressed files to treat the .gz/.zst suffix as the second part of the extension, instead of the whole extension,
+	with respect to Mednafen data file path construction and naming.
+
+	Added undocumented setting "filesys.old_gz_naming", that can be set to "1" by the user to restore the old data file naming behavior for gzip-compressed files for
+	backwards-compatibility reasons.
+
+October 27, 2021:
+	Added Zstandard decompression support to game loading, with both naked files("zst" extension) and ZIP archives.
+
+October 21, 2021:
+	SS: Don't send CD data sectors to partition buffers when the disc hasn't gone through the authentication process.
+
+October 19, 2021:
+	SS: Moved some CDB CD reading variable initialization into StartSeek() to reduce the amount of redundant error-prone code.
+
+	SS: Don't erroneously signal CDB EHST HIRQ when ending a TOC or file info data transfer.
+
+October 18, 2021:
+	SS: Implemented more aspects of the CD block disc authentication process.  Fixes abort to CD player screen when trying to start a game demo in
+	Gremlin Interactive's "Demo Disc".
+
+	SS: fixed a few issues with CD block directory reading and handling of directories with more than 256 entries.
+
+October 6, 2021:
+	SS: Added commented-out partial fix for end-of-level hang in "Loaded".
+
+	SS: Changed midsync event time initializing to use SS_SetEventNT() instead of doing it directly(and breaking when the midsync event isn't the last enumerated
+	event)
+
+	SS: Added a dev build event order sanity check to ForceEventUpdates().
+
+October 5, 2021:
+	SS: Implemented a delay when the SMPC joystick read process is aborted due to time over or due to the Break bit being 1, per tests on a SS, and fixed
+	timing granularity issues with the processing of the Break/Continue bits; fixes unresponsive input in "Discworld", and abort to CD player screen in the
+	USA and Europe releases of "Primal Rage".
+
+October 1, 2021:
+	SS: Added "Senkutsu Katsuryu Taisen: Chaos Seed" to the internal database of games to enable full cache emulation with, to fix the inability to skip
+	the intro FMV.
+
+	An empty string for a setting that expects a numeric value is now rejected instead of being treated as 0.
+
+September 29, 2021:
+	Misformatted setting file lines are now rejected with an error instead of silently ignored.
+
+September 27, 2021:
+	SS: Fixed a mistake in an invocation of the SH-2 emulation Branch() macro that caused an expensive debugger function to be called even when the debugger was
+	not active, hurting performance.
+
+September 26, 2021:
+	Settings file parsing error messages now include line numbers when relevant.
+
+	SS: Removed MDFN_COLD from SH7095::SetDebugMode(), as it causes newer gcc's optimizer to make bad assumptions and place the main CPU execution loop in the
+	cold text section.
+
+September 25, 2021:
+	Providing an empty string for a setting that expects an integer or real number will now result in an error, instead of being treated as 0.
+
+	Modified the settings code to use the new string<->integer conversion functions, for stricter parsing(nonsense like "0x -0x1" is no longer allowed)
+	and better error messages in certain cases.
+
+	Added new string<->integer utility conversion functions.
+
+September 21, 2021:
+	SS: Implemented a simple optimization in the VDP1 drawing code, reducing executable size by about 900KB on x86_64 Linux.
+
+	Added MDFNI_SaveSettingsCompact(), to be used in the future for settings backups.
+
+September 14, 2021:
+	Added tests for clamp_to_u8(), clamp_to_u16(), and MDFN_abs64().
+
+	Added the MDFN_abs64() function.
+
+	Rewrote the sign_*_to_s*() macros and clamp_to_u8/u16() functions.
+
+September 13, 2021:
+	Added MemoryStream::get_line_mem() function to allow for more efficient parsing of large line-delimited text files.
+
+	Added MDFN_memdupstr() function, stuck the guts of the settings handling code in a class, and reworked the settings file loading code
+	to be a bit faster.
+
+	Added inline FileStream::put_char() function, and optimized the settings file saving code.
+
+September 10, 2021:
+	Reworked how setting generation at startup works a bit to reduce the number of memory allocations, and added setting flags to mark strings
+	that should be free()'d when MDFNI_Kill()->MDFN_KillSettings() is called at exit, to reduce noise when checking for memory leaks.
+
+	Fixed currently-benign memory leak in the FPS display code.
+
+	SexyAL: Fixed memory leak in dummy sound driver.
+
+September 9, 2021:
+	SexyAL: Modified the ALSA driver code to not use a VLA for the noninterleaved multichannel support.
+
+September 8, 2021:
+	Fixed an instance of undefined behavior in SwiftResampler.
+
+September 7, 2021:
+	Added a couple more compiler bug/sanity tests.
+
+September 6, 2021:
+	Rewrote some of the small inline utility functions in CDUtility.h, and added tests for the rewritten utility functions to
+	ensure correctness and stable semantics.
+
+	Added test for gcc bug #97760.
+
+August 28, 2021:
+	Added crc32_cdrom_edc() function(to be used later), reimplemented crc16_ccitt() with the new generic fast CRC calculation template function,
+	and added a few CRC calculation sanity tests run at startup.
+
+August 24, 2021:
+	SS: Fixed an off-by-150 bug in the CDB code, present since the first release with Saturn emulation, that caused the read hinting at the start of emulated
+	seeks to not have the desired effect.
+
+	SS: Implemented emulation of the CDB Scan command.
+
+August 16, 2021:
+	SS: Optimized the SCSP sound CPU interrupt level calculation code.
+
+August 14, 2021:
+	SS: Fixed a few inaccuracies in the relative timing of SCSP timer increments across different prescaler rates, per tests on a SS.
+
+August 13, 2021:
+	SS: Added emulation of the SCSP MIDI interface output logic and approximate timing.
+
+August 10, 2021:
+	SS: Fixed a few inaccuracies in the relative timing of SCSP EG level updates across different rates, per tests on a SS.
+
+July 21, 2021:
+	Typedef signed char and unsigned char to int8 and uint8 respectively, instead of relying on int8_t and uint8_t, in case they're ever
+	implemented without the aliasing properties of char types, which Mednafen code relies on.
+
+July 17, 2021:
+	SS: When a CDB seek is started very shortly after another seek, don't elide the previous seek's startup side effects; fixes the CD audio player in
+	the North America/Europe BIOS, which broke with 1.26.0-UNSTABLE.
+
+	Compile with -Wstack-usage=32768 to check for excessive stack usage in functions.
+
+July 15, 2021:
+	VB: Added "left" and "right" options to the "vb.3dmode" setting, to allow for more easily showing only the left or right view.
+
+July 11, 2021:
+	Added setting "video.cursorvis", to control the window manager default cursor visibility.
+
+June 26, 2021:
+	Use AtomicFIFO for the main thread->emulation thread event queue, and fixed related excessive(100+ KB) stack usage in a couple functions.
+
+June 20, 2021:
+	SS: Added "Saturn Super Vol. 2" to the internal database of games to use the data cache read bypass kludge with, to fix the flickering title
+	screen in the "Golden Axe: The Duel" demo.
+
+	SS: The VA0/VA1 motherboard's memory mapping behavior for Low-RAM is now emulated instead of VA2's, to fix a crash in "Myst" in the generator room.
+
+	SS: The emulated reset button mapped to Mednafen's reset command key(F10 default) will now respect the "ckdelay" setting.
+
+	Added a quick configure script test to check if disabling PIC/PIE breaks the compiler/linker, and if it does, PIC/PIE is not disabled,
+	to prevent a link-time failure on Haiku.
+
+June 19, 2021:
+	Use AC_TRY_LINK() instead of AC_TRY_COMPILE() in the configure script test for AVX inline assembly availability, to handle toolchain setups where
+	the assembler is run at link time instead of compile time.
+
+	Added setting "video.force_bbclear", default value of "0", which when set to "1" will force clearing of the backbuffer before drawing every frame.
+
 -- 1.27.1: --
 
 June 4, 2021:
