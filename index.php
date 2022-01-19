@@ -34,7 +34,7 @@
   <li>Sega Game Gear</li>
   <li>Sega Genesis/Megadrive</li>
   <li>Sega Master System</li>
-  <li>Sega Saturn <i>(experimental, x86_64 only)</i></li>
+  <li>Sega Saturn <i>(<a href="/documentation/ss.html#Section_intro">64-bit only</a>)</i></li>
   <li>Sony PlayStation</li>
  </ul>
  </p>

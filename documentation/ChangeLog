@@ -1,3 +1,44 @@
+-- 1.29.0: --
+
+January 12, 2022:
+	PCE, PCE-Fast: Initialize VCE color table memory at power-on to roughly(without probabilistic bit randomness) match test results from a
+	PC Engine Duo instead of just zeroing it; fixes unreadable letters in the password entry screen of "Order of the Griffon".
+
+	Added test for potential splatting-related bug in qemu's PPC64 VSX "xscvdpsp" instruction emulation that messes up OwlResampler when compiled with gcc.
+
+January 11, 2022:
+	PCE: Added patch in the "notes" subdir for extending the upper range of the "pce.slend" setting to 241(not applied in Mednafen due to increasing
+	the probability of an extra 8ms of input lag with some games).
+
+January 9, 2022:
+	VB: Fixed a couple inaccuracies in the VSU modulation emulation, fixing a few sound effects in "Virtual Boy Wario Land".
+
+January 7, 2022:
+	SNES-Faust: Fixed S-DSP pitch modulation being half as strong as it should be.
+
+December 29, 2021:
+	SNES: Fixed wrong compile-time endian detection on little-endian PPC64.
+
+December 24, 2021:
+	PCE: Fixed incomplete initialization of the VDC BG tile cache; fixes glitches after the boss explodes in "R-Type" under certain
+	conditions(more likely to occur in forks of Mednafen).
+
+December 20, 2021:
+	NES: Added missing mapper 90 variables to save states.
+
+December 5, 2021:
+	Placing a "%d" or "%b" specifier at the beginning of a filesys.fname_* setting format string will now cause the generated path to be used as-is, rather
+	than potentially being prefixed with the corresponding filesys.path_* setting or the Mednafen base directory.  Fixes a regression introduced in
+	1.28.0-UNSTABLE that caused IPS patch files to be loaded from the wrong location when the user had loaded a game via a relative path.
+
+November 29, 2021:
+	Added support for playing the SCSP-generated music from most Sega Model 2A, 2B, 2C, and 3 games, via the new experimental "sasplay" module.
+
+November 15, 2021:
+	SNES: Fixed compilation error for little-endian PPC64 with LTO enabled.
+
+	Fixed compilation error after running configure with --disable-fancy-scalers.
+
 -- 1.28.0-UNSTABLE: --
 
 November 7, 2021:

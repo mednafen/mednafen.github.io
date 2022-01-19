@@ -169,7 +169,7 @@ function PageEnd()
 {
  ?>
   <div class="CopyrightBox">
-   Page design and original content copyright &copy; 2005-2021 Mednafen Team.  The Mednafen Beetle is copyright &copy; 2005 <a href="http://camilleart.com/">Camille Young</a>.  Nintendo,
+   Page design and original content copyright &copy; 2005-2022 Mednafen Team.  The Mednafen Beetle is copyright &copy; 2005 <a href="http://camilleart.com/">Camille Young</a>.  Nintendo,
    Nintendo Entertainment System, GameBoy, GameBoy Color, and GameBoy Advance are registered trademarks of <a href="http://www.nintendo.com/">Nintendo</a>.  Mednafen is <b>not</b> an official Nintendo product, and Mednafen is in no way affiliated with the Nintendo corporation.
   </div>
   </body>
