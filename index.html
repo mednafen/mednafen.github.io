@@ -186,7 +186,26 @@
 <div class="ContentBox">
  <h2 class="ContentBoxHead">News</h2>
  <div class="ContentBoxBody">
-<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=6577&amp;th=2044#msg_6577">Mednafen 1.28.0-UNSTABLE</a><span style="float: right;">November 12, 2021 - 02:23 PST</span></h3><div class="ContentBoxBodySub"><b>Notable changes since 1.27.1:</b><br />
+<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=6619&amp;th=2057#msg_6619">Mednafen 1.29.0</a><span style="float: right;">January 19, 2022 - 02:19 PST</span></h3><div class="ContentBoxBodySub">Small bugfix-oriented update that also adds support for playing music from Sega Model 2A/2B/2C/3 games by loading ZIP archives of  ROM image sets with MAME-style filenames.<br />
+<br />
+<b>Notable changes since 1.28.0-UNSTABLE:</b><br />
+<ul>
+<li>Added support for playing the SCSP-generated music from most Sega Model 2A, 2B, 2C, and 3 arcade games.
+<li><b>PCE</b>: Fixed a memory initialization bug that could cause  graphics glitches after the explosion of the first boss in &quot;R-Type&quot;.
+<li><b>PCE</b>, <b>PCE-Fast</b>: Fixed unreadable black letters in &quot;Order of the Griffon&quot;'s password entry screen.
+<li><b>SNES</b>: Fixed broken emulation on little-endian PPC64 due to endianness misdetection.
+<li><b>SNES-Faust</b>: Fixed S-DSP pitch modulation being half as strong as it should be.
+<li><b>VB</b>: Fixed a VSU modulation emulation inaccuracy that severely distorted some sound effects in &quot;Virtual Boy Wario Land&quot;.
+</ul><div align="center"><a href="https&#58;&#47;&#47;mednafen.github.io/documentation/ChangeLog.txt" target="_blank">ChangeLog</a></div><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.29.0.tar.xz" target="_blank">mednafen-1.29.0.tar.xz</a><br />
+<font size="-1">SHA-256: da3fbcf02877f9be0f028bfa5d1cb59e953a4049b90fe7e39388a3386d9f362e</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.29.0-win64.zip" target="_blank">mednafen-1.29.0-win64.zip</a><br />
+<font size="-1">SHA-256: 26c6676354d44e7d2c31b002f0abb097940e0846e449ed080fb79e6b64db0be2</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.29.0-win32.zip" target="_blank">mednafen-1.29.0-win32.zip</a><br />
+<font size="-1">SHA-256: f1c78dd0190129efaeeaa8e96553fb4d83d0120041caaaa6d4e7f440a573d811</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=6577&amp;th=2044#msg_6577">Mednafen 1.28.0-UNSTABLE</a><span style="float: right;">November 12, 2021 - 02:23 PST</span></h3><div class="ContentBoxBodySub"><b>Notable changes since 1.27.1:</b><br />
 <ul>
 <li>Stricter parsing of the configuration file and numeric setting values, with error messages now containing line numbers when relevant.
 <li>Added setting &quot;video.force_bbclear&quot;, default value of &quot;0&quot;, which when set to &quot;1&quot; will force clearing of the backbuffer before drawing every frame.
@@ -400,64 +419,7 @@ Minor update.<br />
 <font size="-1">SHA-256: ad3a7906521f0ce45737c2f0f7ea1117799548e60d10a746ac74ddd26d944cbb</font><br />
 <br />
 <a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.24.1-win32.zip" target="_blank">mednafen-1.24.1-win32.zip</a><br />
-<font size="-1">SHA-256: d26456eb711feac679e424968edee579b69c38ce1972a93bed10355b04ff21cd</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=6033&amp;th=1852#msg_6033">Mednafen 1.24.0-UNSTABLE</a><span style="float: right;">December 24, 2019 - 15:48 PST</span></h3><div class="ContentBoxBodySub"><b>Notable changes since 1.23.0-UNSTABLE:</b><br />
-<ul>
-<li>Added settings &quot;affinity.cd&quot;, &quot;affinity.emu&quot;, &quot;affinity.video&quot;, and &quot;ss.affinity.vdp2&quot; to specify CPU thread affinity masks for the CD read threads, main emulation thread, video blitting thread, and Saturn VDP2 rendering thread, respectively.  Setting thread affinities properly can improve Saturn emulation performance on a dual-core CPU with hyperthreading.
-<li>Using drive-relative paths on Windows should no longer make a mess due to Mednafen looking for and putting files in the wrong place.
-<li><b>Apple2</b>: Added support for 32-color custom palettes(will automatically enable a text fringe reduction RGB mode if used).
-<li><b>Apple2</b>: Renamed(with backwards-compatibility aliases) video mode &quot;rgb_alt1&quot; to &quot;rgb_alt&quot; and &quot;rgb_alt2&quot; to &quot;rgb_alt_tfr&quot;, and added new video mode &quot;rgb_tfr&quot;.
-<li><b>PS1</b>: Made minor adjustments to the PS1 pixel aspect ratio and lightgun crosshairs Y position with PAL PS1 emulation.  This may necessitate updating any custom per-game psx.xscale/psx.xscalefs settings, and recalibrating the lightgun in-game, with PAL games.
-<li><b>PS1</b>: Added setting &quot;psx.correct_aspect&quot;, default value of &quot;1&quot;.
-<li><b>SNES-Faust</b>: Added support for Game Genie cheats(entered via Mednafen's cheat system).
-<li><b>SNES-Faust</b>: Added setting &quot;snes_faust.region&quot; to allow for overriding the automatic region detection and emulating one region while reporting the different region to the game.
-<li><b>SNES-Faust</b>: Added DSP-2 and S-DD1 emulation.
-<li><b>SNES-Faust</b>: Added MSU1 support.
-<li><b>SNES-Faust</b>: Fixed hang in &quot;Frisky Tom&quot; in &quot;Nichibutsu Arcade Classics&quot;.
-<li><b>SNES-Faust</b>: Fixed audio glitching and hang in &quot;Tenshi no Uta: Shiroki Tsubasa no Inori&quot;.
-<li><b>SNES-Faust</b>: Added a multithreaded PPU renderer, controlled via the new &quot;snes_faust.renderer&quot; setting, disabled by default.
-<li><b>SNES-Faust</b>: Added SuperFX overclocking support, controlled via setting &quot;snes_faust.superfx.clock_rate&quot;.
-<li><b>SNES-Faust</b>: Added SuperFX instruction cache emulation support, controlled via setting &quot;snes_faust.superfx.icache&quot;, disabled by default.
-<li><b>SS</b>: Removed setting &quot;ss.midsync&quot;; the functionality it controlled is now always enabled.
-</ul><div align="center"><a href="https&#58;&#47;&#47;mednafen.github.io/documentation/ChangeLog.txt" target="_blank">ChangeLog</a></div><br />
-<b>New settings:</b><br />
-<ul>
-<li>affinity.cd
-<li>affinity.emu
-<li>affinity.video
-<li>psx.correct_aspect
-<li>snes_faust.renderer
-<li>snes_faust.affinity.ppu
-<li>snes_faust.affinity.msu1.data
-<li>snes_faust.affinity.msu1.audio
-<li>snes_faust.msu1.resamp_quality
-<li>snes_faust.region
-<li>snes_faust.slstart
-<li>snes_faust.slend
-<li>snes_faust.slstartp
-<li>snes_faust.slendp
-<li>snes_faust.superfx.clock_rate
-<li>snes_faust.superfx.icache
-<li>ss.affinity.vdp2
-</ul><br />
-<b>Changed settings:</b><br />
-<ul>
-<li>apple2.video.mode
-<li>snes_faust.correct_aspect
-<li>snes_faust.h_filter
-</ul><br />
-<b>Removed settings:</b><br />
-<ul>
-<li>ss.midsync
-</ul><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.24.0-UNSTABLE.tar.xz" target="_blank">mednafen-1.24.0-UNSTABLE.tar.xz</a><br />
-<font size="-1">SHA-256: e71d9de5ff350f76eedbd8f31a899012a674309ab3f110bf6ea259c1e19bd4cc</font><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.24.0-UNSTABLE-win64.zip" target="_blank">mednafen-1.24.0-UNSTABLE-win64.zip</a><br />
-<font size="-1">SHA-256: 8ddc89f8ff32da747321a12d7553b40942f8775876ee74b84835d47b3d993477</font><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.24.0-UNSTABLE-win32.zip" target="_blank">mednafen-1.24.0-UNSTABLE-win32.zip</a><br />
-<font size="-1">SHA-256: a1ab29f7bbeb375994582e14aa6ab3c8d58590592ae7de61a42ba6b783255bea</font></div></div><br> </div>
+<font size="-1">SHA-256: d26456eb711feac679e424968edee579b69c38ce1972a93bed10355b04ff21cd</font></div></div><br> </div>
 </div>
 <br />
   <div class="CopyrightBox">
