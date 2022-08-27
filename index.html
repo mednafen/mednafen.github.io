@@ -186,7 +186,29 @@
 <div class="ContentBox">
  <h2 class="ContentBoxHead">News</h2>
  <div class="ContentBoxBody">
-<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=6619&amp;th=2057#msg_6619">Mednafen 1.29.0</a><span style="float: right;">January 19, 2022 - 02:19 PST</span></h3><div class="ContentBoxBodySub">Small bugfix-oriented update that also adds support for playing music from Sega Model 2A/2B/2C/3 games by loading ZIP archives of  ROM image sets with MAME-style filenames.<br />
+<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=6752&amp;th=2100#msg_6752">Mednafen 1.31.0-UNSTABLE</a><span style="float: right;">August 27, 2022 - 17:21 PDT</span></h3><div class="ContentBoxBodySub"><b>Notable changes since 1.29.0:</b><br />
+<ul>
+<li><b>MD</b>: Fixed glitches and hang in the Europe release of &quot;Donald in Maui Mallard&quot;.
+<li><b>PC-FX</b>: Expanded external backup memory from 32KiB to 128KiB, to match the amount of memory in an FX-BMP.
+<li><b>PC-FX</b>: External backup memory will now be saved to/loaded from its own file, instead of being appended to the internal backup memory in the same file.  For backwards compatibility, there is support for initially loading data from a combined 32KiB+32KiB file; however, the additional 96KiB of external backup memory will be unusable by the game in this case due to existing filesystem structures.
+<li><b>SASPlay</b>: Added support for &quot;Air Walkers&quot;.
+<li><b>SNES-Faust</b>: Added mouse emulation.
+<li><b>SNES-Faust</b>: Fixed color math glitch in &quot;Final Fantasy V&quot; when Exdeath is holding the <s>opaque white sphere</s> party hostage.
+<li><b>SNES-Faust</b>: Fixed broken ExLoROM support, used by a &quot;Heartthrob Memorial&quot; translation patch.
+<li><b>SS</b>: Added experimental support for ST-V games that don't require decryption chips or special hardware.  Refer to the <a href="https&#58;&#47;&#47;mednafen.github.io/documentation/ss.html#Section_stv" target="_blank">ST-V section of the documentation</a> for more details and a list of explicitly supported games.
+<li><b>SS</b>: Fixed missing and glitchy graphics in &quot;Houkago Ren'ai Club: Koi no Etude&quot;.
+<li><b>SS</b>: Fixed graphical glitches in &quot;Radiant Silvergun&quot; at the start of a new game begun after interrupting the attract mode, or game over, while a fancy rotating background was present, such as during the AKA-O battle.
+
+</ul><div align="center"><a href="https&#58;&#47;&#47;mednafen.github.io/documentation/ChangeLog.txt" target="_blank">ChangeLog</a></div><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.31.0-UNSTABLE.tar.xz" target="_blank">mednafen-1.31.0-UNSTABLE.tar.xz</a><br />
+<font size="-1">SHA-256: bfcff72e370e09e12ba3791600782187fbf5e2cc9d6b5fe4f9f3471642046367</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.31.0-UNSTABLE-win64.zip" target="_blank">mednafen-1.31.0-UNSTABLE-win64.zip</a><br />
+<font size="-1">SHA-256: 787ff503eb282dcd1bcdfc5b17da2f5bd24ac607b6c7ba6e36df1df335a607e5</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.31.0-UNSTABLE-win32.zip" target="_blank">mednafen-1.31.0-UNSTABLE-win32.zip</a><br />
+<font size="-1">SHA-256: 0f4c21472bf7631133784c5b23999b11fc5ca6b196a6074ef071d9ebbb4a6636</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=6619&amp;th=2057#msg_6619">Mednafen 1.29.0</a><span style="float: right;">January 19, 2022 - 02:19 PST</span></h3><div class="ContentBoxBodySub">Small bugfix-oriented update that also adds support for playing music from Sega Model 2A/2B/2C/3 games by loading ZIP archives of  ROM image sets with MAME-style filenames.<br />
 <br />
 <b>Notable changes since 1.28.0-UNSTABLE:</b><br />
 <ul>
@@ -408,18 +430,7 @@ Minor update.<br />
 <font size="-1">SHA-256: cb95a1e0c33873ccd746e5ac4af2cbcdc48281416beb66f1da99e9b68e26aca6</font><br />
 <br />
 <a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.24.2-win32.zip" target="_blank">mednafen-1.24.2-win32.zip</a><br />
-<font size="-1">SHA-256: f2921999408a911e7be5229a0cf51be658c5b3bc4ad15e6353a6988c0308f00c</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=6099&amp;th=1873#msg_6099">Mednafen 1.24.1</a><span style="float: right;">March 18, 2020 - 02:58 PDT</span></h3><div class="ContentBoxBodySub">Minor update to fix build issues on a few platforms, to fix sound effect glitches in the PS1 game &quot;Re-Loaded: The Hardcore Sequel&quot;, and to fix minor background layer alignment issues in the Saturn game &quot;Fighters Megamix&quot;.<br />
-<br />
-<div align="center"><a href="https&#58;&#47;&#47;mednafen.github.io/documentation/ChangeLog.txt" target="_blank">ChangeLog</a></div><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.24.1.tar.xz" target="_blank">mednafen-1.24.1.tar.xz</a><br />
-<font size="-1">SHA-256: a47adf3faf4da66920bebb9436e28cbf87ff66324d0bb392033cbb478b675fe7</font><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.24.1-win64.zip" target="_blank">mednafen-1.24.1-win64.zip</a><br />
-<font size="-1">SHA-256: ad3a7906521f0ce45737c2f0f7ea1117799548e60d10a746ac74ddd26d944cbb</font><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.24.1-win32.zip" target="_blank">mednafen-1.24.1-win32.zip</a><br />
-<font size="-1">SHA-256: d26456eb711feac679e424968edee579b69c38ce1972a93bed10355b04ff21cd</font></div></div><br> </div>
+<font size="-1">SHA-256: f2921999408a911e7be5229a0cf51be658c5b3bc4ad15e6353a6988c0308f00c</font></div></div><br> </div>
 </div>
 <br />
   <div class="CopyrightBox">
