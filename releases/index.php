@@ -108,13 +108,12 @@ Windows 8 and newer will work, but their use is discouraged unless Mednafen is r
 <h2 class="ContentBoxHead">Compiling from Sources:</h2>
 <div class="ContentBoxBody">
 <table border>
-<tr><td colspan="4">Library dependencies for Mednafen >= 1.21.0-UNSTABLE, plus the development package names for various distributions that need to be installed.</td></tr>
+<tr><td colspan="4">Library dependencies for Mednafen >= 1.27.0-UNSTABLE, plus the development package names for various distributions that need to be installed.</td></tr>
 <tr><th>&nbsp;</th><th>Debian Stretch</th></tr>
 <tr><td>(General)</td><td>build-essential<br>pkg-config</td></tr>
 <tr><td>ALSA</td><td>libasound2-dev</td></tr>
 <tr><td><a href="http://libsdl.org/">SDL 2.0.5+</a></td><td>libsdl2-dev</td></tr>
 <tr><td><a href="https://xiph.org/flac/">libFLAC</a></td><td>libflac-dev</td></tr>
-<tr><td><a href="http://www.mega-nerd.com/libsndfile/">libsndfile</a></td><td>libsndfile1-dev</td></tr>
 <tr><td><a href="http://www.zlib.org/">zlib</a></td><td>zlib1g-dev</td></tr>
 </table>
 <p />

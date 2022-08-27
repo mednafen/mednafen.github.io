@@ -1,3 +1,81 @@
+-- 1.31.0-UNSTABLE: --
+
+August 22, 2022:
+	SNES-Faust: Fixed garbage MSU1 audio on big-endian platforms.
+
+August 15, 2022:
+	SS: Added "Real Bout Garou Densetsu" to the internal database of games to enable full cache emulation with, to fix startup hang after skipping the BIOS
+	bootup animation, a regression introduced in 1.26.0-UNSTABLE.
+
+August 11, 2022:
+	VB: Don't flip framebuffers at the first start of drawing to the framebuffer after power-on, and (always) flip framebuffers when XPRST is triggered, per
+	tip from blitter.
+
+August 6, 2022:
+	When running the configure script with --with-external-trio, pkg-config information is now used preferentially if available.
+
+July 28, 2022:
+	SNES-Faust: Added mouse emulation.
+
+July 25, 2022:
+	SNES: Fixed #if/#ifdef typo in libco PPC code that reportedly broke libco on PPC when compiling with clang.
+
+July 16, 2022:
+	MD: Fixed bad values in the PAL V28 VCounter table(though normal resolution interlace VCounter stuff still needs to be fixed).  Fixes glitches and
+	hang in the Europe release of "Donald in Maui Mallard".
+
+	Fixed some M68K instruction and exception execution time inaccuracies.
+
+	Implemented emulation of M68K instruction Scc's dummy read.
+
+July 4, 2022:
+	SS: Added basic ST-V support.
+
+	SS: In SMPC INTBACK command processing, when starting controller reading after returning SMPC status, wait for Continue/Break *before* waiting for the end
+	of VBlank, prioritize Continue over Break, and don't allow the wait for end of VBlank to be interrupted by setting the Break bit, per tests on a SS.
+
+June 30, 2022:
+	Extended support for configuring buttons on virtual ports from port 12 to port 13, using new key combo ALT+SHIFT+Keypad 3, and switching devices
+	by CTRL+SHIFT+Keypad 3, for future use.
+
+June 25, 2022:
+	Added std::string variants of MDFN_strazicmp().
+
+	Adjusted minimum file extension search priority(e.g. for ".bin" and ".exe" extensions) from -80 to -1000.
+
+June 20, 2022:
+	Added initial value argument to crc16_ccitt().
+
+June 14, 2022:
+	Added support for returning CRC32 values in VirtualFS::finfo(), for entries in a ZIP archive.
+
+June 12, 2022:
+	SS: Trigger mid-frame synchronization when going into vblank if not already triggered by SMPC INTBACK command processing.
+
+March 26, 2022:
+	SS: When VDP2 per-dot RBG0 coefficient reading is enabled, and a per-dot coefficient read is attempted from a memory region not configured for that purpose
+	via RDBS, force the coefficient data to 0, instead of using the per-line coefficient data.  Fixes graphical glitches in "Radiant Silvergun" when starting
+	a new game after interrupting the attract mode during the AKA-O battle.
+
+March 23, 2022:
+	SS: Forcibly disable NBG1-3 only if both RBG0 and RBG1 are enabled via BGON, instead of only checking if RBG1 is enabled; fixes missing/glitchy graphics
+	in "Houkago Ren'ai Club: Koi no Etude".
+
+March 9, 2022:
+	SNES-Faust: Fixed broken ExLoROM support.
+
+	PCE, PCE-Fast, PC-FX:  Update channel 1 frequency cache upon LFO frequency register writes(the way the channel 1 frequency and LFO frequency are combined
+	is still inaccurate, however, causing frequency update timing granularity to be too high).
+
+February 4, 2022:
+	SNES-Faust: Fixed PPU window emulation bug that caused graphical glitches with a white circle at a few places in "Final Fantasy 5".
+
+February 2, 2022:
+	PC-FX: Expanded external backup memory to 128KiB, and changed it so that internal backup memory and external backup memory are saved to/loaded from separate files.
+
+January 22, 2022:
+	SASPlay: Added support for "Air Walkers".
+
 -- 1.29.0: --
 
 January 12, 2022:
