@@ -186,7 +186,44 @@
 <div class="ContentBox">
  <h2 class="ContentBoxHead">News</h2>
  <div class="ContentBoxBody">
-<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=6752&amp;th=2100#msg_6752">Mednafen 1.31.0-UNSTABLE</a><span style="float: right;">August 27, 2022 - 17:21 PDT</span></h3><div class="ContentBoxBodySub"><b>Notable changes since 1.29.0:</b><br />
+<div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=7001&amp;th=2181#msg_7001">Mednafen 1.32.0-UNSTABLE</a><span style="float: right;">January  9, 2024 - 18:24 PST</span></h3><div class="ContentBoxBodySub"><b>Notable changes since 1.31.0-UNSTABLE:</b><br />
+<ul>
+<li>The default key mapping(for new configurations) to exit Mednafen is now only &quot;F12&quot;, instead of both &quot;ESC&quot; and/or &quot;F12&quot; as before; additionally, a new mapping for &quot;ESC&quot; to close the netplay console/text popup has been added.
+<li>Added command-line option &quot;-ovconfig&quot;, to load global override settings from the specified file.  The global override settings will override any settings loaded from &quot;mednafen.cfg&quot; or set via command-line arguments, but will be overridden in turn by more-specific per-module and per-game override configuration files.  
+<li>Fixed data alignment issue that could produce broken QuickTime videos when using the CSCD codec(the default) with certain combinations of emulation module video settings.
+<li>Added setting &quot;<a href="https&#58;&#47;&#47;mednafen.github.io/documentation/#input.grab.strategy" target="_blank">input.grab.strategy</a>&quot;, default value of &quot;full&quot;.  It can be set to &quot;auto&quot; to enable minimalistic grabbing of the system keyboard and/or mouse, when input grabbing is toggled on, dependent on emulating a virtual keyboard and/or virtual mouse/ball device.
+<li>On the Windows build, keyboard grabbing will now capture ALT+Tab and the Windows keys, and discard synthetic left CTRL keypresses generated from pressing AltGr.
+<li>Restored Windows 2000 compatibility, broken in 1.21.0-UNSTABLE, for people who enjoy airgaps, firewalls, and/or insecurities.
+<li>Fixed fatal startup error when running the Mednafen executable from the root directory of a drive on Windows, a regression introduced around version 1.22.0-UNSTABLE.
+<li><b>Apple2</b>: Added support for Apple IIe and Enhanced IIe, selectable via changing the new &quot;<a href="https&#58;&#47;&#47;mednafen.github.io/documentation/apple2.html#apple2.model" target="_blank">apple2.model</a>&quot; setting, or by utilizing the new &quot;model&quot; directive in a MAI file.
+<li><b>Apple2</b>: When loading a floppy disk image from a ZIP archive without a MAI file, all other floppy disk images with the same extension in the same directory in the ZIP archive will now also be loaded automatically.  If desired, this feature can be disabled by setting the new &quot;<a href="https&#58;&#47;&#47;mednafen.github.io/documentation/apple2.html#apple2.multiload" target="_blank">apple2.multiload</a>&quot; setting to &quot;0&quot;.
+<li><b>Apple2</b>: Added setting &quot;<a href="https&#58;&#47;&#47;mednafen.github.io/documentation/apple2.html#apple2.input.kb.ghosting" target="_blank">apple2.input.kb.ghosting</a>&quot;, default value of &quot;1&quot;, that can be set to &quot;0&quot; to disable emulation of spurious ghost keypresses.
+<li><b>Apple2</b>: Increased the maximum value of the &quot;<a href="https&#58;&#47;&#47;mednafen.github.io/documentation/apple2.html#apple2.video.color_smooth" target="_blank">apple2.video.color_smooth</a>&quot; setting to &quot;2&quot;, which will enable more-aggressive composite video color smoothing.
+<li><b>Apple2</b>: Added an adjustable composite color video sharpening filter, controlled by the new setting &quot;<a href="https&#58;&#47;&#47;mednafen.github.io/documentation/apple2.html#apple2.video.postsharp" target="_blank">apple2.video.postsharp</a>&quot;.
+<li><b>Apple2</b>: Reworked how HGR is handled with the &quot;rgb_alt&quot; and &quot;rgb_alt_tfr&quot; video rendering modes, for consistency with DHGR and to correct a few glitches.
+<li><b>Apple2</b>: Added &quot;rgb_qd&quot; and &quot;rgb_qd_tfr&quot; <a href="https&#58;&#47;&#47;mednafen.github.io/documentation/apple2.html#apple2.video.mode" target="_blank">video rendering modes</a>, which will render DHGR at quarter-resolution, and provide two distinct grays, but are otherwise the same as &quot;rgb&quot; and &quot;rgb_tfr&quot;.
+<li><b>Apple2</b>: Added &quot;rgb_video7&quot; <a href="https&#58;&#47;&#47;mednafen.github.io/documentation/apple2.html#apple2.video.mode" target="_blank">video rendering mode</a>, which  supports the additional graphics modes offered by the Apple IIe Video 7 RGB interface, one of which is used by Sierra's AGI games.
+<li><b>Apple2</b>: Added high-level(no seek delay) ProDOS-compatible hard disk drive emulation, usable by loading a raw hard disk drive image with an &quot;hdv&quot; file extension, and through the &quot;hdd&quot; directive in a MAI file.
+
+<li><b>PS1</b>: Added support for Konami's &quot;Pop'n Music&quot; controller.
+
+<li><b>SNES-Faust</b>: Fixed distorted graphics in &quot;Marvelous&quot; and &quot;Bishoujo Janshi Suchie-Pai&quot; due to hires color math emulation inaccuracies.
+<li><b>SNES-Faust</b>: Fixed letter sprite glitches(horizontal black lines) in &quot;Wordtris&quot;.
+<li><b>SNES-Faust</b>: CPU writes to VRAM during active display are now blocked.  Fixes missing dialog box and text in &quot;Mazinger Z&quot;, title screen corruption in &quot;NBA Pro Basketball: Bulls vs Blazers&quot; and &quot;Shin Nihon Pro Wrestling: Chou Senshi in Tokyo Dome&quot;, and graphical garbage during startup in &quot;Zen-Nihon Pro Wres&quot;.  May break ancient ROM hacks and fan translations.
+<li><b>SS</b>: Fixed hangs in &quot;Gal Jan&quot;, &quot;Kanzen Chuukei Pro Yakyuu Greatest Nine&quot;, the USA version of &quot;Creature Shock: Special Edition&quot;, and the European versions of &quot;Magic Carpet&quot;, &quot;Manx TT SuperBike&quot;, and &quot;Revolution X&quot;.
+<li><b>SS</b>: Fixed erroneous red shadows beneath units during the final episode's first battle in &quot;Sakura Taisen&quot;.
+<li><b>SS</b>: Added support for loading bootable ROM cart images up to 48MiB in size, with a filename extension of &quot;ss&quot;.  If the ROM image is 32MiB or smaller, 512KiB of backup memory for save games will be available.
+<li><b>SS</b>: Added support for routing SCSP MIDI output to stdout, for debug text output, by changing the new &quot;<a href="https&#58;&#47;&#47;mednafen.github.io/documentation/ss.html#ss.midi" target="_blank">ss.midi</a>&quot; setting's value to &quot;stdout&quot;.
+</ul><div align="center"><a href="https&#58;&#47;&#47;mednafen.github.io/documentation/ChangeLog.txt" target="_blank">ChangeLog</a></div><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.32.0-UNSTABLE.tar.xz" target="_blank">mednafen-1.32.0-UNSTABLE.tar.xz</a><br />
+<font size="-1">SHA-256: cede8fe3384849f06cb15bfd67d0739fe4fdc9e819add5c1b6df686f296f54f9</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.32.0-UNSTABLE-win64.zip" target="_blank">mednafen-1.32.0-UNSTABLE-win64.zip</a><br />
+<font size="-1">SHA-256: 3ca97a8786b1ad0c040e5374d29e93bdd6b0f3af2361ba841e6bf9a439d33434</font><br />
+<br />
+<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.32.0-UNSTABLE-win32.zip" target="_blank">mednafen-1.32.0-UNSTABLE-win32.zip</a><br />
+<font size="-1">SHA-256: 2effc8a5108e4eb6d04b81f6251e0d69e61277317906dbd6d749a39d42ad8295</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=6752&amp;th=2100#msg_6752">Mednafen 1.31.0-UNSTABLE</a><span style="float: right;">August 27, 2022 - 17:21 PDT</span></h3><div class="ContentBoxBodySub"><b>Notable changes since 1.29.0:</b><br />
 <ul>
 <li><b>MD</b>: Fixed glitches and hang in the Europe release of &quot;Donald in Maui Mallard&quot;.
 <li><b>PC-FX</b>: Expanded external backup memory from 32KiB to 128KiB, to match the amount of memory in an FX-BMP.
@@ -410,27 +447,7 @@ April 28, 2021:
 <font size="-1">SHA-256: abcb3d6f037c4b69f82b6d1b01e80e727bfd6f54bdc9cae78a4167e1d9c6240c</font><br />
 <br />
 <a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.24.3-win32.zip" target="_blank">mednafen-1.24.3-win32.zip</a><br />
-<font size="-1">SHA-256: 9486b5c7e26e146b5142f9aed1d204441ab7395edbe92f697376bb3e6a9a9467</font></div></div><br><div class="ContentBoxSub"><h3><a href="https://forum.fobby.net/index.php?t=rview&amp;goto=6165&amp;th=1892#msg_6165">Mednafen 1.24.2</a><span style="float: right;">May  1, 2020 - 01:13 PDT</span></h3><div class="ContentBoxBodySub"><font size="3"><font color="purple">A newer version, <a href="https&#58;&#47;&#47;forum.fobby.net/index.php?t=msg&amp;th=1896" target="_blank">1.24.3</a>, is available.</font></font><br />
-<hr><br />
-Minor update.<br />
-<ul>
-<li>Fixed broken support for systems with no OpenGL implementation available.
-<li><b>Apple2</b>: Fixed potential assert() failure after changing disks.
-<li><b>SS</b>: Implemented emulation of SCSP slot EG bypass and short waveform mode bits.
-<li><b>SS</b>: Implemented the buggy linear interpolation that occurs when SCSP FM is used.
-<li><b>SS</b>: Implemented SCSP register mirroring.
-<li><b>SS</b>: Fixed a few inaccuracies with the SCSP waveform loop handling.
-</ul><br />
-<div align="center"><a href="https&#58;&#47;&#47;mednafen.github.io/documentation/ChangeLog.txt" target="_blank">ChangeLog</a></div><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.24.2.tar.xz" target="_blank">mednafen-1.24.2.tar.xz</a><br />
-<font size="-1">SHA-256: 1169ded285bb56d359973d3d332f28e5d2e9e41768a9932383d1a0ef63057c6c</font><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.24.2-win64.zip" target="_blank">mednafen-1.24.2-win64.zip</a><br />
-<font size="-1">SHA-256: cb95a1e0c33873ccd746e5ac4af2cbcdc48281416beb66f1da99e9b68e26aca6</font><br />
-<br />
-<a href="https&#58;&#47;&#47;mednafen.github.io/releases/files/mednafen-1.24.2-win32.zip" target="_blank">mednafen-1.24.2-win32.zip</a><br />
-<font size="-1">SHA-256: f2921999408a911e7be5229a0cf51be658c5b3bc4ad15e6353a6988c0308f00c</font></div></div><br> </div>
+<font size="-1">SHA-256: 9486b5c7e26e146b5142f9aed1d204441ab7395edbe92f697376bb3e6a9a9467</font></div></div><br> </div>
 </div>
 <br />
   <div class="CopyrightBox">
