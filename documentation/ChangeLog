@@ -1,3 +1,17 @@
+-- 1.32.1: --
+
+March 15, 2024:
+	Apple2: Fixed erroneous parsing of WOZ file padding bytes and unknown chunks' data as 8-byte chunk headers.
+
+	Fixed broken handling of the end-of-stream condition when reading from non-compressed files stored in ZIP archives;
+	fixes loading of such Apple II WOZ disk images and CloneCD CD images.
+
+January 17, 2024:
+	SS: Implemented workaround for gcc bug #113255 in the VDP1 rasterization code.
+
+January 14, 2024:
+	Apple2: Fixed typos/brainfart that broke language card and ROM card control accesses via $C08F.
+
 -- 1.32.0-UNSTABLE: --
 
 December 29, 2023:

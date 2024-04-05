@@ -19,7 +19,7 @@
  <p>
  The following systems are supported(refer to the emulation module documentation for more details):
  <ul>
-  <li>Apple II/II+</li>
+  <li>Apple II/II+/IIe/Enhanced IIe</li>
   <li>Atari Lynx</li>
   <li>Neo Geo Pocket (Color)</li>
   <li>WonderSwan</li>
